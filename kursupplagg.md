@@ -123,6 +123,7 @@ Datastrukturer: arrayer och objekt.
 ### Kurslitteratur
 
 - 4. [Data Structures: Objects and Arrays](http://eloquentjavascript.net/04_data.html)
+- 5. [Higher-order Functions](http://eloquentjavascript.net/05_higher_order.html)
 
 ----------
 
@@ -138,7 +139,7 @@ Datastrukturer: arrayer och objekt.
 ----------
 ## Vecka 4
 
-### Föreläsning 5 (del 1)
+### "Peer Instruction #1" (del 1)
 
 **Måndagen den 21 september 13:15-15:00**
 
@@ -153,6 +154,10 @@ Mer om funktioner.
 
 #### Kurslitteratur
 
+- 1. [Values, Types, and Operators](http://eloquentjavascript.net/01_values.html)
+- 2. [Program Structure](http://eloquentjavascript.net/02_program_structure.html)
+- 3. [Functions](http://eloquentjavascript.net/03_functions.html)
+- 4. [Data Structures: Objects and Arrays](http://eloquentjavascript.net/04_data.html)
 - 5. [Higher-order Functions](http://eloquentjavascript.net/05_higher_order.html)
 
 ----------
@@ -179,7 +184,7 @@ Mer om funktioner.
 
 ## Vecka 5
 
-### Föreläsning 6 (del 2)
+### Föreläsning 5 (del 2)
 
 **Måndagen den 28 september 13:15-15:00**
 
@@ -207,7 +212,7 @@ Objekt: egenskaper, metoder, prototyper.
 
 ----------
 
-### Föreläsning 7 (del 2)
+### Föreläsning 6 (del 2)
 
 **Onsdagen den 28 september 10:15-12:00**
 
@@ -238,7 +243,7 @@ Objekt: Arv, överskuggning, polymorfism.
 
 ## Vecka 6
 
-### Föreläsning 8 (del 2)
+### Föreläsning 7 (del 2)
 
 **Måndagen den 5 oktober 10:15-12:00**
 
@@ -271,7 +276,7 @@ Buggar, felhantering samt reguljära uttryck.
 
 ## Vecka 7
 
-### Föreläsning 9 (del 2)
+### "Peer Instruction #2" (del 2)
 
 **Måndagen den 12 oktober 10:15-12:00**
 
@@ -280,13 +285,14 @@ Buggar, felhantering samt reguljära uttryck.
  
 #### Abstrakt
 
-Mer om objekt.
-
-[TODO: Presentation]
+[TODO]
 
 ### Kurslitteratur
 
 - 6. [The Secret Life of Objects](http://eloquentjavascript.net/06_object.html)
+- 7. [Project: Electronic Life](http://eloquentjavascript.net/07_elife.html)
+- 8. [Bugs and Error Handling](http://eloquentjavascript.net/08_error.html)
+- 9. [Regular Expressions](http://eloquentjavascript.net/09_regexp.html)
 
 ----------
 
@@ -312,7 +318,7 @@ Mer om objekt.
 
 ## Vecka 8
 
-### Föreläsning 10 (del 3)
+### Föreläsning 8 (del 3)
 
 **Måndagen den 19 oktober 13:15-15:00**
 
@@ -344,7 +350,6 @@ Moduler.
 ----------
 
 ## Vecka 9
-----------
 
 ### Handledning
 
@@ -355,6 +360,7 @@ Moduler.
 - Campus: Ny107K, Ny108K, Ny112K, Ny113K
 - Distans: [https://connect.sunet.se/supervision-1dv021/](https://connect.sunet.se/supervision-1dv021/)
 
+----------
 
 ### Examinationsuppgift 3 (del 3, provmoment 3)
 
