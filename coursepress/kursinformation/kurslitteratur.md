@@ -1,5 +1,3 @@
-# Kurslitteratur
-
 ## Eloquent JavaScript, 2nd Edition
 Den rekommenderade kurslitteraturen är [Eloquent JavaScript, 2nd Edition](http://eloquentjavascript.net/) av Marijn Haverbake, ISBN 978-1593275846.
 
