@@ -1,5 +1,3 @@
-# Kursupplägg
-
 ## Vecka 1
 
 ### Kursintroduktion
