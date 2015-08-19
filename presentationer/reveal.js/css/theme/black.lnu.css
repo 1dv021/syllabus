@@ -18,6 +18,10 @@
             text-align: center;
         }
 
+.reveal pre {
+    text-indent:0;
+}
+
 .lnu li {
     /*padding-left: 1em;*/
     text-indent: -1em;
@@ -47,6 +51,19 @@
             color: #98C807;
             font-weight: bold;
         }
+
+        .lnu ul ul ul {
+            list-style: none;
+            padding: 0;
+            margin-left: 1em;
+            font-size: 80%;
+        }
+
+            .lnu ul ul ul li:before {
+                content: "\0bb\0020";
+                color: #cfb220;
+                font-weight: bold;
+            }
 
     .lnu ul ol {
         list-style-type: none;
@@ -129,4 +146,12 @@
     color: #98C807;
     font-weight: bold;
     padding-left: 1em;
+}
+
+.lnu .no-text-transform {
+    text-transform: none;
+}
+
+.lnu .text-gray {
+    color: gray;
 }
