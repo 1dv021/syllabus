@@ -22,4 +22,4 @@ historik, datatyper, Number, String, Boolean, Object, "typeof"-operatorn, aritme
     - [Defining a function](http://eloquentjavascript.net/03_functions.html#h_tqLFw/oazr)
 
 ## Externa resurser
-- [Crockford on JavaScript – Volume 1: The Early Years](https://youtu.be/JxAXlJEmNMg) (1 h 42 m). Denna föreläsning av Douglas Crockford ger en historisk bakgrund till Javascript.
+- [Crockford on JavaScript – Volume 1: The Early Years](https://youtu.be/JxAXlJEmNMg) (1 h 42 m). Douglas Crockford ger en historisk bakgrund till Javascript.
