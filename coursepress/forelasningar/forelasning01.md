@@ -1,8 +1,14 @@
-- [Presentation]("https://rawgit.com/1dv021/syllabus/master/presentationer/01/index.html#") (HTML-presentation)
+## Nyckelord
 
-## I kurslitteraturen
+historik, datatyper, Number, String, Boolean, Object, "typeof"-operatorn, aritmetiska operatorer, logiska operatorer, uttryck, satser, variabler, nyckleord, reserverade ord, funktioner
 
-- [Introduktion]("http://eloquentjavascript.net/00_intro.html")
+## Resurser
+- [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/01/index.html#)
+- <del>Inspelning</del>
+
+### Eloquent JavaScript, 2nd Edition 
+
+- [Introduktion](http://eloquentjavascript.net/00_intro.html)
 - [1. Values, Types, and Operators](http://eloquentjavascript.net/01_values.html)
 - [2. Program Structure](http://eloquentjavascript.net/02_program_structure.html)
 	- [Expressions and statements](http://eloquentjavascript.net/02_program_structure.html#h_5fUOQZwwHx)
@@ -16,4 +22,4 @@
     - [Defining a function](http://eloquentjavascript.net/03_functions.html#h_tqLFw/oazr)
 
 ## Externa resurser
-- [Crockford on JavaScript – Volume 1: The Early Years](https://youtu.be/JxAXlJEmNMg). Denna föreläsning av Douglas Crockford ger en historisk bakgrund till Javascript.
+- [Crockford on JavaScript – Volume 1: The Early Years](https://youtu.be/JxAXlJEmNMg) (1 h 42 m). Denna föreläsning av Douglas Crockford ger en historisk bakgrund till Javascript.
