@@ -8,8 +8,11 @@ Innan du startar med detta så förutsätter vi följande:
 Guiden består av följande steg:
 
 1. Introduktion
-2. Installera Git
-3. Installera Node.js
+2. Versionshanteraren Git
+ * Installation
+ * Konfiguration
+3. Applikationsmiljön Node.js
+ * Installation av Node.js och npm
 4. Installera IDEt Webstorm
 5. Kom igång med GitHub
 6. Genomför din första laboration, Hello World
@@ -19,13 +22,23 @@ Inte nog med att du ska lära dig programmera i denna kurs, du kommer också att
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RyKpl19Ezis?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
-## 2. Installera Git
+## 2. Versionshantering med Git
 Git är det versionshanteringssystem som vi kommer att använda för att spåra ändringar i vår kod och se till att vi alltid har möjlighet att backa tillbaka om vi gjort något fel. Att arbeta med versionshantering blir extra viktigt när du börjar arbeta i kodprojekt tillsammans med andra.
 
-Det du ska göra nu är följande:
+### Att göra
 1. Installera git från [https://git-scm.com/](https://git-scm.com/)
 2. Konfigurera git med avsenden på namn, epostadress
 3. Se till att git sparar dina användaruppgifter så att du slipper logga in varje gång.
 
 I [följande inspelning](https://youtu.be/iZYUfBR-DZM) går vi igenom ovanstående steg.
 <iframe width="420" height="315" src="https://www.youtube.com/embed/iZYUfBR-DZM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
+## 3. Applikationsmiljön Node.js
+Node.js är den applikationsmiljö i vilken vi kommer att köra våra javascriptprogram. Du kanske tidigare känner till att javascript används på webbsidor och således körs i användarens webbläsare. I denna kurs kommer vi dock att exekvera våra program utanför webbläsaren och Node.js är det verktyg vi kommer att använda för att göra detta.
+NPM (Node Package Manager) hjälper oss att hålla reda på yttre beroenden i våra applikationer/program. Det finns väldigt mycket moduler av färdig kod som vi kan använda oss av i våra program så att vi slipper uppfinna hjulet på nytt. Det är här npm kommer in i bilden och hjälper oss att hämta hem och underhålla dessa beroenden. 
+
+### Att göra
+1. Installare Node.js och npm
+
+I [följande inspelning](https://youtu.be/lG-T8Ar6mDI) går vi igenom ovanstående steg.
+<iframe width="420" height="315" src="https://www.youtube.com/embed/lG-T8Ar6mDI?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
