@@ -17,7 +17,10 @@ Guiden består av följande steg:
  * Installation
  * Konfiguration av terminalen
  * Konfiguration av JSCS och JSHint 
-5. Kom igång med GitHub
+5. GitHub
+ * Skaffa konto
+ * Ansök om GitHub Education
+ * Bekanta dig med kursens GitHub-organisation
 6. Genomför din första laboration, Hello World
 
 ## 1. Introduktion
@@ -46,7 +49,7 @@ NPM (Node Package Manager) hjälper oss att hålla reda på yttre beroenden i v�
 I [följande inspelning](https://youtu.be/lG-T8Ar6mDI) går vi igenom ovanstående steg.
 <iframe width="420" height="315" src="https://www.youtube.com/embed/lG-T8Ar6mDI?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
-### 4. Webstorm IDE
+## 4. Webstorm IDE
 Ett IDE (Integrated Developer Environment) är en utvecklingsmiljö för oss programmerare i vilken vi har tillgång till de verktyg som vi behöver när vi programmerar. Det finns mängder med olika utvecklingsmiljöer att välja på och i denna kurs har vi valt [Webstorm](https://www.jetbrains.com/webstorm/). Webstorm är en populär utvecklingsmiljö när man arbetar med javascriptapplikationer och som student har du [tillgång till miljön via ditt studentkonto hos LNU](https://www.jetbrains.com/webstorm/student).
 
 ### Att göra
@@ -56,3 +59,20 @@ Ett IDE (Integrated Developer Environment) är en utvecklingsmiljö för oss pro
 
 I [följande inspelning](https://youtu.be/WCzfV8LB6a0) går vi igenom ovanstående steg.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WCzfV8LB6a0?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
+## Github
+[Github](https://github.com) är en lagringsyta för våra applikationer som möjliggör sammarbete och ett effektivt arbetssätt. Du kommer att använda Github under stora delar av din utbildning så det är viktigt att du redan nu bekantar dig väl med tjänsten. Github erbjuder dessutom ett paket för studenter som innebär att du får tillgång till ett antal privata lagringsytor och även tillgång till externa verktyg. Har du redan ett konto på Github? Titta då på filmen nedan så beskriver vi hur du ska gå tillväga för att ansöka om GitHub Education Pack på det kontot. Du behöver inte skapa ett nytt för dina studier! 
+
+Det finns även en [guide](https://coursepress.lnu.se/info/manual/kom-igang-med-github/) på CoursePress som kan vara vettig att läsa igenom.
+
+### Att göra
+1. Ditt konto på Github
+ * Skapa ett nytt eller...
+ * Lägg till din studentepostadress till ett befintligt konto
+2. Ansök om GitHub Educational Pack
+3. Organisationen 1dv021
+ * Bekanta dig med kursens [organisation](https://github.com/1dv021)
+ * Godkänn din inbjudan till organisationen
+
+I [följande inspelning](https://youtu.be/q058hV1sJEo) går vi igenom ovanstående steg.
+<iframe width="420" height="315" src="https://www.youtube.com/embed/q058hV1sJEo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
