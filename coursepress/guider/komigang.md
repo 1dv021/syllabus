@@ -14,6 +14,9 @@ Guiden består av följande steg:
 3. Applikationsmiljön Node.js
  * Installation av Node.js och npm
 4. Webstorm IDE
+ * Installation
+ * Konfiguration av terminalen
+ * Konfiguration av JSCS och JSHint 
 5. Kom igång med GitHub
 6. Genomför din första laboration, Hello World
 
