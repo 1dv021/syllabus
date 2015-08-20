@@ -13,7 +13,7 @@ Guiden består av följande steg:
  * Konfiguration
 3. Applikationsmiljön Node.js
  * Installation av Node.js och npm
-4. Installera IDEt Webstorm
+4. Webstorm IDE
 5. Kom igång med GitHub
 6. Genomför din första laboration, Hello World
 
@@ -38,7 +38,18 @@ Node.js är den applikationsmiljö i vilken vi kommer att köra våra javascript
 NPM (Node Package Manager) hjälper oss att hålla reda på yttre beroenden i våra applikationer/program. Det finns väldigt mycket moduler av färdig kod som vi kan använda oss av i våra program så att vi slipper uppfinna hjulet på nytt. Det är här npm kommer in i bilden och hjälper oss att hämta hem och underhålla dessa beroenden. 
 
 ### Att göra
-1. Installare Node.js och npm
+1. Installera Node.js och npm
 
 I [följande inspelning](https://youtu.be/lG-T8Ar6mDI) går vi igenom ovanstående steg.
 <iframe width="420" height="315" src="https://www.youtube.com/embed/lG-T8Ar6mDI?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
+### 4. Webstorm IDE
+Ett IDE (Integrated Developer Environment) är en utvecklingsmiljö för oss programmerare i vilken vi har tillgång till de verktyg som vi behöver när vi programmerar. Det finns mängder med olika utvecklingsmiljöer att välja på och i denna kurs har vi valt [Webstorm](https://www.jetbrains.com/webstorm/). Webstorm är en populär utvecklingsmiljö när man arbetar med javascriptapplikationer och som student har du [tillgång till miljön via ditt studentkonto hos LNU](https://www.jetbrains.com/webstorm/student).
+
+### Att göra
+1. Installera WebStorm
+2. Konfigurera WebStorm terminalen så att den använder Git Bash
+3. Göra inställningar för kodkvalitetsverktygen JSHint och JSCS
+
+I [följande inspelning](https://youtu.be/WCzfV8LB6a0) går vi igenom ovanstående steg.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WCzfV8LB6a0?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
