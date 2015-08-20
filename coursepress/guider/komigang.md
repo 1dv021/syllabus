@@ -21,7 +21,7 @@ Guiden består av följande steg:
  * Skaffa konto
  * Ansök om GitHub Education
  * Bekanta dig med kursens GitHub-organisation
-6. Genomför din första laboration, Hello World
+6. Genomför din första laboration, "Hello, World!"
 
 ## 1. Introduktion
 Inte nog med att du ska lära dig programmera i denna kurs, du kommer också att lära dig en mängd med verktyg som kommer att underlätta när vi utvecklar. I början kan detta kännas väldigt omständigt. Vi lovar dock att om tar tillfället i akt och lugnt och metodiskt arbetar igenom dessa guider och sedan följer de arbetsscheman vi satt upp för specifika uppgifter så kommer du att få en oerhört stabil grund att stå på inför dina programmeringsutmaningar. 
@@ -38,6 +38,10 @@ Git är det versionshanteringssystem som vi kommer att använda för att spåra 
 
 I [följande inspelning](https://youtu.be/iZYUfBR-DZM) går vi igenom ovanstående steg.
 <iframe width="420" height="315" src="https://www.youtube.com/embed/iZYUfBR-DZM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
+För en lite djupare genomgång av git rekommenderar vi följande resurser:
+* [Try Git](https://try.github.io/levels/1/challenges/1) - GitHubs snabbgenomgång. Interaktiv träning.
+* 
 
 ## 3. Applikationsmiljön Node.js
 Node.js är den applikationsmiljö i vilken vi kommer att köra våra javascriptprogram. Du kanske tidigare känner till att javascript används på webbsidor och således körs i användarens webbläsare. I denna kurs kommer vi dock att exekvera våra program utanför webbläsaren och Node.js är det verktyg vi kommer att använda för att göra detta.
@@ -60,7 +64,7 @@ Ett IDE (Integrated Developer Environment) är en utvecklingsmiljö för oss pro
 I [följande inspelning](https://youtu.be/WCzfV8LB6a0) går vi igenom ovanstående steg.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WCzfV8LB6a0?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
-## Github
+## 5. Github
 [Github](https://github.com) är en lagringsyta för våra applikationer som möjliggör sammarbete och ett effektivt arbetssätt. Du kommer att använda Github under stora delar av din utbildning så det är viktigt att du redan nu bekantar dig väl med tjänsten. Github erbjuder dessutom ett paket för studenter som innebär att du får tillgång till ett antal privata lagringsytor och även tillgång till externa verktyg. Har du redan ett konto på Github? Titta då på filmen nedan så beskriver vi hur du ska gå tillväga för att ansöka om GitHub Education Pack på det kontot. Du behöver inte skapa ett nytt för dina studier! 
 
 Det finns även en [guide](https://coursepress.lnu.se/info/manual/kom-igang-med-github/) på CoursePress som kan vara vettig att läsa igenom.
@@ -68,7 +72,7 @@ Det finns även en [guide](https://coursepress.lnu.se/info/manual/kom-igang-med-
 ### Att göra
 1. Ditt konto på Github
  * Skapa ett nytt eller...
- * Lägg till din studentepostadress till ett befintligt konto
+ * ...lägg till din studentepostadress till ett befintligt konto
 2. Ansök om GitHub Educational Pack
 3. Organisationen 1dv021
  * Bekanta dig med kursens [organisation](https://github.com/1dv021)
@@ -76,3 +80,5 @@ Det finns även en [guide](https://coursepress.lnu.se/info/manual/kom-igang-med-
 
 I [följande inspelning](https://youtu.be/q058hV1sJEo) går vi igenom ovanstående steg.
 <iframe width="420" height="315" src="https://www.youtube.com/embed/q058hV1sJEo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
+## 6. Hello, World!
