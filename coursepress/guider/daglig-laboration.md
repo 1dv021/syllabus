@@ -9,7 +9,7 @@ Kursens laborationsuppgifter hittar du här: [https://github.com/1dv021/laborati
 * `git remote add https://github.com/1dv021/laborationer.git`
 3. Hämta ner laborationerna till ditt lokala repo:
 * `git pull 1dv021`
-4. Merga `1dv021/master` med `master`
+4. Merga *1dv021/master* med *master*
 * `git merge 1dv021/master`
 5. Installera alla yttre beroenden. (Mocha, JSCS, JSHint...)
 * `npm install`
@@ -18,15 +18,17 @@ Du är nu redoa att ta dig an din första uppgift.
 
 ## Dagligt arbete, laborationer
 
-1. Uppdatera för att se om några nya uppgifter tillkommit i 1DV021
+Börja med att updatera för att se om några nya uppgifter tillkommit i 1DV021
 * `git pull 1dv021`
-2. Växla till den laborationsuppgift du vill arbeta med.
+
+1. Växla till den laborationsuppgift du vill arbeta med.
 * `git checkout part1-hello-world`
-3. Arbeta med uppgiften, kör tester etc. Gör regelbundna commits:
-* `git add .`, `git commit -m "Implements solution for the task"`
-4. När uppgiften är löst, merga den med master-branchen
+2. Arbeta med uppgiften, kör tester etc. Gör regelbundna commits:
+* `git add .`
+* `git commit -m "Implements solution for the task"`
+3. När uppgiften är löst, merga den med master-branchen
 * `git checkout master`
 * `git merge part1-hello-world`
-5. Skicka förändringar till github
+4. Skicka förändringar till github
 * `git push`
-6. Börja om på steg 2 med nästa uppgift i ordningen.
+5. Börja om på steg 1 med nästa uppgift i ordningen.
