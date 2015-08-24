@@ -23,6 +23,9 @@ Guiden består av följande steg:
  * Bekanta dig med kursens GitHub-organisation
 6. Genomför din första laboration, "Hello, World!"
 
+### Skolans datorsalar
+Om du använder skolans datorsalar så är steg 1-4 redan genomförda på de datorer som finns i salarna Ny106, Ny107, Ny108, Ny112 samt Ny113. Du kan, och ska inte installera något eget på dessa datorer utan kan börja med steg 5.
+
 ### Resurser
 1. [What is VCS? (GitHub Training & Guides)](https://youtu.be/8oRjP8yj2Wo?list=PLg7s6cbtAD165JTRsXh8ofwRw0PqUnkVH)
 2. [What is Git? (GitHub Training & Guides)](https://youtu.be/uhtzxPU7Bz0?list=PLg7s6cbtAD165JTRsXh8ofwRw0PqUnkVH)
