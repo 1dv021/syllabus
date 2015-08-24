@@ -23,6 +23,11 @@ Guiden består av följande steg:
  * Bekanta dig med kursens GitHub-organisation
 6. Genomför din första laboration, "Hello, World!"
 
+### Resurser
+1. [What is VCS? (GitHub Training & Guides)](https://youtu.be/8oRjP8yj2Wo?list=PLg7s6cbtAD165JTRsXh8ofwRw0PqUnkVH)
+2. [What is Git? (GitHub Training & Guides)](https://youtu.be/uhtzxPU7Bz0?list=PLg7s6cbtAD165JTRsXh8ofwRw0PqUnkVH)
+3. 
+
 ## 1. Introduktion
 Inte nog med att du ska lära dig programmera i denna kurs, du kommer också att lära dig en mängd med verktyg som kommer att underlätta när vi utvecklar. I början kan detta kännas väldigt omständigt. Vi lovar dock att om tar tillfället i akt och lugnt och metodiskt arbetar igenom dessa guider och sedan följer de arbetsscheman vi satt upp för specifika uppgifter så kommer du att få en oerhört stabil grund att stå på inför dina programmeringsutmaningar. 
 
@@ -81,4 +86,17 @@ Det finns även en [guide](https://coursepress.lnu.se/info/manual/kom-igang-med-
 I [följande inspelning](https://youtu.be/q058hV1sJEo) går vi igenom ovanstående steg.
 <iframe width="420" height="315" src="https://www.youtube.com/embed/q058hV1sJEo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
+### Resurser
+Titta nu gärna igenom nedanstående föreläsning och se om du efter detta kan "forka" vårt repo 1dv021/syllabus och kanske rätta något stavfel eller bidra med något annat till kursens innehåll!
+* [The Basics of Git and GitHub (Github Training)](https://youtu.be/U8GBXvdmHT4)
+
 ## 6. Hello, World!
+Äntligen är det dags att skriva kod! Vi går igenom hur vi kan arbeta med laborationerna i kursen. 
+
+### Att göra
+1. Klona ditt laborationsrepo från Github
+2. Kopiera in laborationsuppgifterna
+3. Lös en uppgift
+
+I [följande inspelning](https://youtu.be/yFzyCLC53iA) går vi igenom ovanstående steg.
+<iframe width="420" height="315" src="https://www.youtube.com/embed/yFzyCLC53iA?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
