@@ -3,12 +3,22 @@
 [TODO]
 
 ## Resurser
-- <del>HTML-presentation</del>
+- [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/02/index.html#)
 - <del>Inspelning</del>
 
 ### Eloquent JavaScript, 2nd Edition 
 
-[TODO]
+- [2. Program Structure](http://eloquentjavascript.net/02_program_structure.html)
+    - [Control Flow](http://eloquentjavascript.net/02_program_structure.html#h_rDxYNPd65Z)
+    - [Conditional Execution](http://eloquentjavascript.net/02_program_structure.html#h_wpz5oi2dy7)
+    - [while and do Loops](http://eloquentjavascript.net/02_program_structure.html#h_FaGGgUI+MM)
+    - [Indenting Code](http://eloquentjavascript.net/02_program_structure.html#h_3I0M2f1Cmh)
+    - [for Loops](http://eloquentjavascript.net/02_program_structure.html#h_oupMC+5FKN)
+    - [Breaking Out of a Loop](http://eloquentjavascript.net/02_program_structure.html#h_WWKAoSPJ47)
+    - [Updating variables succinctly](http://eloquentjavascript.net/02_program_structure.html#h_TGUhwjSkqm)
+    - [Dispatching on a value with switch](http://eloquentjavascript.net/02_program_structure.html#h_jMKsa0SXdL)
+    - [Capitalization](http://eloquentjavascript.net/02_program_structure.html#h_t54vuASjLD)
+    - [Comments](http://eloquentjavascript.net/02_program_structure.html#h_/OBuIOX390)
 
 ## Externa resurser
 
