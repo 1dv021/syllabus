@@ -1,6 +1,6 @@
 ## Nyckelord
 
-[TODO]
+kontrollstrukturer, sekvens, selektion, iteration, (rekursion), "if"-satsen, "switch"-satsen, "?:"-operatorn (villkorsoperatorn), "while"-satsen, "do...while"-satsen, "for"-satsen, "break"-satsen, "continue"-satsen, kommentarer
 
 ## Resurser
 - [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/02/index.html#)
