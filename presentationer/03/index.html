@@ -1,0 +1,165 @@
+﻿<!doctype html>
+<html lang="sv-se">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>03 - Föreläsning - Grundläggande programmering (1DV021)</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="icon" href="../images/favicon.png" type="image/png" />
+
+    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="../reveal.js/css/theme/black.lnu.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div class="reveal lnu">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <!-- Start -->
+            <section class="center" data-state="lnu-intro">
+                <h3>Grundläggande programmering</h3>
+                <h3>(1DV021)</h3>
+                <h1>Föreläsning 3</h1>
+                <div class="lnu-footer">
+                    <img src="../images/lnu-logotype.png" />
+                    <img src="../images/lnu-symbol.png" />
+                </div>
+            </section>
+
+            <!-- CC -->
+            <section data-state="lnu-cc">
+                <h2>Upphovsrätt för detta verk</h2>
+                <p>
+                    Detta verk är framtaget av Mats Loock i anslutning till kursen Grundläggande programmering (1DV021) vid Linnéuniversitetet.
+                </p>
+                <p>Allt innehåll i detta verk förutom fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol, är licensierad under en <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons-licens" style="border-width:0;vertical-align:middle" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /> Creative Commons Erkännande 4.0 Internationell Licens</a>.</p>
+                <h4>Du får använda detta verk så här</h4>
+                <ul>
+                    <li>kopiera hela eller delar av innehållet</li>
+                    <li>sprida hela eller delar av innehållet</li>
+                    <li>visa hela eller delar av innehållet offentligt och digitalt</li>
+                    <li>konvertera innehållet till annat format</li>
+                    <li>du får även göra om innehållet</li>
+                </ul>
+                <p>
+                    Om du förändrar innehållet så ta inte med fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol i din nya version!
+                </p>
+                <p>
+                    Vid all användning måste du ange källan: ”Linnéuniversitetet – Grundläggande programmering (1DV021)” och en länk till https://coursepress.lnu.se/kurs/grundlaggande-programmering och till Creative Common-licensen här ovan.
+                </p>
+            </section>
+
+            <!-- Vad är funktioner bra för? -->
+            <section>
+                <h2>Vad är funktioner bra för?</h2>
+                <ul>
+                    <li>
+                        Alla språk har inbyggda funktioner.
+                        <pre><code class="js">console.log("Hej hopp!"); // skriver ut en sträng i konsolfönstret
+var result = Math.floor(3.14); // avrundar ett flyttal till närmasta lägre heltal
+</code></pre>
+                    <ul>
+                        <li>Det finns dock inte funktioner som löser alla problem; du måste skriva egna.</li>
+                    </ul>
+                    </li>
+                    <li>
+                        Att dela upp ett program i mindre delar, <b>funktioner</b>, är viktigt för att...
+                        <ul>
+                            <li>...strukturera kod.</li>
+                            <li>...få överblick över koden.</li>
+                            <li>...undvika att identisk kod upprepas. <span class="text-gray">Bryt aldrig mot principen <b>DRY</b> <i>(Don't repeat yourself!</i>).</span></li>
+                            <li>...koden blir enklare att testa.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Att anropa en funktion -->
+            <section>
+                <h2>Att anropa en funktion</h2>
+                <pre><code class="js">console.log("Hello, World!"); // Skriver ut strängen (och returnerar värdet undefined).
+
+console.log(); // Skriver ut en ny rad (och returnerar värdet undefined).
+
+var randomNumber = Math.random(); // Returnerar ett värde från och med 0 till 1.
+</code></pre>
+                <ul>
+                    <li>
+                        En funktion anropas genom att ange dess namn följt av parenteser innehållande eventuella argument.
+                        <ul>
+                            <li>Argument är data som skickas till funktionen.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Då en funktion exekverats klart returneras <b>alltid</b> ett värde, ett så kallat returvärde.
+                        <ul>
+                            <li>Returvärde är data som en funktion ger tillbaka.</li>
+                        </ul>
+                    </li>
+                    <li>Parenteserna efter funktionens namn måste alltid anges, oavsett om det finns argument eller inte.</li>
+                </ul>
+            </section>
+
+            <!-- Skapa en funktion -->
+            <section>
+                <h2>Att skapa en funktion</h2>
+            </section>
+        </div>
+    </div>
+
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.js"></script>
+
+    <script>
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            width: 1280,
+            height: 800,
+            controls: true,
+            progress: true,
+            history: true,
+            center: false,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // Optional reveal.js plugins
+            dependencies: [
+                { src: '../reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
+                { src: '../reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: '../reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function () { return !!document.querySelector('pre code'); }, callback: function () { hljs.initHighlightingOnLoad(); } },
+                { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+                { src: '../reveal.js/plugin/notes/notes.js', async: true }
+            ]
+        });
+
+    </script>
+
+</body>
+</html>
