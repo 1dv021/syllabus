@@ -1,13 +1,7 @@
-[cp-message-box header="OBS!" type="tool"]
-Då kursen är ny kommer detta innehåll byggas på under kursens gång! 
-Det kan alltså tillkomma fler uppgifter trots att kursen pågår.
-Glöm därför inte att uppdatera ditt repositorie då och då med "git pull".
-[/cp-message-box]
-
 ### Innan du startar
 Se till att du studerat de demofilmer och instruktioner som finns INNAN du sätter igång med de andra laborationsuppgifterna:
-- (Kom igång med kursen)["https://coursepress.lnu.se/kurs/grundlaggande-programmering/kom-igang-med-kursen/"]
-- (Dagligt arbetsflöde)["https://coursepress.lnu.se/kurs/grundlaggande-programmering/workflow-laborationer/"]
+- [Kom igång med kursen]("https://coursepress.lnu.se/kurs/grundlaggande-programmering/kom-igang-med-kursen/")
+- [Dagligt arbetsflöde]("https://coursepress.lnu.se/kurs/grundlaggande-programmering/workflow-laborationer/")
 
 
 ## Laborationsuppgifterna
