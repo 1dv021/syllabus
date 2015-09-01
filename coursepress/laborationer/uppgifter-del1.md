@@ -11,14 +11,17 @@ Dessa laborationsuppgifter kan utföras under kursens första del. Alla laborati
 ###Hello World  (part1-hello-world)
 Denna laborationsuppgift gås igenom i demonstrationsuppgifterna
 
+***
 
 ###Simple Sum (part1-simple-sum)
 En enklare uppgift där du ska returnera summan av två tal
 
+***
 
 ###Tiny Tunes (part1-tiny-tunes)
 Denna branch (part1-tiny-tunes) består av ett antal mindre uppgifter. Du hittar dem i tiny-tunes.js och bör lösa dem i den ordning de kommer. Nästan alla uppgifter har tester knutna till sig och vill man kan man kommentera fram endast de tester som gäller den miniuppgift man arbetar med för stunden. Testerna finns i /test/part-1/tiny-tunes ifall man vill undersöka dessa.
 
+***
 
 ###Check values (part1-check-values)
 Denna uppgift går ut på att undersöka vad för datatyp en given parameter/variabel har.
@@ -33,7 +36,7 @@ ska en textsträng returneras med en text som beskriver vad det är för datatyp
 * Skickas null in som parameter ska strängen "You send me null" returneras
 
 Mer information om uppgiften hittar du på:
-(https://github.com/1dv021/laborationer/tree/part1-check-values/src/part-1/check-values)[https://github.com/1dv021/laborationer/tree/part1-check-values/src/part-1/check-values]
+https://github.com/1dv021/laborationer/tree/part1-check-values/src/part-1/check-values
 
 ###Black Adder (part1-black-adder)
 Denna uppgift går ut på att skapa en mycket enkel räkneapplikation.
