@@ -30,7 +30,7 @@ ska en textsträng returneras med en text som beskriver vad det är för datatyp
 * Skickas null in som parameter ska strängen "You send me null" returneras
 
 **Kodexempel**
-```
+```javascript
 var vc = require(......);
 console.log(vc.check("Detta är en sträng")); // outputs "You send me a string"
 console.log(vc.check(true)); // outputs "You send me a primitive"
