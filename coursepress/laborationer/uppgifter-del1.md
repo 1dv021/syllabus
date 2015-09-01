@@ -6,7 +6,10 @@ Se till att du studerat de demofilmer och instruktioner som finns INNAN du sätt
 
 
 ## Laborationsuppgifterna
-Dessa laborationsuppgifter kan utföras under kursens första del. Alla laborationsuppgifter tillhörande del 1 finns i olika branches som börjar med namnet "part1-". Följande laborationsuppgifter finns idagsläget och de är placerade i en ordning vi tycker man bör ta sig an dem:
+Dessa laborationsuppgifter kan utföras under kursens första del. Alla laborationsuppgifter tillhörande del 1 finns i olika branches som börjar med namnet "part1-". Varje branch-namn står inom paratens till uppgiften och det är viktigt att du använder just detta namn. Det kan finnas ytterligare branches i din lista. Det kan vara så att det är några tidigare felaktiga branches. För att rensa bort gamla och borttagna branches du kan se i din lista kan du köra kommandot:
+git remote update 1dv021 --prune
+
+Följande laborationsuppgifter finns idagsläget och de är placerade i en ordning vi tycker man bör ta sig an dem:
 
 ###Hello World  (part1-hello-world)
 Denna laborationsuppgift gås igenom i demonstrationsuppgifterna
@@ -18,7 +21,7 @@ En enklare uppgift där du ska returnera summan av två tal
 
 ***
 
-###Tiny Tunes (part1-tiny-tunes-15)
+###Tiny Tunes (part1-tiny-tunes-15) <-- OBS var noga med namnet!
 Denna branch (part1-tiny-tunes) består av ett antal mindre uppgifter. Du hittar dem i tiny-tunes.js och bör lösa dem i den ordning de kommer. Nästan alla uppgifter har tester knutna till sig och vill man kan man kommentera fram endast de tester som gäller den miniuppgift man arbetar med för stunden. Testerna finns i /test/part-1/tiny-tunes ifall man vill undersöka dessa.
 
 Mer information: https://github.com/1dv021/laborationer/tree/part1-tiny-tunes-15/src/part-1/tiny-tunes
