@@ -45,7 +45,7 @@ Denna uppgift går ut på att skapa en mycket enkel räkneapplikation.
 Den ska klara av att addera att fritt antal parametrar i form av nummer (heltal som decimaltal)
 
 Mer information om uppgiften hittar du på:
-https://github.com/1dv021/laborationer/tree/part1-black-adders/src/part-1/black-adder
+https://github.com/1dv021/laborationer/tree/part1-black-adder/src/part-1/black-adder
 
 ***
 
@@ -83,4 +83,4 @@ http://lnu.se?name=Stina&age=24
 http://lnu.se - är själva URL:en till webbservern och den behöver vi inte bry oss om i denna uppgift men det som kommer efter tecknet '?', det är själva querystringen och den ska vi försöka bena ut i vår kod. En querystring består av ett eller flera värdepar. Vi ser dem i exemplet som name=Stina och age=24, name och age är nyklar (liknande variabler) och Stina och 24 är dess värden. Din uppgift blir att skriva en funktion som tar in en URL och parsar/arbetar om dessa till JavaScript-objekt som sedan blir enklare att hantera i kod. 
 
 Mer information om uppgiften hittar du på:
-https://github.com/1dv021/laborationer/tree/parse-querystring/src/part-1/parse-querystring
+https://github.com/1dv021/laborationer/tree/part1-parse-querystring/src/part-1/parse-querystring
