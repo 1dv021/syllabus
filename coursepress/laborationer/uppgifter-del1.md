@@ -25,7 +25,7 @@ Mer information: https://github.com/1dv021/laborationer/tree/part1-tiny-tunes-15
 
 ***
 
-###Check values (part1-check-values)
+###Check values (part1-check-values-15)
 Denna uppgift går ut på att undersöka vad för datatyp en given parameter/variabel har.
 Uppgiften har en färdig funktion som tar en parameter(value) och beroende på vad man skickar in
 ska en textsträng returneras med en text som beskriver vad det är för datatyp. Se exemplen nedan.
@@ -38,7 +38,7 @@ ska en textsträng returneras med en text som beskriver vad det är för datatyp
 * Skickas null in som parameter ska strängen "You send me null" returneras
 
 Mer information om uppgiften hittar du på:
-https://github.com/1dv021/laborationer/tree/part1-check-values/src/part-1/check-values
+https://github.com/1dv021/laborationer/tree/part1-check-values-15/src/part-1/check-values
 
 ***
 
