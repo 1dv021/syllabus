@@ -38,12 +38,16 @@ ska en textsträng returneras med en text som beskriver vad det är för datatyp
 Mer information om uppgiften hittar du på:
 https://github.com/1dv021/laborationer/tree/part1-check-values/src/part-1/check-values
 
+***
+
 ###Black Adder (part1-black-adder)
 Denna uppgift går ut på att skapa en mycket enkel räkneapplikation.
 Den ska klara av att addera att fritt antal parametrar i form av nummer (heltal som decimaltal)
 
 Mer information om uppgiften hittar du på:
-(https://github.com/1dv021/laborationer/tree/part1-black-adders/src/part-1/black-adder)[https://github.com/1dv021/laborationer/tree/part1-black-adder/src/part-1/black-adder]
+https://github.com/1dv021/laborationer/tree/part1-black-adders/src/part-1/black-adder
+
+***
 
 ###Bugsy (part1-bugsy)
 I denna uppgiften får du kod i form av dels en modul (helper) innehållande en del hjälpfunktioner
@@ -53,7 +57,9 @@ Din uppgift blir att rätta koden i funktionen "getGangster". Denna funktion tar
 på en misstänkt gangster. Metoden getGangster har till uppgift att undersöka dessa initsialer och para ihop dessa
 med rätt gangsternamn. Till sin hjälp kan funktionen använda två hjälpfunktioner som laddas in via modulen "helper".
 Mer information om uppgiften hittar du på:
-(https://github.com/1dv021/laborationer/tree/part1-bugsy/src/part-1/bugsy)[https://github.com/1dv021/laborationer/tree/part1-bugsy/src/part-1/bugsy]
+https://github.com/1dv021/laborationer/tree/part1-bugsy/src/part-1/bugsy
+
+***
 
 ###Logger (part1-logger)
 Denna uppgift går ut på att fortsätta utveckla befintlig kod för att färdigställa en enklare
@@ -73,8 +79,9 @@ typeNumber är ett nummer som representerar en viss typ av meddelande (t.ex. 'in
 Detta nummer används när man anropar modulen men i själva loggen sparas meddelandetypen.
 
 Mer information om uppgiften hittar du på:
-(https://github.com/1dv021/laborationer/tree/part1-logger/src/part-1/logger)[https://github.com/1dv021/laborationer/tree/part1-logger/src/part-1/logger]
+https://github.com/1dv021/laborationer/tree/part1-logger/src/part-1/logger
 
+***
 
 ####Parse QuerySTring (part1-parse-querystring)
 Denna uppgift går ut på att parsa en så kallad querystring och plocka ut värden från denna. En querystring används som påbyggnad på en vanlig URL för att skicka med extra data till servern. Exempelvis kan en URL se ut såhär:
@@ -83,4 +90,4 @@ http://lnu.se?name=Stina&age=24
 http://lnu.se - är själva URL:en till webbservern och den behöver vi inte bry oss om i denna uppgift men det som kommer efter tecknet '?', det är själva querystringen och den ska vi försöka bena ut i vår kod. En querystring består av ett eller flera värdepar. Vi ser dem i exemplet som name=Stina och age=24, name och age är nyklar (liknande variabler) och Stina och 24 är dess värden. Din uppgift blir att skriva en funktion som tar in en URL och parsar/arbetar om dessa till JavaScript-objekt som sedan blir enklare att hantera i kod. 
 
 Mer information om uppgiften hittar du på:
-(https://github.com/1dv021/laborationer/tree/part1-parse-querystring/src/part-1/parse-querystring)[https://github.com/1dv021/laborationer/tree/parse-querystring/src/part-1/parse-querystring]
+https://github.com/1dv021/laborationer/tree/parse-querystring/src/part-1/parse-querystring
