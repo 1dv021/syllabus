@@ -1,7 +1,8 @@
 ## Innan du startar
 Se till att du studerat de demofilmer och instruktioner som finns INNAN du sätter igång med de andra laborationsuppgifterna:
-- [Kom igång med kursen](https://coursepress.lnu.se/kurs/grundlaggande-programmering/kom-igang-med-kursen/)
-- [Dagligt arbetsflöde](https://coursepress.lnu.se/kurs/grundlaggande-programmering/workflow-laborationer/)
+
+* [Kom igång med kursen](https://coursepress.lnu.se/kurs/grundlaggande-programmering/kom-igang-med-kursen/)
+* [Dagligt arbetsflöde](https://coursepress.lnu.se/kurs/grundlaggande-programmering/workflow-laborationer/)
 
 
 ## Laborationsuppgifterna
@@ -29,7 +30,8 @@ ska en textsträng returneras med en text som beskriver vad det är för datatyp
 * Skickas null in som parameter ska strängen "You send me null" returneras
 
 **Kodexempel**
-```
+
+``
 var vc = require(......);
 
 console.log(vc.check("Detta är en sträng")); // outputs "You send me a string"
@@ -38,7 +40,7 @@ console.log(vc.check({})); // outputs "You send me an object"
 console.log(vc.check([])); // outputs "You send me an array"
 console.log(vc.check(function(){})); // outputs "You send me a function"
 ...
-```
+``
 Se testerna för mer information om hur modulen ska fungera
 
 ####Black Adder (part1-black-adder)
