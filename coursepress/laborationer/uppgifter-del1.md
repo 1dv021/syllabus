@@ -71,13 +71,6 @@ Modulen har tre publika metoder (se kod för mer kommentarer kring dess):
 * read(typeNumber) - läser(returnerar) meddelanden
 * clear() - Tömmer loggen
 
-
-Dessa är från början tomma och tanken är att du ska fylla dessa med kod som får modulen  att
-klara de tester som finns skrivna.
-
-typeNumber är ett nummer som representerar en viss typ av meddelande (t.ex. 'info', 'debug' osv.)
-Detta nummer används när man anropar modulen men i själva loggen sparas meddelandetypen.
-
 Mer information om uppgiften hittar du på:
 https://github.com/1dv021/laborationer/tree/part1-logger/src/part-1/logger
 
