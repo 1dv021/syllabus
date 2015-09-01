@@ -51,7 +51,7 @@ https://github.com/1dv021/laborationer/tree/part1-black-adder-15/src/part-1/blac
 
 ***
 
-###Bugsy (part1-bugsy)
+###Bugsy (part1-bugsy-15)
 I denna uppgiften får du kod i form av dels en modul (helper) innehållande en del hjälpfunktioner
 för uppgiften. Dessa fungerar och ska inte ändras.
 
@@ -59,7 +59,7 @@ Din uppgift blir att rätta koden i funktionen "getGangster". Denna funktion tar
 på en misstänkt gangster. Metoden getGangster har till uppgift att undersöka dessa initsialer och para ihop dessa
 med rätt gangsternamn. Till sin hjälp kan funktionen använda två hjälpfunktioner som laddas in via modulen "helper".
 Mer information om uppgiften hittar du på:
-https://github.com/1dv021/laborationer/tree/part1-bugsy/src/part-1/bugsy
+https://github.com/1dv021/laborationer/tree/part1-bugsy-15/src/part-1/bugsy
 
 ***
 
