@@ -79,12 +79,13 @@
                 <h2>Vad är funktioner bra för?</h2>
                 <ul>
                     <li>
-                        Alla språk har inbyggda funktioner.
+                        Alla språk har inbyggda funktioner som utför förutbestämda saker.
                         <pre><code class="js">console.log("Hej hopp!"); // skriver ut en sträng i konsolfönstret
+
 var result = Math.floor(3.14); // avrundar ett flyttal till närmasta lägre heltal
 </code></pre>
                     <ul>
-                        <li>Det finns dock inte funktioner som löser alla problem; du måste skriva egna.</li>
+                        <li>Det finns dock inte funktioner för alla saker; du måste skriva egna.</li>
                     </ul>
                     </li>
                     <li>
@@ -112,22 +113,96 @@ var randomNumber = Math.random(); // Returnerar ett värde från och med 0 till 
                     <li>
                         En funktion anropas genom att ange dess namn följt av parenteser innehållande eventuella argument.
                         <ul>
-                            <li>Argument är data som skickas till funktionen.</li>
+                            <li>Argument är värden som skickas till funktionen. Det är funktionen som bestämmer om inget , ett eller flera argument kan skickas vid anrop.</li>
                         </ul>
                     </li>
                     <li>
                         Då en funktion exekverats klart returneras <b>alltid</b> ett värde, ett så kallat returvärde.
                         <ul>
-                            <li>Returvärde är data som en funktion ger tillbaka.</li>
+                            <li>Returvärde är det värde en funktion ger tillbaka. Bara ett värde kan returneras.</li>
                         </ul>
                     </li>
                     <li>Parenteserna efter funktionens namn måste alltid anges, oavsett om det finns argument eller inte.</li>
                 </ul>
             </section>
 
-            <!-- Skapa en funktion -->
+            <!-- Att definiera en funktion -->
             <section>
-                <h2>Att skapa en funktion</h2>
+                <section>
+                    <h2>Att definiera en funktion</h2>
+                    <ul>
+                        <li>
+                            Du definierar en funktion på samma sätt som en variabel, värdet är bara en funktion.
+                            <pre><code class="js">var sayHello = function(name) {
+    var greeting = "Hello, " + name + "!";
+
+    return greeting;
+}
+
+console.log(sayHello("Ellen Nu")); // ➡ Hello, Ellen Nu!
+</code></pre>
+                            <ul>
+                                <li>En funktion är ett uttryck som börjar med nyckelordet <code>function</code>.</li>
+                                <li>Mellan parenteserna kan ingen, en eller flera <b>parametrar</b> finnas. En parameter fungerar på samma sätt som en variabel i funktionen.</li>
+                                <li>Funktionens kropp, mellan klammerparenteserna, innehåller satserna som exekveras när funktionen anropas.</li>
+                                <li>return-satsen, om den finns någon, bestämmer värdet funktionen returnerar då den anropas. Saknas <code>return</code>-sats returneras värdet <code>undefined</code>.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2><code class="no-text-transform">return</code>-satser</h2>
+                    <ul>
+                        <li>
+                            En funktion behöver inte ha en <code>return</code>-sats.
+                            <pre><code class="js">var sayHello = function(name) {
+    console.log()"Hello, " + name + "!");
+}
+sayHello("Nisse"); // ➡ Hello, Nisse!
+</code></pre>
+                            <ul><li>OBS! Trots att <code>return</code>-sats saknas returnerar funktionen värdet <code>undefined</code>!</li></ul>
+                        </li>
+                        <li>
+                            Det kan finnas flera <code>return</code>-satser i en funktion.
+                            <pre><code class="js">var evenOrOdd = function(value) {
+    // Är talet jämt delbart med 2?
+    if (value % 2 === 0){
+        return "jämt";
+    }
+
+    return "udda";
+}
+
+var result = evenOrOdd(42);
+console.log("42 är ett" + result + "tal."); // ➡ 42 är ett jämt tal.
+</code></pre>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>En bättre lösning?</h2>
+                    <pre><code class="js">var evenOrOdd = function(value) {
+    // Är talet jämt delbart med 2?
+    if (value % 2 === 0){
+        return "jämt";
+    }
+
+    return "udda";
+}
+
+var result = evenOrOdd(42);
+console.log("42 är ett" + result + "tal."); // ➡ 42 är ett jämt tal.
+</code></pre>
+                    <pre><code class="js">var isEven = function(value) {
+    // Är talet jämt delbart med 2?
+    return value % 2 === 0;
+}
+
+var result = isEven(42) ? "jämt" : "udda";
+console.log("42 är ett" + result + "tal."); 
+// ➡ 42 är ett jämt tal.
+</code></pre>
+                </section>
             </section>
         </div>
     </div>
