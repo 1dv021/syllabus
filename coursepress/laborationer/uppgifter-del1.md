@@ -42,12 +42,12 @@ https://github.com/1dv021/laborationer/tree/part1-check-values-15/src/part-1/che
 
 ***
 
-###Black Adder (part1-black-adder)
+###Black Adder (part1-black-adder-15)
 Denna uppgift går ut på att skapa en mycket enkel räkneapplikation.
 Den ska klara av att addera att fritt antal parametrar i form av nummer (heltal som decimaltal)
 
 Mer information om uppgiften hittar du på:
-https://github.com/1dv021/laborationer/tree/part1-black-adder/src/part-1/black-adder
+https://github.com/1dv021/laborationer/tree/part1-black-adder-15/src/part-1/black-adder
 
 ***
 
@@ -63,7 +63,7 @@ https://github.com/1dv021/laborationer/tree/part1-bugsy/src/part-1/bugsy
 
 ***
 
-###Logger (part1-logger)
+###Logger (part1-logger-15)
 Denna uppgift går ut på att fortsätta utveckla befintlig kod för att färdigställa en enklare
 logg-modul, dvs. en applikationer som loggar olika typer av meddelandenobjekt i en array.
 Modulen har en array (_log) där meddelandeobjekt kan sparas och läsas ifrån.
@@ -74,7 +74,7 @@ Modulen har tre publika metoder (se kod för mer kommentarer kring dess):
 * clear() - Tömmer loggen
 
 Mer information om uppgiften hittar du på:
-https://github.com/1dv021/laborationer/tree/part1-logger/src/part-1/logger
+https://github.com/1dv021/laborationer/tree/part1-logger-15/src/part-1/logger
 
 ***
 
