@@ -30,17 +30,14 @@ ska en textsträng returneras med en text som beskriver vad det är för datatyp
 * Skickas null in som parameter ska strängen "You send me null" returneras
 
 **Kodexempel**
-
-``
+```
 var vc = require(......);
-
 console.log(vc.check("Detta är en sträng")); // outputs "You send me a string"
 console.log(vc.check(true)); // outputs "You send me a primitive"
 console.log(vc.check({})); // outputs "You send me an object"
 console.log(vc.check([])); // outputs "You send me an array"
 console.log(vc.check(function(){})); // outputs "You send me a function"
-...
-``
+```
 Se testerna för mer information om hur modulen ska fungera
 
 ####Black Adder (part1-black-adder)
@@ -51,7 +48,6 @@ Den ska klara av att addera att fritt antal parametrar i form av nummer (heltal 
 var calc = require(......);
 var sum = calc.add(2, 5, 19);
 console.log(sum); // output 26
-
 ```
 Dock ska modulen kunna avgöra att den verkligen anropas med riktiga tal/nummer
 eller åtminstone tal i form av textsträngar typ "12"
@@ -61,11 +57,10 @@ eller åtminstone tal i form av textsträngar typ "12"
 var calc = require(......);
 var sum = calc.add(2, "5", 19);
 console.log(sum); // output 26
-
 sum = calc.add(2.5, "5", "3,5", "1.2"); // obs både kommatecken(,) och punkt(.) ska fungera att använda i strängar
 console.log(sum); // output 12.2
-
 ```
+
 ####Bugsy (part1-bugsy)
 I denna uppgiften får du kod i form av dels en modul (helper) innehållande en del hjälpfunktioner
 för uppgiften. Dessa fungerar och ska inte ändras.
@@ -83,10 +78,7 @@ namn tills det inte finns flera. Då returneras en tom sträng. Metoden passar b
 var helper = require("helper"); // laddar in modulen helper
 var name = getNext(); // första namnet laddas in => "Bugsy Malone"
 
-....
-
 name = getNext(); // nu uppdateras variabeln "name" med nästa namn i listan => "Frank Nitti"
-
 ```
 
 ##### Funktionen getInitials(name)
