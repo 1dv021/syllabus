@@ -5,6 +5,7 @@ historik, datatyper, Number, String, Boolean, Object, "typeof"-operatorn, aritme
 ## Resurser
 - [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/01/index.html#)
 - [Inspelning](https://connect.sunet.se/p8ghp4qjs7e/) 2015-09-01, 13-15 (Adobe Connect)
+- [Inspelning](https://youtu.be/fB4ELNsGRsA) 2015-09-01, 13-15 (Youtube)
 
 ### Eloquent JavaScript, 2nd Edition 
 
