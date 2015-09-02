@@ -72,6 +72,11 @@ Ett IDE (Integrated Developer Environment) är en utvecklingsmiljö för oss pro
 I [följande inspelning](https://youtu.be/WCzfV8LB6a0) går vi igenom ovanstående steg.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WCzfV8LB6a0?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
+### Kommentarer
+I klippet ovan så konfiguerar jag terminalen för att fungera i Windows. Om du sitter i OSX så kan du hoppa över detta steg eftersom bashterminalen är förvald i OSX. Mina inställningar ser ut så här om du råkat ändra:
+![Terminalen i OSX](https://raw.githubusercontent.com/1dv021/syllabus/master/coursepress/guider/pic/osx_terminal.png)
+
+
 ## 5. Github
 [Github](https://github.com) är en lagringsyta för våra applikationer som möjliggör sammarbete och ett effektivt arbetssätt. Du kommer att använda Github under stora delar av din utbildning så det är viktigt att du redan nu bekantar dig väl med tjänsten. Github erbjuder dessutom ett paket för studenter som innebär att du får tillgång till ett antal privata lagringsytor och även tillgång till externa verktyg. Har du redan ett konto på Github? Titta då på filmen nedan så beskriver vi hur du ska gå tillväga för att ansöka om GitHub Education Pack på det kontot. Du behöver inte skapa ett nytt för dina studier! 
 
