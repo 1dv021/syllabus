@@ -81,12 +81,11 @@
                     <li>
                         Alla språk har inbyggda funktioner som utför förutbestämda saker.
                         <pre><code class="js">console.log("Hej hopp!"); // skriver ut en sträng i konsolfönstret
-
 var result = Math.floor(3.14); // avrundar ett flyttal till närmasta lägre heltal
 </code></pre>
-                    <ul>
-                        <li>Det finns dock inte funktioner för alla saker; du måste skriva egna.</li>
-                    </ul>
+                        <ul>
+                            <li>Det finns dock inte funktioner för alla saker; du måste skriva egna.</li>
+                        </ul>
                     </li>
                     <li>
                         Att dela upp ett program i mindre delar, <b>funktioner</b>, är viktigt för att...
@@ -104,9 +103,7 @@ var result = Math.floor(3.14); // avrundar ett flyttal till närmasta lägre hel
             <section>
                 <h2>Att anropa en funktion</h2>
                 <pre><code class="js">console.log("Hello, World!"); // Skriver ut strängen (och returnerar värdet undefined).
-
 console.log(); // Skriver ut en ny rad (och returnerar värdet undefined).
-
 var randomNumber = Math.random(); // Returnerar ett värde från och med 0 till 1.
 </code></pre>
                 <ul>
@@ -135,10 +132,8 @@ var randomNumber = Math.random(); // Returnerar ett värde från och med 0 till 
                             Du definierar en funktion på samma sätt som en variabel, värdet är bara en funktion.
                             <pre><code class="js">var sayHello = function(name) {
     var greeting = "Hello, " + name + "!";
-
     return greeting;
 }
-
 console.log(sayHello("Ellen Nu")); // ➡ Hello, Ellen Nu!
 </code></pre>
                             <ul>
@@ -150,6 +145,9 @@ console.log(sayHello("Ellen Nu")); // ➡ Hello, Ellen Nu!
                         </li>
                     </ul>
                 </section>
+            </section>
+
+            <section>
                 <section>
                     <h2><code class="no-text-transform">return</code>-satser</h2>
                     <ul>
@@ -158,6 +156,7 @@ console.log(sayHello("Ellen Nu")); // ➡ Hello, Ellen Nu!
                             <pre><code class="js">var sayHello = function(name) {
     console.log()"Hello, " + name + "!");
 }
+
 sayHello("Nisse"); // ➡ Hello, Nisse!
 </code></pre>
                             <ul><li>OBS! Trots att <code>return</code>-sats saknas returnerar funktionen värdet <code>undefined</code>!</li></ul>
@@ -165,11 +164,11 @@ sayHello("Nisse"); // ➡ Hello, Nisse!
                         <li>
                             Det kan finnas flera <code>return</code>-satser i en funktion.
                             <pre><code class="js">var evenOrOdd = function(value) {
+
     // Är talet jämt delbart med 2?
     if (value % 2 === 0){
         return "jämt";
     }
-
     return "udda";
 }
 
@@ -180,29 +179,105 @@ console.log("42 är ett" + result + "tal."); // ➡ 42 är ett jämt tal.
                     </ul>
                 </section>
                 <section>
-                    <h2>En bättre lösning?</h2>
-                    <pre><code class="js">var evenOrOdd = function(value) {
+                    <h2>En generellt bättre lösning?</h2>
+                    <ul>
+                        <li>
+                            Funktion som returnerar en sträng (en mindre generell lösning).
+                            <pre><code class="js">var evenOrOdd = function(value) {
+
     // Är talet jämt delbart med 2?
     if (value % 2 === 0){
         return "jämt";
     }
-
     return "udda";
 }
 
 var result = evenOrOdd(42);
 console.log("42 är ett" + result + "tal."); // ➡ 42 är ett jämt tal.
 </code></pre>
-                    <pre><code class="js">var isEven = function(value) {
+                        </li>
+                        <li>
+                            Funktion som returnerar ett Booleskt värde (en generellare lösning).
+                            <pre><code class="js">var isEven = function(value) {
+
     // Är talet jämt delbart med 2?
     return value % 2 === 0;
 }
 
 var result = isEven(42) ? "jämt" : "udda";
-console.log("42 är ett" + result + "tal."); 
-// ➡ 42 är ett jämt tal.
+console.log("42 är ett" + result + "tal."); // ➡ 42 är ett jämt tal.
 </code></pre>
+                        </li>
+                    </ul>
                 </section>
+            </section>
+
+            <section>
+                <h2>Parametrar och dess räckvidd <span style="font-size:60%">("<i>scope</i>")</span></h2>
+                <pre><code class="js">var getFullName = function(firstName, lastName) {
+    var fullName = firstName + " " + lastName;  // OBS! lokal variabel
+
+    return fullName;
+}
+
+var fullName = getFullName("Ellen", "Nu"); // OBS! global variabel
+console.log("Personens fullständiga namn är " + fullName + ".");
+// ➡ Personens fullständiga namn är Ellen Nu.
+
+fullName = getFullName("Nisse", "Hult");
+console.log("Personens fullständiga namn är " + fullName + ".");
+// ➡ Personens fullständiga namn är Nisse Hult.
+</code></pre>
+                <ul>
+                    <li>
+                        Parametrar fungerar i stort på samma sätt som lokala variabler i en funktion.
+                        <ul>
+                            <li>Variabler i en funktion måste defineras med <code>var</code> för att bli lokala.</li>
+                            <li><code>firtsName</code>, lastName</code> och fullName</code> är <b>lokala</b> i funktionen getFullName.</li>
+                            <li>Värdena <code>firstName</code> och <code>lastName</code> tilldelas bestäms vid anropet av funktionen.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Mer om parametrar</h2>
+                <ul>
+                    <li>
+                        Javascript är generös vid tolkning av argument som skickas till en funktion.
+                        <ul>
+                            <li>Är det för många argument igoreras de extra.</li>
+                            <li>Är det för få argument tilldelas funktionens parametrar värdet <code>undefined</code>.</li>
+                            <li>Lätt hänt att felaktigt antal argument skickas med vid anrop av en funktion.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Funktioner som värden -->
+            <section>
+                <h2>Funktioner som värden</h2>
+                <ul>
+                    <li>En funktion kan skickas som argument till en annan funktion.</li>
+                    <li>
+                        En funktionsvariabels värde kan ändras.
+                        <pre style="width:100%;"><code class="js">var doNotLie = true;
+var tellTheTruth = function() {
+    return "Mats är bäst!";
+};
+
+console.log(tellTheTruth()); // ➡ Mats är bäst!
+
+if (doNotLie) {
+    tellTheTruth = function() {
+        return "Mats är inte bättre än John!";
+    };
+}
+
+console.log(tellTheTruth()); // ➡ Mats är inte bättre än John!
+</code></pre>
+                    </li>
+                </ul>
             </section>
         </div>
     </div>
