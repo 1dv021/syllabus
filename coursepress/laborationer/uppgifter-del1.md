@@ -54,18 +54,6 @@ https://github.com/1dv021/laborationer/tree/part1-black-adder-15/src/part-1/blac
 
 ***
 
-###Bugsy (part1-bugsy-15)
-I denna uppgiften får du kod i form av dels en modul (helper) innehållande en del hjälpfunktioner
-för uppgiften. Dessa fungerar och ska inte ändras.
-
-Din uppgift blir att rätta koden i funktionen "getGangster". Denna funktion tar en sträng i form av initsialer
-på en misstänkt gangster. Metoden getGangster har till uppgift att undersöka dessa initsialer och para ihop dessa
-med rätt gangsternamn. Till sin hjälp kan funktionen använda två hjälpfunktioner som laddas in via modulen "helper".
-Mer information om uppgiften hittar du på:
-https://github.com/1dv021/laborationer/tree/part1-bugsy-15/src/part-1/bugsy
-
-***
-
 ###Logger (part1-logger-15)
 Denna uppgift går ut på att fortsätta utveckla befintlig kod för att färdigställa en enklare
 logg-modul, dvs. en applikationer som loggar olika typer av meddelandenobjekt i en array.
@@ -89,3 +77,15 @@ http://lnu.se - är själva URL:en till webbservern och den behöver vi inte bry
 
 Mer information om uppgiften hittar du på:
 https://github.com/1dv021/laborationer/tree/part1-querystring-parser/src/part-1/parse-querystring
+
+###Bugsy (part1-bugsy-15)
+I denna uppgiften får du kod i form av dels en modul (helper) innehållande en del hjälpfunktioner
+för uppgiften. Dessa fungerar och ska inte ändras.
+
+Din uppgift blir att rätta koden i funktionen "getGangster". Denna funktion tar en sträng i form av initsialer
+på en misstänkt gangster. Metoden getGangster har till uppgift att undersöka dessa initsialer och para ihop dessa
+med rätt gangsternamn. Till sin hjälp kan funktionen använda två hjälpfunktioner som laddas in via modulen "helper".
+Mer information om uppgiften hittar du på:
+https://github.com/1dv021/laborationer/tree/part1-bugsy-15/src/part-1/bugsy
+
+***
