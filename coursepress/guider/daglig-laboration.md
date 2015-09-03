@@ -6,7 +6,7 @@ Kursens laborationsuppgifter hittar du här: [https://github.com/1dv021/laborati
 1. Klona ditt laborationsrepo från organisationen 1DV021 
 * `git clone https://github.com/1dv021/DITTANVÄNDARNAMN-laborationer.git`
 2. Lägg en genväg till kursens laborationsrepo:
-* `git remote add https://github.com/1dv021/laborationer.git`
+* `git remote add 1dv021 https://github.com/1dv021/laborationer.git`
 3. Hämta ner laborationerna till ditt lokala repo:
 * `git pull 1dv021`
 4. Merga *1dv021/master* med *master*
@@ -19,7 +19,7 @@ Du är nu redoa att ta dig an din första uppgift.
 ## Dagligt arbete, laborationer
 
 Börja med att updatera för att se om några nya uppgifter tillkommit i 1DV021
-* `git pull 1dv021`
+`git pull 1dv021`
 
 1. Växla till den laborationsuppgift du vill arbeta med.
 * `git checkout part1-hello-world`
