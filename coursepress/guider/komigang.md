@@ -62,7 +62,7 @@ I [följande inspelning](https://youtu.be/lG-T8Ar6mDI) går vi igenom ovanståen
 <iframe width="420" height="315" src="https://www.youtube.com/embed/lG-T8Ar6mDI?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 ## 4. Webstorm IDE
-Ett IDE (Integrated Developer Environment) är en utvecklingsmiljö för oss programmerare i vilken vi har tillgång till de verktyg som vi behöver när vi programmerar. Det finns mängder med olika utvecklingsmiljöer att välja på och i denna kurs har vi valt [Webstorm](https://www.jetbrains.com/webstorm/). Webstorm är en populär utvecklingsmiljö när man arbetar med javascriptapplikationer och som student har du [tillgång till miljön via ditt studentkonto hos LNU](https://www.jetbrains.com/webstorm/student).
+Ett IDE (Integrated Developer Environment) är en utvecklingsmiljö för oss programmerare i vilken vi har tillgång till de verktyg som vi behöver när vi programmerar. Det finns mängder med olika utvecklingsmiljöer att välja på och i denna kurs har vi valt [Webstorm](https://www.jetbrains.com/webstorm/). Webstorm är en populär utvecklingsmiljö när man arbetar med javascriptapplikationer och som student har du [tillgång till miljön via ditt studentkonto hos LNU](https://www.jetbrains.com/student).
 
 ### Att göra
 1. Installera WebStorm
