@@ -24,6 +24,20 @@ En enklare uppgift där du ska returnera summan av två tal
 ###Tiny Tunes (part1-tiny-tunes-15) <-- OBS var noga med namnet!
 Denna branch **(part1-tiny-tunes-15)** består av ett antal mindre uppgifter. Du hittar dem i tiny-tunes.js och bör lösa dem i den ordning de kommer. Nästan alla uppgifter har tester knutna till sig och vill man kan man kommentera fram endast de tester som gäller den miniuppgift man arbetar med för stunden. Testerna finns i /test/part-1/tiny-tunes ifall man vill undersöka dessa.
 
+* Uppgift 1-3 Bör man kunna lösa efter föreläsning 1 och kapitlen 1-2 i boken
+* Uppgift 4, middleCharacter - Ett tips är att kolla upp funtionen String.charAt
+  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
+* Uppgit 5, findHash - Kolla upp funktionerna String.indexOf och String.slice 
+  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
+  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
+* Uppgift 6, getOdd, Här bör man känna till loopar och restoperatorn, Kapitel 1-2 i boken
+* Uppgift 7, gettings, Här kan det vara bra att känna till selektioner (Kapitel 2)
+* Uppgift 8, simpleReplaceWithForLoop. Som namnet antyder är det bra att känna till for-loopen här (Kapitel 2)
+* Uppgift 9, simpleReplaceWithWhile. Studera while-loopen (kapitel 2)
+* Uppgift 10, firstThree, Tipset här är att kunna skriva nästlade loopar, dvs. en loop i en annan loop
+* Uppgift 11, robberLanguage, Kolla upp switch-satsen (Kapitel 2)
+* Uppgift 12, makeURL, Här kan || -operatorn fungera bra att ge variabler defaulta värden på saknade parametrar (sid 19-20, kapitel 3)
+
 Mer information: https://github.com/1dv021/laborationer/tree/part1-tiny-tunes-15/src/part-1/tiny-tunes
 
 ***
