@@ -81,6 +81,7 @@
                     <li>
                         Alla språk har inbyggda funktioner som utför förutbestämda saker.
                         <pre><code class="js">console.log("Hej hopp!"); // skriver ut en sträng i konsolfönstret
+
 var result = Math.floor(3.14); // avrundar ett flyttal till närmasta lägre heltal
 </code></pre>
                         <ul>
@@ -103,7 +104,9 @@ var result = Math.floor(3.14); // avrundar ett flyttal till närmasta lägre hel
             <section>
                 <h2>Att anropa en funktion</h2>
                 <pre><code class="js">console.log("Hello, World!"); // Skriver ut strängen (och returnerar värdet undefined).
+
 console.log(); // Skriver ut en ny rad (och returnerar värdet undefined).
+
 var randomNumber = Math.random(); // Returnerar ett värde från och med 0 till 1.
 </code></pre>
                 <ul>
@@ -132,8 +135,10 @@ var randomNumber = Math.random(); // Returnerar ett värde från och med 0 till 
                             Du definierar en funktion på samma sätt som en variabel, värdet är bara en funktion.
                             <pre><code class="js">var sayHello = function(name) {
     var greeting = "Hello, " + name + "!";
+
     return greeting;
 }
+
 console.log(sayHello("Ellen Nu")); // ➡ Hello, Ellen Nu!
 </code></pre>
                             <ul>
@@ -246,8 +251,23 @@ console.log("Personens fullständiga namn är " + fullName + ".");
                     <li>
                         Javascript är generös vid tolkning av argument som skickas till en funktion.
                         <ul>
-                            <li>Är det för många argument igoreras de extra.</li>
-                            <li>Är det för få argument tilldelas funktionens parametrar värdet <code>undefined</code>.</li>
+                            <li>
+                                Är det för många argument ignoreras de extra.
+                                <pre><code class="js">Math.floor(3.14, 9.36, 17.3); // → 3</code></pre>
+                            </li>
+                            <li>
+                                Är det för få argument tilldelas funktionens parametrar värdet <code>undefined</code>.
+                                <pre><code class="js">var sumThreeNumbers = function(op1, op2, op3) {
+
+    // Värden vid anrop enligt nedan: op1 = 23, op2 = 4, op3 = undefined
+    var result = op1 + op2 + op3; // → NaN
+    
+    return result;
+};
+
+console.log(sumThreeNumbers(23, 4)); // ➡ NaN
+</code></pre>
+                            </li>
                             <li>Lätt hänt att felaktigt antal argument skickas med vid anrop av en funktion.</li>
                         </ul>
                     </li>
@@ -278,6 +298,30 @@ console.log(tellTheTruth()); // ➡ Mats är inte bättre än John!
 </code></pre>
                     </li>
                 </ul>
+            </section>
+
+            <!-- "Closure" -->
+            <section>
+                <h2>"<i>Closure</i>"</h2>
+                <ul>
+                    <li>En funktion returnerar en nästlad funktion.</li>
+                    <li>Funktionen som returneras har full tillgång till den omslutande funktionens lokala variabler.</li>
+                </ul>
+                <pre style="height:100%"><code class="js">var greet = function(greeting) {
+    var localGreeting = greeting;
+
+    return function(name) {
+        return localGreeting + " " + name + ".";
+    };
+};
+
+var goodMorning = greet("God morgon");
+var goodEvening = greet("God kväll");
+
+console.log(goodMorning("Ellen")); // ➡ God morgon Ellen.
+console.log(goodEvening("Nisse")); // ➡ God kväll Nisse.
+console.log(goodMorning("Mats"));  // ➡ God morgon Mats.
+</code></pre>
             </section>
         </div>
     </div>
