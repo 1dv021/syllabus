@@ -21,6 +21,19 @@ En enklare uppgift där du ska returnera summan av två tal
 
 ***
 
+### Pre Tiny Tunes (part1-pre-tiny-tunes)
+Denna branch **(part1-pre-tiny-tunes-15)** består av ett antal mindre uppgifter som lämpar sig väl att göra efter föreläsning 2. Uppgiften är förberedande för de lite större uppgifterna i "Tiny Tunes"-uppgiften. Du kan lösa uppgifterna i vilken ordning du vill, men jag rekommenderar att beta av dem uppifrån. Det är viktigt att har konfiguerart Mocha i Webbstorm så att du kan köra testerna. 
+
+Observera att det finns läsanvisningar som kommentarer i koden. Följ dessa länkar!
+
+Arbetsgång:
+1) Börja med att checka ut branchen part1-pre-tiny-tunes
+2) Kör testerna i Webstorm. Notera att samtliga fallerar. Du kan titta på dem i fönstret i nedre vänstra hörnet.
+3) Börja att skriva kod för att lösa uppgift 1. Kör testerna och ändra i koden tills de två första testerna är gröna.
+4) Fortsätt med nästa funktion.
+5) Upprepa tills dess att alla tester är gröna och du är klar med uppgiften.
+
+
 ###Tiny Tunes (part1-tiny-tunes-15) <-- OBS var noga med namnet!
 Denna branch **(part1-tiny-tunes-15)** består av ett antal mindre uppgifter. Du hittar dem i tiny-tunes.js och bör lösa dem i den ordning de kommer. Nästan alla uppgifter har tester knutna till sig och vill man kan man kommentera fram endast de tester som gäller den miniuppgift man arbetar med för stunden. Testerna finns i /test/part-1/tiny-tunes ifall man vill undersöka dessa.
 
