@@ -22,7 +22,7 @@ En enklare uppgift där du ska returnera summan av två tal
 ***
 
 ### Pre Tiny Tunes (part1-pre-tiny-tunes)
-Denna branch **(part1-pre-tiny-tunes-15)** består av ett antal mindre uppgifter som lämpar sig väl att göra efter föreläsning 2. Uppgiften är förberedande för de lite större uppgifterna i "Tiny Tunes"-uppgiften. Du kan lösa uppgifterna i vilken ordning du vill, men jag rekommenderar att beta av dem uppifrån. Det är viktigt att har konfiguerart Mocha i Webbstorm så att du kan köra testerna. 
+Denna branch **(part1-pre-tiny-tunes)** består av ett antal mindre uppgifter som lämpar sig väl att göra efter föreläsning 2. Uppgiften är förberedande för de lite större uppgifterna i "Tiny Tunes"-uppgiften. Du kan lösa uppgifterna i vilken ordning du vill, men jag rekommenderar att beta av dem uppifrån. Det är viktigt att har konfiguerart Mocha i Webbstorm så att du kan köra testerna. 
 
 Observera att det finns läsanvisningar som kommentarer i koden. Följ dessa länkar!
 
