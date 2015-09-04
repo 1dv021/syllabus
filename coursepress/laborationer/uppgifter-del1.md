@@ -27,6 +27,7 @@ Denna branch **(part1-pre-tiny-tunes)** består av ett antal mindre uppgifter so
 Observera att det finns läsanvisningar som kommentarer i koden. Följ dessa länkar!
 
 Arbetsgång:
+
 1. Börja med att checka ut branchen part1-pre-tiny-tunes
 2. Kör testerna i Webstorm. Notera att samtliga fallerar. Du kan titta på dem i fönstret i nedre vänstra hörnet.
 3. Börja att skriva kod för att lösa uppgift 1. Kör testerna och ändra i koden tills de två första testerna är gröna.
