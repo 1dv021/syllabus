@@ -73,8 +73,9 @@ I [följande inspelning](https://youtu.be/WCzfV8LB6a0) går vi igenom ovanståen
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WCzfV8LB6a0?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 ### Kommentarer
-I klippet ovan så konfiguerar jag terminalen för att fungera i Windows. Om du sitter i OSX så kan du hoppa över detta steg eftersom bashterminalen är förvald i OSX. Mina inställningar ser ut så här om du råkat ändra:
-![Terminalen i OSX](https://raw.githubusercontent.com/1dv021/syllabus/master/coursepress/guider/pic/osx_terminal.png)
+* I klippet ovan så konfiguerar jag terminalen för att fungera i Windows. Om du sitter i OSX så kan du hoppa över detta steg eftersom bashterminalen är förvald i OSX. Mina inställningar ser ut så här om du råkat ändra: ![Terminalen i OSX](https://raw.githubusercontent.com/1dv021/syllabus/master/coursepress/guider/pic/osx_terminal.png)
+* Många Windowsanvändare verkar ha problem med terminalen och istället för en bash terminal möts man av `bash-4.3$`. Lösningen finns i [följande inspelning](http://www.youtube.com/watch?v=KPnl5VUSKYc).
+
 
 
 ## 5. Github
