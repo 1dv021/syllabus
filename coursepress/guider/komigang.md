@@ -5,6 +5,8 @@ Innan du startar med detta så förutsätter vi följande:
 * Du har loggat in på din [student-epostadress](http://lnu.se/student/vi-hjalper-dig/it-och-support/e-post).
 * Du har tittat på kursens första [introduktionsföreläsning](https://coursepress.lnu.se/kurs/grundlaggande-programmering/introduktion/).  
 
+***
+
 Guiden består av följande steg:
 
 1. Introduktion
@@ -23,13 +25,16 @@ Guiden består av följande steg:
  * Bekanta dig med kursens GitHub-organisation
 6. Genomför din första laboration, "Hello, World!"
 
+***
+
 ### Skolans datorsalar
 Om du använder skolans datorsalar så är steg 1-4 redan genomförda på de datorer som finns i salarna Ny106, Ny107, Ny108, Ny112 samt Ny113. Du kan, och ska inte installera något eget på dessa datorer utan kan börja med steg 5.
 
 ### Resurser
 1. [What is VCS? (GitHub Training & Guides)](https://youtu.be/8oRjP8yj2Wo?list=PLg7s6cbtAD165JTRsXh8ofwRw0PqUnkVH)
 2. [What is Git? (GitHub Training & Guides)](https://youtu.be/uhtzxPU7Bz0?list=PLg7s6cbtAD165JTRsXh8ofwRw0PqUnkVH)
-3. 
+
+***
 
 ## 1. Introduktion
 Inte nog med att du ska lära dig programmera i denna kurs, du kommer också att lära dig en mängd med verktyg som kommer att underlätta när vi utvecklar. I början kan detta kännas väldigt omständigt. Vi lovar dock att om tar tillfället i akt och lugnt och metodiskt arbetar igenom dessa guider och sedan följer de arbetsscheman vi satt upp för specifika uppgifter så kommer du att få en oerhört stabil grund att stå på inför dina programmeringsutmaningar. 
@@ -98,6 +103,9 @@ I [följande inspelning](https://youtu.be/q058hV1sJEo) går vi igenom ovanståen
 ### Resurser
 Titta nu gärna igenom nedanstående föreläsning och se om du efter detta kan "forka" vårt repo 1dv021/syllabus och kanske rätta något stavfel eller bidra med något annat till kursens innehåll!
 * [The Basics of Git and GitHub (Github Training)](https://youtu.be/U8GBXvdmHT4)
+
+### Kommentarer
+* För att få en inbjudan till kursens GitHub-repo så måste du först [fylla i din profilinformation](https://coursepress.lnu.se/kurs/grundlaggande-programmering/profilinformation/) och då specielt ditt GitHub-användarnamn. Efter detta kan det ta upp till ett dygn innan du får inbjudan till GitHub-repot.
 
 ## 6. Hello, World!
 Äntligen är det dags att skriva kod! Vi går igenom hur vi kan arbeta med laborationerna i kursen. 
