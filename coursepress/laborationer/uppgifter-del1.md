@@ -45,7 +45,7 @@ Denna branch **(part1-tiny-tunes-15)** består av ett antal mindre uppgifter. Du
   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
 * Uppgit 5, findHash - Kolla upp funktionerna String.indexOf och String.slice 
   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
-  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
+  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice
 * Uppgift 6, getOdd, Här bör man känna till loopar och restoperatorn, Kapitel 1-2 i boken
 * Uppgift 7, gettings, Här kan det vara bra att känna till selektioner (Kapitel 2)
 * Uppgift 8, simpleReplaceWithForLoop. Som namnet antyder är det bra att känna till for-loopen här (Kapitel 2)
