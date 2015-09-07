@@ -120,7 +120,7 @@ https://github.com/1dv021/laborationer/tree/part1-bugsy-15/src/part-1/bugsy
 
 ***
 
-### Harshadtal ([part1-harshad-number](https://github.com/1dv021/laborationer/raw/part1-harshad-number/))
+### Harshadtal ([part1-harshad-number](https://github.com/1dv021/laborationer/tree/part1-harshad-number/src/part-1/harshad-number))
 
 Harshadtal, eller Nivental, i en given talbas, i denna uppgift talbasen 10, är ett heltal som är jämt delbart med sin siffersumma.
 
@@ -130,7 +130,7 @@ Exmpel på tal som är Harshadtal:
 - 24, då 2 + 4 = 6 och 24 är lika med 6 * 4
 - 198, då 1 + 9 + 8 = 18 och 198 är lika med 18 * 11
 
-Din uppgift är att slutföra implementationen av det påbörjade Harshad-objektet, som har tre metoder: - `isValid`, `getNext` och `getSequence`. [Läs mer...](https://github.com/1dv021/laborationer/raw/part1-harshad-number/src/part-1/harshad-number/README.md)
+Din uppgift är att slutföra implementationen av det påbörjade Harshad-objektet, som har tre metoder: - `isValid`, `getNext` och `getSequence`. [Läs mer...](https://github.com/1dv021/laborationer/blob/part1-harshad-number/src/part-1/harshad-number/README.md)
 
 
 ***
