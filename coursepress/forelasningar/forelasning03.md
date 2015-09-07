@@ -1,14 +1,24 @@
 ## Nyckelord
 
-[TODO]
+funktion, anropa funktion, argument, returvärde, parameter, return-sats, räckvidd ("*scope*"), globala variabler, lokala variabler, "*closure*", funktionsuttryck, funktiondeklaration
 
 ## Resurser
-- <del>HTML-presentation</del>
+- [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/03/index.html#)
 - <del>Inspelning</del>
 
 ### Eloquent JavaScript, 2nd Edition 
 
-[TODO]
+- [3. Functions](http://eloquentjavascript.net/03_functions.html)
+    - [Defining a function](http://eloquentjavascript.net/03_functions.html#h_tqLFw/oazr)
+    - [Parameters and scopes](http://eloquentjavascript.net/03_functions.html#h_u4j2OhpYkg)
+    - [Nested scope](http://eloquentjavascript.net/03_functions.html#h_c/Ms2Ed/N0)
+    - [Functions as values](http://eloquentjavascript.net/03_functions.html#h_y6WGSsYfER)
+    - [Declaration notation](http://eloquentjavascript.net/03_functions.html#h_H2WKvqbgVY)
+    - [Optional Arguments](http://eloquentjavascript.net/03_functions.html#h_1pGtRjrCUp)
+    - [Closure](http://eloquentjavascript.net/03_functions.html#h_hOd+yVxaku)
+    - [Recursion](http://eloquentjavascript.net/03_functions.html#h_jxl1p970Fy)
+    - [Growing functions](http://eloquentjavascript.net/03_functions.html#h_eVDWIAuyBK)
+    - [Functions and side effects](http://eloquentjavascript.net/03_functions.html#h_EdyBGBF6y/)
 
 ## Externa resurser
 
