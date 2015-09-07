@@ -137,7 +137,7 @@ var randomNumber = Math.random(); // Returnerar ett värde från och med 0 till 
     var greeting = "Hello, " + name + "!";
 
     return greeting;
-}
+};
 
 console.log(sayHello("Ellen Nu")); // ➡ Hello, Ellen Nu!
 </code></pre>
@@ -160,7 +160,7 @@ console.log(sayHello("Ellen Nu")); // ➡ Hello, Ellen Nu!
                             En funktion behöver inte ha en <code>return</code>-sats.
                             <pre><code class="js">var sayHello = function(name) {
     console.log()"Hello, " + name + "!");
-}
+};
 
 sayHello("Nisse"); // ➡ Hello, Nisse!
 </code></pre>
@@ -175,7 +175,7 @@ sayHello("Nisse"); // ➡ Hello, Nisse!
         return "jämt";
     }
     return "udda";
-}
+};
 
 var result = evenOrOdd(42);
 console.log("42 är ett" + result + "tal."); // ➡ 42 är ett jämt tal.
@@ -195,7 +195,7 @@ console.log("42 är ett" + result + "tal."); // ➡ 42 är ett jämt tal.
         return "jämt";
     }
     return "udda";
-}
+};
 
 var result = evenOrOdd(42);
 console.log("42 är ett" + result + "tal."); // ➡ 42 är ett jämt tal.
@@ -207,7 +207,7 @@ console.log("42 är ett" + result + "tal."); // ➡ 42 är ett jämt tal.
 
     // Är talet jämt delbart med 2?
     return value % 2 === 0;
-}
+};
 
 var result = isEven(42) ? "jämt" : "udda";
 console.log("42 är ett" + result + "tal."); // ➡ 42 är ett jämt tal.
@@ -223,7 +223,7 @@ console.log("42 är ett" + result + "tal."); // ➡ 42 är ett jämt tal.
     var fullName = firstName + " " + lastName;  // OBS! lokal variabel
 
     return fullName;
-}
+};
 
 var fullName = getFullName("Ellen", "Nu"); // OBS! global variabel
 console.log("Personens fullständiga namn är " + fullName + ".");
@@ -331,12 +331,12 @@ console.log(goodMorning("Mats"));  // ➡ God morgon Mats.
                         <pre><code ="js">// anonymt funktionsuttryck
 var greet = function() {
     console.log("Hello, World!");
-}
+};
 
 // namngivet funktionsuttryck
 var anotherGreet = function sayHi() {
     console.log("Hello, World!");
-}
+};
 </code></pre>
                     </li>
                     <li>
