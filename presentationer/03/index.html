@@ -323,6 +323,35 @@ console.log(goodEvening("Nisse")); // ➡ God kväll Nisse.
 console.log(goodMorning("Mats"));  // ➡ God morgon Mats.
 </code></pre>
             </section>
+            <section>
+                <h2>Olika sätt att skapa funktioner</h2>
+                <ul>
+                    <li>
+                        Funktionsuttryck
+                        <pre><code ="js">// anonymt funktionsuttryck
+var greet = function() {
+    console.log("Hello, World!");
+}
+
+// namngivet funktionsuttryck
+var anotherGreet = function sayHi() {
+    console.log("Hello, World!");
+}
+</code></pre>
+                    </li>
+                    <li>
+                        Funktionsdeklaration
+                        <pre><code ="js">function sayHello() {
+    console.log("Hello, World!");
+}
+</code></pre>
+                        <ul>
+                            <li>Definierar en namngiven funktion utan avändande av någon variabel.</li>
+                            <li>Påminner om variabeldeklarationer. Variabeldeklarationer börjar med <code>var</code>, funktionsdeklarationer börjar <code>function</code>.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
         </div>
     </div>
 
