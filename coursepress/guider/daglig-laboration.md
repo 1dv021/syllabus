@@ -30,5 +30,5 @@ Börja med att updatera för att se om några nya uppgifter tillkommit i 1DV021
 * `git checkout master`
 * `git merge part1-hello-world`
 4. Skicka förändringar till github
-* `git push`
+* `git push origin`
 5. Börja om på steg 1 med nästa uppgift i ordningen.
