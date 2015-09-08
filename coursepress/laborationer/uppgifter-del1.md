@@ -58,6 +58,17 @@ Mer information: https://github.com/1dv021/laborationer/tree/part1-tiny-tunes-15
 
 ***
 
+### Rätvinlig triangle (part1-right-triangle)
+
+Komplettera funktionen `Shap.createRightTriangle(base)`, som endast får använda följande strängar, en gång vardera, 
+
+- `"#"`
+- `"\n"`
+
+för att skapa en rätvinklig triangel i form av en enda sträng som funktionen returnerar. Vid anrop av funktionen ska det vara möjligt att bestämma hur många tecken som ska finnas i den rätvinkliga triangelns bas.
+
+Mer information: https://github.com/1dv021/laborationer/tree/part1-right-triangle/src/part-1/right-triangle
+
 ###Check values (part1-check-values-15)
 Denna uppgift går ut på att undersöka vad för datatyp en given parameter/variabel har.
 Uppgiften har en färdig funktion som tar en parameter(value) och beroende på vad man skickar in
