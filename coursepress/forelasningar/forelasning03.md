@@ -4,7 +4,9 @@ funktion, anropa funktion, argument, returvärde, parameter, return-sats, räckv
 
 ## Resurser
 - [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/03/index.html#)
-- <del>Inspelning</del>
+- [Inspelning](https://connect.sunet.se/p39bxagd36d/) 2015-09-07, 13-15 (Adobe Connect, Första 10 min saknas)
+- <del>[Inspelning](#) 2015-09-08, 13-15 (Youtube)</del>
+- <del>[Inspelning](http://orion.lnu.se/pub/education/course/1DV021/HT15/lectures/1dv021-f03.mp4) 2015-09-08, 13-15 (mp4)</del>
 
 ### Eloquent JavaScript, 2nd Edition 
 
