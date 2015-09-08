@@ -24,4 +24,4 @@ funktion, anropa funktion, argument, returvärde, parameter, return-sats, räckv
 
 ## Externa resurser
 
-- [Crockford on JavaScript - Act III: Function the Ultimate](https://youtu.be/ya4UHuXNygM)
+- [Crockford on JavaScript - Act III: Function the Ultimate](https://youtu.be/ya4UHuXNygM) (Crockfords föreläsning om funktioner är mycket bra men var inte rädd om du inte förstår allt då han går väldigt fort fram och pratar om många specialfall.)
