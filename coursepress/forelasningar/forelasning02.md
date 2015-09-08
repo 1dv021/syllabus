@@ -23,3 +23,4 @@ kontrollstrukturer, sekvens, selektion, iteration, (rekursion), "if"-satsen, "sw
     - [Comments](http://eloquentjavascript.net/02_program_structure.html#h_/OBuIOX390)
 
 ## Externa resurser
+- [Crockford on JavaScript - Chapter 2: And Then There Was JavaScript](https://youtu.be/RO1Wnu-xKoY) (1 h 30 m) Crockford ger en introduktion till JavaScript och går igenom mycket av det som tas upp på föreläsningen + en hel del till. Hänger du inte med på allt så var inte ledsen, var istället glad över det du hänger med på!
