@@ -5,13 +5,15 @@ Kursens laborationsuppgifter hittar du här: [https://github.com/1dv021/laborati
 
 1. Klona ditt laborationsrepo från organisationen 1DV021 
 * `git clone https://github.com/1dv021/DITTANVÄNDARNAMN-laborationer.git`
-2. Lägg en genväg till kursens laborationsrepo:
+2. Byt katalog till den katalog som du klonade under 1)
+* `cd DITTANVÄNDARNAMN-laborationer`(Oftast räcker det att du skriver första bokstaven i ditt användarnamn och sedan trycker TAB)
+3. Lägg en genväg till kursens laborationsrepo:
 * `git remote add 1dv021 https://github.com/1dv021/laborationer.git`
-3. Hämta ner laborationerna till ditt lokala repo:
+4. Hämta ner laborationerna till ditt lokala repo:
 * `git pull 1dv021`
-4. Merga *1dv021/master* med *master*
+5. Merga *1dv021/master* med *master*
 * `git merge 1dv021/master`
-5. Installera alla yttre beroenden. (Mocha, JSCS, JSHint...)
+6. Installera alla yttre beroenden. (Mocha, JSCS, JSHint...)
 * `npm install`
 
 Du är nu redoa att ta dig an din första uppgift.
