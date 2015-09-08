@@ -58,7 +58,7 @@ Mer information: https://github.com/1dv021/laborationer/tree/part1-tiny-tunes-15
 
 ***
 
-### Rätvinlig triangle (part1-right-triangle)
+### Rätvinklig triangle (part1-right-triangle)
 
 Komplettera funktionen `Shap.createRightTriangle(base)`, som endast får använda följande strängar, en gång vardera, 
 
