@@ -69,6 +69,8 @@ för att skapa en rätvinklig triangel i form av en enda sträng som funktionen 
 
 Mer information: https://github.com/1dv021/laborationer/tree/part1-right-triangle/src/part-1/right-triangle
 
+***
+
 ###Check values (part1-check-values-15)
 Denna uppgift går ut på att undersöka vad för datatyp en given parameter/variabel har.
 Uppgiften har en färdig funktion som tar en parameter(value) och beroende på vad man skickar in
