@@ -34,7 +34,8 @@ Arbetsgång:
 4. Fortsätt med nästa funktion.
 5. Upprepa tills dess att alla tester är gröna och du är klar med uppgiften.
 
-[Här hittar du en komigång-inspelning för just denna laborationsuppgift.](https://youtu.be/4JJlXamcgks)
+- [Här hittar du en komigång-inspelning för just denna laborationsuppgift.](https://youtu.be/4JJlXamcgks)
+- [Här hittar du en inspelning på en av lösningarna för laborationsuppgiften.](https://youtu.be/ntjmYQMYBx4)
 
 
 ###Tiny Tunes (part1-tiny-tunes-15) <-- OBS var noga med namnet!
