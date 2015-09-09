@@ -81,6 +81,16 @@ I [följande inspelning](https://youtu.be/WCzfV8LB6a0) går vi igenom ovanståen
 * I klippet ovan så konfiguerar jag terminalen för att fungera i Windows. Om du sitter i OSX så kan du hoppa över detta steg eftersom bashterminalen är förvald i OSX. Mina inställningar ser ut så här om du råkat ändra: ![Terminalen i OSX](https://raw.githubusercontent.com/1dv021/syllabus/master/coursepress/guider/pic/osx_terminal.png)
 * Många Windowsanvändare verkar ha problem med terminalen och istället för en bash terminal möts man av `bash-4.3$`. Lösningen finns i [följande inspelning](http://www.youtube.com/watch?v=KPnl5VUSKYc).
 
+### Kommentar 2 - Färgkodning och branchnamn i Mac/Linux terminal
+Oberservera att detta endast gäller er som kör Mac/Linux!
+Om man saknar färgkodning och att enkelt kunna se vilken branch man är i när man jobbar i terminalen så kan vi rekommendera att installera [“Oh My ZSH!”](http://ohmyz.sh/). Vi kan kalla det ett pimpat shell/terminalutseende som också har stöd för smarta plugin och olika teman. Ni hittar installationsinstruktioner på sidan men de kan sammanfattas så som:
+
+1. Gå till sidan http://ohmyz.sh och installera applikationen via att i en terminal skriva:
+```sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"```
+Vad detta gör är att det laddar ner ett skript som körs på din dator varför du kan behöva skriva ditt lösenord (till din lokala dator) för att tillåta skriptet installeras. Du kan gå till URL:en och kontrollera skriptet om du är nojig :)
+
+2. För att få det att fungera i WebStorm i menyn välj Preferences->Tools->Terminal
+I rutan för shell Path, skriver du “/bin/zsh” (istället för "/bin/sh"). Välj OK och starta ett nytt terminalfönster så bör du ha det nya utseendet. Mer information om Mer information om teman och plugin finns på: http://ohmyz.sh/
 
 
 ## 5. Github
