@@ -81,6 +81,7 @@ I [följande inspelning](https://youtu.be/WCzfV8LB6a0) går vi igenom ovanståen
 * I klippet ovan så konfiguerar jag terminalen för att fungera i Windows. Om du sitter i OSX så kan du hoppa över detta steg eftersom bashterminalen är förvald i OSX. Mina inställningar ser ut så här om du råkat ändra: ![Terminalen i OSX](https://raw.githubusercontent.com/1dv021/syllabus/master/coursepress/guider/pic/osx_terminal.png)
 * Många Windowsanvändare verkar ha problem med terminalen och istället för en bash terminal möts man av `bash-4.3$`. Lösningen finns i [följande inspelning](http://www.youtube.com/watch?v=KPnl5VUSKYc).
 
+
 ### Kommentar 2 - Färgkodning och branchnamn i Mac/Linux terminal
 Oberservera att detta endast gäller er som kör Mac/Linux!
 Om man saknar färgkodning och att enkelt kunna se vilken branch man är i när man jobbar i terminalen så kan vi rekommendera att installera [“Oh My ZSH!”](http://ohmyz.sh/). Vi kan kalla det ett pimpat shell/terminalutseende som också har stöd för smarta plugin och olika teman. Ni hittar installationsinstruktioner på sidan men de kan sammanfattas så som:
