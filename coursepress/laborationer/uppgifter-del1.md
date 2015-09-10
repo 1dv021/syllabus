@@ -13,10 +13,11 @@ Följande laborationsuppgifter finns idagsläget och de är placerade i en ordni
 
 ###Hello World  (part1-hello-world)
 
-| First Header  | Second Header |
+|   | |
 | ------------- | ------------- |
 | Svårighetsnivå  | Grundläggande  |
 | Kursvecka  | 1  |
+| Föreläsningar| F01|
 | Nyckelord| Komigång, strängar|
 
 Denna laborationsuppgift gås igenom i demonstrationsuppgifterna
