@@ -11,7 +11,9 @@ git remote update 1dv021 --prune
 
 Följande laborationsuppgifter finns idagsläget och de är placerade i en ordning vi tycker man bör ta sig an dem:
 
-###Hello World
+***
+
+##Hello World
 
 |  |  |
 | ------------- | ------------- |
@@ -23,14 +25,26 @@ Följande laborationsuppgifter finns idagsläget och de är placerade i en ordni
 
 Denna laborationsuppgift gås igenom i demonstrationsuppgifterna
 
-***
+##Simple Sum
+|  |  |
+| ------------- | ------------- |
+|  branch | [part1-simple-sum](https://github.com/1dv021/laborationer/tree/part1-simple-sum) |
+| Svårighetsnivå  | Grundläggande  |
+| Kursvecka  | 1  |
+| Föreläsningar| F01|
+| Nyckelord| Komigång, number|
 
-###Simple Sum (part1-simple-sum)
 En enklare uppgift där du ska returnera summan av två tal
 
-***
+## Pre Tiny Tunes (part1-pre-tiny-tunes)
+|  |  |
+| ------------- | ------------- |
+|  branch | [part1-pre-tiny-tunes](https://github.com/1dv021/laborationer/tree/part1-pre-tiny-tunes) |
+| Svårighetsnivå  | Grundläggande  |
+| Kursvecka  | 1  |
+| Föreläsningar| F01, F02|
+| Nyckelord| number, strängar|
 
-### Pre Tiny Tunes (part1-pre-tiny-tunes)
 Denna branch **(part1-pre-tiny-tunes)** består av ett antal mindre uppgifter som lämpar sig väl att göra efter föreläsning 2. Uppgiften är förberedande för de lite större uppgifterna i "Tiny Tunes"-uppgiften. Du kan lösa uppgifterna i vilken ordning du vill, men jag rekommenderar att beta av dem uppifrån. Det är viktigt att har konfiguerart Mocha i Webbstorm så att du kan köra testerna. 
 
 Observera att det finns läsanvisningar som kommentarer i koden. Följ dessa länkar!
@@ -46,9 +60,15 @@ Arbetsgång:
 - [Här hittar du en komigång-inspelning för just denna laborationsuppgift.](https://youtu.be/4JJlXamcgks)
 - [Här hittar du en inspelning på en av lösningarna för laborationsuppgiften.](https://youtu.be/ntjmYQMYBx4)
 
-***
+##Tiny Tunes
+|  |  |
+| ------------- | ------------- |
+|  branch | [part1-tiny-tunes-15](https://github.com/1dv021/laborationer/tree/part1-tiny-tunes-15) |
+| Svårighetsnivå  | Grundläggande  |
+| Kursvecka  | 2  |
+| Föreläsningar| F01, F02, F03|
+| Nyckelord| number, strängar, iterationer, selektioner, inbyggda funktioner|
 
-###Tiny Tunes (part1-tiny-tunes-15) <-- OBS var noga med namnet!
 Denna branch **(part1-tiny-tunes-15)** består av ett antal mindre uppgifter. Du hittar dem i tiny-tunes.js och bör lösa dem i den ordning de kommer. Nästan alla uppgifter har tester knutna till sig och vill man kan man kommentera fram endast de tester som gäller den miniuppgift man arbetar med för stunden. Testerna finns i /test/part-1/tiny-tunes ifall man vill undersöka dessa.
 
 * Uppgift 1-3 Bör man kunna lösa efter föreläsning 1 och kapitlen 1-2 i boken
@@ -67,9 +87,14 @@ Denna branch **(part1-tiny-tunes-15)** består av ett antal mindre uppgifter. Du
 
 Mer information: https://github.com/1dv021/laborationer/tree/part1-tiny-tunes-15/src/part-1/tiny-tunes
 
-***
-
-### Rätvinklig triangle (part1-right-triangle)
+## Rätvinklig triangle
+|  |  |
+| ------------- | ------------- |
+|  branch | [part1-right-triangle](https://github.com/1dv021/laborationer/tree/part1-right-triangle) |
+| Svårighetsnivå  | Grundläggande  |
+| Kursvecka  | 2  |
+| Föreläsningar| F01, F02, F03|
+| Nyckelord| |
 
 Komplettera funktionen `Shap.createRightTriangle(base)`, som endast får använda följande strängar, en gång vardera, 
 
@@ -82,7 +107,15 @@ Mer information: https://github.com/1dv021/laborationer/tree/part1-right-triangl
 
 ***
 
-###Check values (part1-check-values-15)
+##Check values
+|  |  |
+| ------------- | ------------- |
+|  branch | [part1-check-values-15](https://github.com/1dv021/laborationer/tree/part1-check-values-15) |
+| Svårighetsnivå  | Grundläggande  |
+| Kursvecka  | 3  |
+| Föreläsningar| F01-F04|
+| Nyckelord| objekt, arrayer |
+
 Denna uppgift går ut på att undersöka vad för datatyp en given parameter/variabel har.
 Uppgiften har en färdig funktion som tar en parameter(value) och beroende på vad man skickar in
 ska en textsträng returneras med en text som beskriver vad det är för datatyp. Se exemplen nedan.
@@ -97,18 +130,30 @@ ska en textsträng returneras med en text som beskriver vad det är för datatyp
 Mer information om uppgiften hittar du på:
 https://github.com/1dv021/laborationer/tree/part1-check-values-15/src/part-1/check-values
 
-***
+##Black Adder
+|  |  |
+| ------------- | ------------- |
+|  branch | [part1-black-adder-15](https://github.com/1dv021/laborationer/tree/part1-black-adder-15) |
+| Svårighetsnivå  | [TODO]  |
+| Kursvecka  | 3  |
+| Föreläsningar| F01-F04|
+| Nyckelord| [TODO] |
 
-###Black Adder (part1-black-adder-15)
 Denna uppgift går ut på att skapa en mycket enkel räkneapplikation.
 Den ska klara av att addera att fritt antal parametrar i form av nummer (heltal som decimaltal)
 
 Mer information om uppgiften hittar du på:
 https://github.com/1dv021/laborationer/tree/part1-black-adder-15/src/part-1/black-adder
 
-***
+##Logger
+|  |  |
+| ------------- | ------------- |
+|  branch | [part1-logger-15](https://github.com/1dv021/laborationer/tree/part1-logger-15) |
+| Svårighetsnivå  | [TODO]  |
+| Kursvecka  | 3  |
+| Föreläsningar| F01-F04|
+| Nyckelord| [TODO] |
 
-###Logger (part1-logger-15)
 Denna uppgift går ut på att fortsätta utveckla befintlig kod för att färdigställa en enklare
 logg-modul, dvs. en applikationer som loggar olika typer av meddelandenobjekt i en array.
 Modulen har en array (_log) där meddelandeobjekt kan sparas och läsas ifrån.
@@ -121,9 +166,15 @@ Modulen har tre publika metoder (se kod för mer kommentarer kring dess):
 Mer information om uppgiften hittar du på:
 https://github.com/1dv021/laborationer/tree/part1-logger-15/src/part-1/logger
 
-***
+##Parse Querystring
+|  |  |
+| ------------- | ------------- |
+|  branch | [part1-querystring-parser](https://github.com/1dv021/laborationer/tree/part1-querystring-parser) |
+| Svårighetsnivå  | [TODO]  |
+| Kursvecka  | 3  |
+| Föreläsningar| F01-F04|
+| Nyckelord| [TODO] |
 
-####Parse Querystring (part1-querystring-parser)
 Denna uppgift går ut på att parsa en så kallad querystring och plocka ut värden från denna. En querystring används som påbyggnad på en vanlig URL för att skicka med extra data till servern. Exempelvis kan en URL se ut såhär:
 http://lnu.se?name=Stina&age=24
 
@@ -132,7 +183,15 @@ http://lnu.se - är själva URL:en till webbservern och den behöver vi inte bry
 Mer information om uppgiften hittar du på:
 https://github.com/1dv021/laborationer/tree/part1-querystring-parser/src/part-1/parse-querystring
 
-###Bugsy (part1-bugsy-15)
+##Bugsy ()
+|  |  |
+| ------------- | ------------- |
+|  branch | [part1-bugsy-15](https://github.com/1dv021/laborationer/tree/part1-bugsy-15) |
+| Svårighetsnivå  | [TODO]  |
+| Kursvecka  | 3  |
+| Föreläsningar| F01-F04|
+| Nyckelord| [TODO] |
+
 I denna uppgiften får du kod i form av dels en modul (helper) innehållande en del hjälpfunktioner
 för uppgiften. Dessa fungerar och ska inte ändras.
 
@@ -142,9 +201,14 @@ med rätt gangsternamn. Till sin hjälp kan funktionen använda två hjälpfunkt
 Mer information om uppgiften hittar du på:
 https://github.com/1dv021/laborationer/tree/part1-bugsy-15/src/part-1/bugsy
 
-***
-
-### Harshadtal (part1-harshad-number)
+## Harshadtal (part1-harshad-number)
+|  |  |
+| ------------- | ------------- |
+|  branch | [part1-harshad-number](https://github.com/1dv021/laborationer/tree/part1-harshad-number) |
+| Svårighetsnivå  | [TODO]  |
+| Kursvecka  | 3  |
+| Föreläsningar| F01-F04|
+| Nyckelord| [TODO] |
 
 Harshadtal, eller Nivental, i en given talbas, i denna uppgift talbasen 10, är ett heltal som är jämt delbart med sin siffersumma.
 
@@ -159,5 +223,3 @@ Din uppgift är att slutföra implementationen av det påbörjade Harshad-objekt
 Mer information om uppgiften hittar du på:
 https://github.com/1dv021/laborationer/tree/part1-harshad-number/src/part-1/harshad-number
 
-
-***
