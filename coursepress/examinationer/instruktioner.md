@@ -17,5 +17,10 @@ För att komma igång med examinationsuppgiften ska du göra fdöljande:
 
 Ovanstående instruktioner finns ingående demonstrerade i demot [1DV021 - Demo - Examinationsuppgift 1 - Kom Igång](https://youtu.be/OxQzwQc9VT8).
 
+## Dagligt arbete med uppgiften
+1. `git add .` Lägg till förändringar till nästa commit
+2. `git commit -m "Vad innebär den senaste förändringen du gjort? Kommentera här"` Regelbundna commits
+3. `git push` Skicka upp förändringarna till GitHub som en backup ifall något händer med din dator.
+
 ## Inlämning
 [TODO]
