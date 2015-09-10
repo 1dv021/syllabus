@@ -12,6 +12,13 @@ git remote update 1dv021 --prune
 Följande laborationsuppgifter finns idagsläget och de är placerade i en ordning vi tycker man bör ta sig an dem:
 
 ###Hello World  (part1-hello-world)
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Svårighetsnivå  | Grundläggande  |
+| Kursvecka  | 1  |
+| Nyckelord| Komigång, strängar|
+
 Denna laborationsuppgift gås igenom i demonstrationsuppgifterna
 
 ***
