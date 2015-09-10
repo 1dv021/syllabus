@@ -1,9 +1,9 @@
 Examinationsuppgifterna är en del av kursens examination. Inför varje muntlig examination så ska en praktisk programmeringsuppgift utföras och lämnas in. Deadline för inlämning av uppgiften framgår under intstruktionerna för varje uppgift.
 
 Speciella regler gäller för genomförandet av de praktiska examinationsuppgifterna:
-- Uppgifterna är _obligatoriska_ att genomföra för att få genomföra den muntliga examinationen.
-- Uppgifterna ska genomföras enskilt utan hjälp från utomstående part. Det är tillåtet att söka generell hjälp kring delar som uppgiften innefattar så som "Hur får man ut längden på en array?", "Hur fungerar for-loopen etc." men det är inte tillåtet att ställa direkta frågor kring hur man löser uppgiften. 
-- Du ska göra regelbunda commits när du löser uppgiften. Denna historik ska finnas på GitHub. Ett tiotal commits per examinationsuppgift bör finnas.
+- Uppgifterna är **obligatoriska** att genomföra för att få genomföra den muntliga examinationen.
+- Uppgifterna ska genomföras **enskilt** utan hjälp från utomstående part. Det är tillåtet att söka generell hjälp kring delar som uppgiften innefattar så som "Hur får man ut längden på en array?", "Hur fungerar for-loopen etc." men det är inte tillåtet att ställa direkta frågor kring hur man löser uppgiften. 
+- Du ska göra **regelbunda commits** när du löser uppgiften. Denna historik ska finnas på GitHub. Ett tiotal commits per examinationsuppgift bör finnas.
 
 ## Kom igång med uppgiften
 För att komma igång med examinationsuppgiften ska du göra fdöljande:
