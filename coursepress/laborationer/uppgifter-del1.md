@@ -13,8 +13,9 @@ Följande laborationsuppgifter finns idagsläget och de är placerade i en ordni
 
 ###Hello World
 
-|  branch | part1-hello-world |
+|  |  |
 | ------------- | ------------- |
+|  branch | [part1-hello-world](https://github.com/1dv021/laborationer/tree/part1-hello-world) |
 | Svårighetsnivå  | Grundläggande  |
 | Kursvecka  | 1  |
 | Föreläsningar| F01|
