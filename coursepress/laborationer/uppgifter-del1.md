@@ -36,7 +36,7 @@ Denna laborationsuppgift gås igenom i demonstrationsuppgifterna
 
 En enklare uppgift där du ska returnera summan av två tal
 
-## Pre Tiny Tunes (part1-pre-tiny-tunes)
+## Pre Tiny Tunes
 |  |  |
 | ------------- | ------------- |
 |  branch | [part1-pre-tiny-tunes](https://github.com/1dv021/laborationer/tree/part1-pre-tiny-tunes) |
@@ -183,7 +183,7 @@ http://lnu.se - är själva URL:en till webbservern och den behöver vi inte bry
 Mer information om uppgiften hittar du på:
 https://github.com/1dv021/laborationer/tree/part1-querystring-parser/src/part-1/parse-querystring
 
-##Bugsy ()
+##Bugsy
 |  |  |
 | ------------- | ------------- |
 |  branch | [part1-bugsy-15](https://github.com/1dv021/laborationer/tree/part1-bugsy-15) |
@@ -201,7 +201,7 @@ med rätt gangsternamn. Till sin hjälp kan funktionen använda två hjälpfunkt
 Mer information om uppgiften hittar du på:
 https://github.com/1dv021/laborationer/tree/part1-bugsy-15/src/part-1/bugsy
 
-## Harshadtal (part1-harshad-number)
+## Harshadtal
 |  |  |
 | ------------- | ------------- |
 |  branch | [part1-harshad-number](https://github.com/1dv021/laborationer/tree/part1-harshad-number) |
