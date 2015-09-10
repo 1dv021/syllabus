@@ -8,8 +8,10 @@ Speciella regler gäller för genomförandet av de praktiska examinationsuppgift
 ## Kom igång med uppgiften
 För att komma igång med examinationsuppgiften ska du göra fdöljande:
 
-1. Klona ditt repo https://github.com/1dv021/ANVÄNDARNAMN-examination-NR. Exempelvis: `git clone https://github.com/1dv021/xx222yy-examination-1`
-2. Fyll på repot med examinationsuppgift 1: `git pull https://github.com/1dv021/examination-1`
+1. Klona ditt repo https://github.com/1dv021/ANVÄNDARNAMN-examination-NR. 
+  * Exempelvis: `git clone https://github.com/1dv021/xx222yy-examination-1`
+2. Fyll på repot med examinationsuppgift 1
+  * `git pull https://github.com/1dv021/examination-1`
 3. Konfigurera Webstorm att köra filen "app.js" vid run.
 4. Konfigurera Webstorm att köra tester från katalogen "tests"
 
