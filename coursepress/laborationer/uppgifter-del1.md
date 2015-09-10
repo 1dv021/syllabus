@@ -11,9 +11,9 @@ git remote update 1dv021 --prune
 
 Följande laborationsuppgifter finns idagsläget och de är placerade i en ordning vi tycker man bör ta sig an dem:
 
-###Hello World  (part1-hello-world)
+###Hello World
 
-
+|  branch | part1-hello-world |
 | ------------- | ------------- |
 | Svårighetsnivå  | Grundläggande  |
 | Kursvecka  | 1  |
