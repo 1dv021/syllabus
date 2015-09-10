@@ -37,6 +37,7 @@ Arbetsgång:
 - [Här hittar du en komigång-inspelning för just denna laborationsuppgift.](https://youtu.be/4JJlXamcgks)
 - [Här hittar du en inspelning på en av lösningarna för laborationsuppgiften.](https://youtu.be/ntjmYQMYBx4)
 
+***
 
 ###Tiny Tunes (part1-tiny-tunes-15) <-- OBS var noga med namnet!
 Denna branch **(part1-tiny-tunes-15)** består av ett antal mindre uppgifter. Du hittar dem i tiny-tunes.js och bör lösa dem i den ordning de kommer. Nästan alla uppgifter har tester knutna till sig och vill man kan man kommentera fram endast de tester som gäller den miniuppgift man arbetar med för stunden. Testerna finns i /test/part-1/tiny-tunes ifall man vill undersöka dessa.
