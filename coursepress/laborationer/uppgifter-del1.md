@@ -13,7 +13,7 @@ Följande laborationsuppgifter finns idagsläget och de är placerade i en ordni
 
 ###Hello World  (part1-hello-world)
 
-|   | |
+
 | ------------- | ------------- |
 | Svårighetsnivå  | Grundläggande  |
 | Kursvecka  | 1  |
