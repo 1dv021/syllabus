@@ -111,7 +111,7 @@ Mer information: https://github.com/1dv021/laborationer/tree/part1-right-triangl
 |  |  |
 | ------------- | ------------- |
 |  branch | [part1-check-values-15](https://github.com/1dv021/laborationer/tree/part1-check-values-15) |
-| Svårighetsnivå  | Grundläggande  |
+| Svårighetsnivå  | Grundläggande A |
 | Kursvecka  | 3  |
 | Föreläsningar| F01-F04|
 | Nyckelord| objekt, arrayer |
@@ -134,10 +134,10 @@ https://github.com/1dv021/laborationer/tree/part1-check-values-15/src/part-1/che
 |  |  |
 | ------------- | ------------- |
 |  branch | [part1-black-adder-15](https://github.com/1dv021/laborationer/tree/part1-black-adder-15) |
-| Svårighetsnivå  | [TODO]  |
+| Svårighetsnivå  | C |
 | Kursvecka  | 3  |
 | Föreläsningar| F01-F04|
-| Nyckelord| [TODO] |
+| Nyckelord| arguments object, String.replace, typeof, isNaN, parseFloat |
 
 Denna uppgift går ut på att skapa en mycket enkel räkneapplikation.
 Den ska klara av att addera att fritt antal parametrar i form av nummer (heltal som decimaltal)
@@ -149,10 +149,10 @@ https://github.com/1dv021/laborationer/tree/part1-black-adder-15/src/part-1/blac
 |  |  |
 | ------------- | ------------- |
 |  branch | [part1-logger-15](https://github.com/1dv021/laborationer/tree/part1-logger-15) |
-| Svårighetsnivå  | [TODO]  |
+| Svårighetsnivå  | B  |
 | Kursvecka  | 3  |
 | Föreläsningar| F01-F04|
-| Nyckelord| [TODO] |
+| Nyckelord| functions, objects, arrays, Array.filter, Objects.keys |
 
 Denna uppgift går ut på att fortsätta utveckla befintlig kod för att färdigställa en enklare
 logg-modul, dvs. en applikationer som loggar olika typer av meddelandenobjekt i en array.
@@ -170,10 +170,10 @@ https://github.com/1dv021/laborationer/tree/part1-logger-15/src/part-1/logger
 |  |  |
 | ------------- | ------------- |
 |  branch | [part1-querystring-parser](https://github.com/1dv021/laborationer/tree/part1-querystring-parser) |
-| Svårighetsnivå  | [TODO]  |
+| Svårighetsnivå  | B  |
 | Kursvecka  | 3  |
 | Föreläsningar| F01-F04|
-| Nyckelord| [TODO] |
+| Nyckelord| strings, objects, arrays, String.split, String.substr |
 
 Denna uppgift går ut på att parsa en så kallad querystring och plocka ut värden från denna. En querystring används som påbyggnad på en vanlig URL för att skicka med extra data till servern. Exempelvis kan en URL se ut såhär:
 http://lnu.se?name=Stina&age=24
@@ -187,10 +187,10 @@ https://github.com/1dv021/laborationer/tree/part1-querystring-parser/src/part-1/
 |  |  |
 | ------------- | ------------- |
 |  branch | [part1-bugsy-15](https://github.com/1dv021/laborationer/tree/part1-bugsy-15) |
-| Svårighetsnivå  | [TODO]  |
+| Svårighetsnivå  | B  |
 | Kursvecka  | 3  |
 | Föreläsningar| F01-F04|
-| Nyckelord| [TODO] |
+| Nyckelord| functions, do-while, while, debug |
 
 I denna uppgiften får du kod i form av dels en modul (helper) innehållande en del hjälpfunktioner
 för uppgiften. Dessa fungerar och ska inte ändras.
