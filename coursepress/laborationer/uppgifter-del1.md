@@ -223,3 +223,113 @@ Din uppgift är att slutföra implementationen av det påbörjade Harshad-objekt
 Mer information om uppgiften hittar du på:
 https://github.com/1dv021/laborationer/tree/part1-harshad-number/src/part-1/harshad-number
 
+##Make HTML
+
+|  |  |
+| ------------- | ------------- |
+|  branch | [part1-make-html](https://github.com/1dv021/laborationer/tree/part1-make-html) |
+| Svårighetsnivå  | A  |
+| Kursvecka  | 2 - 3 |
+| Föreläsningar| F03|
+| Nyckelord| funktioner, strängar|
+
+En applikation med flera funktioner som bygger ihop HTML-strängar.
+Mer info: https://github.com/1dv021/laborationer/tree/part1-make-html/src/part-1/make-html
+
+##Copy Array
+|  |  |
+| ------------- | ------------- |
+|  branch | [part1-copy-array](https://github.com/1dv021/laborationer/tree/part1-copy-array) |
+| Svårighetsnivå  | A  |
+| Kursvecka  | 3 |
+| Föreläsningar| F04|
+| Nyckelord| arrayer, Array.slice, felhantering|
+
+Kopierar arrayer och hanterar felaktiga parametrar
+Mer info: https://github.com/1dv021/laborationer/tree/part1-copy-array/src/part-1/copy-array
+
+##Sort Array
+|  |  |
+| ------------- | ------------- |
+|  branch | [part1-sorting-arrays](https://github.com/1dv021/laborationer/tree/part1-sorting-arrays) |
+| Svårighetsnivå  | A  |
+| Kursvecka  | 3 |
+| Föreläsningar| F04|
+| Nyckelord| arrayer, Array.sort, referenstyper|
+
+Sorterar arrayer med heltal i fallande och stigande ordning
+Mer info: https://github.com/1dv021/laborationer/tree/part1-sorting-arrays/src/part-1/sorting-arrays
+
+
+##Sorting teams
+|  |  |
+| ------------- | ------------- |
+|  branch | [part1-sorting-teams](https://github.com/1dv021/laborationer/tree/part1-sorting-teams) |
+| Svårighetsnivå  | B  |
+| Kursvecka  | 3 |
+| Föreläsningar| F04|
+| Nyckelord| funktioner, arrayer, objekt, Array.sort|
+
+Sorterar arrayer innehållandes objekt
+Mer info: https://github.com/1dv021/laborationer/tree/part1-sorting-teams/src/part-1/sorting-teams
+
+##Overmean
+|  |  |
+| ------------- | ------------- |
+|  branch | [part1-overmean-15](https://github.com/1dv021/laborationer/tree/part1-overmean-15) |
+| Svårighetsnivå  | B  |
+| Kursvecka  | 3 - 4 |
+| Föreläsningar| F04|
+| Nyckelord| funktioner, arrayer, objekt, felhantering, Array.reduce, Array.filter, Array.map|
+
+Räknar ut medelvärde på en array innehållandes objekt, returnerar objekten som har över/lika med medelvärdet.
+Mer info: https://github.com/1dv021/laborationer/tree/part1-overmean-15/src/part-1/overmean
+
+##Reduce Array del 1
+|  |  |
+| ------------- | ------------- |
+|  branch | [part1-reduce-array](https://github.com/1dv021/laborationer/tree/part1-reduce-array) |
+| Svårighetsnivå  | B  |
+| Kursvecka  | 3 |
+| Föreläsningar| F04|
+| Nyckelord| Array.reduce |
+
+Beräkna totalsumma av en arrays heltal med hjälp av Array.reduce
+Mer info: https://github.com/1dv021/laborationer/tree/part1-reduce-array/src/part-1/reduce-array
+
+##Reduce Array del 2
+|  |  |
+| ------------- | ------------- |
+|  branch | [part1-reduce-array-part2](https://github.com/1dv021/laborationer/tree/part1-reduce-array-part2) |
+| Svårighetsnivå  | C  |
+| Kursvecka  | 3 - 4 |
+| Föreläsningar| F04|
+| Nyckelord| Array.reduce |
+
+Beräkna titalsumma av en arrays med objekt innehållandes heltal med hjälp av Array.reduce
+Mer info: https://github.com/1dv021/laborationer/tree/part1-reduce-array-part2/src/part-1/reduce-array-part2
+
+##Get Winner
+|  |  |
+| ------------- | ------------- |
+|  branch | TO DO |
+| Svårighetsnivå  | C  |
+| Kursvecka  | 3 - 4 |
+| Föreläsningar| F04|
+| Nyckelord| funktioner, arrayer, objekt, strängar |
+
+Analysera en array, beräkna antal förekomster, sortera och filtrera resultatet
+Mer info: TO DO
+
+##Sub sequence
+|  |  |
+| ------------- | ------------- |
+|  branch | [part1-sub-sequence](https://github.com/1dv021/laborationer/tree/sub-sequence) |
+| Svårighetsnivå  | C  |
+| Kursvecka  | 4 |
+| Föreläsningar| F04|
+| Nyckelord| Arrayer, forloop |
+
+Avgöra om andra parametern (array) är en sekvens i den första parametern (array)
+Mer info: https://github.com/1dv021/laborationer/tree/part1-sub-sequence/src/part-1/sub-sequence
+
