@@ -24,6 +24,8 @@ array, objekt, 0-baserat index, arrayliteral, Array, värdetyp, referenstyp, sor
 	- [Filtering an array](http://eloquentjavascript.net/05_higher_order.html#h_1BJbwiI0gI)
 	- [Transforming with map](http://eloquentjavascript.net/05_higher_order.html#h_lJEtQ+qjXz)
 	- [Summarizing with reduce](http://eloquentjavascript.net/05_higher_order.html#h_fx3e34kT/k)
+- [8. Bugs and Error Handling](http://eloquentjavascript.net/08_error.html)
+	- [Exceptions](http://eloquentjavascript.net/08_error.html#h_zT3755/aOp) 
 
 ## Externa resurser
 
