@@ -324,7 +324,7 @@ Mer info: TO DO
 ##Sub sequence
 |  |  |
 | ------------- | ------------- |
-|  branch | [part1-sub-sequence](https://github.com/1dv021/laborationer/tree/sub-sequence) |
+|  branch | [part1-sub-sequence](https://github.com/1dv021/laborationer/tree/part1-sub-sequence) |
 | Svårighetsnivå  | C  |
 | Kursvecka  | 4 |
 | Föreläsningar| F04|
