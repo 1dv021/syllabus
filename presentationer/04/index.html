@@ -261,6 +261,7 @@ var getRandomNumbers = function(count) {
 
 // Initialize a variable to refer to an array.
 numbers = getRandomNumbers(5);
+
 console.log(numbers); // ➡ [ 5, 8, 7, 1, 6 ]
 </code></pre>
             </section>
@@ -269,12 +270,14 @@ console.log(numbers); // ➡ [ 5, 8, 7, 1, 6 ]
                 <h2>Array som parameter</h2>
                 <ul><li>Använder du en array som argument kan du få oönskade "sidoeffekter".</li></ul>
                 <pre><code class="js" style="max-height:none;">var scores;
+
 var logDoubledUp = function(results) {
     var i;
 
     for (i = 0; i < results.length; i += 1) {
         results[i] *= 2;
     }
+
     console.log(results); // ➡ [ 36, 18, 46, 24, 42, 34 ]
 };
 
@@ -291,6 +294,7 @@ console.log(scores);      // ➡ [ 36, 18, 46, 24, 42, 34 ]
                 <h2>Arbeta med en modifierad kopia av en array</h2>
                 <ul><li>Metoden <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice"><code>slice</code></a> skapar en kopia av en array.</li></ul>
                 <pre><code class="js" style="max-height:none;">var scores;
+
 var logDoubledUp = function(results) {
     var copy = results.slice(); // skapar en kopia av arrayen results refererar till
     var i;
@@ -346,6 +350,7 @@ console.log(values); // ➡ [ 1, 2, 4, 8, 10, 24, 42 ]</code></pre>
 values.forEach(function(value) {
     console.log(value);
 });
+
 // ➡ 2
 // ➡ 1
 // ➡ 8
@@ -400,12 +405,184 @@ console.log(transformedValues); // ➡  4, 2, 16
 
             <!-- Object -->
             <section>
-                <h2>Object</h2>
+                <h2>Vad är ett objekt?</h2>
                 <ul>
-                    <li>Du kan samla namngivna värden i objekt (referenstypen Object). Namn/värde-paren kallas egenskaper.</li>
+                    <li>Objekt är ett referensvärde, en instans av en referenstyp, som t.ex. <code>Object</code>.</li>
+                    <li>Du kan samla namngivna värden i objekt. Namn/värde-paren kallas egenskaper.</li>
+                    <li>Egenskaperna ett objekt har kan vara olika typer.</li>
+                    <li>En, eller flera, referensvariabler kan referera till ett och samma objekt.</li>
                 </ul>
-                <pre><code class="js">var person = { firstName: "Ellen", lastName: "Nu", age: 5, eyeColor: "yellow" };
+                <pre><code class="js">var person = {
+    firstName: "Ellen", 
+    lastName: "Nu", 
+    age: 5, 
+    eyeColor: "yellow"
+};
+
+var anotherRef = person; // båda variablerna refererar till samma objekt
 </code></pre>
+            </section>
+
+            <!-- Så skapar du ett objekt ab typen Object -->
+            <section>
+                <h2>Så skapar du ett Object-objekt</h2>
+                <ul>
+                    <li>
+                        Objektliteral - rekommenderat sätt
+                        <pre><code class="js">// Ett tomt obejkt
+var person = {};
+
+// Ett objekt med tre egenskaper
+var car = {
+    make: "Volvo",
+    color: "blue",
+    year: 2010
+};
+</code></pre>
+                    </li>
+                    <li>
+                        Med nyckelordet new - inte rekommenderat!
+                        <pre><code class="js">// Ett tomt objekt
+var person = new Object();
+
+// Ett objekt med tre egenskaper
+var car = new Object();
+car.make = "Volvo";
+car.color = "blue";
+car.year = 2010;
+</code></pre>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- -->
+            <section>
+                <h2>Två olika sätt att att komma åt egenskapers värden</h2>
+                <ul>
+                    <li>
+                        Punktnotationen är det föredragna sättet.
+                    </li>
+                    <li>Hakparenteser används oftast tillsammans med en variabel innehållande egenskapens namn.</li>
+                </ul>
+                        <pre><code class="js">var car = {
+    make: "Volvo",
+    color: "blue",
+    year: 2010
+};
+
+console.log(car.year); // ➡  2010
+
+// Lägg till en ny egenskap till objektet.
+car.model = "V70"; // { make: 'Volvo', color: 'blue', year: 2010, model: 'V70' }
+
+var property = "model";
+console.log(car[property]); // ➡  "V70"
+</code></pre>
+            </section>
+
+            <!-- Egenskaper i ett objekt -->
+            <section>
+                <h2>Egenskaper i ett objekt</h2>
+                <ul>
+                    <li>
+                        Iterera genom ett objekts samtliga egenskaper (inklusive dess prototyps) med <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in"><code>for...in</code></a>.
+                        <pre><code class="js">var property;
+var car = {
+    make: "Volvo",
+    color: "blue",
+    year: 2010
+};
+
+for (property in car) {
+    console.log(property + ": " +  car[property]);
+}
+
+// ➡ make: Volvo
+// ➡ color: blue
+// ➡ year: 2010
+</code></pre>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Nycklarna till värdena</h2>
+                <ul>
+                    <li>
+                        Iterera igenom ett objekts egna egenskaper med hjälp av egenskapen <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys"><code>keys</code></a>, som är en array innehållande objektets egna egenskaper.
+                        <pre><code class="js" style="max-height:none">var car = {
+    make: "Volvo",
+    color: "blue",
+    year: 2010
+};
+
+var keys = Object.keys(car); // [ 'make', 'color', 'year' ]
+
+keys.forEach(function(key) {
+    console.log(key + ": " +  car[key]);
+});
+
+// ➡ make: Volvo
+// ➡ color: blue
+// ➡ year: 2010
+</code></pre>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Om fel inträffar kasta ett undantag!</h2>
+                    <ul>
+                        <li>
+                            Kastas ett undantag avbryts all exekvering av en aktuella funktionen (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw"><code>throw</code></a>).
+                        </li>
+                        <li>Exekveringen fortsätter i det först förekommande <code>catch</code>-blocket; saknas det avslutas programmet.
+                    <pre><code class="js" style="max-height:none">var foo = function(arr) {
+
+    // Kasta ett undantag om arr inte refererar till en array.
+    if (!Array.isArray(arr)) {
+        throw new TypeError("arr doesn't refer to an array.");
+    }
+
+    // Gör något med arrayen...
+};
+
+foo("Jag är inte en array!");  // Anropet leder till att programmet avslutas!
+</code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Hantera undantag</h2>
+                    <ul>
+                        <li>
+                            Undantag kan fångas och hanteras (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch"><code>try...catch</code></a>).
+                            <pre style="width:100%;"><code class="js" style="max-height:none; width:100%;">var car = {
+    make: "Volvo",
+    color: "blue",
+    year: 2010
+};
+
+var bar = function(obj) {
+    if (!obj.hasOwnProperty("make") ||
+        !obj.hasOwnProperty("model")) {
+        throw new Error("Objektet saknar relevanta egenskap(er).");
+    }
+
+    // Gör något med objektets egenskaper make och model...
+};
+
+try {
+    bar(car);
+} catch (e) {
+    console.log(e.message); // ➡ Objektet saknar relevanta egenskap(er).
+}
+</code></pre>
+                        </li>
+                    </ul>
+                </section>
             </section>
         </div>
     </div>
