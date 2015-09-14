@@ -1,9 +1,9 @@
 ## Nyckelord
 
-[TODO]
+array, objekt, 0-baserat index, arrayliteral, Array, värdetyp, referenstyp, sorteringsfunktion, Object, egenskaper, objektliteral, undantag, kasta undantag (throw), fånga undantag (try...catch)
 
 ## Resurser
-- <del>HTML-presentation</del>
+- [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/04/index.html#)
 - <del>Inspelning</del>
 
 ### Eloquent JavaScript, 2nd Edition
