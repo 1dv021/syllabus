@@ -7,9 +7,13 @@ Se till att du studerat de demofilmer och instruktioner som finns INNAN du sätt
 
 ## Laborationsuppgifterna
 Dessa laborationsuppgifter kan utföras under kursens första del. Alla laborationsuppgifter tillhörande del 1 finns i olika branches som börjar med namnet "part1-". Varje branch-namn står inom paratens till uppgiften och det är viktigt att du använder just detta namn. Det kan finnas ytterligare branches i din lista. Det kan vara så att det är några tidigare felaktiga branches. För att rensa bort gamla och borttagna branches du kan se i din lista kan du köra kommandot:
-git remote update 1dv021 --prune
 
-Följande laborationsuppgifter finns idagsläget och de är placerade i en ordning vi tycker man bör ta sig an dem:
+```
+git remote update 1dv021 --prune
+```
+Uppgifterna är uppdelade i olika svårighetsnivåer från A till C, där C är den svåraste nivån.
+
+Lösningsförslag finns att studera på: https://github.com/1dv021/part1-solutions/tree/master/src/part-1. Dessa kommer fyllas på allt eftersom.
 
 ***
 
@@ -149,7 +153,7 @@ https://github.com/1dv021/laborationer/tree/part1-black-adder-15/src/part-1/blac
 |  |  |
 | ------------- | ------------- |
 |  branch | [part1-logger-15](https://github.com/1dv021/laborationer/tree/part1-logger-15) |
-| Svårighetsnivå  | B  |
+| Svårighetsnivå  | C  |
 | Kursvecka  | 3  |
 | Föreläsningar| F01-F04|
 | Nyckelord| functions, objects, arrays, Array.filter, Objects.keys |
@@ -170,7 +174,7 @@ https://github.com/1dv021/laborationer/tree/part1-logger-15/src/part-1/logger
 |  |  |
 | ------------- | ------------- |
 |  branch | [part1-querystring-parser](https://github.com/1dv021/laborationer/tree/part1-querystring-parser) |
-| Svårighetsnivå  | B  |
+| Svårighetsnivå  | C  |
 | Kursvecka  | 3  |
 | Föreläsningar| F01-F04|
 | Nyckelord| strings, objects, arrays, String.split, String.substr |
@@ -205,7 +209,7 @@ https://github.com/1dv021/laborationer/tree/part1-bugsy-15/src/part-1/bugsy
 |  |  |
 | ------------- | ------------- |
 |  branch | [part1-harshad-number](https://github.com/1dv021/laborationer/tree/part1-harshad-number) |
-| Svårighetsnivå  | [TODO]  |
+| Svårighetsnivå  | C  |
 | Kursvecka  | 3  |
 | Föreläsningar| F01-F04|
 | Nyckelord| [TODO] |
