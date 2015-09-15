@@ -126,7 +126,7 @@ ska en textsträng returneras med en text som beskriver vad det är för datatyp
 
 * Skickas en primitiv datatyp ska du identifiera och skriva ut vilken t.ex. "You send me a number" eller "You send me a string"
 * Skickas ett objekt in ska strängen "You send me an object"
-* Skickas en array in ska strängen "You send me an array"
+* Skickas en array in ska strängen "You send me an array" (Tips: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)
 * Skickas ingen parameter in ska strängen "You send me an undefined value" returneras
 * Skickas en funtion in som parameter ska strängen "You send me a function" returneras
 * Skickas null in som parameter ska strängen "You send me null" returneras
