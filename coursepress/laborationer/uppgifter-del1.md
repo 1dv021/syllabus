@@ -22,7 +22,7 @@ Lösningsförslag finns att studera på: https://github.com/1dv021/part1-solutio
 |  |  |
 | ------------- | ------------- |
 |  branch | [part1-hello-world](https://github.com/1dv021/laborationer/tree/part1-hello-world) |
-| Svårighetsnivå  | Grundläggande  |
+| Svårighetsnivå  | A  |
 | Kursvecka  | 1  |
 | Föreläsningar| F01|
 | Nyckelord| Komigång, strängar|
@@ -33,7 +33,7 @@ Denna laborationsuppgift gås igenom i demonstrationsuppgifterna
 |  |  |
 | ------------- | ------------- |
 |  branch | [part1-simple-sum](https://github.com/1dv021/laborationer/tree/part1-simple-sum) |
-| Svårighetsnivå  | Grundläggande  |
+| Svårighetsnivå  | A  |
 | Kursvecka  | 1  |
 | Föreläsningar| F01|
 | Nyckelord| Komigång, number|
@@ -44,7 +44,7 @@ En enklare uppgift där du ska returnera summan av två tal
 |  |  |
 | ------------- | ------------- |
 |  branch | [part1-pre-tiny-tunes](https://github.com/1dv021/laborationer/tree/part1-pre-tiny-tunes) |
-| Svårighetsnivå  | Grundläggande  |
+| Svårighetsnivå  | A  |
 | Kursvecka  | 1  |
 | Föreläsningar| F01, F02|
 | Nyckelord| number, strängar|
@@ -68,7 +68,7 @@ Arbetsgång:
 |  |  |
 | ------------- | ------------- |
 |  branch | [part1-tiny-tunes-15](https://github.com/1dv021/laborationer/tree/part1-tiny-tunes-15) |
-| Svårighetsnivå  | Grundläggande  |
+| Svårighetsnivå  | B  |
 | Kursvecka  | 2  |
 | Föreläsningar| F01, F02, F03|
 | Nyckelord| number, strängar, iterationer, selektioner, inbyggda funktioner|
@@ -95,7 +95,7 @@ Mer information: https://github.com/1dv021/laborationer/tree/part1-tiny-tunes-15
 |  |  |
 | ------------- | ------------- |
 |  branch | [part1-right-triangle](https://github.com/1dv021/laborationer/tree/part1-right-triangle) |
-| Svårighetsnivå  | Grundläggande  |
+| Svårighetsnivå  | A  |
 | Kursvecka  | 2  |
 | Föreläsningar| F01, F02, F03|
 | Nyckelord| |
@@ -115,7 +115,7 @@ Mer information: https://github.com/1dv021/laborationer/tree/part1-right-triangl
 |  |  |
 | ------------- | ------------- |
 |  branch | [part1-check-values-15](https://github.com/1dv021/laborationer/tree/part1-check-values-15) |
-| Svårighetsnivå  | Grundläggande A |
+| Svårighetsnivå  | A |
 | Kursvecka  | 3  |
 | Föreläsningar| F01-F04|
 | Nyckelord| objekt, arrayer |
