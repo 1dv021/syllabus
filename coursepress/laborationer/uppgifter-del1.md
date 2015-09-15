@@ -227,17 +227,33 @@ Din uppgift är att slutföra implementationen av det påbörjade Harshad-objekt
 Mer information om uppgiften hittar du på:
 https://github.com/1dv021/laborationer/tree/part1-harshad-number/src/part-1/harshad-number
 
+
+##Make HTML Proper
+
+|  |  |
+| ------------- | ------------- |
+|  branch | [part1-make-html-proper](https://github.com/1dv021/laborationer/tree/part1-make-html-proper) |
+| Svårighetsnivå  | A  |
+| Kursvecka  | 3 |
+| Föreläsningar| F03|
+| Nyckelord| funktioner, strängar|
+
+En applikation med flera funktioner som bygger ihop HTML-strängar. Till skillnad från laborationen "Make HTML" under
+så tar fuktionen "makeSnippet" ett mer korrekt utformat objekt. 
+Mer info: https://github.com/1dv021/laborationer/tree/part1-make-html-proper/src/part-1/make-html-proper
+
 ##Make HTML
 
 |  |  |
 | ------------- | ------------- |
 |  branch | [part1-make-html](https://github.com/1dv021/laborationer/tree/part1-make-html) |
 | Svårighetsnivå  | A  |
-| Kursvecka  | 2 - 3 |
+| Kursvecka  | 3 |
 | Föreläsningar| F03|
 | Nyckelord| funktioner, strängar|
 
-En applikation med flera funktioner som bygger ihop HTML-strängar.
+En applikation med flera funktioner som bygger ihop HTML-strängar. Uppgiften skiljer sig från den ovan genom att
+objektet som testas emot i funktionen "makeSnippet" ser annorlunda ut.
 Mer info: https://github.com/1dv021/laborationer/tree/part1-make-html/src/part-1/make-html
 
 ##Copy Array
