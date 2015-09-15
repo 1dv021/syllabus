@@ -118,7 +118,7 @@ Mer information: https://github.com/1dv021/laborationer/tree/part1-right-triangl
 | Svårighetsnivå  | A |
 | Kursvecka  | 3  |
 | Föreläsningar| F01-F04|
-| Nyckelord| objekt, arrayer |
+| Nyckelord| objekt, arrayer, typeof, Array.isArray |
 
 Denna uppgift går ut på att undersöka vad för datatyp en given parameter/variabel har.
 Uppgiften har en färdig funktion som tar en parameter(value) och beroende på vad man skickar in
