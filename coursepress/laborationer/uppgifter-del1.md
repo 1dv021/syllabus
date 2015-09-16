@@ -332,14 +332,15 @@ Mer info: https://github.com/1dv021/laborationer/tree/part1-reduce-array-part2/s
 ##Get Winner
 |  |  |
 | ------------- | ------------- |
-|  branch | TO DO |
-| Svårighetsnivå  | C  |
+|  branch | https://github.com/1dv021/laborationer/tree/part1-get-winners |
+| Svårighetsnivå  | B  |
 | Kursvecka  | 3 - 4 |
 | Föreläsningar| F04|
 | Nyckelord| funktioner, arrayer, objekt, strängar |
 
-Analysera en array, beräkna antal förekomster, sortera och filtrera resultatet
-Mer info: TO DO
+Analysera en array, beräkna antal förekomster, sortera och filtrera resultatet. Bra uppgift 
+att göra innan examinationen.
+Mer info: https://github.com/1dv021/laborationer/tree/part1-get-winners/src/part-1/get-winners
 
 ##Sub sequence
 |  |  |
@@ -350,6 +351,6 @@ Mer info: TO DO
 | Föreläsningar| F04|
 | Nyckelord| Arrayer, forloop |
 
-Avgöra om andra parametern (array) är en sekvens i den första parametern (array)
+Avgöra om andra parametern (array) är en sekvens i den första parametern (array). 
 Mer info: https://github.com/1dv021/laborationer/tree/part1-sub-sequence/src/part-1/sub-sequence
 
