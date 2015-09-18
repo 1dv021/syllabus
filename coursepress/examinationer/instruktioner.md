@@ -12,11 +12,12 @@ För att komma igång titta på följande demo: [1DV021 - Demo - Examinationsupp
 Sammanfattningsvis ska du göra följande:
 1. Klona ditt repo https://github.com/1dv021/ANVÄNDARNAMN-examination-NR till en **tom** katalog i på ditt system.
   * Exempelvis: `git clone https://github.com/1dv021/xx222yy-examination-1`
-2. Fyll på repot med examinationsuppgift 1
+2. `cd xx222yy.examination-1`
+3. Fyll på repot med examinationsuppgift 1
   * `git pull https://github.com/1dv021/examination-1`
-3. Kör `npm install`
-4. Konfigurera Webstorm att köra filen "app.js" vid run.
-5. Konfigurera Webstorm att köra tester från katalogen "tests"
+4. Kör `npm install`
+5. Konfigurera Webstorm att köra filen "app.js" vid run.
+6. Konfigurera Webstorm att köra tester från katalogen "tests"
 
 ## Dagligt arbete med uppgiften
 1. `git add .` Lägg till förändringar till nästa commit
