@@ -46,8 +46,12 @@ Vid den muntliga examinationen ställs frågor som rör de delar som tagits upp 
 
 Se till att ha marginal före och efter din examinationstid då kursledningen inte kan garantera att tidsschemat håller fullt ut.
 
+***
+
 ### Campus
 För campusstudenter, eller distansstudenter utan tillgång till webbkamera, så genomförs examinationen på plats i Kalmar. Examinationen äger rum på kursledningens kontor och du ansvarar själv för att vara på plats vid sittgrupperna utanför ingången till Fakulteten för tekniks Reception vid toppen av trappa C senast 5 minuter innan utsatt examinationstid.
+
+***
 
 ### Distans
 För att examineras på distans krävs följande:
@@ -57,3 +61,6 @@ För att examineras på distans krävs följande:
 3. Att du har tillgång till kamera och att denna fungerar i Skype
 
 Som distansstudent ser du till att vara online i kursens Adobe Connectrum för "Examination" senast fem minuter före utsatt tid. Skriv upp dig i listan enligt de instruktioner som ges i rummet så ringer kursledningen upp dig när det är din tur.
+
+## Omexamination
+Möjlighet till omexamination kommer att ges. Mer info kommer att publiceras här.
