@@ -34,8 +34,15 @@ Sammanfattningsvis ska du göra följande:
 ***
 
 ### Inlämning
-[TODO]
+Lämna in uppgiften senast deadline (se resp. examinationsuppgift) genom att göra en Release på github. Ange taggen "v1.0" när du gör releasen.
 
+1. Börja med att klicka på fliken "0 releases" ![](https://raw.githubusercontent.com/1dv021/syllabus/master/coursepress/pic/release1.png)
+
+2. Klicka på "Create a new release" ![](https://raw.githubusercontent.com/1dv021/syllabus/master/coursepress/pic/release2.png)
+
+3. Fyll i information om releasen och skapa den. ![](https://raw.githubusercontent.com/1dv021/syllabus/master/coursepress/pic/release3.png)
+
+Om du efter du gjort en release ångrar dig och vill göra förändringar så går det bra. När du gör en ny release döper du i så fall den till v1.1 och så vidare.
 
 ## Muntlig examination
 Vid den muntliga examinationen ställs frågor som rör de delar som tagits upp i kursens teoretiska och praktiska moment hörande till den/de delar som examinationen berör. Varje examination beräknas ta 20 minuter och frågor kring den praktiska examinationsuppgiften kommer att ställas så väl som frågor kring kursens teori. En förutsättning för att göra den muntliga examinationen är följande:
