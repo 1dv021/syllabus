@@ -56,7 +56,7 @@ Se till att ha marginal före och efter din examinationstid då kursledningen in
 ***
 
 ### Campus
-För campusstudenter, eller distansstudenter utan tillgång till webbkamera, så genomförs examinationen på plats i Kalmar. Examinationen äger rum på kursledningens kontor och du ansvarar själv för att vara på plats vid sittgrupperna utanför ingången till Fakulteten för tekniks Reception vid toppen av trappa C senast 5 minuter innan utsatt examinationstid.
+För campusstudenter, eller distansstudenter utan tillgång till webbkamera, så genomförs examinationen på plats i Kalmar. Examinationen äger rum på kursledningens kontor och du ansvarar själv för att vara på plats vid sittgrupperna utanför ingången till Fakulteten för tekniks Reception vid toppen av trappa D senast 5 minuter innan utsatt examinationstid.
 
 ***
 
