@@ -86,7 +86,7 @@ var getNumber = function() {
 value = getNumber();
 
 console.log(value); // ➡ 3
-                </code></pre>
+</code></pre>
                 <ul>
                     <li>Att skriva större program bestående av kod med fristående variabler och funktioner blir ohållbart i längden.</li>
                     <li>Vi behöver ett nytt sätt att organisera vår kod så att den blir tydligare!</li>
@@ -107,7 +107,7 @@ var getNumber = function() {
 value = getNumber();
 
 console.log(value); // ➡ 3
-                </code></pre>
+</code></pre>
                 </fieldset>
                 <ul>
                     <li>Genom att på något sätt kapsla in variabler och funktioner blir koden tydligare. </li>
@@ -192,6 +192,73 @@ var anotherSimplePerson = {
 
 smallTalk.apply(anotherSimplePerson, ["Tjabba!"]); // ➡ Tjabba! Jag, Ellen, är 5 år.
 smallTalk.call(anotherSimplePerson, "Hallå!"); // ➡ Hallå! Jag, Ellen, är 5 år.
+</code></pre>
+                </section>
+            </section>
+
+            <!-- Factory-designmönstret -->
+            <section>
+                <h2>Designmönstret <i>Factory</i></h2>
+                <ul>
+                    <li>Funktionen createDie löser problemet med att skapa flera liknande objekt, MEN...</li>
+                    <li>...av vilken typ är objekten som skapas? Jo, <code>Object</code>! Inte <code>Die</code>!</li>
+                </ul>
+                    <pre><code class="js" style="max-height: none;">var createDie = function() {
+    var obj = {
+        faceValue: undefined,
+        roll: function () {
+            this.faceValue = Math.floor(Math.random() * 6) + 1;
+        }
+    };
+
+    return obj;
+};
+
+var die = createDie();
+die.roll();
+console.log(die.faceValue);   // ➡ 3
+console.log(typeof die);      // ➡ object
+console.log(die.constructor); // ➡ [Function: Object]
+</code></pre>
+            </section>
+
+            <!-- Designmönstret Constructor -->
+            <section>
+                <section>
+                    <h2>Designmönstret <i>Constructor</i></h2>
+                    <ul>
+                        <li>Används nyckleordet <code>new</code> före en funktion som anropas betraktas funktionen som en konstruktorfunktion.</li>
+                        <li>Ett objekt som skapas med <code>new</code> sägs vara en <b>instans</b> av dess konstruktor.</li>
+                    </ul>
+                        <pre><code class="js" style="max-height: none;">function Die() {
+    this.faceValue = undefined;
+    this.roll = function() {
+        this.faceValue = Math.floor(Math.random() * 6) + 1;
+    };
+}
+
+var die = new Die(); // die refererar till en instans av Die
+die.roll();
+console.log(die.faceValue);   // ➡ 3
+console.log(typeof die);      // ➡ object
+console.log(die.constructor); // ➡ [Function: Die]
+</code></pre>
+                </section>
+                <section>
+                    <h2>Konstruktorfunktion med parametrar</h2>
+                        <pre><code class="js" style="max-height: none;">function SimplePerson(name, age) {
+    this.name = name;
+    this.age = age;
+    this.talk = function() {
+        console.log("Jag, " + this.name + ", är " +  this.age + " år.");
+    };
+}
+
+var simplePerson1 = new SimplePerson("Nisse", 42);
+var simplePerson2 = new SimplePerson("Ellen", 5);
+
+simplePerson1.talk(); // ➡ Jag, Nisse, är 42 år.
+simplePerson2.talk(); // ➡ Jag, Ellen, är 5 år.
 </code></pre>
                 </section>
             </section>
