@@ -73,6 +73,128 @@
                     Vid all användning måste du ange källan: ”Linnéuniversitetet – Grundläggande programmering (1DV021)” och en länk till https://coursepress.lnu.se/kurs/grundlaggande-programmering och till Creative Common-licensen här ovan.
                 </p>
             </section>
+
+            <!-- Vad är avsikten med koden egentligen? -->
+            <section>
+                <h2>Vad är avsikten med koden egentligen?</h2>
+                <pre><code class="js">var value;
+
+var getNumber = function() {
+    return Math.floor(Math.random() * 6) + 1;
+};
+
+value = getNumber();
+
+console.log(value); // ➡ 3
+                </code></pre>
+                <ul>
+                    <li>Att skriva större program bestående av kod med fristående variabler och funktioner blir ohållbart i längden.</li>
+                    <li>Vi behöver ett nytt sätt att organisera vår kod så att den blir tydligare!</li>
+                </ul>
+            </section>
+
+            <!-- Hur kan vi skriva tydligare kod? -->
+            <section>
+                <h2>Hur kan vi skriva tydligare kod?</h2>
+                <fieldset style="border: 1px solid #eba056;margin-bottom:1em;">
+                    <legend style="margin-left:1em;padding: 0 .3em;color:#eba056">Die <span style="font-size: smaller;">(<i>tärning</i>)</span></legend>
+                <pre><code class="js">var value;
+
+var getNumber = function() {
+    return Math.floor(Math.random() * 6) + 1;
+};
+
+value = getNumber();
+
+console.log(value); // ➡ 3
+                </code></pre>
+                </fieldset>
+                <ul>
+                    <li>Genom att på något sätt kapsla in variabler och funktioner blir koden tydligare. </li>
+                    <li>Objekt kan användas till att kapsla in variabler och funktioner; objekt kan både innehålla variabler (egenskaper) och funktioner (metoder).</li>
+                </ul>
+            </section>
+
+            <!-- Skapa ett objekt -->
+            <section>
+                <section>
+                    <h2>Skapa ett objekt</h2>
+                    <pre><code class="js">var die = {
+    faceValue: undefined,
+    roll: function() {
+        this.faceValue = Math.floor(Math.random() * 6) + 1;
+    }
+};
+
+die.roll();
+console.log(die.faceValue); // ➡ 3
+                    </code></pre>
+                    <ul>
+                        <li>
+                            Ett Object-objekt används till att kapsla in...
+                            <ul>
+                                <li>...tärningens aktuella värde (egenskapen <code>faceValue</code>).</li>
+                                <li>...att tärningen kan kastas (metoden <code>roll</code>), vilket ändrar tärningens värde.</li>
+                            </ul>
+                        </li>
+                        <li>Vanligt sätt att skapa <b>ett</b> objekt, MEN...</li>
+                        <li>...behöver flera objekt skapas måste koden dupliceras!</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 class="no-text-transform">this</h2>
+                    <pre><code class="js" style="max-height: none;">var roll = function() {
+    this.faceValue = Math.floor(Math.random() * 6) + 1;
+};
+
+var die = {
+    faceValue : undefined
+};
+
+var die2 = {
+    faceValue : undefined,
+    roll : roll
+};
+
+roll.call(die); // i roll() kommer this att referera till samma objekt som die
+die2.roll();    // i roll() kommer this att referera till samma objekt som die2
+
+console.log(die.faceValue);  // ➡ 3
+console.log(die2.faceValue); // ➡ 5
+</code></pre>
+                    <ul>
+                        <li><code>this</code> refererar till objektet som funktionen anropades för. </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Funktion som använder <span class="no-text-transform">this</span></h2>
+                    <pre><code class="js" style="max-height: none;">// Skapar objekt som anropar funktion där kroppen använder this.
+
+var smallTalk = function(greet) {
+
+    greet = greet || "Hej!";
+
+    console.log(greet + " Jag, " + this.name + ", är " +  this.age + " år.");
+};
+
+var simplePerson = {
+    name: "Nisse",
+    age: 42,
+    talk: smallTalk
+};
+
+simplePerson.talk(); // ➡ Hej! Jag, Nisse, är 42 år.
+
+var anotherSimplePerson = {
+    name: "Ellen",
+    age: 5
+};
+
+smallTalk.apply(anotherSimplePerson, ["Tjabba!"]); // ➡ Tjabba! Jag, Ellen, är 5 år.
+smallTalk.call(anotherSimplePerson, "Hallå!"); // ➡ Hallå! Jag, Ellen, är 5 år.
+</code></pre>
+                </section>
+            </section>
         </div>
     </div>
 
