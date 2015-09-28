@@ -200,7 +200,7 @@ smallTalk.call(anotherSimplePerson, "Hallå!"); // ➡ Hallå! Jag, Ellen, är 5
             <section>
                 <h2>Designmönstret <i>Factory</i></h2>
                 <ul>
-                    <li>Funktionen createDie löser problemet med att skapa flera liknande objekt, MEN...</li>
+                    <li>Funktionen <code>createDie</code> löser problemet med att skapa flera liknande objekt, MEN...</li>
                     <li>...av vilken typ är objekten som skapas? Jo, <code>Object</code>! Inte <code>Die</code>!</li>
                 </ul>
                     <pre><code class="js" style="max-height: none;">var createDie = function() {
@@ -259,6 +259,59 @@ var simplePerson2 = new SimplePerson("Ellen", 5);
 
 simplePerson1.talk(); // ➡ Jag, Nisse, är 42 år.
 simplePerson2.talk(); // ➡ Jag, Ellen, är 5 år.
+</code></pre>
+                    <ul>
+                        <li>Två identiska objekt skapas, så när på värdena egenskaperna <code>name</code> och <code>age</code> har. Metoden <code>talk</code> existerar för varje instans av <code>SimplePerson</code>.</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- Designmönstret Constructor/Prototype -->
+            <section>
+                <section>
+                    <h2>Designmönstret <i style="font-size: smaller;">Constructor/Prototype</i></h2>
+                    <pre><code class="js">function Die() {
+    this.faceValue = undefined;
+}
+
+Die.prototype.roll = function() {
+    this.faceValue = Math.floor(Math.random() * 6) + 1;
+};
+
+var die = new Die();
+die.roll();
+console.log(die.faceValue);    // ➡ 3
+console.log(typeof die);       // ➡ object
+console.log(die.constructor);  // ➡ [Function: Die]
+</code></pre>
+                    <ul>
+                        <li>Konstruktorfunktionen innehåller enbart instansegenskapen <code>faceValue</code>, som är unik för varje instans av <code>Die</code>.</li>
+                        <li>Metoden <code>roll</code> tillhör prototypen för <code>Die</code> och är gemensamm för alla objekt instansierade från <code>Die</code>.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Designmönster för referenstyper</h2>
+                    <ul>
+                        <li>Alla objekt instansierade med samma konstruktor delar samma prototyp (egenskaper och metoder).</li>
+                    </ul>
+                    <pre><code class="js" style="max-height: none;">function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+Person.prototype.talk = function() {
+    console.log("Jag, " + this.name + ", är " +  this.age + " år.");
+};
+
+var person1 = new Person("Nisse", 42);
+console.log(person1.constructor); // [Function: Person]
+
+var person2 = new Person("Ellen", 5);
+console.log(person2.constructor); // [Function: Person]
+
+person1.talk(); // Jag, Nisse, är 42 år.
+person2.talk(); // Jag, Ellen, är 5 år.
 </code></pre>
                 </section>
             </section>
