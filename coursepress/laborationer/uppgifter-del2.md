@@ -29,4 +29,5 @@ Lösningsförslag finns att studera på: https://github.com/1dv021/part2-solutio
 | Nyckelord| Factory pattern, Constructor pattern, Constructor/Prototype pattern.|
 
 I denna uppgift ska du skapa enklare legobits-objekt. Du hittar en beskrivning för detta här:
-[https://github.com/1dv021/laborationer/tree/part2-simple-lego-builder/src/part-2/simple-lego-builder](Mer information: https://github.com/1dv021/laborationer/tree/part2-simple-lego-builder/src/part-2/simple-lego-builder)
+
+[README.md](https://github.com/1dv021/laborationer/tree/part2-simple-lego-builder/src/part-2/simple-lego-builder)
