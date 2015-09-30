@@ -31,3 +31,14 @@ Lösningsförslag finns att studera på: https://github.com/1dv021/part2-solutio
 I denna uppgift ska du skapa enklare legobits-objekt. Du hittar en beskrivning för detta här:
 
 [README.md](https://github.com/1dv021/laborationer/tree/part2-simple-lego-builder/src/part-2/simple-lego-builder)
+
+## Skrotbilen
+|  |  |
+| ------------- | ------------- |
+|  branch | [part2-scrap-car](https://github.com/1dv021/laborationer/tree/part2-scrap-car) |
+| Svårighetsnivå  | A  |
+| Kursvecka  | 5  |
+| Föreläsningar| F05|
+| Nyckelord| Constructor/Prototype pattern|
+
+"Din uppgift är att skriva kod som efterliknar en enkel bil. Bilen ska kunna starta, stanna, svänga till höger, svänga till vänster och accelerera. Det ska vara möjligt att ge bilen ett smeknamn och dessutom nåste bilen själv hålla ordning på dess hastighet." [Läs mer..](https://github.com/1dv021/laborationer/tree/part2-scrap-car/src/part-2/scrap-car)
