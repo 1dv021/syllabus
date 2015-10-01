@@ -53,3 +53,15 @@ I denna uppgift ska du skapa enklare legobits-objekt. Du hittar en beskrivning f
 | Nyckelord| Constructor/Prototype pattern|
 
 "Din uppgift är att skriva kod som efterliknar en enkel bil. Bilen ska kunna starta, stanna, svänga till höger, svänga till vänster och accelerera. Det ska vara möjligt att ge bilen ett smeknamn och dessutom nåste bilen själv hålla ordning på dess hastighet." [Läs mer..](https://github.com/1dv021/laborationer/tree/part2-scrap-car/src/part-2/scrap-car)
+
+## Monumental ellips
+|  |  |
+| ------------- | ------------- |
+|  branch | [part2-monumental-ellipse](https://github.com/1dv021/laborationer/tree/part2-monumental-ellipse) |
+| Svårighetsnivå  | B |
+| Kursvecka  | 6  |
+| Föreläsningar| F05, F06|
+| Nyckelord| "Constructor/Prototype pattern", "getters", "setters"|
+
+"Du ska skriva en konstruktorfunktion som skapar ett objekt av typen Ellipse där arean och omkretsen ska kunna beräknas. I samband med att objektet skapas ska det vara möjlight att ange halva storaxelns längd, som betecknas a, och halva lillaxelns längd, som betecknas b." [Läs mer..](https://github.com/1dv021/laborationer/tree/part2-monumental-ellipse/src/part-2/monumental-ellipse)
+
