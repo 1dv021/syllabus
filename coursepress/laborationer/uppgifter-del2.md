@@ -32,6 +32,17 @@ I denna uppgift ska du skapa enklare legobits-objekt. Du hittar en beskrivning f
 
 [README.md](https://github.com/1dv021/laborationer/tree/part2-simple-lego-builder/src/part-2/simple-lego-builder)
 
+## Episk ellips
+|  |  |
+| ------------- | ------------- |
+|  branch | [part2-epic-ellipse](https://github.com/1dv021/laborationer/tree/part2-epic-ellipse) |
+| Svårighetsnivå  | A  |
+| Kursvecka  | 5  |
+| Föreläsningar| F05|
+| Nyckelord| Constructor/Prototype pattern|
+
+"Du ska skriva en konstruktorfunktion som skapar ett objekt av typen Ellipse där arean och omkretsen ska kunna beräknas. I samband med att objektet skapas ska det vara möjlight att ange halva storaxelns längd, som betecknas a, och halva lillaxelns längd, som betecknas b." [Läs mer..](https://github.com/1dv021/laborationer/tree/part2-epic-ellipse/src/part-2/epic-ellipse)
+
 ## Skrotbilen
 |  |  |
 | ------------- | ------------- |
