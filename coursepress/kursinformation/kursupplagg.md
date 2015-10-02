@@ -210,26 +210,6 @@ Objekt: egenskaper, metoder, prototyper.
 
 ----------
 
-### Föreläsning 6 (del 2)
-
-**Onsdagen den 28 september 10:15-12:00**
-
-- Campus: Ny105K
-- Distans: [https://connect.sunet.se/lecture-1dv021/](https://connect.sunet.se/lecture-1dv021/)
- 
-#### Abstrakt
-
-Objekt: Arv, överskuggning, polymorfism.
-
-[TODO: Presentation]
-
-### Kurslitteratur
-
-- 6. [The Secret Life of Objects](http://eloquentjavascript.net/06_object.html)
-- 7. [Project: Electronic Life](http://eloquentjavascript.net/07_elife.html)
-
-----------
-
 ### Handledning
 
 **Torsdagen den 10 september 10:15 - 12:00**
@@ -241,7 +221,7 @@ Objekt: Arv, överskuggning, polymorfism.
 
 ## Vecka 6
 
-### Föreläsning 7 (del 2)
+### Föreläsning 6 (del 2)
 
 **Måndagen den 5 oktober 10:15-12:00**
 
@@ -250,12 +230,14 @@ Objekt: Arv, överskuggning, polymorfism.
  
 #### Abstrakt
 
-Buggar, felhantering samt reguljära uttryck.
+Objekt: Arv, överskuggning. Buggar, felhantering samt reguljära uttryck.
 
 [TODO: Presentation]
 
 ### Kurslitteratur
 
+- 6. [The Secret Life of Objects](http://eloquentjavascript.net/06_object.html)
+- 7. [Project: Electronic Life](http://eloquentjavascript.net/07_elife.html)
 - 8. [Bugs and Error Handling](http://eloquentjavascript.net/08_error.html)
 - 9. [Regular Expressions](http://eloquentjavascript.net/09_regexp.html)
 
@@ -316,7 +298,7 @@ Buggar, felhantering samt reguljära uttryck.
 
 ## Vecka 8
 
-### Föreläsning 8 (del 3)
+### Föreläsning 7 (del 3)
 
 **Måndagen den 19 oktober 13:15-15:00**
 
