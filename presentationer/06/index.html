@@ -1,0 +1,388 @@
+﻿<!doctype html>
+<html lang="sv-se">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>06 - Föreläsning - Grundläggande programmering (1DV021)</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="icon" href="../images/favicon.png" type="image/png" />
+
+    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="../reveal.js/css/theme/black.lnu.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div class="reveal lnu">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <!-- Start -->
+            <section class="center" data-state="lnu-intro">
+                <h3>Grundläggande programmering</h3>
+                <h3>(1DV021)</h3>
+                <h1>Föreläsning 6</h1>
+                <div class="lnu-footer">
+                    <img src="../images/lnu-logotype.png" />
+                    <img src="../images/lnu-symbol.png" />
+                </div>
+            </section>
+
+            <!-- CC -->
+            <section data-state="lnu-cc">
+                <h2>Upphovsrätt för detta verk</h2>
+                <p>
+                    Detta verk är framtaget av Mats Loock i anslutning till kursen Grundläggande programmering (1DV021) vid Linnéuniversitetet.
+                </p>
+                <p>Allt innehåll i detta verk förutom fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol, är licensierad under en <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons-licens" style="border-width:0;vertical-align:middle" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /> Creative Commons Erkännande 4.0 Internationell Licens</a>.</p>
+                <h4>Du får använda detta verk så här</h4>
+                <ul>
+                    <li>kopiera hela eller delar av innehållet</li>
+                    <li>sprida hela eller delar av innehållet</li>
+                    <li>visa hela eller delar av innehållet offentligt och digitalt</li>
+                    <li>konvertera innehållet till annat format</li>
+                    <li>du får även göra om innehållet</li>
+                </ul>
+                <p>
+                    Om du förändrar innehållet så ta inte med fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol i din nya version!
+                </p>
+                <p>
+                    Vid all användning måste du ange källan: ”Linnéuniversitetet – Grundläggande programmering (1DV021)” och en länk till https://coursepress.lnu.se/kurs/grundlaggande-programmering och till Creative Common-licensen här ovan.
+                </p>
+            </section>
+
+            <!-- Prototyper -->
+            <section>
+                <h2 style="font-size:110%;">Relationer mellan konstruktor, prototyp och objekt</h2>
+                <pre style="float:left;width: 54%;"><code class="js" style="font-size: 95%;">function Die() {
+    this.faceValue;
+}
+
+Die.prototype.roll = function() {
+    this.faceValue = Math.floor(Math.random() * 6) + 1;
+};
+
+var die1 = new Die();
+var die2 = new Die();
+
+die1.roll();
+die2.roll();
+</code></pre>
+                <img src="prototype.png" width="45%" height="45%" style="border: none; background: none; float:right;padding-top:2em;" />
+                <div style="clear: both;">
+                    <ul>
+                        <li>När en konstruktorfunktion skapas skapas även en tillhörande prototyp, som är ett objekt bl.a. innehållande en referens, <code>constructor</code>, till konstruktorfunktionen samt egenskaper och metoder gemensamma för alla instanser av typen.</li>
+                        <li>Varje instans har en referens, <code>__proto__</code>, till konstruktorns prototyp.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Problem med publika egenskaper -->
+            <section>
+                <section>
+                    <h2>Problem med publika egenskaper</h2>
+                    <pre><code class="js">function Die() {
+    this.faceValue;
+}
+
+Die.prototype.roll = function() {
+    this.faceValue = Math.floor(Math.random() * 6) + 1;
+};
+
+var die1 = new Die();
+var die2 = new Die();
+
+// Inte några värden en sexsidig tärning ska ha...
+die1.faceValue = 42;
+die2.faceValue = "Kilroy was here!";
+</code></pre>
+                    <ul>
+                        <li>En publik egenskap kan sättas till vilket värde som helst.</li>
+                        <li>LÖSNING: datat, egenskapen <code>faceValue</code>, ska kapslas in och döljas.</li>
+                    </ul>
+                </section>
+
+                <!-- Privata medlemmar -->
+                <section>
+                    <h2>Privata medlemmar</h2>
+                    <ul>
+                        <li>Privata medlemmar kallas egenskaper och metoder som inte kan kommas åt utanför konstruktorfunktionen.</li>
+                        <li>
+                            Privata medlemmar skapas av konstruktorn.
+                            <ul>
+                                <li> Konstruktorns parametrar.</li>
+                                <li> Medlemmar definierade med var.</li>
+                            </ul>
+                            <pre><code class="js">function Foo(param) {
+    this.param = param; // "publik"
+    var secret = 42;    // "privat"
+
+    var bar = function() {  // "privat"
+        return "forty-two";
+    };
+}
+</code></pre>
+                        </li>
+                        <li>"Getters" och "setters" krävs för åtkomst av privata egenskaper.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>En privat tärning</h2>
+                    <ul>
+                        <li>Genom att använda <code>Object.defineProperty</code> kan du ange den funktion som ska köras då en egenskaps värde hämtas respektive tilldelas ett värde.</li>
+                    </ul>
+                    <pre><code class="js" style="max-height: none;font-size: 80%;line-height: 1.1em;">function Die() {
+    var _faceValue;
+
+    Object.defineProperty(this, "faceValue", {
+        get: function() {
+            return _faceValue;
+        },
+
+        set: function(value) {
+            var intValue = parseInt(value, 10);
+            if (isNaN(intValue) || intValue < 1 || intValue > 6) {
+                throw new Error("faceValue must be an integer between 1 and 6.");
+            }
+            _faceValue = intValue;
+        }
+    });
+}
+
+Die.prototype.roll = function() {
+    this.faceValue = Math.floor(Math.random() * 6) + 1;
+};
+
+var die = new Die();
+die.faceValue = 42; // ett undantag kastas
+</code></pre>
+                </section>
+            </section>
+
+            <!-- Arv -->
+            <section>
+                <!-- Upprepning av kod -->
+                <section>
+                    <h2>Upprepning av kod</h2>
+                    <ul>
+                        <li><code>Person</code> och <code>Student</code> innehåller kod gemensam för de båda typerna. Behöver det vara så? Nej, med hjälp av arv (<i>"inheritance"</i>) kan kod återanvändas instället för att upprepas.</li>
+                    </ul>
+                    <pre><code class="js" style="max-height: none;line-height: 1.15em;">function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+Person.prototype.toString = function() {
+    console.log("Jag, " + this.name + ", är " +  this.age + " år.");
+};
+
+function Student(name, age, isCampus) {
+    this.name = name;
+    this.age = age;
+    this.isCampus = isCampus;
+}
+
+Student.prototype.toString = function() {
+    console.log("Jag, " + this.name + ", läser på " +
+        (this.isCampus ? "campus" : "distans") + " och är " +  this.age + " år.");
+};
+</code></pre>
+                </section>
+
+                <!-- Återanvändning av kod -->
+                <section>
+                    <h2>Återanvändning av kod</h2>
+                    <ul>
+                        <li>Genom att låta <code>Student</code> ärva från <code>Person</code> kan kod i <code>Person</code> återanvändas av <code>Student</code>.</li>
+                    </ul>
+                    <pre style="width: 100%;"><code class="js" style="max-height: none;line-height: 1.15em;">function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+Person.prototype.toString = function() { // överskuggar metoden i Object.prototype
+    console.log("Jag, " + this.name + ", är " +  this.age + " år.");
+};
+
+function Student(name, age, isCampus) {
+    Person.call(this, name, age); // anrop av konstruktorn för Person
+    this.isCampus = isCampus;
+}
+
+Student.prototype = Object.create(Person.prototype); // ärver prototypen från Person
+Student.prototype.constructor =  Student; // återställer konstruktorn till Student
+
+Student.prototype.toString = function() { // överskuggar metoden i Person.prototype
+    console.log("Jag, " + this.name + ", läser på " +
+        (this.isCampus ? "campus" : "distans") + " och är " +  this.age + " år.");
+};
+</code></pre>
+                </section>
+
+                <!-- Av vilken typ är ett objekt? -->
+                <section>
+                    <h2>Av vilken typ är ett objekt?</h2>
+                    <ul>
+                        <li>Med operatorn <code>instanceof</code> kan du undersöka om en konstruktor har används för att skapa ett objekt.</li>
+                    </ul>
+                    <pre><code class="js">var person1 = new Person("Nisse", 42);
+var student1 = new Student("Ellen", 21, true);
+
+console.log(person1 instanceof Person);  // ➡ true
+console.log(person1 instanceof Student); // ➡ false
+
+console.log(student1 instanceof Person);  // ➡ true
+console.log(student1 instanceof Student); // ➡ true
+</code></pre>
+                </section>
+            </section>
+
+            <!-- Reguljära uttryck -->
+            <section>
+                <!-- -->
+                <section>
+                    <h2>Hur kontrollera att en egenskaps värde är formaterat på rätt sätt?</h2>
+                    <pre style="width: 100%;"><code class="js">function Address(addressLine, postalCode, city) {
+    this.adressLine = addressLine;
+    this.postalCode = postalCode;
+    this.city = city;
+}
+
+var address1 = new Address("Storgatan 1", "123 45", "Storstaden"); // OK adress!
+var address2 = new Address("Lillgatan 1", "ingen aning", "Lillstaden"); // felaktigt postnummer!
+</code></pre>
+                    <ul>
+                        <li>Att kontrolelra att postnummret består av fem siffror med eventuellt mellanslag mellan tredje och fjärde siffran kräver en hel del kod...</li>
+                        <li>...om vi inte kapslar den publika egenskapen och använder ett <b>reguljärt uttryck</b> vid valideringen av värdet.</li>
+                    </ul>
+                </section>
+
+                <!-- -->
+                <section>
+                    <h2>Reguljärt uttryck till undsättning</h2>
+                    <pre style="width: 100%;"><code class="js" style="max-height: none;">function Address(addressLine, postalCode, city) {
+    this.adressLine = addressLine;
+    this.city = city;
+
+    Object.defineProperty(this, "postalCode", {
+        get: function() {
+            return postalCode;
+        },
+
+        set: function(value) {
+            if (!/^[1-9]\d{2} ?\d{2}$/.test(value)){
+                throw new Error("postalCode seems to be invalid.");
+            }
+            postalCode = value;
+        }
+    });
+
+    this.postalCode = postalCode;
+}
+
+var address1 = new Address("Storgatan 1", "123 45", "Storstaden"); // OK adress!
+var address2 = new Address("Lillgatan 1", "ingen aning", "Lillstaden"); // Undantag kastas!
+</code></pre>
+                    <ul>
+                        <li>Det reguljära uttrycket defineras av  <code>/^[1-9]\d{2} ?\d{2}$/</code>.</li>
+                    </ul>
+                </section>
+
+                <!-- Vad betyder /^[1-9]\d{2} ?\d{2}$/? -->
+                <section>
+                    <h2>Vad betyder <code class="no-text-transform">/^[1-9]\d{2} ?\d{2}$/</code>?</h2>
+                    <ul>
+                        <li>Reguljära uttryck hanteras av typen <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp"><code>RegExp</code></a>.
+                            <ul>
+                                <li><code>^</code>, start av strängen.</li>
+                                <li><code>[1-9]</code>, exakt en förekomst av 1, 2, 3, 4, 5, 6, 7, 8 eller 9.</li>
+                                <li><code>\d{2}</code>, exakt två förekomster av 0 till 9.</li>
+                                <li><code><span class="text-gray">˽</span>?</code>, ingen eller en förekomst av ett mellanslag.</li>
+                                <li><code>\d{2}</code>, exakt två förekomster av 0 till 9.</li>
+                                <li><code>$</code>, slut på strängen.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            Det finns två sätt att skapa <code>RegExp</code>-objekt på:
+                    <pre style="width: 100%;"><code class="js">var regexp1 =  /^[1-9]\d{2} ?\d{2}$/; // literal
+
+var regexp2 = new RegExp("^[1-9]\d{2} ?\d{2}$"); // konstruktor
+</code></pre>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- -->
+            <section>
+                <h2>Fånga undantag med <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch"><code class="no-text-transform">try...catch</code></a></h2>
+                <ul>
+                    <li>För att kasta ett undantag används <code>throw</code>.</li>
+                    <li>Kod som kan leda till att ett undantag kastas placeras i ett <code>try</code>-block, som följs av ett...</li>
+                    <li>...<code>catch</code>-block innehållande kod som ska exekveras om ett undantag har kastats.</li>
+                </ul>
+                <pre style="width:100%;"><code class="js">try{
+    var address2 = new Address("Lillgatan 1", "ingen aning", "Lillstaden"); // Undantag kastas!
+    // Gör något med address2 - om det nu går...
+} catch (e) { // Fångar undantaget.
+    concole.log(e.message); // Presenterar felmeddelandet "postalCode seems to be invalid.".
+}
+</code></pre>
+            </section>
+        </div>
+    </div>
+
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.js"></script>
+
+    <script>
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            width: 1280,
+            height: 800,
+            controls: true,
+            progress: true,
+            history: true,
+            center: false,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // Optional reveal.js plugins
+            dependencies: [
+                { src: '../reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
+                { src: '../reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: '../reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function () { return !!document.querySelector('pre code'); }, callback: function () { hljs.initHighlightingOnLoad(); } },
+                { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+                { src: '../reveal.js/plugin/notes/notes.js', async: true }
+            ]
+        });
+
+    </script>
+
+</body>
+</html>
