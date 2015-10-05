@@ -196,7 +196,7 @@ die.faceValue = 42; // ett undantag kastas
 }
 
 Person.prototype.toString = function() {
-    console.log("Jag, " + this.name + ", är " +  this.age + " år.");
+    return "Jag, " + this.name + ", är " +  this.age + " år.";
 };
 
 function Student(name, age, isCampus) {
@@ -206,8 +206,8 @@ function Student(name, age, isCampus) {
 }
 
 Student.prototype.toString = function() {
-    console.log("Jag, " + this.name + ", läser på " +
-        (this.isCampus ? "campus" : "distans") + " och är " +  this.age + " år.");
+    return "Jag, " + this.name + ", läser på " +
+        (this.isCampus ? "campus" : "distans") + " och är " +  this.age + " år.";
 };
 </code></pre>
                 </section>
@@ -224,7 +224,7 @@ Student.prototype.toString = function() {
 }
 
 Person.prototype.toString = function() { // överskuggar metoden i Object.prototype
-    console.log("Jag, " + this.name + ", är " +  this.age + " år.");
+    return "Jag, " + this.name + ", är " +  this.age + " år.";
 };
 
 function Student(name, age, isCampus) {
@@ -236,8 +236,8 @@ Student.prototype = Object.create(Person.prototype); // ärver prototypen från 
 Student.prototype.constructor =  Student; // återställer konstruktorn till Student
 
 Student.prototype.toString = function() { // överskuggar metoden i Person.prototype
-    console.log("Jag, " + this.name + ", läser på " +
-        (this.isCampus ? "campus" : "distans") + " och är " +  this.age + " år.");
+    return "Jag, " + this.name + ", läser på " +
+        (this.isCampus ? "campus" : "distans") + " och är " +  this.age + " år.";
 };
 </code></pre>
                 </section>
