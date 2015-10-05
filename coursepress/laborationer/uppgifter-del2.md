@@ -54,6 +54,19 @@ I denna uppgift ska du skapa enklare legobits-objekt. Du hittar en beskrivning f
 
 "Din uppgift är att skriva kod som efterliknar en enkel bil. Bilen ska kunna starta, stanna, svänga till höger, svänga till vänster och accelerera. Det ska vara möjligt att ge bilen ett smeknamn och dessutom nåste bilen själv hålla ordning på dess hastighet." [Läs mer..](https://github.com/1dv021/laborationer/tree/part2-scrap-car/src/part-2/scrap-car)
 
+## The leauge
+|  |  |
+| ------------- | ------------- |
+|  branch | [part2-monumental-ellipse](https://github.com/1dv021/laborationer/tree/part2-the-leauge) |
+| Svårighetsnivå  | C |
+| Kursvecka  | 5 - 6 |
+| Föreläsningar| F05|
+| Nyckelord| "Constructor/Prototype pattern", "shallow-copy"|
+
+Du ska skriva en mindre applikation som simulerar ett ligaspel. En liga kan innehålla många lag och ett lag kan vara med i 
+många ligor. Uppgiften har inga tester på getters/setters utan bygger främst på konstruktionerna från föreläsning F05. [Läs mer..](https://github.com/1dv021/laborationer/tree/part2-the-leauge/src/part-2/the-leauge)
+
+
 ## Monumental ellips
 |  |  |
 | ------------- | ------------- |
@@ -64,4 +77,5 @@ I denna uppgift ska du skapa enklare legobits-objekt. Du hittar en beskrivning f
 | Nyckelord| "Constructor/Prototype pattern", "getters", "setters"|
 
 "Du ska skriva en konstruktorfunktion som skapar ett objekt av typen Ellipse där arean och omkretsen ska kunna beräknas. I samband med att objektet skapas ska det vara möjlight att ange halva storaxelns längd, som betecknas a, och halva lillaxelns längd, som betecknas b." [Läs mer..](https://github.com/1dv021/laborationer/tree/part2-monumental-ellipse/src/part-2/monumental-ellipse)
+
 
