@@ -20,7 +20,7 @@ Du är nu redoa att ta dig an din första uppgift.
 
 ## Dagligt arbete, laborationer
 
-Börja med att updatera för att se om några nya uppgifter tillkommit i 1DV021
+Börja med att uppdatera för att se om några nya uppgifter tillkommit i 1DV021
 `git pull 1dv021`
 
 1. Växla till den laborationsuppgift du vill arbeta med.
