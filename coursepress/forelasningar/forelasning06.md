@@ -1,7 +1,7 @@
 ## Nyckelord
 
 konstruktor, prototyp, "this, "__proto__", "prototype", "constructor", inkapsling, privata medlemmar, "getters", "setters", 
-Object.defineProperty, arv, "instanceof", regulj‰ra uttryck, RegExp, try...catch
+Object.defineProperty, arv, "instanceof", regulj√§ra uttryck, RegExp, try...catch
 
 ## Resurser
 - [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/06/index.html#)
