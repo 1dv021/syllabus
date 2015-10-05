@@ -57,7 +57,7 @@ I denna uppgift ska du skapa enklare legobits-objekt. Du hittar en beskrivning f
 ## The leauge
 |  |  |
 | ------------- | ------------- |
-|  branch | [part2-monumental-ellipse](https://github.com/1dv021/laborationer/tree/part2-the-leauge) |
+|  branch | [part2-the-leauge](https://github.com/1dv021/laborationer/tree/part2-the-leauge) |
 | Svårighetsnivå  | C |
 | Kursvecka  | 5 - 6 |
 | Föreläsningar| F05|
