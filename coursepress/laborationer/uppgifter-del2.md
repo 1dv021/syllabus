@@ -67,6 +67,17 @@ I denna uppgift ska du skapa enklare legobits-objekt. Du hittar en beskrivning f
 
 "Du ska skriva en konstruktorfunktion som skapar ett objekt av typen Ellipse där arean och omkretsen ska kunna beräknas. I samband med att objektet skapas ska det vara möjlight att ange halva storaxelns längd, som betecknas a, och halva lillaxelns längd, som betecknas b." [Läs mer..](https://github.com/1dv021/laborationer/tree/part2-monumental-ellipse/src/part-2/monumental-ellipse)
 
+## __"It figures"__
+|  |  |
+| ------------- | ------------- |
+|  branch | [part2-monumental-ellipse](https://github.com/1dv021/laborationer/tree/part2-monumental-ellipse) |
+| Svårighetsnivå  | B |
+| Kursvecka  | 6  |
+| Föreläsningar| F05, F06|
+| Nyckelord| "Constructor/Prototype pattern", arv |
+
+"Du ska skriva tre konstruktorfunktioner som skapar objekt av typen Ellipse eller Rectangle där arean och omkretsen ska kunna beräknas. Den tredje typen, Shape, ska samla de medlemmar som är gemensamma för Ellipse och Rectangle..." [Läs mer..](https://github.com/1dv021/laborationer/tree/part2-it-figures/src/part-2/it-figures)
+
 ## The leauge
 |  |  |
 | ------------- | ------------- |
