@@ -70,7 +70,7 @@ I denna uppgift ska du skapa enklare legobits-objekt. Du hittar en beskrivning f
 ## __"It figures"__
 |  |  |
 | ------------- | ------------- |
-|  branch | [part2-monumental-ellipse](https://github.com/1dv021/laborationer/tree/part2-monumental-ellipse) |
+|  branch | [part2-it-figures](https://github.com/1dv021/laborationer/tree/part2-monumental-ellipse) |
 | Svårighetsnivå  | B |
 | Kursvecka  | 6  |
 | Föreläsningar| F05, F06|
