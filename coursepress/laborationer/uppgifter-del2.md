@@ -31,6 +31,7 @@ Lösningsförslag finns att studera på: https://github.com/1dv021/part2-solutio
 I denna uppgift ska du skapa enklare legobits-objekt. Du hittar en beskrivning för detta här:
 
 [README.md](https://github.com/1dv021/laborationer/tree/part2-simple-lego-builder/src/part-2/simple-lego-builder)
+[Inspelad lösningsfilm](https://youtu.be/FbCjUOXtVkg)
 
 ## Episk ellips
 |  |  |
