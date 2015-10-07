@@ -27,7 +27,7 @@ Lösningsförslag finns att studera på: https://github.com/1dv021/part2-solutio
 | Kursvecka  | 5  |
 | Föreläsningar| F05|
 | Nyckelord| Factory pattern, Constructor pattern, Constructor/Prototype pattern.|
-| Lösning| [Inspelning](https://youtu.be/FbCjUOXtVkg)|
+| Lösning| [Kod](https://github.com/1dv021/solutions/tree/master/src/part-2/simple-lego-builder)<br>[Inspelning](https://youtu.be/FbCjUOXtVkg)|
 
 För att träna på att skapa objekt med hjälp av olika designmönster så ska du i tre steg skapa en enkel "legoapplikation".
 
@@ -46,7 +46,7 @@ Objekten som ska skapas [Läs mer...](https://github.com/1dv021/laborationer/tre
 | Kursvecka  | 5  |
 | Föreläsningar| F05|
 | Nyckelord| Constructor/Prototype pattern|
-| Lösning| [Kod](https://github.com/1dv021/solutions/tree/master/src/part-2/epic-ellipse)[Inspelning](https://youtu.be/-__iDYP5Dws) |
+| Lösning| [Kod](https://github.com/1dv021/solutions/tree/master/src/part-2/epic-ellipse)<br>[Inspelning](https://youtu.be/-__iDYP5Dws) |
 
 "Du ska skriva en konstruktorfunktion som skapar ett objekt av typen Ellipse där arean och omkretsen ska kunna beräknas. I samband med att objektet skapas ska det vara möjlight att ange halva storaxelns längd, som betecknas a, och halva lillaxelns längd, som betecknas b." [Läs mer..](https://github.com/1dv021/laborationer/tree/part2-epic-ellipse/src/part-2/epic-ellipse)
 
@@ -58,7 +58,7 @@ Objekten som ska skapas [Läs mer...](https://github.com/1dv021/laborationer/tre
 | Kursvecka  | 5  |
 | Föreläsningar| F05|
 | Nyckelord| Constructor/Prototype pattern|
-| Lösning| [Inspelning](https://youtu.be/2hwY-BH93fg) |
+| Lösning| [Kod](https://github.com/1dv021/solutions/tree/master/src/part-2/scrap-car)<br>[Inspelning](https://youtu.be/2hwY-BH93fg) |
 
 "Din uppgift är att skriva kod som efterliknar en enkel bil. Bilen ska kunna starta, stanna, svänga till höger, svänga till vänster och accelerera. Det ska vara möjligt att ge bilen ett smeknamn och dessutom nåste bilen själv hålla ordning på dess hastighet." [Läs mer..](https://github.com/1dv021/laborationer/tree/part2-scrap-car/src/part-2/scrap-car)
 
@@ -92,6 +92,7 @@ Objekten som ska skapas [Läs mer...](https://github.com/1dv021/laborationer/tre
 | Kursvecka  | 5 - 6 |
 | Föreläsningar| F05|
 | Nyckelord| "Constructor/Prototype pattern", "shallow-copy"|
+| Lösning| [Kod](https://github.com/1dv021/solutions/tree/master/src/part-2/the-leauge)<br>|
 
 Du ska skriva en mindre applikation som simulerar ett ligaspel. En liga kan innehålla många lag och ett lag kan vara med i 
 många ligor. Uppgiften har inga tester på getters/setters utan bygger främst på konstruktionerna från föreläsning F05. [Läs mer..](https://github.com/1dv021/laborationer/tree/part2-the-leauge/src/part-2/the-leauge)
