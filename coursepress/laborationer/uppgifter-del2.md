@@ -58,6 +58,7 @@ Objekten som ska skapas [Läs mer...](https://github.com/1dv021/laborationer/tre
 | Kursvecka  | 5  |
 | Föreläsningar| F05|
 | Nyckelord| Constructor/Prototype pattern|
+| Lösning| [Inspelning](https://youtu.be/2hwY-BH93fg) |
 
 "Din uppgift är att skriva kod som efterliknar en enkel bil. Bilen ska kunna starta, stanna, svänga till höger, svänga till vänster och accelerera. Det ska vara möjligt att ge bilen ett smeknamn och dessutom nåste bilen själv hålla ordning på dess hastighet." [Läs mer..](https://github.com/1dv021/laborationer/tree/part2-scrap-car/src/part-2/scrap-car)
 
