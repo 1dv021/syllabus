@@ -27,12 +27,16 @@ Lösningsförslag finns att studera på: https://github.com/1dv021/part2-solutio
 | Kursvecka  | 5  |
 | Föreläsningar| F05|
 | Nyckelord| Factory pattern, Constructor pattern, Constructor/Prototype pattern.|
+| Lösning| [Inspelning](https://youtu.be/FbCjUOXtVkg)|
 
-I denna uppgift ska du skapa enklare legobits-objekt. Du hittar en beskrivning för detta här:
+För att träna på att skapa objekt med hjälp av olika designmönster så ska du i tre steg skapa en enkel "legoapplikation".
 
-[README.md](https://github.com/1dv021/laborationer/tree/part2-simple-lego-builder/src/part-2/simple-lego-builder)
+(file: lego-part1.js) Här skapar du objekt med Factory Pattern
+(file: lego-part2.js) Här skapar du objekt med Constructor Pattern
+(file: lego-part3.js) Här skapar du objekt med Constructor/Prototype Pattern
+Objekten som ska skapas [Läs mer...](https://github.com/1dv021/laborationer/tree/part2-simple-lego-builder/src/part-2/simple-lego-builder)
 
-[Inspelad lösningsfilm](https://youtu.be/FbCjUOXtVkg)
+
 
 ## Episk ellips
 |  |  |
