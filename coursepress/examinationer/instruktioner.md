@@ -1,7 +1,7 @@
 Kursens examination är uppdelad i tre examinationstillfällen där varje examinationstillfälle består av en *praktisk examinationsuppgift* och en *muntlig examination*.
 
 ## Praktisk examinationsuppgift
-Den praktiska examinationsuppgiften genomförs enskilt och lämnas in innan den muntliga examinationen. Deadline för inlämning av uppgiften framgår under intstruktionerna för varje uppgift.
+Den praktiska examinationsuppgiften genomförs enskilt och lämnas in innan den muntliga examinationen. Deadline för inlämning av uppgiften framgår under instruktionerna för varje uppgift.
 
 Speciella regler gäller för genomförandet av de praktiska examinationsuppgifterna:
 - Uppgifterna är **obligatoriska** att genomföra för att få genomföra den muntliga examinationen.
@@ -12,17 +12,18 @@ Speciella regler gäller för genomförandet av de praktiska examinationsuppgift
 
 ### Kom igång med uppgiften
 
-För att komma igång titta på följande demo: [1DV021 - Demo - Examinationsuppgift 1 - Kom Igång](https://youtu.be/OxQzwQc9VT8).
+För att komma igång titta på följande demo: [1DV021 - Demo - Examinationsuppgift 1 - Kom Igång](https://youtu.be/OxQzwQc9VT8). Samma arbetssätt och principer gäller för examinationsuppgift 2 och 3.
 
 Sammanfattningsvis ska du göra följande:
-1. Klona ditt repo https://github.com/1dv021/ANVÄNDARNAMN-examination-NR till en **tom** katalog i på ditt system.
+1. Klona ditt repo https://github.com/1dv021/ANVÄNDARNAMN-examination-NR till en **tom** katalog på ditt system.
   * Exempelvis: `git clone https://github.com/1dv021/xx222yy-examination-1`
-2. `cd xx222yy.examination-1`
-3. Fyll på repot med examinationsuppgift 1
-  * `git pull https://github.com/1dv021/examination-1`
+2. Byt katalog till den nerklonade uppgiften
+  * Exempelvis: `cd xx222yy-examination-1`
+3. Fyll på repot med examinationsuppgift NR
+  * `git pull https://github.com/1dv021/examination-1` (examination-2, examination-3 för examintion 2 respektive 3.)
 4. Kör `npm install`
 5. Konfigurera Webstorm att köra filen "app.js" vid run.
-6. Konfigurera Webstorm att köra tester från katalogen "tests"
+6. Konfigurera Webstorm att köra tester från katalogen "tests".
 
 ***
 
