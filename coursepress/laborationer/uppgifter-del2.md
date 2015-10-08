@@ -62,6 +62,17 @@ Objekten som ska skapas [Läs mer...](https://github.com/1dv021/laborationer/tre
 
 "Din uppgift är att skriva kod som efterliknar en enkel bil. Bilen ska kunna starta, stanna, svänga till höger, svänga till vänster och accelerera. Det ska vara möjligt att ge bilen ett smeknamn och dessutom nåste bilen själv hålla ordning på dess hastighet." [Läs mer..](https://github.com/1dv021/laborationer/tree/part2-scrap-car/src/part-2/scrap-car)
 
+## Ancestors
+|  |  |
+| ------------- | ------------- |
+|  branch | [part2-scrap-car](https://github.com/1dv021/laborationer/tree/part2-ancestors) |
+| Svårighetsnivå  | A  |
+| Kursvecka  | 5 - 6  |
+| Föreläsningar| F05|
+| Nyckelord| Constructor/Prototype pattern recursion|
+
+I denna uppgift får du träna på rekursion vilket är nödvändigt inför examination 2 [Läs mer..](https://github.com/1dv021/laborationer/tree/part2-scrap-car/src/part-2/ancestor)
+
 ## Monumental ellips
 |  |  |
 | ------------- | ------------- |
