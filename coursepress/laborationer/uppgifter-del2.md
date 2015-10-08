@@ -71,7 +71,7 @@ Objekten som ska skapas [Läs mer...](https://github.com/1dv021/laborationer/tre
 | Föreläsningar| F05|
 | Nyckelord| Constructor/Prototype pattern recursion|
 
-I denna uppgift får du träna på rekursion vilket är nödvändigt inför examination 2 [Läs mer..](https://github.com/1dv021/laborationer/tree/part2-ancestors/src/part-2/ancestor)
+I denna uppgift får du träna på rekursion vilket är nödvändigt inför examination 2 [Läs mer..](https://github.com/1dv021/laborationer/tree/part2-ancestors/src/part-2/ancestors)
 
 ## Monumental ellips
 |  |  |
