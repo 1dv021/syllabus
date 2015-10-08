@@ -70,6 +70,8 @@ Objekten som ska skapas [Läs mer...](https://github.com/1dv021/laborationer/tre
 | Kursvecka  | 5 - 6  |
 | Föreläsningar| F05|
 | Nyckelord| Constructor/Prototype pattern recursion|
+| Lösning| [Kod](https://github.com/1dv021/solutions/tree/master/src/part-2/ancestors) |
+
 
 I denna uppgift får du träna på rekursion vilket är nödvändigt inför examination 2 [Läs mer..](https://github.com/1dv021/laborationer/tree/part2-ancestors/src/part-2/ancestors)
 
