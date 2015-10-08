@@ -65,13 +65,13 @@ Objekten som ska skapas [Läs mer...](https://github.com/1dv021/laborationer/tre
 ## Ancestors
 |  |  |
 | ------------- | ------------- |
-|  branch | [part2-scrap-car](https://github.com/1dv021/laborationer/tree/part2-ancestors) |
+|  branch | [part2-ancestors](https://github.com/1dv021/laborationer/tree/part2-ancestors) |
 | Svårighetsnivå  | A  |
 | Kursvecka  | 5 - 6  |
 | Föreläsningar| F05|
 | Nyckelord| Constructor/Prototype pattern recursion|
 
-I denna uppgift får du träna på rekursion vilket är nödvändigt inför examination 2 [Läs mer..](https://github.com/1dv021/laborationer/tree/part2-scrap-car/src/part-2/ancestor)
+I denna uppgift får du träna på rekursion vilket är nödvändigt inför examination 2 [Läs mer..](https://github.com/1dv021/laborationer/tree/part2-ancestors/src/part-2/ancestor)
 
 ## Monumental ellips
 |  |  |
