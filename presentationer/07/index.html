@@ -122,7 +122,8 @@
                         </ul>
                     </li>
                     <li>
-                        Beroende på miljö finns det olika sätt att hantera moduler. Node.js har sitt sätt. På klienten finns t.ex. Browserify, requireJS och commonJS. (ES6 har sitt sätt.)
+                        Beroende på miljö finns det olika sätt att hantera moduler. Node.js har sitt sätt. På klienten
+                        finns t.ex. Browserify, requireJS och commonJS. <span class="text-gray">(ECMAScript 2015 har sitt sätt.)</span>
                     </li>
                 </ul>
             </section>
@@ -250,9 +251,79 @@ module.exports = User;
 
             <!-- Import -->
             <section>
-                <h2>Importera kod</h2>
+
+                <!-- Importera kod -->
+                <section>
+                    <h2>Importera kod</h2>
+                    <ul>
+                        <li>
+                            För att ladda en modul som finns i samma katalog som filen som laddar den använder du <code>require</code>
+                            och filnamnet (inklusive sökvägen).
+                            <pre><code class="js">//app.js
+var greetings = require("./greetings");
+console.log(greetings.sayHelloInEnglish());
+console.log(greetings.sayHelloInSpanish());
+</code></pre>
+                        </li>
+                        <li>Du anger alltid den relativa sökvägen, i förhållande till filen som vill använda en modul,
+                            till den fil som innehåller modulen du vill ladda.
+                            <ul>
+                                <li>
+                                    Det är viktigt att du inleder med <code>./</code>, <code>../</code> eller <code>/</code> för att indikera en fil, annars måste
+                                    modulen vara en "<i>core module</i>" eller återfinnas i katalogen <code>node_modules</code>.
+                                </li>
+                                <li>
+                                    Hittas inte filen kommer Node.js att försöka ladda den angivna modulen genom att lägga till
+                                    filändelserna <code>.js</code>, <code>.json</code> och slutligen <code>.node</code>.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- -->
+                <section>
+                    <h2>Importera och använda en egendefinierad typ</h2>
+                    <pre><code class="js" style="max-height: none;">// User.js
+function User(name, email) {
+    this.name = name;
+    this.email = email;
+}
+
+module.exports = User;
+</code></pre>
+<pre><code class="js" style="max-height: none;">// app.js
+var User = require("./User");
+
+var user = new User("Ellen Nu", "en@lnu.se");
+
+console.log(user); ➡ { name: 'Ellen Nu', email: 'en@lnu.se' }
+</code></pre>
+                </section>
+            </section>
+
+            <section>
+                <h2>ECMAScript 2015 6th Edition</h2>
                 <ul>
-                    <li></li>
+                    <li>
+                        Standarden
+                        <ul>
+                            <li><a href="http://www.ecma-international.org/ecma-262/6.0/">http://www.ecma-international.org/ecma-262/6.0/</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Dokumentationen
+                        <ul>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference</a></li>
+                            <li>(<a href="http://devdocs.io/javascript/">http://devdocs.io/javascript/</a>)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Det nya
+                        <ul>
+                            <li><a href="http://es6-features.org/">http://es6-features.org/</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </div>
