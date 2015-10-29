@@ -1,4 +1,4 @@
-Laborationsuppgifterna i kursen är till för att du ska öva dig inför examinationsuppgifterna. Dessa är frivilliga att göra emn ger nödvändig träning och bakgrund till examinationsuppgifterna.
+Laborationsuppgifterna i kursen är till för att du ska öva dig inför examinationsuppgifterna. Dessa är frivilliga att göra men ger nödvändig träning och bakgrund till examinationsuppgifterna.
 
 Laborationsuppgifterna är uppdelade i tre delar och kommer fyllas på under kursens gång.
 
