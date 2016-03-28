@@ -89,7 +89,7 @@ I denna uppgift får du träna på rekursion vilket är nödvändigt inför exam
 ## __"It figures"__
 |  |  |
 | ------------- | ------------- |
-|  branch | [part2-it-figures](https://github.com/1dv021/laborationer/tree/part2-monumental-ellipse) |
+|  branch | [part2-it-figures](https://github.com/1dv021/laborationer/tree/part2-it-figures) |
 | Svårighetsnivå  | B |
 | Kursvecka  | 6  |
 | Föreläsningar| F05, F06|
