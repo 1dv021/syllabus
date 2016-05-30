@@ -47,4 +47,10 @@ __VIKTIGT!__ Se till att du står i katalogen som skapades under steg 2 genom at
 ## Steg 5. Klart!
 
 ...
+
+### Fira!
+
+Genom att följa denna guide har du nu förberett ditt privata repo för kursens övningsuppgifter. :tada: :octocat: :zap:
+
+> __Tips__: Ta en titt på guiden för [flödet hur du arbetar med en övningsuppgift](../flode-for-att-arbeta-med-en-ovningsuppgift) eller [andra intressanta guider](../).
  
