@@ -1,6 +1,5 @@
-# Summary
+# Innehåll
 
-* [Innehåll](book/innehall.md)
-   * Övningsuppgifter
-   * Examinationsuppgifter
+* Övningsuppgifter
+* Examinationsuppgifter
 
