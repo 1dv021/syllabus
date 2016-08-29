@@ -4,7 +4,8 @@ Innan du startar med detta så förutsätter vi följande:
 * Du har skaffat dig ett [student-konto](https://accountcheckout.lnu.se/SelectLanguage.aspx) på LNU.
 * Du har loggat in på din [student-epostadress](http://lnu.se/student/vi-hjalper-dig/it-och-support/e-post).
 * Du har skaffat dig ett eget [GitHub-konto](https://coursepress.gitbooks.io/1dv021/content/guider/ditt-alldeles-egna-github-kontot/).
-* Du har medddelat kursledning ditt användarnamn på [GitHub](https://coursepress.gitbooks.io/1dv021/content/guider/meddela-kursledningen-ditt-anvandarnamn-pa-github/).
+* Du har [medddelat kursledning ditt användarnamn på GitHub](https://coursepress.gitbooks.io/1dv021/content/guider/meddela-kursledningen-ditt-anvandarnamn-pa-github/).
+ 
 ***
 
 Guiden består av följande steg:
