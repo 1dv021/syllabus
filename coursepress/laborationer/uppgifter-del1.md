@@ -1,8 +1,7 @@
 ## Innan du startar
-Se till att du studerat de demofilmer och instruktioner som finns INNAN du sätter igång med de andra laborationsuppgifterna:
+Se till att du studerat de demofilmer och instruktioner som finns INNAN du sätter igång med de andra övningsuppgifterna:
 
 * [Kom igång med kursen](https://coursepress.lnu.se/kurs/grundlaggande-programmering/kom-igang-med-kursen/)
-
 
 ## Övningsuppgifterna
 
