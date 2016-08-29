@@ -1,368 +1,261 @@
-﻿<!doctype html>
-<html lang="en">
-
+﻿<!DOCTYPE html>
+<html>
 <head>
+    <title>00 - Introduktion - Objektorienterad programmering (1DV024)</title>
     <meta charset="utf-8">
-
-    <title>00 - Introduktion - Grundläggande programmering (1DV021)</title>
-
-    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-    <meta name="author" content="Hakim El Hattab">
-
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-
-    <link rel="icon" href="../images/favicon.png" type="image/png" />
-
-    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
-    <link rel="stylesheet" href="../reveal.js/css/theme/black.css" id="theme">
-    <link rel="stylesheet" href="../reveal.js/css/theme/black.lnu.css" id="theme">
-
-    <!-- Code syntax highlighting -->
-    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
-
-    <!-- Printing and PDF exports -->
-    <script>
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-        document.getElementsByTagName('head')[0].appendChild(link);
-    </script>
-
-    <!--[if lt IE 9]>
-    <script src="lib/js/html5shiv.js"></script>
-    <![endif]-->
+    <link rel="icon" href="../remark/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="../remark/stylesheets/lnu.dark.css" id="theme">
+    <link rel="stylesheet" href="../reveal.js/css/theme/black.lnu.css">
 </head>
+<body class="lnu">
+<textarea id="source">
 
-<body>
+        class: center, middle, lnu-background-yellow
 
-    <div class="reveal lnu">
+        ### Grundläggande programmering (1DV021)
+        # Introduktion
 
-        <!-- Any section element inside of this container is displayed as a slide -->
-        <div class="slides">
-            <section class="center" data-state="lnu-intro">
-                <h3>Grundläggande programmering</h3>
-                <h3>(1DV021)</h3>
-                <h1>Introduktion</h1>
-                <div class="lnu-footer">
-                    <img src="../images/lnu-logotype.png" />
-                    <img src="../images/lnu-symbol.png" />
-                </div>
-            </section>
-
-            <section data-state="lnu-cc">
-                <h2>Upphovsrätt för detta verk</h2>
-                <p>
-                    Detta verk är framtaget av Mats Loock i anslutning till kursen Grundläggande programmering (1DV021) vid Linnéuniversitetet.
-                </p>
-                <p>Allt innehåll i detta verk förutom fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol, är licensierad under en <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons-licens" style="border-width:0;vertical-align:middle" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /> Creative Commons Erkännande 4.0 Internationell Licens</a>.</p>
-                <h4>Du får använda detta verk så här</h4>
-                <ul>
-                    <li>kopiera hela eller delar av innehållet</li>
-                    <li>sprida hela eller delar av innehållet</li>
-                    <li>visa hela eller delar av innehållet offentligt och digitalt</li>
-                    <li>konvertera innehållet till annat format</li>
-                    <li>du får även göra om innehållet</li>
-                </ul>
-                <p>
-                    Om du förändrar innehållet så ta inte med fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol i din nya version!
-                </p>
-                <p>
-                    Vid all användning måste du ange källan: ”Linnéuniversitetet – Grundläggande programmering (1DV021)” och en länk till https://coursepress.lnu.se/kurs/grundlaggande-programmering och till Creative Common-licensen här ovan.
-                </p>
-            </section>
-
-            <section>
-                <section>
-                    <h2>Kursledningen</h2>
-                    <dl class="table">
-                        <dt class="table-cell">
-                            <img class="grayscale" src="http://www.gravatar.com/avatar/a334470b8e87eb204a337c228f940e13.jpg?s=80" alt="Mats">
-                        </dt>
-                        <dd class="table-cell">Mats Loock (kursansvarig/kursledare)</dd>
-                    </dl>
-                    <dl class="table">
-                        <dt class="table-cell">
-                            <img class="grayscale" src="http://www.gravatar.com/avatar/f0792a7226128e723ae2a45450e4da5c.jpg?s=80" alt="Johan">
-                        </dt>
-                        <dd class="table-cell">Johan Leitet (kursansvarig/kursledare)</dd>
-                    </dl>
-                    <dl class="table">
-                        <dt class="table-cell">
-                            <img class="grayscale" src="http://www.gravatar.com/avatar/b47109ad8c128221c9dd060d15c89cc9.jpg?s=80" alt="Jacob">
-                        </dt>
-                        <dd class="table-cell">Jacob Lindehoff (kursledare)</dd>
-                    </dl>
-                    <dl class="table">
-                        <dt class="table-cell">
-                            <img class="grayscale" src="http://www.gravatar.com/avatar/2261038623688f4d83dc10c53b85efb8.jpg?s=80" alt="John">
-                        </dt>
-                        <dd class="table-cell">John Häggerud (kursledare)</dd>
-                    </dl>
-                </section>
-                <section>
-                    <h3>...och nej vi är inte gudar...</h3>
-                    <blockquote>
-                        &ldquo;He who can, does.<br />
-                        He who cannot, teaches.&ldquo;
-                        <div style="text-align: right;font-size:70%;">
-                            <p>
-                                Man and Superman (1903) "Maxims for Revolutionists"<br />
-                                George Bernard Shaw
-                            </p>
-                        </div>
-                    </blockquote>
-
-                    <div class="fragment">
-                        <h3>...men å andra sidan...</h3>
-                        <blockquote>
-                            &ldquo;Those who can, do.<br />
-                            Those who can do more, teach.&ldquo;
-                            <div style="text-align: right;font-size:70%;">
-                                <p>
-                                    Okänd
-                                </p>
-                            </div>
-                        </blockquote>
-                    </div>
-                </section>
-            </section>
-
-            <section>
-                <h2>Efter kursen kommer du att...</h2>
-                <ul>
-                    <li>
-                        ...kunna skriva enklare applikationer i Javascript.
-                    </li>
-                    <li>
-                        ...själv ha skapat dig en god programmeringsgrund att stå på, vilket gör det enklare att använda, och lära in, olika program- och skriptspråk som t.ex. C# och PHP.
-                    </li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Kurslitteratur</h2>
-                <ul>
-                    <li>Eloquent JavaScript, 2nd Edition av Marijn Haverbake.</li>
-                    <ul>
-                        <li>Tryckt format, ISBN 978-1593275846.</li>
-                        <li><b>FRI att tillgå online</b>, <a href="http://eloquentjavascript.net/">http://eloquentjavascript.net/</a>.</li>
-                    </ul>
-                    <li>…en bra bok, som du självklart får använda under examinationerna!</li>
-                    <li>Kursen bygger på och följer i stort första delen av kurslitteraturen (kapitel 1-11). Endast kompletterande material kommer att finnas att tillgå, som på inget sätt kan ersätta kurslitteraturen.</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Upplägg</h2>
-                <ul>
-                    <li>
-                        Kursen är indelad i tre delar där varje del...
-                        <ul>
-                            <li>...har ett antal laborationsuppgifter som är förberedande för...</li>
-                            <li>
-                                ...den, för varje del, avslutande individuella examinationsuppgiften.
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        Teorin som varje del omfattar examineras individuellt och muntligen med utgångspunkt från examinationsuppgifterna. Det är med andra ord totalt tre ordinarie examinationstillfällen.
-                    </li>
-                    <li>
-                        Schemalagd verksamhet
-                        <ul>
-                            <li>
-                                Föreläsningar (8 st á 2 h)
-                            </li>
-                            <li>
-                                "Peer instructions" (2 st á 2 h)
-                            </li>
-                            <li>
-                                Handledningstillfällen (16 st á 2 h)
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </section>
-
-            <section>
-                <section>
-                    <h2>Viktiga datum och tider</h2>
-                    <ul>
-                        <li>
-                            Alla datum och tider hittar du i schemat.
-                            <ul>
-                                <li>...och ja det är viktigt att du deltar aktivt under läraktiviteterna.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <p></p>
-                    <h4>Viktiga!</h4>
-                    <ul>
-                        <li>
-                            "Peer Instructions"
-                            <ul>
-                                <li>21/9 13:15-15:00</li>
-                                <li>12/10 13:15-15:00</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <p></p>
-                    <h4>Extraordinärt viktiga!</h4>
-                    <ul>
-                        <li>
-                            Muntlig examination
-                            <ul>
-                                <li>24/9 - 25/9 8:00-17:00</li>
-                                <li>15/10 - 16/10 8:00-17:00</li>
-                                <li>29/10 - 30/10 8:00-17:00</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </section>
-                <section>
-                    <blockquote>
-                        &ldquo;Education is not received. It is achieved.&ldquo;
-                        <div style="text-align: right;font-size:70%;">
-                            <p>
-                                Okänd
-                            </p>
-                        </div>
-                    </blockquote>
-
-                    <div class="fragment">
-                        <blockquote>
-                            &ldquo;Learning is not a spectator sport.&ldquo;
-                            <div style="text-align: right;font-size:70%;">
-                                <p>
-                                    D Blocher
-                                </p>
-                            </div>
-                        </blockquote>
-                    </div>
-                    <div class="fragment">
-                        <blockquote>
-                            &ldquo;Don't be afraid to ask questions. Don't be afraid to ask for help when you need it. I do that every day. Asking for help isn't a sign of weakness, it's a sign of strength. It shows you have the courage to admit when you don't know something, and then allows you to learn something new.&ldquo;
-                            <div style="text-align: right;font-size:70%;">
-                                <p>
-                                    Barak Obama
-                                </p>
-                            </div>
-                        </blockquote>
-                    </div>
-                </section>
-            </section>
-
-            <section>
-                <h2>Del 1</h2>
-                <ul>
-                    <li>4 veckor</li>
-                    <li>
-                        Föreläsningar
-                        <ol>
-                            <li>Värden, typer och operatorer.</li>
-                            <li>Uttryck, satser och variabler.</li>
-                            <li>Styrstrukturer och funktioner.</li>
-                            <li>Datastrukturer: arrayer och objekt.</li>
-                        </ol>
-                    </li>
-                    <li>
-                        Kurslitteratur
-                        <ul>
-                            <li>Kapitel 1 - 5.</li>
-                        </ul>
-                    </li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Del 2</h2>
-                <ul>
-                    <li>3 veckor</li>
-                    <li>
-                        Föreläsningar
-                        <ol start="5" style="counter-reset:count-me 4;">
-                            <li>Objekt: egenskaper, metoder, prototyper.</li>
-                            <li>Objekt: Arv, överskuggning, polymorfism.</li>
-                            <li>Buggar, felhantering samt reguljära uttryck.</li>
-                        </ol>
-                    </li>
-                    <li>
-                        Kurslitteratur
-                        <ul>
-                            <li>Kapitel 6 - 9.</li>
-                        </ul>
-                    </li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Del 3</h2>
-                <ul>
-                    <li>2 veckor</li>
-                    <li>
-                        Föreläsningar
-                        <ol start="8" style="counter-reset:count-me 7;">
-                            <li>Moduler.</li>
-                        </ol>
-                    </li>
-                    <li>
-                        Kurslitteratur
-                        <ul>
-                            <li>Kapitel 10 - 11.</li>
-                        </ul>
-                    </li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Utvecklingsmiljö</h2>
-                <ul>
-                    <li>Git <a href="https://git-scm.com/">https://git-scm.com/</a></li>
-                    <li>JetBrains WebStorm 10 <a href="https://www.jetbrains.com/webstorm/">https://www.jetbrains.com/webstorm/</a></li>
-                    <li>npm <a href="https://www.npmjs.com/">https://www.npmjs.com/</a></li>
-                    <li>Node.js <a href="https://nodejs.org/">https://nodejs.org/</a></li>
-                    <li>JSHint <a href="http://jshint.com/">http://jshint.com/</a></li>
-                    <li>JSCS <a href="http://jscs.info/">http://jscs.info/</a></li>
-                    <li>Mocha <a href="https://mochajs.org/">https://mochajs.org/</a></li>
-                </ul>
-            </section>
-
+        <div class="lnu-footer">
+            <img src="../remark/images/lnu-logotype.png">
+            <img src="../remark/images/lnu-symbol.png">
         </div>
-    </div>
 
-    <script src="../reveal.js/lib/js/head.min.js"></script>
-    <script src="../reveal.js/js/reveal.js"></script>
+        ---
 
-    <script>
+        class: lnu-background-cc
 
-        // Full list of configuration options available at:
-        // https://github.com/hakimel/reveal.js#configuration
-        Reveal.initialize({
-            width: 1280,
-            height: 800,
-            controls: true,
-            progress: true,
-            history: true,
-            center: false,
+        ### Upphovsrätt för detta verk
 
-            transition: 'slide', // none/fade/slide/convex/concave/zoom
+        Detta verk är framtaget av Mats Loock i anslutning till kursen Grundläggande programmering (1DV021) vid Linnéuniversitetet.
 
-            // Optional reveal.js plugins
-            dependencies: [
-                { src: '../reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
-                { src: '../reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
-                { src: '../reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
-                { src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function () { return !!document.querySelector('pre code'); }, callback: function () { hljs.initHighlightingOnLoad(); } },
-                { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
-                { src: '../reveal.js/plugin/notes/notes.js', async: true }
-            ]
-        });
+        Allt innehåll i detta verk förutom fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol,
+        är licensierad under en <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+            <img alt="Creative Commons-licens" style="border-width:0;vertical-align:middle" src="https://i.creativecommons.org/l/by/4.0/80x15.png" />
+            Creative Commons Erkännande 4.0 Internationell Licens
+        </a>.
+        #### Du får använda detta verk så här
+        - kopiera hela eller delar av innehållet
+        - sprida hela eller delar av innehållet
+        - visa hela eller delar av innehållet offentligt och digitalt
+        - konvertera innehållet till annat format
+        - du får även göra om innehållet
 
+        Om du förändrar innehållet så ta inte med fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol i din nya version!
+
+        Vid all användning måste du ange källan: ”Linnéuniversitetet – Grundläggande programmering (1DV021)” och
+        en länk till https://coursepress.lnu.se/kurs/grundlaggande-programmering och till Creative Common-licensen här ovan.
+
+        ---
+
+        # Kursledningen
+
+        <dl class="table">
+            <dt class="table-cell">
+                <img class="grayscale border" src="http://www.gravatar.com/avatar/a334470b8e87eb204a337c228f940e13.jpg?s=80" alt="Mats">
+            </dt>
+            <dd class="table-cell" style="text-align: left">Mats Loock (kursansvarig/kursledare)</dd>
+        </dl>
+        <dl class="table">
+            <dt class="table-cell">
+                <img class="grayscale border" src="http://www.gravatar.com/avatar/f0792a7226128e723ae2a45450e4da5c.jpg?s=80" alt="Johan">
+            </dt>
+            <dd class="table-cell" style="text-align: left">Johan Leitet (kursansvarig/kursledare)</dd>
+        </dl>
+        <dl class="table">
+            <dt class="table-cell">
+                <img class="grayscale border" src="http://www.gravatar.com/avatar/b47109ad8c128221c9dd060d15c89cc9.jpg?s=80" alt="Jacob">
+            </dt>
+            <dd class="table-cell" style="text-align: left">Jacob Lindehoff (kursledare)</dd>
+        </dl>
+        <dl class="table">
+            <dt class="table-cell">
+                <img class="grayscale border" src="http://www.gravatar.com/avatar/2261038623688f4d83dc10c53b85efb8.jpg?s=80" alt="John">
+            </dt>
+            <dd class="table-cell" style="text-align: left">John Häggerud (kursledare)</dd>
+        </dl>
+
+        ---
+
+        # ...och som vanligt är kursledningen inte gudar...
+
+        <blockquote>
+            <p>“He who can, does.</p>
+            <p>He who cannot, teaches.“</p>
+
+            <footer>
+                Man and Superman (1903) "Maxims for Revolutionists" <br />
+                George Bernard Shaw
+            </footer>
+        </blockquote>
+
+        ## ...men å andra sidan...
+
+        <blockquote>
+            <p>“Those who can, do.</p>
+            <p>Those who can do more, teach.“</p>
+
+            <footer>
+                Okänd
+            </footer>
+        </blockquote>
+
+        ---
+
+        # Kursens mål
+
+        - redogöra för olika datatyper och enklare datastrukturer (1)
+        - välja typer, uttryck, satser och styrstrukturer lämpliga för sammanhanget (2)
+        - skapa och använda funktioner (3)
+        - skapa och använda objekt och arrayer (4)
+        - utföra felsökning i programkod (5)
+        - versionshantera programkod (6)
+        - skriva kod som uppfyller ställda krav för god kodkvalitét (7)
+        - analysera problem för att därefter värdera och välja lämplig design samt konstruera  lösning i form av program i programspråket Javascript (8)
+
+        ## Du kommer med andra ord att...
+        - ...kunna skriva enklare applikationer i Javascript.
+        -   ...själv ha skapat dig en god programmeringsgrund att stå på, vilket gör det enklare att använda, och lära in, olika program- och skriptspråk som t.ex. C#, PHP, ...
+
+        ---
+
+        # Kurslitteratur
+
+        <img class="border" src="http://eloquentjavascript.net/img/cover.png" style="float:right;margin:0 0 10px 10px;" />
+
+        - Eloquent JavaScript, 2nd Edition av Marijn Haverbake.
+            - Tryckt format, ISBN 978-1593275846.
+            - __FRI att tillgå online__, <a href="http://eloquentjavascript.net/">http://eloquentjavascript.net/</a>.
+
+
+        - …en hyfsad bok, som du självklart får använda under examinationerna!
+        - Kursen bygger på och följer i stort första delen av kurslitteraturen (kapitel 1-11). Endast kompletterande material kommer att finnas att tillgå, som på inget sätt kan ersätta kurslitteraturen.
+
+        ---
+
+        # Upplägg
+
+        - Kursen är indelad i tre delar där varje del...
+            - ...har ett antal övningsuppgifter som är förberedande för...
+            - ...den, för varje del, avslutande individuella examinationsuppgiften.
+        - Teorin som varje del omfattar examineras individuellt och muntligen med utgångspunkt från
+        examinationsuppgifterna. Det är med andra ord totalt tre ordinarie examinationstillfällen.
+        - Schemalagd verksamhet
+            - Föreläsningar (7 st á 2 h)
+            - "Peer instructions" (2 st á 2 h)
+            - Handledningstillfällen (8 st á 1 h)
+            - Examinsationstillfällen (3 st á 30 min/kursdeltagare)
+
+        ---
+
+        # Viktiga datum och tider
+
+        - Alla datum och tider hittar du i schemat.
+        - ...och ja det är viktigt att du deltar aktivt under läraktiviteterna.
+        - "Peer Instructions"
+            - 15/9 9:15-11:00
+            - 6/10 13:15-15:00
+        - Muntlig examination
+            - 19/9 - 20/9 8:00-17:00 <span class="text-gray">(3/10 13:00-17:00, 4/10 8:00 - 12:00)</span>
+            - 10/10 - 11/10 8:00-17:00 <span class="text-gray">(31/10 13:00-17:00, 1/11 8:00 - 12:00)</span>
+            - 24/10 - 25/10 8:00-17:00 <span class="text-gray">(7/11 13:00-17:00, 8/11 8:00 - 12:00)</span>
+
+        ---
+    
+        # Något att reflektera över...
+
+        <blockquote>
+            <p>“Education is not received. It is achieved.“</p>
+            <footer>
+                Okänd
+            </footer>
+        </blockquote>
+
+        <blockquote>
+            <p>“Learning is not a spectator sport.“</p>
+            <footer>
+                Okänd
+            </footer>
+        </blockquote>
+
+        <blockquote>
+            <p>
+                “Don't be afraid to ask questions. Don't be afraid to ask for help
+                when you need it. I do that every day. Asking for help isn't a sign of
+                weakness, it's a sign of strength. It shows you have the courage to
+                admit when you don't know something, and then allows you to learn
+                something new.“
+            </p>
+            <footer>
+                Barak Obama
+            </footer>
+        </blockquote>
+
+        ---
+
+        # Del 1
+
+        - 4 veckor (35-38)
+        - Värden, typer och operatorer.
+        - Uttryck, satser och variabler.
+        - Styrstrukturer och funktioner.
+        - Datastrukturer: arrayer och objekt.
+        - Kurslitteraturen: 1 - 5.
+
+        ---
+
+        # Del 2
+
+        - 3 veckor (39-41)
+        - Objekt: egenskaper, metoder, prototyper.
+        - Objekt: Arv, överskuggning, polymorfism.
+        - Buggar, felhantering samt reguljära uttryck.
+        - Kurslitteraturen: 6 - 9.
+
+        ---
+
+        # Del 3
+
+        - 2 veckor (42-43)
+        - Moduler.
+        - Kurslitteraturen: 10 - 11.
+
+        ---
+
+        # Utvecklingsmiljö
+
+        - JetBrains WebStorm 2016 <a href="https://www.jetbrains.com/webstorm/">https://www.jetbrains.com/webstorm/</a>
+        - Node.js <a href="https://nodejs.org/">https://nodejs.org/</a>
+        - npm <a href="https://www.npmjs.com/">https://www.npmjs.com/</a>
+        - Git <a href="https://git-scm.com/">https://git-scm.com/</a></li>
+        - JSHint <a href="http://jshint.com/">http://jshint.com/</a>
+        - JSCS <a href="http://jscs.info/">http://jscs.info/</a>
+        - Mocha <a href="https://mochajs.org/">https://mochajs.org/</a>
+    
+        ---
+    
+        # Vi i kursledningen ställer upp!
+    
+        - __Har du probelm? Fråga!__ Ingen fråga är för dum för att ställas. Kursledningen finns där för dig, …
+        - …och du, __vi vill så gärna att du lyckas__…
+            - …så var smart! Utnyttja kursledningen och använd de schemalagda tillfällena för att ställa frågor. Det är nu då kursen går som kursledningen har tid avsatt för att kunna hjälpa dig.
+        - ...men du..
+            - …__vi ställer upp till 100% och det enda du bara behöver göra är att ställa upp själv!__ Ju tidigare kursledningen får reda på eventuella problem desto lättare kan vi tillsammans åtgärda dem.
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
     </script>
-
+    <script>
+        var slideshow = remark.create({
+            ratio: "16:9",
+            highlightLanguage: "javascript",
+//            highlightStyle: "ir-black",
+            highlightLines: true,
+            navigation: {
+                scroll: true,
+                touch: true,
+                click: false
+            }
+        });
+    </script>
 </body>
 </html>
