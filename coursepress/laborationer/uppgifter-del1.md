@@ -9,7 +9,7 @@ Du hittar övningsuppgifterna till kursens första del i kursboken under [Övnin
 
 Uppgifterna är uppdelade i olika svårighetsnivåer från A till C, där C är den svåraste nivån.
 
-Lösningsförslag kommer att publiceras till varje övningsuppgift.
+[Lösningsförslag finns](https://github.com/1dv021/exercise-solution-proposals) till varje övningsuppgift (pågående arbete!).
 
 >***OBS!*** Fler övningsuppgifter kommer att publiceras.
 
