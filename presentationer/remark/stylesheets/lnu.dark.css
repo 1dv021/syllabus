@@ -227,30 +227,33 @@ code.ildasm.hljs {
         font-weight: normal;
     }
 
-code.csharp.hljs {
+code.javascript.hljs {
     background-color: #0e1e1e;
     color: #dcdcdc;
     width: 90%;
 }
 
-    code.csharp .hljs-keyword {
-        color: #569cd6;
+    code.javascript .hljs-title,
+    code.javascript .hljs-literal,
+    code.javascript .hljs-keyword {
+        color: #cc7832;
+	font-weight:bold;
     }
 
-    code.csharp  .hljs-number {
-        color: #b5cea8;
+    code.javascript  .hljs-number {
+        color: #6897bb;
     }
 
-    code.csharp  .hljs-string {
-        color: #d69d85;
+    code.javascript  .hljs-string {
+        color: #6a8759;
     }
 
-    code.csharp .hljs-title {
-        color: #dcdcdc;
+    code.javascript .hljs-comment {
+        color: #808080;
     }
 
-    code.csharp .hljs-comment {
-        color: #608b4e;
+    code.javascript .hljs-built_in {
+        color: #9876aa;
     }
 
 .organe-border {
@@ -267,4 +270,7 @@ code.csharp.hljs {
     column-count: 3;
     column-gap: 10px;
     column-rule: 1px solid black;
+}
+.gray-text {
+    color: #808080;
 }
