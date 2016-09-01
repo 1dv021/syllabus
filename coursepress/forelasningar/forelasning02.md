@@ -4,8 +4,7 @@ kontrollstrukturer, sekvens, selektion, iteration, (rekursion), "if"-satsen, "sw
 
 ## Resurser
 - [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/02/index.html#)
-- <span style="text-decoration: line-through;color: gray;">[Youtube](#) 2016-09-01, 10-12<span>
-- [Livecoding.tv, 2016-09-01](https://www.livecoding.tv/webbprogrammerare/videos/Dpxnq-sv-kontrollstrukturer-i-javascript/)
+- [Youtube](https://youtu.be/QrgBz3xCYoc) 2016-09-01, 10-12
 
 ### Eloquent JavaScript, 2nd Edition 
 
