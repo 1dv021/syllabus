@@ -4,8 +4,7 @@ historik, datatyper, Number, String, Boolean, Object, "typeof"-operatorn, aritme
 
 ## Resurser
 - [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/01/index.html#)
-- <span style="text-decoration: line-through;color: gray;">[Youtube](#) 2016-08-30, 13:15-15:00<span>
-- [Livecoding.tv, 2016-08-30](https://www.livecoding.tv/webbprogrammerare/videos/oyqQb-sv-programmering-med-javascript-5)
+- [Youtube](https://youtu.be/HGiM9j9oYvk) 2016-08-30, 13:15-15:00
 
 ### Eloquent JavaScript, 2nd Edition 
 
