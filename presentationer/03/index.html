@@ -1,388 +1,328 @@
-﻿<!doctype html>
-<html lang="sv-se">
-
+﻿<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
-
     <title>03 - Föreläsning - Grundläggande programmering (1DV021)</title>
-
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-
-    <link rel="icon" href="../images/favicon.png" type="image/png" />
-
-    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
-    <link rel="stylesheet" href="../reveal.js/css/theme/black.css" id="theme">
-    <link rel="stylesheet" href="../reveal.js/css/theme/black.lnu.css" id="theme">
-
-    <!-- Code syntax highlighting -->
-    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
-
-    <!-- Printing and PDF exports -->
-    <script>
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-        document.getElementsByTagName('head')[0].appendChild(link);
-    </script>
-
-    <!--[if lt IE 9]>
-    <script src="lib/js/html5shiv.js"></script>
-    <![endif]-->
+    <meta charset="utf-8">
+    <link rel="icon" href="../remark/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="../remark/stylesheets/lnu.dark.css" id="theme">
+    <link rel="stylesheet" href="../reveal.js/css/theme/black.lnu.css">
 </head>
+<body class="lnu">
+<textarea id="source">
 
-<body>
+        class: center, middle, lnu-background-yellow
 
-    <div class="reveal lnu">
+        ### Grundläggande programmering (1DV021)
+        # Föreläsnig 3
 
-        <!-- Any section element inside of this container is displayed as a slide -->
-        <div class="slides">
-            <!-- Start -->
-            <section class="center" data-state="lnu-intro">
-                <h3>Grundläggande programmering</h3>
-                <h3>(1DV021)</h3>
-                <h1>Föreläsning 3</h1>
-                <div class="lnu-footer">
-                    <img src="../images/lnu-logotype.png" />
-                    <img src="../images/lnu-symbol.png" />
-                </div>
-            </section>
-
-            <!-- CC -->
-            <section data-state="lnu-cc">
-                <h2>Upphovsrätt för detta verk</h2>
-                <p>
-                    Detta verk är framtaget av Mats Loock i anslutning till kursen Grundläggande programmering (1DV021) vid Linnéuniversitetet.
-                </p>
-                <p>Allt innehåll i detta verk förutom fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol, är licensierad under en <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons-licens" style="border-width:0;vertical-align:middle" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /> Creative Commons Erkännande 4.0 Internationell Licens</a>.</p>
-                <h4>Du får använda detta verk så här</h4>
-                <ul>
-                    <li>kopiera hela eller delar av innehållet</li>
-                    <li>sprida hela eller delar av innehållet</li>
-                    <li>visa hela eller delar av innehållet offentligt och digitalt</li>
-                    <li>konvertera innehållet till annat format</li>
-                    <li>du får även göra om innehållet</li>
-                </ul>
-                <p>
-                    Om du förändrar innehållet så ta inte med fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol i din nya version!
-                </p>
-                <p>
-                    Vid all användning måste du ange källan: ”Linnéuniversitetet – Grundläggande programmering (1DV021)” och en länk till https://coursepress.lnu.se/kurs/grundlaggande-programmering och till Creative Common-licensen här ovan.
-                </p>
-            </section>
-
-            <!-- Vad är funktioner bra för? -->
-            <section>
-                <h2>Vad är funktioner bra för?</h2>
-                <ul>
-                    <li>
-                        Alla språk har inbyggda funktioner som utför förutbestämda saker.
-                        <pre><code class="js">console.log("Hej hopp!"); // skriver ut en sträng i konsolfönstret
-
-var result = Math.floor(3.14); // avrundar ett flyttal till närmasta lägre heltal
-</code></pre>
-                        <ul>
-                            <li>Det finns dock inte funktioner för alla saker; du måste skriva egna.</li>
-                        </ul>
-                    </li>
-                    <li>
-                        Att dela upp ett program i mindre delar, <b>funktioner</b>, är viktigt för att...
-                        <ul>
-                            <li>...strukturera kod.</li>
-                            <li>...få överblick över koden.</li>
-                            <li>...undvika att identisk kod upprepas. <span class="text-gray">Bryt aldrig mot principen <b>DRY</b> <i>(Don't repeat yourself!</i>).</span></li>
-                            <li>...koden blir enklare att testa.</li>
-                        </ul>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Att anropa en funktion -->
-            <section>
-                <h2>Att anropa en funktion</h2>
-                <pre><code class="js">console.log("Hello, World!"); // Skriver ut strängen (och returnerar värdet undefined).
-
-console.log(); // Skriver ut en ny rad (och returnerar värdet undefined).
-
-var randomNumber = Math.random(); // Returnerar ett värde från och med 0 till 1.
-</code></pre>
-                <ul>
-                    <li>
-                        En funktion anropas genom att ange dess namn följt av parenteser innehållande eventuella argument.
-                        <ul>
-                            <li>Argument är värden som skickas till funktionen. Det är funktionen som bestämmer om inget , ett eller flera argument kan skickas vid anrop.</li>
-                        </ul>
-                    </li>
-                    <li>
-                        Då en funktion exekverats klart returneras <b>alltid</b> ett värde, ett så kallat returvärde.
-                        <ul>
-                            <li>Returvärde är det värde en funktion ger tillbaka. Bara ett värde kan returneras.</li>
-                        </ul>
-                    </li>
-                    <li>Parenteserna efter funktionens namn måste alltid anges, oavsett om det finns argument eller inte.</li>
-                </ul>
-            </section>
-
-            <!-- Att definiera en funktion -->
-            <section>
-                <section>
-                    <h2>Att definiera en funktion</h2>
-                    <ul>
-                        <li>
-                            Du definierar en funktion på samma sätt som en variabel, värdet är bara en funktion.
-                            <pre><code class="js">var sayHello = function(name) {
-    var greeting = "Hello, " + name + "!";
-
-    return greeting;
-};
-
-console.log(sayHello("Ellen Nu")); // ➡ Hello, Ellen Nu!
-</code></pre>
-                            <ul>
-                                <li>En funktion är ett uttryck som börjar med nyckelordet <code>function</code>.</li>
-                                <li>Mellan parenteserna kan ingen, en eller flera <b>parametrar</b> finnas. En parameter fungerar på samma sätt som en variabel i funktionen.</li>
-                                <li>Funktionens kropp, mellan klammerparenteserna, innehåller satserna som exekveras när funktionen anropas.</li>
-                                <li>return-satsen, om den finns någon, bestämmer värdet funktionen returnerar då den anropas. Saknas <code>return</code>-sats returneras värdet <code>undefined</code>.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </section>
-            </section>
-
-            <section>
-                <section>
-                    <h2><code class="no-text-transform">return</code>-satser</h2>
-                    <ul>
-                        <li>
-                            En funktion behöver inte ha en <code>return</code>-sats.
-                            <pre><code class="js">var sayHello = function(name) {
-    console.log()"Hello, " + name + "!");
-};
-
-sayHello("Nisse"); // ➡ Hello, Nisse!
-</code></pre>
-                            <ul><li>OBS! Trots att <code>return</code>-sats saknas returnerar funktionen värdet <code>undefined</code>!</li></ul>
-                        </li>
-                        <li>
-                            Det kan finnas flera <code>return</code>-satser i en funktion.
-                            <pre><code class="js">var evenOrOdd = function(value) {
-
-    // Är talet jämt delbart med 2?
-    if (value % 2 === 0){
-        return "jämt";
-    }
-    return "udda";
-};
-
-var result = evenOrOdd(42);
-console.log("42 är ett" + result + "tal."); // ➡ 42 är ett jämt tal.
-</code></pre>
-                        </li>
-                    </ul>
-                </section>
-                <section>
-                    <h2>En generellt bättre lösning?</h2>
-                    <ul>
-                        <li>
-                            Funktion som returnerar en sträng (en mindre generell lösning).
-                            <pre><code class="js">var evenOrOdd = function(value) {
-
-    // Är talet jämt delbart med 2?
-    if (value % 2 === 0){
-        return "jämt";
-    }
-    return "udda";
-};
-
-var result = evenOrOdd(42);
-console.log("42 är ett" + result + "tal."); // ➡ 42 är ett jämt tal.
-</code></pre>
-                        </li>
-                        <li>
-                            Funktion som returnerar ett Booleskt värde (en generellare lösning).
-                            <pre><code class="js">var isEven = function(value) {
-
-    // Är talet jämt delbart med 2?
-    return value % 2 === 0;
-};
-
-var result = isEven(42) ? "jämt" : "udda";
-console.log("42 är ett" + result + "tal."); // ➡ 42 är ett jämt tal.
-</code></pre>
-                        </li>
-                    </ul>
-                </section>
-            </section>
-
-            <section>
-                <h2>Parametrar och dess räckvidd <span style="font-size:60%">("<i>scope</i>")</span></h2>
-                <pre><code class="js">var getFullName = function(firstName, lastName) {
-    var fullName = firstName + " " + lastName;  // OBS! lokal variabel
-
-    return fullName;
-};
-
-var fullName = getFullName("Ellen", "Nu"); // OBS! global variabel
-console.log("Personens fullständiga namn är " + fullName + ".");
-// ➡ Personens fullständiga namn är Ellen Nu.
-
-fullName = getFullName("Nisse", "Hult");
-console.log("Personens fullständiga namn är " + fullName + ".");
-// ➡ Personens fullständiga namn är Nisse Hult.
-</code></pre>
-                <ul>
-                    <li>
-                        Parametrar fungerar i stort på samma sätt som lokala variabler i en funktion.
-                        <ul>
-                            <li>Variabler i en funktion måste defineras med <code>var</code> för att bli lokala.</li>
-                            <li><code>firtsName</code>, lastName</code> och fullName</code> är <b>lokala</b> i funktionen getFullName.</li>
-                            <li>Värdena <code>firstName</code> och <code>lastName</code> tilldelas bestäms vid anropet av funktionen.</li>
-                        </ul>
-                    </li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Mer om parametrar</h2>
-                <ul>
-                    <li>
-                        Javascript är generös vid tolkning av argument som skickas till en funktion.
-                        <ul>
-                            <li>
-                                Är det för många argument ignoreras de extra.
-                                <pre><code class="js">Math.floor(3.14, 9.36, 17.3); // → 3</code></pre>
-                            </li>
-                            <li>
-                                Är det för få argument tilldelas funktionens parametrar värdet <code>undefined</code>.
-                                <pre><code class="js">var sumThreeNumbers = function(op1, op2, op3) {
-
-    // Värden vid anrop enligt nedan: op1 = 23, op2 = 4, op3 = undefined
-    var result = op1 + op2 + op3; // → NaN
-    
-    return result;
-};
-
-console.log(sumThreeNumbers(23, 4)); // ➡ NaN
-</code></pre>
-                            </li>
-                            <li>Lätt hänt att felaktigt antal argument skickas med vid anrop av en funktion.</li>
-                        </ul>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Funktioner som värden -->
-            <section>
-                <h2>Funktioner som värden</h2>
-                <ul>
-                    <li>En funktion kan skickas som argument till en annan funktion.</li>
-                    <li>
-                        En funktionsvariabels värde kan ändras.
-                        <pre style="width:100%;"><code class="js">var doNotLie = true;
-var tellTheTruth = function() {
-    return "Mats är bäst!";
-};
-
-console.log(tellTheTruth()); // ➡ Mats är bäst!
-
-if (doNotLie) {
-    tellTheTruth = function() {
-        return "Mats är inte bättre än John!";
-    };
-}
-
-console.log(tellTheTruth()); // ➡ Mats är inte bättre än John!
-</code></pre>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- "Closure" -->
-            <section>
-                <h2>"<i>Closure</i>"</h2>
-                <ul>
-                    <li>En funktion returnerar en nästlad funktion.</li>
-                    <li>Funktionen som returneras har full tillgång till den omslutande funktionens lokala variabler.</li>
-                </ul>
-                <pre style="height:100%"><code class="js">var greet = function(greeting) {
-    var localGreeting = greeting;
-
-    return function(name) {
-        return localGreeting + " " + name + ".";
-    };
-};
-
-var goodMorning = greet("God morgon");
-var goodEvening = greet("God kväll");
-
-console.log(goodMorning("Ellen")); // ➡ God morgon Ellen.
-console.log(goodEvening("Nisse")); // ➡ God kväll Nisse.
-console.log(goodMorning("Mats"));  // ➡ God morgon Mats.
-</code></pre>
-            </section>
-            <section>
-                <h2>Olika sätt att skapa funktioner</h2>
-                <ul>
-                    <li>
-                        Funktionsuttryck
-                        <pre><code ="js">// anonymt funktionsuttryck
-var greet = function() {
-    console.log("Hello, World!");
-};
-
-// namngivet funktionsuttryck
-var anotherGreet = function sayHi() {
-    console.log("Hello, World!");
-};
-</code></pre>
-                    </li>
-                    <li>
-                        Funktionsdeklaration
-                        <pre><code ="js">function sayHello() {
-    console.log("Hello, World!");
-}
-</code></pre>
-                        <ul>
-                            <li>Definierar en namngiven funktion utan avändande av någon variabel.</li>
-                            <li>Påminner om variabeldeklarationer. Variabeldeklarationer börjar med <code>var</code>, funktionsdeklarationer börjar <code>function</code>.</li>
-                        </ul>
-                    </li>
-                </ul>
-            </section>
+        <div class="lnu-footer">
+            <img src="../remark/images/lnu-logotype.png">
+            <img src="../remark/images/lnu-symbol.png">
         </div>
-    </div>
 
-    <script src="../reveal.js/lib/js/head.min.js"></script>
-    <script src="../reveal.js/js/reveal.js"></script>
+        ---
 
-    <script>
-        // Full list of configuration options available at:
-        // https://github.com/hakimel/reveal.js#configuration
-        Reveal.initialize({
-            width: 1280,
-            height: 800,
-            controls: true,
-            progress: true,
-            history: true,
-            center: false,
+        class: lnu-background-cc
 
-            transition: 'slide', // none/fade/slide/convex/concave/zoom
+        ### Upphovsrätt för detta verk
 
-            // Optional reveal.js plugins
-            dependencies: [
-                { src: '../reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
-                { src: '../reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
-                { src: '../reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
-                { src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function () { return !!document.querySelector('pre code'); }, callback: function () { hljs.initHighlightingOnLoad(); } },
-                { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
-                { src: '../reveal.js/plugin/notes/notes.js', async: true }
-            ]
-        });
+        Detta verk är framtaget av Mats Loock i anslutning till kursen Grundläggande programmering (1DV021) vid Linnéuniversitetet.
 
-    </script>
+        Allt innehåll i detta verk förutom fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol,
+        är licensierad under en <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+            <img alt="Creative Commons-licens" style="border-width:0;vertical-align:middle" src="https://i.creativecommons.org/l/by/4.0/80x15.png" />
+            Creative Commons Erkännande 4.0 Internationell Licens
+        </a>.
+        #### Du får använda detta verk så här
+        - kopiera hela eller delar av innehållet
+        - sprida hela eller delar av innehållet
+        - visa hela eller delar av innehållet offentligt och digitalt
+        - konvertera innehållet till annat format
+        - du får även göra om innehållet
 
+        Om du förändrar innehållet så ta inte med fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol i din nya version!
+
+        Vid all användning måste du ange källan: ”Linnéuniversitetet – Grundläggande programmering (1DV021)” och
+        en länk till https://coursepress.lnu.se/kurs/grundlaggande-programmering och till Creative Common-licensen här ovan.
+
+        ---
+
+        # Vad är funktioner bra för?
+
+        - Alla språk har inbyggda funktioner som utför förutbestämda saker.
+
+        ```
+        console.log('Hej hopp!'); // skriver ut en sträng i konsolfönstret
+
+        let result = Math.floor(3.14); // avrundar ett flyttal till närmasta lägre heltal
+        ```
+
+
+        - Det finns dock inte funktioner för alla saker; du måste skriva egna.
+        - Att dela upp ett program i mindre delar, __funktioner__, är viktigt för att...
+            - ...strukturera kod.
+            - ...få överblick över koden.
+            - ...undvika att identisk kod upprepas. <span class="text-gray">Bryt aldrig mot principen __DRY__ _(Don't repeat yourself!_).</span>
+            - ...koden blir enklare att testa.
+
+        ---
+    
+        # Att anropa en funktion
+    
+        ```
+        console.log('Hello, World!'); // Skriver ut strängen (och returnerar värdet undefined).
+
+        console.log(); // Skriver ut en ny rad (och returnerar värdet undefined).
+
+        let randomNumber = Math.random(); // Returnerar ett värde från och med 0 till 1.
+        ```
+    
+        - En funktion anropas genom att ange dess namn följt av parenteser innehållande eventuella argument.
+            - Argument är värden som skickas till funktionen. Det är funktionen som bestämmer om inget , ett eller flera argument kan skickas vid anrop.
+        - Då en funktion exekverats klart returneras __alltid__ ett värde, ett så kallat returvärde.
+            - Returvärde är det värde en funktion ger tillbaka. Bara ett värde kan returneras.
+        - Parenteserna efter funktionens namn måste alltid anges, oavsett om det finns argument eller inte.
+
+        ---
+
+        # Att definiera en funktion
+
+        - Du definierar en funktion på samma sätt som en variabel, värdet är bara en funktion.
+
+        ```
+        let sayHello = function(name) {
+          let greeting = 'Hello, ' + name + '!';
+            
+          return greeting;
+        };
+            
+        console.log(sayHello('Ellen Nu')); // ➡ Hello, Ellen Nu!
+        ```
+
+        - En funktion är ett uttryck som börjar med nyckelordet `function`.
+        - Mellan parenteserna kan ingen, en eller flera __parametrar__ finnas. En parameter fungerar på samma sätt som en lokal variabel i funktionen.
+        - Funktionens kropp, mellan klammerparenteserna, innehåller satserna som exekveras när funktionen anropas.
+        - return-satsen, om den finns någon, bestämmer värdet funktionen returnerar då den anropas. Saknas `return`-sats returneras värdet `undefined`.
+
+        ---
+
+        # `return`-satser
+
+        - En funktion behöver inte ha en `return`-sats.
+
+        ```
+        let sayHello = function(name) {
+          console.log()'Hello, ' + name + '!');
+        };
+
+        sayHello('Nisse'); // ➡ Hello, Nisse!
+        ```
+
+        - __OBS!__ Om en `return`-sats saknas i en funktion returnerar funktionen alltid värdet `undefined`!
+        - Det kan finnas flera `return`-satser i en funktion.
+
+        ```
+        let evenOrOdd = function(value) {
+          // Är talet jämt delbart med 2?
+          if (value % 2 === 0){
+            return 'jämt';
+          }
+          return 'udda';
+        };
+
+        let result = evenOrOdd(42);
+        console.log('42 är ett ' + result + ' tal.'); // ➡ 42 är ett jämt tal.
+        ```
+        
+        ---
+    
+        # En generellt bättre lösning?
+
+        - Funktion som returnerar en sträng (en mindre generell lösning).
+    
+        ```
+        let evenOrOdd = function(value) {
+          // Är talet jämt delbart med 2?
+          if (value % 2 === 0){
+            return 'jämt';
+          }
+          return 'udda';
+        };
+            
+        let result = evenOrOdd(42);
+        console.log('42 är ett' + result + 'tal.'); // ➡ 42 är ett jämt tal.
+        ```                                    
+        
+        - Funktion som returnerar ett booleskt värde (en generellare lösning).
+    
+        ```
+        let isEven = function(value) {
+          // Är talet jämt delbart med 2?
+          return value % 2 === 0;
+        };
+            
+        let result = isEven(42) ? 'jämt' : 'udda';
+        console.log('42 är ett ' + result + ' tal.'); // ➡ 42 är ett jämt tal.
+        ```
+    
+        ---
+    
+        # Parametrar och dess räckvidd ("_scope_")
+
+        ```
+        let getFullName = function(firstName, lastName) {
+          let fullName = firstName + ' ' + lastName;  // OBS! lokal variabel
+
+          return fullName;
+        };
+        
+        let fullName = getFullName('Ellen', 'Nu'); // OBS! global variabel
+        console.log('Personens fullständiga namn är ' + fullName + '.');
+        // ➡ Personens fullständiga namn är Ellen Nu.
+        
+        fullName = getFullName('Nisse', 'Hult');
+        console.log('Personens fullständiga namn är ' + fullName + '.');
+        // ➡ Personens fullständiga namn är Nisse Hult.
+        ```
+
+
+        - Parametrar fungerar i stort på samma sätt som lokala variabler i en funktion.
+            - Variabler i en funktion måste defineras med `let`, eller `var` för att bli lokala.
+            - `firtsName`, `lastName` och `fullName` är __lokala__ i funktionen `getFullName`.
+            - Värdena `firstName` och `lastName` tilldelas bestäms vid anropet av funktionen.
+
+        ---
+    
+        # Mer om parametrar
+
+        Javascript är generös vid tolkning av argument som skickas till en funktion.
+    
+        - Är det för många argument ignoreras de extra.
+
+        ```
+        Math.floor(3.14, 9.36, 17.3); // → 3
+        ```
+
+        - Är det för få argument tilldelas funktionens parametrar värdet `undefined`.
+
+        ```
+        let sumThreeNumbers = function(op1, op2, op3) {
+          // Värden vid anrop enligt nedan: op1 = 23, op2 = 4, op3 = undefined
+          let result = op1 + op2 + op3; // → NaN
+
+          return result;
+        };
+        console.log(sumThreeNumbers(23, 4)); // ➡ NaN
+        ```
+
+        - Lätt hänt att felaktigt antal argument skickas med vid anrop av en funktion.
+    
+        ---
+    
+        # Funktioner som värden
+    
+        - En funktion kan skickas som argument till en annan funktion.
+        - En funktionsvariabels värde kan ändras.
+        
+        ```
+        let doNotLie = true;
+
+        let confess = function(someFunction) {
+          console.log(someFunction());
+        };
+
+        let tellTheTruth = function() {
+          return 'Mats är bäst!';
+        };
+
+        confess(tellTheTruth); // ➡ Mats är bäst!
+
+        if (doNotLie) {
+          tellTheTruth = function() {
+            return 'Mats är inte bättre än John!';
+          };
+        }
+
+        confess(tellTheTruth); // ➡ Mats är inte bättre än John!
+        ```
+
+        ---
+    
+        # "_Closure_"
+            
+        - En funktion returnerar en nästlad funktion.
+        - Funktionen som returneras har full tillgång till den omslutande funktionens lokala variabler.
+
+        ```
+        let greet = function(greeting) {
+          let localGreeting = greeting;
+        
+          return function(name) {
+            return localGreeting + ' ' + name + '.';
+          };
+        };
+        
+        let goodMorning = greet('God morgon');
+        let goodEvening = greet('God kväll');
+        
+        console.log(goodMorning('Ellen')); // ➡ God morgon Ellen.
+        console.log(goodEvening('Nisse')); // ➡ God kväll Nisse.
+        console.log(goodMorning('Mats'));  // ➡ God morgon Mats.
+        ```
+
+        ---
+
+        # Olika sätt att skapa funktioner
+
+        ## Funktionsuttryck
+
+        ```
+        greet(); // ReferenceError: greet is not defined
+        anotherGreet(); // ReferenceError: greet is not defined
+    
+        // anonymt funktionsuttryck
+        let greet = function() {
+          console.log('Hello, World!');
+        };
+
+        // namngivet funktionsuttryck
+        let anotherGreet = function sayHi() {
+          console.log('Hello, World!');
+        };
+
+        greet(); // Outputs: 'Hello, World!'
+        anotherGreet(); // Outputs: 'Hello, World!'
+        ```
+
+        - Funktionen definieras först när satsen som definierar funktionen exekverats.
+
+        ## Funktionsdeklaration
+
+        ```
+        sayHello(); // Outputs: 'Hello, World!'
+
+        function sayHello() {
+          console.log('Hello, World!');
+        }
+        ```
+
+        - Funktionen definieras precis innan omslutande funktion exekveras.
+
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js">
+</script>
+<script>
+    var slideshow = remark.create({
+        ratio: "16:9",
+        highlightLanguage: "javascript",
+//            highlightStyle: "ir-black",
+        highlightLines: true,
+        navigation: {
+            scroll: true,
+            touch: true,
+            click: false
+        }
+    });
+</script>
 </body>
 </html>
