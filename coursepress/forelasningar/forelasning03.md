@@ -4,6 +4,7 @@ funktion, anropa funktion, argument, returvärde, parameter, return-sats, räckv
 
 ## Resurser
 - [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/03/index.html#)
+- [Livecoding.tv, 2016-09-06](https://www.livecoding.tv/webbprogrammerare/videos/K941x-sv-funktioner-i-javascript)
 
 ### Eloquent JavaScript, 2nd Edition 
 
