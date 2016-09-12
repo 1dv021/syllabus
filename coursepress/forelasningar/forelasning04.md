@@ -4,9 +4,6 @@ array, objekt, 0-baserat index, arrayliteral, Array, värdetyp, referenstyp, sor
 
 ## Resurser
 - [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/04/index.html#)
-- [Inspelning](https://connect.sunet.se/p46aowtxgfb/) 2015-09-14, 13-15 (Adobe Connect)
-- [Inspelning](https://youtu.be/XmNbIZGliNQ) 2015-09-14, 13-15 (Youtube)
-- [Inspelning](http://orion.lnu.se/pub/education/course/1DV021/HT15/lectures/1dv021-f04.mp4) 2015-09-14, 13-15 (mp4)
 
 ### Eloquent JavaScript, 2nd Edition
 
@@ -28,7 +25,3 @@ array, objekt, 0-baserat index, arrayliteral, Array, värdetyp, referenstyp, sor
 	- [Summarizing with reduce](http://eloquentjavascript.net/05_higher_order.html#h_fx3e34kT/k)
 - [8. Bugs and Error Handling](http://eloquentjavascript.net/08_error.html)
 	- [Exceptions](http://eloquentjavascript.net/08_error.html#h_zT3755/aOp) 
-
-## Externa resurser
-
-[TODO]
