@@ -1,620 +1,558 @@
-﻿<!doctype html>
-<html lang="sv-se">
-
+﻿<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
-
     <title>04 - Föreläsning - Grundläggande programmering (1DV021)</title>
-
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-
-    <link rel="icon" href="../images/favicon.png" type="image/png" />
-
-    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
-    <link rel="stylesheet" href="../reveal.js/css/theme/black.css" id="theme">
-    <link rel="stylesheet" href="../reveal.js/css/theme/black.lnu.css" id="theme">
-
-    <!-- Code syntax highlighting -->
-    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
-
-    <!-- Printing and PDF exports -->
-    <script>
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-        document.getElementsByTagName('head')[0].appendChild(link);
-    </script>
-
-    <!--[if lt IE 9]>
-    <script src="lib/js/html5shiv.js"></script>
-    <![endif]-->
+    <meta charset="utf-8">
+    <link rel="icon" href="../remark/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="../remark/stylesheets/lnu.dark.css" id="theme">
+    <link rel="stylesheet" href="../reveal.js/css/theme/black.lnu.css">
 </head>
+<body class="lnu">
+<textarea id="source">
 
-<body>
+        class: center, middle, lnu-background-yellow
 
-    <div class="reveal lnu">
+        ### Grundläggande programmering (1DV021)
+        # Föreläsnig 4
 
-        <!-- Any section element inside of this container is displayed as a slide -->
-        <div class="slides">
-            <!-- Start -->
-            <section class="center" data-state="lnu-intro">
-                <h3>Grundläggande programmering</h3>
-                <h3>(1DV021)</h3>
-                <h1>Föreläsning 4</h1>
-                <div class="lnu-footer">
-                    <img src="../images/lnu-logotype.png" />
-                    <img src="../images/lnu-symbol.png" />
-                </div>
-            </section>
-
-            <!-- CC -->
-            <section data-state="lnu-cc">
-                <h2>Upphovsrätt för detta verk</h2>
-                <p>
-                    Detta verk är framtaget av Mats Loock i anslutning till kursen Grundläggande programmering (1DV021) vid Linnéuniversitetet.
-                </p>
-                <p>Allt innehåll i detta verk förutom fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol, är licensierad under en <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons-licens" style="border-width:0;vertical-align:middle" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /> Creative Commons Erkännande 4.0 Internationell Licens</a>.</p>
-                <h4>Du får använda detta verk så här</h4>
-                <ul>
-                    <li>kopiera hela eller delar av innehållet</li>
-                    <li>sprida hela eller delar av innehållet</li>
-                    <li>visa hela eller delar av innehållet offentligt och digitalt</li>
-                    <li>konvertera innehållet till annat format</li>
-                    <li>du får även göra om innehållet</li>
-                </ul>
-                <p>
-                    Om du förändrar innehållet så ta inte med fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol i din nya version!
-                </p>
-                <p>
-                    Vid all användning måste du ange källan: ”Linnéuniversitetet – Grundläggande programmering (1DV021)” och en länk till https://coursepress.lnu.se/kurs/grundlaggande-programmering och till Creative Common-licensen här ovan.
-                </p>
-            </section>
-
-            <!-- ??? -->
-            <section>
-                <h2>Hur hantrera flera värden genom en variabel eller ett returvärde?</h2>
-                <h4>Problem</h4>
-                <ul>
-                    <li>
-                        En variabel kan bara tilldelas ett värde.
-                        <ul>
-                            <li>Vilka alternativ finns det om "flera" värden ska kunna tilldelas en variabel?</li>
-                        </ul>
-                    </li>
-                    <li>
-                        En funktion kan bara returnera ett värde.
-                        <ul>
-                            <li>Vilka alternativ finns det om "flera" värden ska returneras?</li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <h4>Lösning</h4>
-                <p>Oavsett om det är "flera" värden som ska tilldelas en variabel eller om en funktion ska returnera "flera" värden är lösningen <b>EN</b> referens till en <b>array</b> eller ett <b>objekt</b>, där arrayen eller objektet kan <b>innehålla flera värden</b>.</p>
-            </section>
-
-            <!-- Array -->
-            <section>
-                <!-- Vad är en array? -->
-                <section>
-                    <h2>Vad är en array?</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <td style="font-size:smaller">värde ➡ </td>
-                                <td style="text-align:center;border: 1px solid gray;width: 3em;"><code>12.6</code></td>
-                                <td style="text-align:center;border: 1px solid gray;width: 3em;">18.7</td>
-                                <td style="text-align:center;border: 1px solid gray;width: 3em;">9.8</td>
-                                <td style="text-align:center;border: 1px solid gray;width: 3em;">13.2</td>
-                                <td style="text-align:center;border: 1px solid gray;width: 3em;">14.4</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style="font-size:smaller;color:#fc6">index ➡ </td>
-                                <td style="text-align:center;font-size:smaller;;color:#fc6;">0</td>
-                                <td style="text-align:center;font-size:smaller;;color:#fc6;">1</td>
-                                <td style="text-align:center;font-size:smaller;;color:#fc6;">2</td>
-                                <td style="text-align:center;font-size:smaller;;color:#fc6;">3</td>
-                                <td style="text-align:center;font-size:smaller;;color:#fc6;">4</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <ul>
-                        <li>
-                            Du kan samla flera värden i en array.
-                            <ul>
-                                <li>En array innehåller element där varje element kan innehållet ett värde.</li>
-                                <li>Med hjälp av index kan du ange vilket element i arrayen du vill hämta ett värde från eller tilldela ett värde.</li>
-                                <li>En array har ett s.k. 0-baserat index, d.v.s. första elementet i en array har alltid index 0.</li>
-                            </ul>
-                        <li>Värdena i en array kan vara av olika typer. <span class="text-gray" style="font-size:smaller;">(Bör undvikas! Object lämpligare.)</span></li>
-                    </ul>
-                    <table>
-                        <thead>
-                            <tr>
-                                <td style="font-size:smaller">värde ➡ </td>
-                                <td style="text-align:center;border: 1px solid gray;">42</td>
-                                <td style="text-align:center;border: 1px solid gray;">"är meningen med livet"</td>
-                                <td style="text-align:center;border: 1px solid gray;">true</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style="font-size:smaller;color:#fc6">index ➡ </td>
-                                <td style="text-align:center;font-size:smaller;;color:#fc6;">0</td>
-                                <td style="text-align:center;font-size:smaller;;color:#fc6;">1</td>
-                                <td style="text-align:center;font-size:smaller;;color:#fc6;">2</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-
-                <!-- Så skapar du en array -->
-                <section>
-                    <h2>Så skapar du en array</h2>
-                    <ul>
-                        <li>
-                            Arrayliteral - rekommenderat sätt
-                            <pre><code class="js">// En tom array
-var values = [];
-
-// En array med tre element
-var cars = ["Volvo", "Nissan", "Passat"];
-</code></pre>
-                        </li>
-                        <li>
-                            Med nyckleordet new - inte rekommenderat!
-                            <pre><code class="js">// En tom array
-var values = new Array();
-
-// En array med tre element
-var cars = new Array("Volvo", "Nissan", "Passat");
-</code></pre>
-                        </li>
-                    </ul>
-                </section>
-
-                <!-- Så arbetar du med en array -->
-                <section>
-                    <h2>Så arbetar du med en array</h2>
-                    <pre><code class="js" style="max-height:none;">// Array med fem element.
-var temperatures = [12.6, 18.7, 9.8, 13.2, 14.4];
-
-// Hämta värdet för det fjärde elementet.
-console.log(temperatures[3]); // ➡ 13.2
-
-// Tilldela det andra elementet ett nytt värde.
-temperatures[1] = 4.2;
-
-// Antalet element i en array.
-console.log(temperatures.length); // ➡ 5
-
-// Iterera igenom en array från första till sista elementet.
-var i;
-var output = "";
-
-for (i = 0; i < temperatures.length; i += 1) {
-    output += temperatures[i] + " ";
-}
-
-console.log(output); // ➡ 12.6 4.2 9.8 13.2 14.4
-</code></pre>
-                    <p style="font-size:smaller;">Se <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array</a> för fler metoder.</p>
-                </section>
-            </section>
-
-            <!-- Värdetyper och referenstyper -->
-            <section>
-                <h2>Värdetyper och referenstyper</h2>
-                <ul><li>Värdetyp (t.ex. Number)</li></ul>
-                <pre style="font-size:40%;"><code class="js" style="max-height:none;">var dogAge = 7;
-var catAge;
-
-console.log(dogAge); // ➡ 7
-
-catAge = dogAge;
-catAge = 3;
-
-console.log(catAge); // ➡ 3
-console.log(dogAge); // ➡ 7
-</code></pre>
-                <ul><li>Referenstyp (t.ex. Array)</li></ul>
-                <pre style="font-size:40%;"><code class="js" style="max-height:none;">var numbers = [5, 8, 7, 1, 6]; // tilldelar en variabel en referens till en array
-var figures;
-
-console.log(numbers); // ➡ [ 5, 8, 7, 1, 6 ]
-
-figures = numbers;    // kopierar referensen till en ny variabel
-figures[0] = 42;      // ändrar det första elementets värde genom att använda kopian av referensen
-
-console.log(figures); // ➡ [ 42, 8, 7, 1, 6 ]
-console.log(numbers); // ➡ [ 42, 8, 7, 1, 6 ], (numbers och figures refererar till samma array!)
-</code></pre>
-            </section>
-
-            <!-- En array som returvärde -->
-            <section>
-                <h2>En array som returvärde</h2>
-                <pre style="font-size:50%;"><code class="js" style="max-height:none;">var numbers;
-
-/**
- * Returns an array of numbers in the range of 0 to 9.
- * @param count {Number} Number of random numbers to randomize.
- * @returns {Array.&lt;Number&gt;}
- */
-var getRandomNumbers = function(count) {
-    var i;
-    var randomNumbers = [];
-
-    for (i = 0; i < count; i += 1) {
-        randomNumbers.push(Math.floor(Math.random() * 10));
-    }
-    
-    // Return reference to an array with count elements.
-    return randomNumbers;
-};
-
-// Initialize a variable to refer to an array.
-numbers = getRandomNumbers(5);
-
-console.log(numbers); // ➡ [ 5, 8, 7, 1, 6 ]
-</code></pre>
-            </section>
-
-            <section style="font-size:smaller;">
-                <h2>Array som parameter</h2>
-                <ul><li>Använder du en array som argument kan du få oönskade "sidoeffekter".</li></ul>
-                <pre><code class="js" style="max-height:none;">var scores;
-
-var logDoubledUp = function(results) {
-    var i;
-
-    for (i = 0; i < results.length; i += 1) {
-        results[i] *= 2;
-    }
-
-    console.log(results); // ➡ [ 36, 18, 46, 24, 42, 34 ]
-};
-
-scores = [18, 9, 23, 12, 21, 17];
-console.log(scores);      // ➡ [ 18, 9, 23, 12, 21, 17 ]
-
-logDoubledUp(scores);
-console.log(scores);      // ➡ [ 36, 18, 46, 24, 42, 34 ]
-</code></pre>
-                <ul><li>Den globala variablen <code>scores</code> refererar till exakt samma array som parametern <code>results</code> gör, varför samma array påverkas oavsett vilken av dem som används.</li></ul>
-            </section>
-
-            <section>
-                <h2>Arbeta med en modifierad kopia av en array</h2>
-                <ul><li>Metoden <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice"><code>slice</code></a> skapar en kopia av en array.</li></ul>
-                <pre><code class="js" style="max-height:none;">var scores;
-
-var logDoubledUp = function(results) {
-    var copy = results.slice(); // skapar en kopia av arrayen results refererar till
-    var i;
-
-    for (i = 0; i < results.length; i += 1) {
-        copy[i] *= 2;
-    }
-
-    console.log(copy); // ➡ [ 36, 18, 46, 24, 42, 34 ]
-};
-
-scores = [18, 9, 23, 12, 21, 17];
-console.log(scores);   // ➡ [ 18, 9, 23, 12, 21, 17 ]
-
-logDoubledUp(scores);
-console.log(scores);   // ➡ [ 18, 9, 23, 12, 21, 17 ]
-</code></pre>
-            </section>
-
-            <!-- Sortera en array -->
-            <section>
-                <h2>Sortera en array</h2>
-                <ul>
-                    <li>
-                        Metoden <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"><code>sort</code></a> sorterar, om ingen sorteringsfunktion anges, genom att först konvertera elementens värden till strängar för att sedan jämföra strängarna (lexografisk sortering).
-                        <pre><code class="js">var values = [2, 42, 10, 1, 8, 24, 4];
-
-values.sort();
-console.log(values); // ➡ [ 1, 10, 2, 24, 4, 42, 8 ], 10 kommer före 2!
-</code></pre>
-                    </li>
-                    <li>
-                        Genom att ange en sorteringsfunktion i form av ett funktionsuttryck kan en egen sorteringordningen bestämmas.
-                        <pre><code class="js">var values = [2, 42, 10, 1, 8, 24, 4];
-
-values.sort(function(a, b) {
-    return a - b;
-});
-
-console.log(values); // ➡ [ 1, 2, 4, 8, 10, 24, 42 ]</code></pre>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Några fler metoder... -->
-            <section>
-                <h2>Några fler metoder...</h2>
-                <ul>
-                    <li>
-                        Iterera igenom värden i en array (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"><code>foreach</code></a>).
-                        <pre><code class="js">var values = [2, 1, 8];
-
-values.forEach(function(value) {
-    console.log(value);
-});
-
-// ➡ 2
-// ➡ 1
-// ➡ 8
-</code></pre>
-                    </li>
-                    <li>
-                        Summera värden i en array (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce"><code>reduce</code></a>).
-                        <pre><code class="js">var sum;
-var values = [2, 1, 8];
-
-sum = values.reduce(function(a, b) {
-    return a + b;
-});
-
-console.log(sum); // ➡ 11
-</code></pre>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Ytterligare några fler metoder... -->
-            <section>
-                <h2>Ytterligare några fler metoder...</h2>
-                <ul>
-                    <li>
-                        Filtrera värden i en array (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter"><code>filter</code></a>).
-                        <pre style="width:100%;"><code class="js">var filteredValues;
-var values = [2, 1, 8];
-
-filteredValues = values.filter(function(a) {
-    // Return all even numbers.
-    return a % 2 === 0;
-});
-
-console.log(filteredValues); // ➡ [ 2, 8 ]
-</code></pre>
-                    </li>
-                    <li>
-                        Transformera värden i en array (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map"><code>map</code></a>).
-                        <pre style="width:100%;"><code class="js">var transformedValues;
-var values = [2, 1, 8];
-
-transformedValues = values.map(function(a) {
-    return a * 2;
-});
-
-console.log(transformedValues); // ➡  4, 2, 16
-</code></pre>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Object -->
-            <section>
-                <h2>Vad är ett objekt?</h2>
-                <ul>
-                    <li>Objekt är ett referensvärde, en instans av en referenstyp, som t.ex. <code>Object</code>.</li>
-                    <li>Du kan samla namngivna värden i objekt. Namn/värde-paren kallas egenskaper.</li>
-                    <li>Egenskaperna ett objekt har kan vara olika typer.</li>
-                    <li>En, eller flera, referensvariabler kan referera till ett och samma objekt.</li>
-                </ul>
-                <pre><code class="js">var person = {
-    firstName: "Ellen", 
-    lastName: "Nu", 
-    age: 5, 
-    eyeColor: "yellow"
-};
-
-var anotherRef = person; // båda variablerna refererar till samma objekt
-</code></pre>
-            </section>
-
-            <!-- Så skapar du ett objekt ab typen Object -->
-            <section>
-                <h2>Så skapar du ett Object-objekt</h2>
-                <ul>
-                    <li>
-                        Objektliteral - rekommenderat sätt
-                        <pre><code class="js">// Ett tomt obejkt
-var person = {};
-
-// Ett objekt med tre egenskaper
-var car = {
-    make: "Volvo",
-    color: "blue",
-    year: 2010
-};
-</code></pre>
-                    </li>
-                    <li>
-                        Med nyckelordet new - inte rekommenderat!
-                        <pre><code class="js">// Ett tomt objekt
-var person = new Object();
-
-// Ett objekt med tre egenskaper
-var car = new Object();
-car.make = "Volvo";
-car.color = "blue";
-car.year = 2010;
-</code></pre>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- -->
-            <section>
-                <h2>Två olika sätt att att komma åt egenskapers värden</h2>
-                <ul>
-                    <li>
-                        Punktnotationen är det föredragna sättet.
-                    </li>
-                    <li>Hakparenteser används oftast tillsammans med en variabel innehållande egenskapens namn.</li>
-                </ul>
-                        <pre><code class="js">var car = {
-    make: "Volvo",
-    color: "blue",
-    year: 2010
-};
-
-console.log(car.year); // ➡  2010
-
-// Lägg till en ny egenskap till objektet.
-car.model = "V70"; // { make: 'Volvo', color: 'blue', year: 2010, model: 'V70' }
-
-var property = "model";
-console.log(car[property]); // ➡  "V70"
-</code></pre>
-            </section>
-
-            <!-- Egenskaper i ett objekt -->
-            <section>
-                <h2>Egenskaper i ett objekt</h2>
-                <ul>
-                    <li>
-                        Iterera genom ett objekts samtliga egenskaper (inklusive dess prototyps) med <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in"><code>for...in</code></a>.
-                        <pre><code class="js">var property;
-var car = {
-    make: "Volvo",
-    color: "blue",
-    year: 2010
-};
-
-for (property in car) {
-    console.log(property + ": " +  car[property]);
-}
-
-// ➡ make: Volvo
-// ➡ color: blue
-// ➡ year: 2010
-</code></pre>
-                    </li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Nycklarna till värdena</h2>
-                <ul>
-                    <li>
-                        Iterera igenom ett objekts egna egenskaper med hjälp av egenskapen <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys"><code>keys</code></a>, som är en array innehållande objektets egna egenskaper.
-                        <pre><code class="js" style="max-height:none">var car = {
-    make: "Volvo",
-    color: "blue",
-    year: 2010
-};
-
-var keys = Object.keys(car); // [ 'make', 'color', 'year' ]
-
-keys.forEach(function(key) {
-    console.log(key + ": " +  car[key]);
-});
-
-// ➡ make: Volvo
-// ➡ color: blue
-// ➡ year: 2010
-</code></pre>
-                    </li>
-                </ul>
-            </section>
-
-            <section>
-                <section>
-                    <h2>Om fel inträffar kasta ett undantag!</h2>
-                    <ul>
-                        <li>
-                            Kastas ett undantag avbryts all exekvering av en aktuella funktionen (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw"><code>throw</code></a>).
-                        </li>
-                        <li>Exekveringen fortsätter i det först förekommande <code>catch</code>-blocket; saknas det avslutas programmet.
-                    <pre><code class="js" style="max-height:none">var foo = function(arr) {
-
-    // Kasta ett undantag om arr inte refererar till en array.
-    if (!Array.isArray(arr)) {
-        throw new TypeError("arr doesn't refer to an array.");
-    }
-
-    // Gör något med arrayen...
-};
-
-foo("Jag är inte en array!");  // Anropet leder till att programmet avslutas!
-</code></pre>
-                        </li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Hantera undantag</h2>
-                    <ul>
-                        <li>
-                            Undantag kan fångas och hanteras (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch"><code>try...catch</code></a>).
-                            <pre style="width:100%;"><code class="js" style="max-height:none; width:100%;">var car = {
-    make: "Volvo",
-    color: "blue",
-    year: 2010
-};
-
-var bar = function(obj) {
-    if (!obj.hasOwnProperty("make") ||
-        !obj.hasOwnProperty("model")) {
-        throw new Error("Objektet saknar relevanta egenskap(er).");
-    }
-
-    // Gör något med objektets egenskaper make och model...
-};
-
-try {
-    bar(car);
-} catch (e) {
-    console.log(e.message); // ➡ Objektet saknar relevanta egenskap(er).
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </section>
-            </section>
+        <div class="lnu-footer">
+            <img src="../remark/images/lnu-logotype.png">
+            <img src="../remark/images/lnu-symbol.png">
         </div>
-    </div>
 
-    <script src="../reveal.js/lib/js/head.min.js"></script>
-    <script src="../reveal.js/js/reveal.js"></script>
+        ---
 
-    <script>
-        // Full list of configuration options available at:
-        // https://github.com/hakimel/reveal.js#configuration
-        Reveal.initialize({
-            width: 1280,
-            height: 800,
-            controls: true,
-            progress: true,
-            history: true,
-            center: false,
+        class: lnu-background-cc
 
-            transition: 'slide', // none/fade/slide/convex/concave/zoom
+        ### Upphovsrätt för detta verk
 
-            // Optional reveal.js plugins
-            dependencies: [
-                { src: '../reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
-                { src: '../reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
-                { src: '../reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
-                { src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function () { return !!document.querySelector('pre code'); }, callback: function () { hljs.initHighlightingOnLoad(); } },
-                { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
-                { src: '../reveal.js/plugin/notes/notes.js', async: true }
-            ]
+        Detta verk är framtaget av Mats Loock i anslutning till kursen Grundläggande programmering (1DV021) vid Linnéuniversitetet.
+
+        Allt innehåll i detta verk förutom fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol,
+        är licensierad under en <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+            <img alt="Creative Commons-licens" style="border-width:0;vertical-align:middle" src="https://i.creativecommons.org/l/by/4.0/80x15.png" />
+            Creative Commons Erkännande 4.0 Internationell Licens
+        </a>.
+        #### Du får använda detta verk så här
+        - kopiera hela eller delar av innehållet
+        - sprida hela eller delar av innehållet
+        - visa hela eller delar av innehållet offentligt och digitalt
+        - konvertera innehållet till annat format
+        - du får även göra om innehållet
+
+        Om du förändrar innehållet så ta inte med fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol i din nya version!
+
+        Vid all användning måste du ange källan: ”Linnéuniversitetet – Grundläggande programmering (1DV021)” och
+        en länk till https://coursepress.lnu.se/kurs/grundlaggande-programmering och till Creative Common-licensen här ovan.
+
+        ---
+
+        # Hur hantrera flera värden genom en variabel eller ett returvärde?
+        ## Problem
+
+        - En variabel kan bara tilldelas ett värde.
+            - Vilka alternativ finns det om "flera" värden ska kunna tilldelas en variabel?
+        - En funktion kan bara returnera ett värde.
+            - Vilka alternativ finns det om "flera" värden ska returneras?
+
+        ## Lösning
+
+        Oavsett om det är "flera" värden som ska tilldelas en variabel eller om en funktion ska returnera "flera" värden är lösningen __EN__ referens till en __array__ eller ett __objekt__, där arrayen eller objektet kan __innehålla flera värden__.
+
+        ---
+
+        # Vad är en array?
+
+        <table>
+            <thead>
+                <tr>
+                    <td style="font-size:smaller">värde ➡ </td>
+                    <td style="text-align:center;border: 1px solid gray;width: 3em;"><code>12.6</code></td>
+                    <td style="text-align:center;border: 1px solid gray;width: 3em;">18.7</td>
+                    <td style="text-align:center;border: 1px solid gray;width: 3em;">9.8</td>
+                    <td style="text-align:center;border: 1px solid gray;width: 3em;">13.2</td>
+                    <td style="text-align:center;border: 1px solid gray;width: 3em;">14.4</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="font-size:smaller;color:#fc6">index ➡ </td>
+                    <td style="text-align:center;font-size:smaller;;color:#fc6;">0</td>
+                    <td style="text-align:center;font-size:smaller;;color:#fc6;">1</td>
+                    <td style="text-align:center;font-size:smaller;;color:#fc6;">2</td>
+                    <td style="text-align:center;font-size:smaller;;color:#fc6;">3</td>
+                    <td style="text-align:center;font-size:smaller;;color:#fc6;">4</td>
+                </tr>
+            </tbody>
+        </table>
+
+        - Du kan samla flera värden i en array.
+            - En array innehåller element där varje element kan innehållet ett värde.
+            - Med hjälp av index kan du ange vilket element i arrayen du vill hämta ett värde från eller tilldela ett värde.
+            - En array har ett s.k. 0-baserat index, d.v.s. första elementet i en array har alltid index 0.
+        - Värdena i en array kan vara av olika typer. <span class="text-gray" style="font-size:smaller;">(Bör undvikas! Object lämpligare.)</span>
+
+        <table>
+            <thead>
+                <tr>
+                    <td style="font-size:smaller">värde ➡ </td>
+                    <td style="text-align:center;border: 1px solid gray;">42</td>
+                    <td style="text-align:center;border: 1px solid gray;">"är meningen med livet"</td>
+                    <td style="text-align:center;border: 1px solid gray;">true</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="font-size:smaller;color:#fc6">index ➡ </td>
+                    <td style="text-align:center;font-size:smaller;;color:#fc6;">0</td>
+                    <td style="text-align:center;font-size:smaller;;color:#fc6;">1</td>
+                    <td style="text-align:center;font-size:smaller;;color:#fc6;">2</td>
+                </tr>
+            </tbody>
+        </table>
+
+        ---
+    
+        # Så skapar du en array
+    
+        - Arrayliteral - rekommenderat sätt
+
+        ```
+        // En tom array
+        let values = [];
+
+        // En array med tre element
+        let cars = ['Volvo', 'Nissan', 'Passat'];
+        ```
+                        
+        - Med nyckleordet new - ___inte rekommenderat!___
+
+        ```
+        // En tom array
+        let values = new Array();
+
+        // En array med tre element
+        let cars = new Array('Volvo', 'Nissan', 'Passat');
+        ```
+
+        ---
+
+        # Så arbetar du med en array
+
+        ```
+        // Array med fem element.
+        let temperatures = [12.6, 18.7, 9.8, 13.2, 14.4];
+
+        // Hämta värdet för det fjärde elementet.
+        console.log(temperatures[3]); // ➡ 13.2
+
+        // Tilldela det andra elementet ett nytt värde.
+        temperatures[1] = 4.2;
+
+        // Antalet element i en array.
+        console.log(temperatures.length); // ➡ 5
+
+        // Iterera igenom en array från första till sista elementet.
+        var output = '';
+
+        for (let i = 0; i < temperatures.length; i += 1) {
+            output += temperatures[i] + ' ';
+        }
+
+        console.log(output); // ➡ 12.6 4.2 9.8 13.2 14.4
+        ```
+
+        .smaller[Se https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array för fler metoder.]
+
+        ---
+
+        # Värdetyper och referenstyper
+
+        - Värdetyp (t.ex. Number)
+
+        ```
+        let dogAge = 7;
+        let catAge;
+
+        console.log(dogAge); // ➡ 7
+
+        catAge = dogAge;
+        catAge = 3;
+
+        console.log(catAge); // ➡ 3
+        console.log(dogAge); // ➡ 7
+        ```
+
+        - Referenstyp (t.ex. Array)
+
+        ```
+        let numbers = [5, 8, 7, 1, 6]; // tilldelar en variabel en referens till en array
+        let figures;
+
+        console.log(numbers); // ➡ [ 5, 8, 7, 1, 6 ]
+
+        figures = numbers;    // kopierar referensen till en ny variabel
+        figures[0] = 42;      // ändrar det första elementets värde genom att använda kopian av referensen
+
+        console.log(figures); // ➡ [ 42, 8, 7, 1, 6 ]
+        console.log(numbers); // ➡ [ 42, 8, 7, 1, 6 ], (numbers och figures refererar till samma array!)
+        ```
+
+        ---
+
+        # En array som returvärde
+
+        ```
+        let numbers;
+
+        /**
+         * Returns an array of numbers in the range of 0 to 9.
+         *
+         * @param count {Number} Number of random numbers to randomize.
+         * @returns {Array.&lt;Number&gt;} An array with random numbers between 0 and 9.
+         */
+        let getRandomNumbers = function(count) {
+            var randomNumbers = [];
+
+            for (let i = 0; i < count; i += 1) {
+                randomNumbers.push(Math.floor(Math.random() * 10));
+            }
+
+            // Return reference to the array with count elements.
+            return randomNumbers;
+        };
+
+        // Set a variable to refer to the returned array.
+        numbers = getRandomNumbers(5);
+
+        console.log(numbers); // ➡ [ 5, 8, 7, 1, 6 ]
+        ```
+
+        ---
+
+        # Array som parameter
+
+        - Använder du en array som argument kan du få oönskade "sidoeffekter".
+
+        ```
+        let scores;
+
+        let logDoubledUp = function(results) {
+            for (let i = 0; i < results.length; i += 1) {
+                results[i] *= 2;
+            }
+
+            console.log(results); // ➡ [ 36, 18, 46, 24, 42, 34 ]
+        };
+
+        scores = [18, 9, 23, 12, 21, 17];
+        console.log(scores);      // ➡ [ 18, 9, 23, 12, 21, 17 ]
+
+        logDoubledUp(scores);
+        console.log(scores);      // ➡ [ 36, 18, 46, 24, 42, 34 ]
+        ```
+
+        - Den globala variablen `scores` refererar till exakt samma array som parametern `results` gör, varför samma array påverkas oavsett vilken av dem som används.
+
+        ---
+
+        # Arbeta med en modifierad kopia av en array
+
+        - Metoden [`slice`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice) skapar en kopia av en array.
+
+        ```
+        let scores;
+
+        let logDoubledUp = function(results) {
+            let copy = results.slice(); // skapar en kopia av arrayen results refererar till
+
+            for (let i = 0; i < results.length; i += 1) {
+                copy[i] *= 2;
+            }
+
+            console.log(copy); // ➡ [ 36, 18, 46, 24, 42, 34 ]
+        };
+
+        scores = [18, 9, 23, 12, 21, 17];
+        console.log(scores);   // ➡ [ 18, 9, 23, 12, 21, 17 ]
+
+        logDoubledUp(scores);
+        console.log(scores);   // ➡ [ 18, 9, 23, 12, 21, 17 ]
+        ```
+
+        ---
+
+        # Sortera en array
+
+        - Metoden [`sort`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) sorterar, om ingen sorteringsfunktion anges, genom att först konvertera elementens värden till strängar för att sedan jämföra strängarna (lexografisk sortering).
+
+        ```
+        let values = [2, 42, 10, 1, 8, 24, 4];
+
+        values.sort();
+        console.log(values); // ➡ [ 1, 10, 2, 24, 4, 42, 8 ], 10 kommer före 2!
+        ```
+
+        - Genom att ange en sorteringsfunktion i form av ett funktionsuttryck kan en egen sorteringordningen bestämmas.
+
+        ```
+        let values = [2, 42, 10, 1, 8, 24, 4];
+
+        values.sort(function(a, b) {
+            return a - b;
         });
 
-    </script>
+        console.log(values); // ➡ [ 1, 2, 4, 8, 10, 24, 42 ]
+        ```
 
+        ---
+
+        # Några fler metoder...
+
+        - Iterera igenom värden i en array ([`forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)).
+
+        ```
+        let values = [2, 1, 8];
+
+        values.forEach(function(value) {
+            console.log(value);
+        });
+
+        // ➡ 2
+        // ➡ 1
+        // ➡ 8
+        ```
+
+        - Reducera värdena i en array genom att t.ex. summera dem ([`reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)).
+
+        ```
+        let sum;
+        let values = [2, 1, 8];
+
+        sum = values.reduce(function(a, b) {
+            return a + b;
+        });
+
+        console.log(sum); // ➡ 11
+        ```
+
+        ---
+
+        # Ytterligare några fler metoder...
+
+        - Filtrera värden i en array ([`filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)).
+
+        ```
+        let filteredValues;
+        let values = [2, 1, 8];
+
+        filteredValues = values.filter(function(a) {
+            // Return all even numbers.
+            return a % 2 === 0;
+        });
+
+        console.log(filteredValues); // ➡ [ 2, 8 ]
+        ```
+
+        - Transformera värden i en array ([`map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)).
+
+        ```
+        let transformedValues;
+        let values = [2, 1, 8];
+
+        transformedValues = values.map(function(a) {
+            return a * 2;
+        });
+
+        console.log(transformedValues); // ➡  4, 2, 16
+        ```
+    
+        ---
+    
+        # Vad är ett objekt?
+
+        - Objekt är ett referensvärde, en instans av en referenstyp, som t.ex. `Object`.
+        - Du kan samla namngivna värden i objekt. Namn/värde-paren kallas egenskaper.
+        - Egenskaperna ett objekt har kan vara olika typer.
+        - En, eller flera, referensvariabler kan referera till ett och samma objekt.
+
+        ```
+        let person = {
+          firstName: 'Ellen',
+          lastName: 'Nu',
+          age: 6,
+          eyeColor: 'yellow'
+        };
+        
+        let anotherRef = person; // båda variablerna refererar till samma objekt
+        ```
+
+        ---
+
+        # Så skapar du ett Object-objekt
+
+        - Objektliteral - rekommenderat sätt
+
+        ```
+         // Ett tomt obejkt
+        let person = {};
+
+        // Ett objekt med tre egenskaper
+        let car = {
+            make: 'Volvo',
+            color: 'blue',
+            year: 2010
+        };
+        ```
+
+        - Med nyckelordet new - ___inte rekommenderat!___
+
+        ```
+        // Ett tomt objekt
+        let person = new Object();
+
+        // Ett objekt med tre egenskaper
+        let car = new Object();
+        car.make = 'Volvo';
+        car.color = 'blue';
+        car.year = 2010;
+        ```
+
+        ---
+
+        # Två olika sätt att att komma åt egenskapers värden
+
+        - Punktnotationen är det föredragna sättet.
+        - Hakparenteser används oftast tillsammans med en variabel innehållande egenskapens namn.
+
+        ```
+        let car = {
+            make: 'Volvo',
+            color: 'blue',
+            year: 2010
+        };
+
+        console.log(car.year); // ➡  2010
+
+        // Lägg till en ny egenskap till objektet.
+        car.model = 'V70'; // { make: 'Volvo', color: 'blue', year: 2010, model: 'V70' }
+
+        let property = 'model';
+        console.log(car[property]); // ➡  'V70'
+        ```
+
+        ---
+
+        # Egenskaper i ett objekt
+
+        - Iterera genom ett objekts samtliga egenskaper (inklusive dess prototyper) med [`for...in`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in).
+
+        ```
+        let property;
+        let car = {
+            make: 'Volvo',
+            color: 'blue',
+            year: 2010
+        };
+
+        for (property in car) {
+            console.log(property + ': ' +  car[property]);
+        }
+
+        // ➡ make: Volvo
+        // ➡ color: blue
+        // ➡ year: 2010
+        ```
+
+        ---
+
+        # Nycklarna till värdena
+
+        - Iterera igenom ett objekts egna egenskaper med hjälp av egenskapen [`keys`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys), som är en array innehållande objektets egna egenskaper.
+
+        ```
+        let car = {
+            make: 'Volvo',
+            color: 'blue',
+            year: 2010
+        };
+
+        let keys = Object.keys(car); // [ 'make', 'color', 'year' ]
+
+        keys.forEach(function(key) {
+            console.log(key + ': ' +  car[key]);
+        });
+
+        // ➡ make: Volvo
+        // ➡ color: blue
+        // ➡ year: 2010
+        ```
+
+        ---
+
+        # Om fel inträffar kasta ett undantag!
+
+        - Kastas ett undantag avbryts all exekvering av en aktuella funktionen ([`throw`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw)).
+        - Exekveringen fortsätter i det först förekommande `catch`-blocket; saknas det avslutas programmet.
+
+        ```
+        let foo = function(arr) {
+
+            // Kasta ett undantag om arr inte refererar till en array.
+            if (!Array.isArray(arr)) {
+                throw new TypeError('arr doesn\'t refer to an array.');
+            }
+
+            // Gör något med arrayen...
+        };
+
+        foo('Jag är inte en array!');  // Anropet leder till att programmet avslutas!
+        ```
+
+        ---
+
+        # Hantera undantag
+
+        - Undantag kan fångas och hanteras ([`try...catch`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)).
+
+        ```
+        let car = {
+            make: 'Volvo',
+            color: 'blue',
+            year: 2010
+        };
+
+        let bar = function(obj) {
+            if (!obj.hasOwnProperty('make') ||
+                !obj.hasOwnProperty('model')) {
+                throw new Error('Objektet saknar relevanta egenskap(er).');
+            }
+
+            // Gör något med objektets egenskaper make och model...
+        };
+
+        try {
+            bar(car);
+        } catch (e) {
+            console.log(e.message); // ➡ Objektet saknar relevanta egenskap(er).
+        }
+        ```
+
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js">
+</script>
+<script>
+    var slideshow = remark.create({
+        ratio: "16:9",
+        highlightLanguage: "javascript",
+//            highlightStyle: "ir-black",
+        highlightLines: true,
+        navigation: {
+            scroll: true,
+            touch: true,
+            click: false
+        }
+    });
+</script>
 </body>
 </html>
