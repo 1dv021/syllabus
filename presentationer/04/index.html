@@ -153,7 +153,7 @@
         console.log(temperatures.length); // ➡ 5
 
         // Iterera igenom en array från första till sista elementet.
-        var output = '';
+        let output = '';
 
         for (let i = 0; i < temperatures.length; i += 1) {
             output += temperatures[i] + ' ';
@@ -212,7 +212,7 @@
          * @returns {Array.&lt;Number&gt;} An array with random numbers between 0 and 9.
          */
         let getRandomNumbers = function(count) {
-            var randomNumbers = [];
+            let randomNumbers = [];
 
             for (let i = 0; i < count; i += 1) {
                 randomNumbers.push(Math.floor(Math.random() * 10));
