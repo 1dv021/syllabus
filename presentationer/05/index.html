@@ -1,351 +1,305 @@
-﻿<!doctype html>
-<html lang="sv-se">
-
+﻿<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
-
     <title>05 - Föreläsning - Grundläggande programmering (1DV021)</title>
-
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-
-    <link rel="icon" href="../images/favicon.png" type="image/png" />
-
-    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
-    <link rel="stylesheet" href="../reveal.js/css/theme/black.css" id="theme">
-    <link rel="stylesheet" href="../reveal.js/css/theme/black.lnu.css" id="theme">
-
-    <!-- Code syntax highlighting -->
-    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
-
-    <!-- Printing and PDF exports -->
-    <script>
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-        document.getElementsByTagName('head')[0].appendChild(link);
-    </script>
-
-    <!--[if lt IE 9]>
-    <script src="lib/js/html5shiv.js"></script>
-    <![endif]-->
+    <meta charset="utf-8">
+    <link rel="icon" href="../remark/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="../remark/stylesheets/lnu.dark.css" id="theme">
+    <link rel="stylesheet" href="../reveal.js/css/theme/black.lnu.css">
 </head>
+<body class="lnu">
+<textarea id="source">
 
-<body>
+    class: center, middle, lnu-background-yellow
 
-    <div class="reveal lnu">
+    ### Grundläggande programmering (1DV021)
+    # Föreläsnig 5
 
-        <!-- Any section element inside of this container is displayed as a slide -->
-        <div class="slides">
-            <!-- Start -->
-            <section class="center" data-state="lnu-intro">
-                <h3>Grundläggande programmering</h3>
-                <h3>(1DV021)</h3>
-                <h1>Föreläsning 5</h1>
-                <div class="lnu-footer">
-                    <img src="../images/lnu-logotype.png" />
-                    <img src="../images/lnu-symbol.png" />
-                </div>
-            </section>
-
-            <!-- CC -->
-            <section data-state="lnu-cc">
-                <h2>Upphovsrätt för detta verk</h2>
-                <p>
-                    Detta verk är framtaget av Mats Loock i anslutning till kursen Grundläggande programmering (1DV021) vid Linnéuniversitetet.
-                </p>
-                <p>Allt innehåll i detta verk förutom fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol, är licensierad under en <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons-licens" style="border-width:0;vertical-align:middle" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /> Creative Commons Erkännande 4.0 Internationell Licens</a>.</p>
-                <h4>Du får använda detta verk så här</h4>
-                <ul>
-                    <li>kopiera hela eller delar av innehållet</li>
-                    <li>sprida hela eller delar av innehållet</li>
-                    <li>visa hela eller delar av innehållet offentligt och digitalt</li>
-                    <li>konvertera innehållet till annat format</li>
-                    <li>du får även göra om innehållet</li>
-                </ul>
-                <p>
-                    Om du förändrar innehållet så ta inte med fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol i din nya version!
-                </p>
-                <p>
-                    Vid all användning måste du ange källan: ”Linnéuniversitetet – Grundläggande programmering (1DV021)” och en länk till https://coursepress.lnu.se/kurs/grundlaggande-programmering och till Creative Common-licensen här ovan.
-                </p>
-            </section>
-
-            <!-- Vad är avsikten med koden egentligen? -->
-            <section>
-                <h2>Vad är avsikten med koden egentligen?</h2>
-                <pre><code class="js">var value;
-
-var getNumber = function() {
-    return Math.floor(Math.random() * 6) + 1;
-};
-
-value = getNumber();
-
-console.log(value); // ➡ 3
-</code></pre>
-                <ul>
-                    <li>Att skriva större program bestående av kod med fristående variabler och funktioner blir ohållbart i längden.</li>
-                    <li>Vi behöver ett nytt sätt att organisera vår kod så att den blir tydligare!</li>
-                </ul>
-            </section>
-
-            <!-- Hur kan vi skriva tydligare kod? -->
-            <section>
-                <h2>Hur kan vi skriva tydligare kod?</h2>
-                <fieldset style="border: 1px solid #eba056;margin-bottom:1em;">
-                    <legend style="margin-left:1em;padding: 0 .3em;color:#eba056">Die <span style="font-size: smaller;">(<i>tärning</i>)</span></legend>
-                <pre><code class="js">var value;
-
-var getNumber = function() {
-    return Math.floor(Math.random() * 6) + 1;
-};
-
-value = getNumber();
-
-console.log(value); // ➡ 3
-</code></pre>
-                </fieldset>
-                <ul>
-                    <li>Genom att på något sätt kapsla in variabler och funktioner blir koden tydligare. </li>
-                    <li>Objekt kan användas till att kapsla in variabler och funktioner; objekt kan både innehålla variabler (egenskaper) och funktioner (metoder).</li>
-                </ul>
-            </section>
-
-            <!-- Skapa ett objekt -->
-            <section>
-                <section>
-                    <h2>Skapa ett objekt</h2>
-                    <pre><code class="js">var die = {
-    faceValue: undefined,
-    roll: function() {
-        this.faceValue = Math.floor(Math.random() * 6) + 1;
-    }
-};
-
-die.roll();
-console.log(die.faceValue); // ➡ 3
-                    </code></pre>
-                    <ul>
-                        <li>
-                            Ett Object-objekt används till att kapsla in...
-                            <ul>
-                                <li>...tärningens aktuella värde (egenskapen <code>faceValue</code>).</li>
-                                <li>...att tärningen kan kastas (metoden <code>roll</code>), vilket ändrar tärningens värde.</li>
-                            </ul>
-                        </li>
-                        <li>Vanligt sätt att skapa <b>ett</b> objekt, MEN...</li>
-                        <li>...behöver flera objekt skapas måste koden dupliceras!</li>
-                    </ul>
-                </section>
-                <section>
-                    <h2 class="no-text-transform">this</h2>
-                    <pre><code class="js" style="max-height: none;">var roll = function() {
-    this.faceValue = Math.floor(Math.random() * 6) + 1;
-};
-
-var die = {
-    faceValue : undefined
-};
-
-var die2 = {
-    faceValue : undefined,
-    roll : roll
-};
-
-roll.call(die); // i roll() kommer this att referera till samma objekt som die
-die2.roll();    // i roll() kommer this att referera till samma objekt som die2
-
-console.log(die.faceValue);  // ➡ 3
-console.log(die2.faceValue); // ➡ 5
-</code></pre>
-                    <ul>
-                        <li><code>this</code> refererar till objektet som funktionen anropades för. </li>
-                    </ul>
-                </section>
-                <section>
-                    <h2>Funktion som använder <span class="no-text-transform">this</span></h2>
-                    <pre><code class="js" style="max-height: none;">// Skapar objekt som anropar funktion där kroppen använder this.
-
-var smallTalk = function(greet) {
-
-    greet = greet || "Hej!";
-
-    console.log(greet + " Jag, " + this.name + ", är " +  this.age + " år.");
-};
-
-var simplePerson = {
-    name: "Nisse",
-    age: 42,
-    talk: smallTalk
-};
-
-simplePerson.talk(); // ➡ Hej! Jag, Nisse, är 42 år.
-
-var anotherSimplePerson = {
-    name: "Ellen",
-    age: 5
-};
-
-smallTalk.apply(anotherSimplePerson, ["Tjabba!"]); // ➡ Tjabba! Jag, Ellen, är 5 år.
-smallTalk.call(anotherSimplePerson, "Hallå!"); // ➡ Hallå! Jag, Ellen, är 5 år.
-</code></pre>
-                </section>
-            </section>
-
-            <!-- Factory-designmönstret -->
-            <section>
-                <h2>Designmönstret <i>Factory</i></h2>
-                <ul>
-                    <li>Funktionen <code>createDie</code> löser problemet med att skapa flera liknande objekt, MEN...</li>
-                    <li>...av vilken typ är objekten som skapas? Jo, <code>Object</code>! Inte <code>Die</code>!</li>
-                </ul>
-                    <pre><code class="js" style="max-height: none;">var createDie = function() {
-    var obj = {
-        faceValue: undefined,
-        roll: function () {
-            this.faceValue = Math.floor(Math.random() * 6) + 1;
-        }
-    };
-
-    return obj;
-};
-
-var die = createDie();
-die.roll();
-console.log(die.faceValue);   // ➡ 3
-console.log(typeof die);      // ➡ object
-console.log(die.constructor); // ➡ [Function: Object]
-</code></pre>
-            </section>
-
-            <!-- Designmönstret Constructor -->
-            <section>
-                <section>
-                    <h2>Designmönstret <i>Constructor</i></h2>
-                    <ul>
-                        <li>Används nyckleordet <code>new</code> före en funktion som anropas betraktas funktionen som en konstruktorfunktion.</li>
-                        <li>Ett objekt som skapas med <code>new</code> sägs vara en <b>instans</b> av dess konstruktor.</li>
-                    </ul>
-                        <pre><code class="js" style="max-height: none;">function Die() {
-    this.faceValue = undefined;
-    this.roll = function() {
-        this.faceValue = Math.floor(Math.random() * 6) + 1;
-    };
-}
-
-var die = new Die(); // die refererar till en instans av Die
-die.roll();
-console.log(die.faceValue);   // ➡ 3
-console.log(typeof die);      // ➡ object
-console.log(die.constructor); // ➡ [Function: Die]
-</code></pre>
-                </section>
-                <section>
-                    <h2>Konstruktorfunktion med parametrar</h2>
-                        <pre><code class="js" style="max-height: none;">function SimplePerson(name, age) {
-    this.name = name;
-    this.age = age;
-    this.talk = function() {
-        console.log("Jag, " + this.name + ", är " +  this.age + " år.");
-    };
-}
-
-var simplePerson1 = new SimplePerson("Nisse", 42);
-var simplePerson2 = new SimplePerson("Ellen", 5);
-
-simplePerson1.talk(); // ➡ Jag, Nisse, är 42 år.
-simplePerson2.talk(); // ➡ Jag, Ellen, är 5 år.
-</code></pre>
-                    <ul>
-                        <li>Två identiska objekt skapas, så när på värdena egenskaperna <code>name</code> och <code>age</code> har. Metoden <code>talk</code> existerar för varje instans av <code>SimplePerson</code>.</li>
-                    </ul>
-                </section>
-            </section>
-
-            <!-- Designmönstret Constructor/Prototype -->
-            <section>
-                <section>
-                    <h2>Designmönstret <i style="font-size: smaller;">Constructor/Prototype</i></h2>
-                    <pre><code class="js">function Die() {
-    this.faceValue = undefined;
-}
-
-Die.prototype.roll = function() {
-    this.faceValue = Math.floor(Math.random() * 6) + 1;
-};
-
-var die = new Die();
-die.roll();
-console.log(die.faceValue);    // ➡ 3
-console.log(typeof die);       // ➡ object
-console.log(die.constructor);  // ➡ [Function: Die]
-</code></pre>
-                    <ul>
-                        <li>Konstruktorfunktionen innehåller enbart instansegenskapen <code>faceValue</code>, som är unik för varje instans av <code>Die</code>.</li>
-                        <li>Metoden <code>roll</code> tillhör prototypen för <code>Die</code> och är gemensam för alla objekt instansierade från <code>Die</code>.</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Designmönster för referenstyper</h2>
-                    <ul>
-                        <li>Alla objekt instansierade med samma konstruktor delar samma prototyp (egenskaper och metoder).</li>
-                    </ul>
-                    <pre><code class="js" style="max-height: none;">function Person(name, age) {
-    this.name = name;
-    this.age = age;
-}
-
-Person.prototype.talk = function() {
-    console.log("Jag, " + this.name + ", är " +  this.age + " år.");
-};
-
-var person1 = new Person("Nisse", 42);
-console.log(person1.constructor); // [Function: Person]
-
-var person2 = new Person("Ellen", 5);
-console.log(person2.constructor); // [Function: Person]
-
-person1.talk(); // Jag, Nisse, är 42 år.
-person2.talk(); // Jag, Ellen, är 5 år.
-</code></pre>
-                </section>
-            </section>
-        </div>
+    <div class="lnu-footer">
+        <img src="../remark/images/lnu-logotype.png">
+        <img src="../remark/images/lnu-symbol.png">
     </div>
 
-    <script src="../reveal.js/lib/js/head.min.js"></script>
-    <script src="../reveal.js/js/reveal.js"></script>
+    ---
 
-    <script>
-        // Full list of configuration options available at:
-        // https://github.com/hakimel/reveal.js#configuration
-        Reveal.initialize({
-            width: 1280,
-            height: 800,
-            controls: true,
-            progress: true,
-            history: true,
-            center: false,
+    class: lnu-background-cc
 
-            transition: 'slide', // none/fade/slide/convex/concave/zoom
+    ### Upphovsrätt för detta verk
 
-            // Optional reveal.js plugins
-            dependencies: [
-                { src: '../reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
-                { src: '../reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
-                { src: '../reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
-                { src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function () { return !!document.querySelector('pre code'); }, callback: function () { hljs.initHighlightingOnLoad(); } },
-                { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
-                { src: '../reveal.js/plugin/notes/notes.js', async: true }
-            ]
-        });
+    Detta verk är framtaget av Mats Loock i anslutning till kursen Grundläggande programmering (1DV021) vid Linnéuniversitetet.
 
-    </script>
+    Allt innehåll i detta verk förutom fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol,
+    är licensierad under en <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+        <img alt="Creative Commons-licens" style="border-width:0;vertical-align:middle" src="https://i.creativecommons.org/l/by/4.0/80x15.png" />
+        Creative Commons Erkännande 4.0 Internationell Licens
+    </a>.
+    #### Du får använda detta verk så här
+    - kopiera hela eller delar av innehållet
+    - sprida hela eller delar av innehållet
+    - visa hela eller delar av innehållet offentligt och digitalt
+    - konvertera innehållet till annat format
+    - du får även göra om innehållet
 
+    Om du förändrar innehållet så ta inte med fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol i din nya version!
+
+    Vid all användning måste du ange källan: ”Linnéuniversitetet – Grundläggande programmering (1DV021)” och
+    en länk till https://coursepress.lnu.se/kurs/grundlaggande-programmering och till Creative Common-licensen här ovan.
+
+    ---
+
+    # Vad är avsikten med koden egentligen?
+
+    ```
+    let value;
+
+    let getNumber = function() {
+        return Math.floor(Math.random() * 6) + 1;
+    };
+
+    value = getNumber();
+
+    console.log(value); // ➡ 3
+    ```
+
+    - Att skriva större program bestående av kod med fristående variabler och funktioner blir ohållbart i längden.
+    - Vi behöver ett nytt sätt att organisera vår kod så att den blir tydligare!
+
+    ---
+
+    #Hur kan vi skriva tydligare kod?
+
+    <fieldset style="border: 1px solid #eba056;margin-bottom:1em;">
+        <legend style="margin-left:1em;padding: 0 .3em;color:#eba056">Die <span style="font-size: smaller;">(<i>tärning</i>)</span></legend>
+    ```
+    let value;
+
+    let getNumber = function() {
+        return Math.floor(Math.random() * 6) + 1;
+    };
+
+    value = getNumber();
+
+    console.log(value); // ➡ 3
+    ```
+    </fieldset>
+    - Genom att på något sätt kapsla in variabler och funktioner blir koden tydligare.
+    - Objekt kan användas till att kapsla in variabler och funktioner; objekt kan både innehålla variabler (egenskaper) och funktioner (metoder).
+
+    ---
+
+    # Skapa ett objekt
+
+    ```
+    let die = {
+      faceValue: undefined,
+      roll: function() {
+        this.faceValue = Math.floor(Math.random() * 6) + 1;
+      }
+    };
+
+    die.roll();
+    console.log(die.faceValue); // ➡ 3
+    ```
+
+    - Ett Object-objekt används till att kapsla in...
+        - ...tärningens aktuella värde (egenskapen `faceValue`).
+        - ...att tärningen kan kastas (metoden `roll`), vilket ändrar tärningens värde.
+    - Vanligt sätt att skapa __ett__ objekt, MEN...
+    - ...behöver flera objekt skapas måste koden dupliceras!
+
+    ---
+
+    # this
+    ```
+    let roll = function() {
+      this.faceValue = Math.floor(Math.random() * 6) + 1;
+    };
+
+    let die = {
+      faceValue: undefined
+    };
+
+    let die2 = {
+      faceValue: undefined,
+      roll
+    };
+
+    roll.call(die); // i roll() kommer this att referera till samma objekt som die
+    die2.roll();    // i roll() kommer this att referera till samma objekt som die2
+
+    console.log(die.faceValue);  // ➡ 3
+    console.log(die2.faceValue); // ➡ 5
+    ```
+
+    - `this` refererar till objektet som funktionen anropades för.
+
+    ---
+
+    # Funktion som använder `this`
+
+    ```
+    // Skapar objekt som anropar funktion som använder this.
+
+    let smallTalk = function(greet = 'Hej!') {
+      console.log(greet + ' Jag, ' + this.name + ', är ' +  this.age + ' år.');
+    };
+
+    let simplePerson = {
+      name: 'Nisse',
+      age: 42,
+      talk: smallTalk
+    };
+
+    simplePerson.talk();                               // ➡ Hej! Jag, Nisse, är 42 år.
+
+    let anotherSimplePerson = {
+      name: 'Ellen',
+      age: 6
+    };
+
+    smallTalk.apply(anotherSimplePerson, ['Tjabba!']); // ➡ Tjabba! Jag, Ellen, är 6 år.
+    smallTalk.call(anotherSimplePerson, 'Hallå!');     // ➡ Hallå! Jag, Ellen, är 6 år.
+    ```
+
+    ---
+
+    # Designmönstret "_Factory_"
+
+    - Funktionen `createDie` löser problemet med att skapa flera liknande objekt, MEN...
+    - ...av vilken typ är objekten som skapas? Jo, `Object`! Inte `Die`!
+
+    ```
+    let createDie = function() {
+      let obj = {
+        faceValue: undefined,
+        roll: function() {
+          this.faceValue = Math.floor(Math.random() * 6) + 1;
+        }
+      };
+
+      return obj;
+    };
+
+    let die = createDie();
+    die.roll();
+
+    console.log(die.faceValue);   // ➡ 3
+    console.log(typeof die);      // ➡ object
+    console.log(die.constructor); // ➡ [Function: Object]
+    ```
+
+    ---
+
+    # Designmönstret "_Constructor_"
+
+    - Används nyckleordet `new` före en funktion som anropas betraktas funktionen som en konstruktorfunktion.
+    - Ett objekt som skapas med `new` sägs vara en __instans__ av dess konstruktor.
+
+    ```
+    function Die() {
+      this.faceValue = undefined;
+      this.roll = function() {
+        this.faceValue = Math.floor(Math.random() * 6) + 1;
+      };
+    }
+
+    let die = new Die(); // die refererar till en instans av Die
+    die.roll();
+
+    console.log(die.faceValue);   // ➡ 4
+    console.log(typeof die);      // ➡ object
+    console.log(die.constructor); // ➡ [Function: Die]
+    ```
+
+    ---
+
+    # Konstruktorfunktion med parametrar
+
+    ```
+    function SimplePerson(name, age) {
+      this.name = name;
+      this.age = age;
+      this.talk = function() {
+        console.log('Jag, ' + this.name + ', är ' +  this.age + ' år.');
+      };
+    }
+
+    let simplePerson1 = new SimplePerson('Nisse', 42);
+    let simplePerson2 = new SimplePerson('Ellen', 6);
+
+    simplePerson1.talk(); // ➡ Jag, Nisse, är 42 år.
+    simplePerson2.talk(); // ➡ Jag, Ellen, är 6 år.
+    ```
+
+    - Två identiska objekt skapas, så när på värdena egenskaperna `name` och `age` har.
+    - __OBS!__ Metoden `talk` är en del av varje instans av `SimplePerson`; det finns alltså två exakt lika upplagor av metoden.
+
+    ---
+
+    # Designmönstret "_Constructor/Prototype_"
+
+    ```
+    function Die() {
+      this.faceValue = undefined;
+    }
+
+    Die.prototype.roll = function() {
+      this.faceValue = Math.floor(Math.random() * 6) + 1;
+    };
+
+    let die = new Die();
+    die.roll();
+
+    console.log(die.faceValue);    // ➡ 4
+    console.log(typeof die);       // ➡ object
+    console.log(die.constructor);  // ➡ [Function: Die]
+    ```
+
+    - Konstruktorfunktionen innehåller enbart instansegenskapen `faceValue`, som är unik för varje instans av `Die`.
+    - Metoden `roll` tillhör prototypen för `Die` och är gemensam för alla objekt instansierade från `Die`.
+
+    ---
+
+    # Designmönster för referenstyper
+
+    - Alla objekt instansierade med samma konstruktor delar samma prototyp (egenskaper och metoder).
+
+    ```
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+
+    Person.prototype.talk = function() {
+      console.log('Jag, ' + this.name + ', är ' +  this.age + ' år.');
+    };
+
+    let person1 = new Person('Nisse', 42);
+    console.log(person1.constructor); // [Function: Person]
+
+    let person2 = new Person('Ellen', 5);
+    console.log(person2.constructor); // [Function: Person]
+
+    person1.talk(); // Jag, Nisse, är 42 år.
+    person2.talk(); // Jag, Ellen, är 5 år.
+    ```
+
+
+</textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js">
+</script>
+<script>
+    var slideshow = remark.create({
+        ratio: "16:9",
+        highlightLanguage: "javascript",
+//            highlightStyle: "ir-black",
+        highlightLines: true,
+        navigation: {
+            scroll: false,
+            touch: true,
+            click: false
+        }
+    });
+</script>
 </body>
 </html>
