@@ -22,9 +22,16 @@ Uppgifterna är uppdelade i olika svårighetsnivåer från A till C, där C är 
 - [Bestäm datatypen](https://coursepress.gitbooks.io/1dv021/content/ovningsuppgifter/del1/bestam-datatypen)
 - [Knivskarp HTML](https://coursepress.gitbooks.io/1dv021/content/ovningsuppgifter/del1/knivskarp-html)
 - [Additionell kopia av array](https://coursepress.gitbooks.io/1dv021/content/ovningsuppgifter/del1/additionell-kopia-av-array/)
+- [Sorterad kopia av array](https://coursepress.gitbooks.io/1dv021/content/ovningsuppgifter/del1/sorterad-kopia-av-array/)
+- [Subjektiv sortering av objekt](https://coursepress.gitbooks.io/1dv021/content/ovningsuppgifter/del1/subjektiv-sortering-av-objekt/)
 
 ## B-nivå
-
+- [Buggig kod](https://coursepress.gitbooks.io/1dv021/content/ovningsuppgifter/del1/buggig-kod/)
+- [Bättre än Svensson](https://coursepress.gitbooks.io/1dv021/content/ovningsuppgifter/del1/battre-an-svensson/)
+- [Reducerad array](https://coursepress.gitbooks.io/1dv021/content/ovningsuppgifter/del1/reducerad-array/)
+- 
 ## C-nivå
 - [Kulramen](https://coursepress.gitbooks.io/1dv021/content/ovningsuppgifter/del1/kulramen/)
 - [Harshadtal](https://coursepress.gitbooks.io/1dv021/content/ovningsuppgifter/del1/harshadtal)
+- [Reducerad array med objekt](https://coursepress.gitbooks.io/1dv021/content/ovningsuppgifter/del1/reducerad-array-med-objekt/)
+- [De bästa av de bästa](https://coursepress.gitbooks.io/1dv021/content/ovningsuppgifter/del1/de-basta-av-de-basta/)
