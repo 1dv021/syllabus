@@ -16,8 +16,12 @@ Uppgifterna är uppdelade i olika svårighetsnivåer från A till C, där C är 
 ## A-nivå
 - [Legokonstruktören](https://coursepress.gitbooks.io/1dv021/content/ovningsuppgifter/del2/legokonstruktoren/)
 - [Episk ellips](https://coursepress.gitbooks.io/1dv021/content/ovningsuppgifter/del2/episk-ellips/)
+- [Episk ellips med klass](https://coursepress.gitbooks.io/1dv021/content/ovningsuppgifter/del2/episk-ellips-med-klass/)
 - [Skrotbilen](https://coursepress.gitbooks.io/1dv021/content/ovningsuppgifter/del2/skrotbilen/)
  
 ## B-nivå
+
+- [Monumental ellips](https://coursepress.gitbooks.io/1dv021/content/ovningsuppgifter/del2/monumental-ellips/)
+- [Monumental ellips med klass](https://coursepress.gitbooks.io/1dv021/content/ovningsuppgifter/del2/monumental-ellips-med-klass/)
 
 ## C-nivå
