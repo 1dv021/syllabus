@@ -1,362 +1,282 @@
-﻿<!doctype html>
-<html lang="sv-se">
-
+﻿<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
-
     <title>07 - Föreläsning - Grundläggande programmering (1DV021)</title>
-
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-
-    <link rel="icon" href="../images/favicon.png" type="image/png" />
-
-    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
-    <link rel="stylesheet" href="../reveal.js/css/theme/black.css" id="theme">
-    <link rel="stylesheet" href="../reveal.js/css/theme/black.lnu.css" id="theme">
-
-    <!-- Code syntax highlighting -->
-    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
-
-    <!-- Printing and PDF exports -->
-    <script>
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-        document.getElementsByTagName('head')[0].appendChild(link);
-    </script>
-
-    <!--[if lt IE 9]>
-    <script src="lib/js/html5shiv.js"></script>
-    <![endif]-->
+    <meta charset="utf-8">
+    <link rel="icon" href="../remark/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="../remark/stylesheets/lnu.dark.css" id="theme">
+    <link rel="stylesheet" href="../reveal.js/css/theme/black.lnu.css">
 </head>
+<body class="lnu">
+<textarea id="source">
 
-<body>
+    class: center, middle, lnu-background-yellow
 
-    <div class="reveal lnu">
+    ### Grundläggande programmering (1DV021)
+    # Föreläsnig 7
 
-        <!-- Any section element inside of this container is displayed as a slide -->
-        <div class="slides">
-            <!-- Start -->
-            <section class="center" data-state="lnu-intro">
-                <h3>Grundläggande programmering</h3>
-                <h3>(1DV021)</h3>
-                <h1>Föreläsning 7</h1>
-                <div class="lnu-footer">
-                    <img src="../images/lnu-logotype.png" />
-                    <img src="../images/lnu-symbol.png" />
-                </div>
-            </section>
-
-            <!-- CC -->
-            <section data-state="lnu-cc">
-                <h2>Upphovsrätt för detta verk</h2>
-                <p>
-                    Detta verk är framtaget av Mats Loock i anslutning till kursen Grundläggande programmering (1DV021) vid Linnéuniversitetet.
-                </p>
-                <p>Allt innehåll i detta verk förutom fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol, är licensierad under en <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons-licens" style="border-width:0;vertical-align:middle" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /> Creative Commons Erkännande 4.0 Internationell Licens</a>.</p>
-                <h4>Du får använda detta verk så här</h4>
-                <ul>
-                    <li>kopiera hela eller delar av innehållet</li>
-                    <li>sprida hela eller delar av innehållet</li>
-                    <li>visa hela eller delar av innehållet offentligt och digitalt</li>
-                    <li>konvertera innehållet till annat format</li>
-                    <li>du får även göra om innehållet</li>
-                </ul>
-                <p>
-                    Om du förändrar innehållet så ta inte med fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol i din nya version!
-                </p>
-                <p>
-                    Vid all användning måste du ange källan: ”Linnéuniversitetet – Grundläggande programmering (1DV021)” och en länk till https://coursepress.lnu.se/kurs/grundlaggande-programmering och till Creative Common-licensen här ovan.
-                </p>
-            </section>
-
-            <!-- Organisera din kod! -->
-            <section>
-                <h2>Organisera din kod!</h2>
-                <ul>
-                    <li>
-                        Det är viktigt att skriva kod som är...
-                        <ul>
-                            <li>lätt att läsa</li>
-                            <li>lätt att förstå</li>
-                            <li>lätt att underhålla</li>
-                            <li>lätt att samarbeta kring</li>
-                        </ul>
-                    </li>
-                    <li>
-                        Du har redan organiserat din kod!
-                        <ul>
-                            <li>Satser som hör samman har du organiserat i <b>funktioner</b>.</li>
-                            <li>Funktioner och variabler (som då kallats metoder och egenskaper) som hör samman har du organiserat i <b>egendefinerade typer</b> ("<i>Constructor/Prototype pattern</i>").</li>
-                            <li>De egendefinierade typerna har du organiserat i...<b>moduler</b>(?).</li>
-                        </ul>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Moduler i JavaScript -->
-            <section>
-                <h2>Moduler i JavaScript</h2>
-                <ul>
-                    <li>
-                        Vad är en en modul i Javascript?
-                        <ul>
-                            <li>En modul är helt enkelt en samling med Javasciptkod som (säkert) kan användas av annan Javascriptkod.</li>
-                        </ul>
-                    </li>
-                    <li>
-                        Varför ska jag organisera min kod i form av moduler?
-                        <ul>
-                            <li>
-                                Genom att organisera din kod i moduler kommer du att dela upp din kod i mindre återanvändbara delar. Vilket är bra eftersom:
-                                <ul style="margin-top:.5em;">
-                                    <li>Korta kodavsnitt är enklare att förstå och "debugga".</li>
-                                    <li>Korta kodavsnitt är enklare att testa.</li>
-                                    <li>Det är enklare att återanvända kodavsnitt istället för att dublicera koden.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        Beroende på miljö finns det olika sätt att hantera moduler. Node.js har sitt sätt. På klienten
-                        finns t.ex. Browserify, requireJS och commonJS. <span class="text-gray">(ECMAScript 2015 har sitt sätt.)</span>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Moduler med Node.js -->
-            <section>
-                <h2>Moduler med Node.js</h2>
-                <ul>
-                    <li>En modul kapslar in kod som hör samman. För att  skapa en modul samlar du alla relaterade funktioner i en fil...
-                    <pre><code class="js">// greetings.js
-var sayHelloInEnglish = function() {
-    return "Hello";
-};
-
-var sayHelloInSpanish = function() {
-    return "Hola";
-};
-
-var sayHelloInSwedish = function() {
-    return "Hej";
-};
-</code></pre></li>
-                    <li>...men det räcker inte att samla funktioner i en fil. För att göra dem tillgängliga utanför
-                        filen måste de <b>exporteras</b> så att de kan <b>importeras</b> i de filer som behöver använda funktionerna.</li>
-                </ul>
-            </section>
-
-            <!-- Export -->
-            <section>
-
-                <!-- Exportera funktioner -->
-                <section>
-                    <h2>Exportera funktioner</h2>
-                        <pre><code class="js" style="max-height: none;">// greetings.js
-var sayHelloInEnglish = function() {
-    return "Hello";
-};
-
-var sayHelloInSpanish = function() {
-    return "Hola";
-};
-
-var sayHelloInSwedish = function() {
-    return "Hej";
-};
-
-// Två funktioner som exporteras; funktionen sayHelloInSwedish
-// är att betrakta som privat inom modulen, d.v.s. inte tillgänglig utanför
-// filen greetings.js.
-module.exports.sayHelloInEnglish = sayHelloInEnglish;
-module.exports.sayHelloInSpanish = sayHelloInSpanish;
-</code></pre>
-                    <ul>
-                        <li>Genom att tilldela <code>module.exports</code>, ett objekt som Node.js tillhandahåller, referenser till funktioner kan du bestämma
-                            vilka funktioner som ska göras tillgängliga utanför filen, exporteras.</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Alternativ syntax</h2>
-                        <pre><code class="js" style="max-height: none;">// greetings.js
-// Två funktioner som exporteras; funktionen sayHelloInSwedish
-// är att betrakta som privat inom modulen, d.v.s. inte tillgänglig utanför
-// filen greetings.js.
-
-module.exports.sayHelloInEnglish = function() {
-    return "Hello";
-};
-
-module.exports.sayHelloInSpanish = function() {
-    return "Hola";
-};
-
-var sayHelloInSwedish = function() {
-    return "Hej";
-};
-</code></pre>
-                </section>
-
-                <section>
-                    <h2>Alternativ syntax II</h2>
-                        <pre><code class="js" style="max-height: none;">// greetings.js
-// Två funktioner som exporteras; funktionen sayHelloInSwedish
-// är att betrakta som privat inom modulen, d.v.s. inte tillgänglig utanför
-// filen greetings.js.
-
-module.exports = {
-    sayHelloInEnglish : function() {
-        return "Hello";
-    },
-
-    sayHelloInSpanish : function() {
-        return "Hola";
-    };
-};
-
-var sayHelloInSwedish = function() {
-    return "Hej";
-};
-</code></pre>
-                </section>
-
-            </section>
-
-            <!-- Exportera en typ -->
-            <section>
-                <h2>Exportera en typ</h2>
-                    <pre><code class="js" style="max-height: none;">// User.js
-function User(name, email) {
-    this.name = name;
-    this.email = email;
-}
-
-module.exports = User;
-
-// Använd INTE!
-//module.exports.User = User;
-</code></pre>
-                <ul>
-                    <li>Om du vill att din modulrot ska vara en konstruktorfunktion tilldelar du
-                        <code>module.exports</code> referensen till konstruktorfunktionen direkt. <span class="text-gray">(Har betydelse
-                        vid importering av modulen.)</span></li>
-                </ul>
-            </section>
-
-            <!-- Import -->
-            <section>
-
-                <!-- Importera kod -->
-                <section>
-                    <h2>Importera kod</h2>
-                    <ul>
-                        <li>
-                            För att ladda en modul som finns i samma katalog som filen som laddar den använder du <code>require</code>
-                            och filnamnet (inklusive sökvägen).
-                            <pre><code class="js">//app.js
-var greetings = require("./greetings");
-console.log(greetings.sayHelloInEnglish());
-console.log(greetings.sayHelloInSpanish());
-</code></pre>
-                        </li>
-                        <li>Du anger alltid den relativa sökvägen, i förhållande till filen som vill använda en modul,
-                            till den fil som innehåller modulen du vill ladda.
-                            <ul>
-                                <li>
-                                    Det är viktigt att du inleder med <code>./</code>, <code>../</code> eller <code>/</code> för att indikera en fil, annars måste
-                                    modulen vara en "<i>core module</i>" eller återfinnas i katalogen <code>node_modules</code>.
-                                </li>
-                                <li>
-                                    Hittas inte filen kommer Node.js att försöka ladda den angivna modulen genom att lägga till
-                                    filändelserna <code>.js</code>, <code>.json</code> och slutligen <code>.node</code>.
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </section>
-
-                <!-- -->
-                <section>
-                    <h2>Importera och använda en egendefinierad typ</h2>
-                    <pre><code class="js" style="max-height: none;">// User.js
-function User(name, email) {
-    this.name = name;
-    this.email = email;
-}
-
-module.exports = User;
-</code></pre>
-<pre><code class="js" style="max-height: none;">// app.js
-var User = require("./User");
-
-var user = new User("Ellen Nu", "en@lnu.se");
-
-console.log(user); // ➡ { name: 'Ellen Nu', email: 'en@lnu.se' }
-</code></pre>
-                </section>
-            </section>
-
-            <section>
-                <h2>ECMAScript 2015 6th Edition</h2>
-                <ul>
-                    <li>
-                        Standarden
-                        <ul>
-                            <li><a href="http://www.ecma-international.org/ecma-262/6.0/">http://www.ecma-international.org/ecma-262/6.0/</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        Dokumentationen
-                        <ul>
-                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference</a></li>
-                            <li>(<a href="http://devdocs.io/javascript/">http://devdocs.io/javascript/</a>)</li>
-                        </ul>
-                    </li>
-                    <li>
-                        Det nya
-                        <ul>
-                            <li><a href="http://es6-features.org/">http://es6-features.org/</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </section>
-        </div>
+    <div class="lnu-footer">
+        <img src="../remark/images/lnu-logotype.png">
+        <img src="../remark/images/lnu-symbol.png">
     </div>
 
-    <script src="../reveal.js/lib/js/head.min.js"></script>
-    <script src="../reveal.js/js/reveal.js"></script>
+    ---
 
-    <script>
-        // Full list of configuration options available at:
-        // https://github.com/hakimel/reveal.js#configuration
-        Reveal.initialize({
-            width: 1280,
-            height: 800,
-            controls: true,
-            progress: true,
-            history: true,
-            center: false,
+    class: lnu-background-cc
 
-            transition: 'slide', // none/fade/slide/convex/concave/zoom
+    ### Upphovsrätt för detta verk
 
-            // Optional reveal.js plugins
-            dependencies: [
-                { src: '../reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
-                { src: '../reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
-                { src: '../reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
-                { src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function () { return !!document.querySelector('pre code'); }, callback: function () { hljs.initHighlightingOnLoad(); } },
-                { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
-                { src: '../reveal.js/plugin/notes/notes.js', async: true }
-            ]
-        });
+    Detta verk är framtaget av Mats Loock i anslutning till kursen Grundläggande programmering (1DV021) vid Linnéuniversitetet.
 
-    </script>
+    Allt innehåll i detta verk förutom fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol,
+    är licensierad under en <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+        <img alt="Creative Commons-licens" style="border-width:0;vertical-align:middle" src="https://i.creativecommons.org/l/by/4.0/80x15.png" />
+        Creative Commons Erkännande 4.0 Internationell Licens
+    </a>.
+    #### Du får använda detta verk så här
+    - kopiera hela eller delar av innehållet
+    - sprida hela eller delar av innehållet
+    - visa hela eller delar av innehållet offentligt och digitalt
+    - konvertera innehållet till annat format
+    - du får även göra om innehållet
 
+    Om du förändrar innehållet så ta inte med fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol i din nya version!
+
+    Vid all användning måste du ange källan: ”Linnéuniversitetet – Grundläggande programmering (1DV021)” och
+    en länk till https://coursepress.lnu.se/kurs/grundlaggande-programmering och till Creative Common-licensen här ovan.
+
+    ---
+
+    # Organisera din kod!
+    - Det är viktigt att skriva kod som är...
+        - lätt att läsa
+        - lätt att förstå
+        - lätt att underhålla
+        - lätt att samarbeta kring
+    - Du har redan organiserat din kod!
+        - Satser som hör samman har du organiserat i __funktioner__.
+        - Funktioner och variabler (som då kallats metoder och egenskaper) som hör samman har du organiserat i __egendefinerade typer__ ("_Constructor/Prototype pattern_").
+        - De egendefinierade typerna har du organiserat i...__moduler__(?).
+
+    ---
+
+    # Moduler i JavaScript
+
+    - Vad är en en modul i Javascript?
+        - En modul är helt enkelt en samling med Javasciptkod som (säkert) kan användas av annan Javascriptkod.
+    - Varför ska jag organisera min kod i form av moduler?
+        - Genom att organisera din kod i moduler kommer du att dela upp din kod i mindre återanvändbara delar. Vilket är bra eftersom:
+            - Korta kodavsnitt är enklare att förstå och "debugga".
+            - Korta kodavsnitt är enklare att testa.
+            - Det är enklare att återanvända kodavsnitt istället för att dublicera koden.
+    - Beroende på miljö finns det olika sätt att hantera moduler. Node.js har sitt sätt. På klienten finns t.ex. Browserify, requireJS och commonJS. <span class="text-gray">(ECMAScript 2015 har sitt sätt.)</span>
+    
+    ---
+    
+    # Moduler med Node.js
+                
+    - En modul kapslar in kod som hör samman. För att  skapa en modul samlar du alla relaterade funktioner i en fil...
+
+    ```
+    // greetings.js
+    const sayHelloInEnglish = function() {
+      return 'Hello';
+    };
+
+    const sayHelloInSpanish = function() {
+      return 'Hola';
+    };
+
+    const sayHelloInSwedish = function() {
+      return 'Hej';
+    };
+    ```
+
+    - ...men det räcker inte att samla funktioner i en fil. För att göra dem tillgängliga utanför
+        filen måste de __exporteras__ så att de kan __importeras__ i de filer som behöver använda funktionerna.
+
+    ---
+
+    # Exportera funktioner
+
+    ```
+    // greetings.js
+    const sayHelloInEnglish = function() {
+      return 'Hello';
+    };
+
+    const sayHelloInSpanish = function() {
+      return 'Hola';
+    };
+
+    const sayHelloInSwedish = function() {
+      return 'Hej';
+    };
+
+    // Två funktioner som exporteras; funktionen sayHelloInSwedish
+    // är att betrakta som privat inom modulen, d.v.s. inte tillgänglig utanför
+    // filen greetings.js.
+    module.exports.sayHelloInEnglish = sayHelloInEnglish;
+    module.exports.sayHelloInSpanish = sayHelloInSpanish;
+    ```
+
+    - Genom att tilldela `module.exports`, ett objekt som Node.js tillhandahåller, referenser till funktioner kan du bestämma vilka funktioner som ska göras tillgängliga utanför filen, exporteras.
+
+    ---
+
+    # Alternativ syntax
+
+    ```
+    // greetings.js
+
+    // Två funktioner som exporteras; funktionen sayHelloInSwedish
+    // är att betrakta som privat inom modulen, d.v.s. inte tillgänglig utanför
+    // filen greetings.js.
+
+    module.exports.sayHelloInEnglish = function() {
+      return 'Hello';
+    };
+
+    module.exports.sayHelloInSpanish = function() {
+      return 'Hola';
+    };
+
+    const sayHelloInSwedish = function() {
+      return 'Hej';
+    };
+    ```
+
+    ---
+
+    # Alternativ syntax II
+
+    ```
+    // greetings.js
+    // Två funktioner som exporteras; funktionen sayHelloInSwedish
+    // är att betrakta som privat inom modulen, d.v.s. inte tillgänglig utanför
+    // filen greetings.js.
+
+    module.exports = {
+      sayHelloInEnglish : function() {
+        return 'Hello';
+      },
+
+      sayHelloInSpanish : function() {
+        return 'Hola';
+      };
+    };
+
+    const sayHelloInSwedish = function() {
+      return 'Hej';
+    };
+    ```
+
+    ---
+
+    # Exportera en typ
+
+    ```
+    // User.js
+    function User(name, email) {
+      this.name = name;
+      this.email = email;
+    }
+
+    module.exports = User;
+
+    // Använd INTE!
+    //module.exports.User = User;
+    ```
+
+    - Om du vill att din modulrot ska vara en konstruktorfunktion tilldelar du `module.exports` referensen till konstruktorfunktionen direkt. <span class="text-gray">(Har betydelse vid import av modulen.)</span>
+
+    ---
+
+    # Importera kod
+
+    - För att ladda en modul som finns i samma katalog som filen som laddar den använder du `require` och filnamnet (inklusive sökvägen).
+
+    ```
+    //app.js
+    const greetings = require('./greetings');
+    console.log(greetings.sayHelloInEnglish());
+    console.log(greetings.sayHelloInSpanish());
+    ```
+
+    - Du anger alltid den relativa sökvägen, i förhållande till filen som vill använda en modul, till den fil som innehåller modulen du vill ladda.
+        - Det är viktigt att du inleder med `./`, `../` eller `/` för att indikera en fil, annars måste modulen vara en "_core module_" eller återfinnas i katalogen `node_modules`.
+        - Hittas inte filen kommer Node.js att försöka ladda den angivna modulen genom att lägga till filändelserna `.js`, `.json` och slutligen `.node`.
+
+    ---
+
+    # Importera och använda en egendefinierad typ
+
+    ```
+    // User.js
+    function User(name, email) {
+      this.name = name;
+      this.email = email;
+    }
+
+    module.exports = User;
+    ```
+
+    ```
+    // app.js
+    const User = require('./User');
+
+    let user = new User('Ellen Nu', 'en@lnu.se');
+
+    console.log(user); // ➡ { name: 'Ellen Nu', email: 'en@lnu.se' }
+    ```
+
+    ---
+
+    # Olika sätt att lösa upphöjt problem
+
+    ```
+    // imperative
+    let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    for (let i = 0; i < arr.length; i += 1) {
+      arr[i] = Math.pow(arr[i], 2);
+    }
+    console.log(arr); // OUTPUT: [ 0, 1, 4, 9, 16, 25, 36, 49, 64, 81 ]
+
+    // declarative with anonymous function expression
+    arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let sqrArr = arr.map(function(num) {
+      return Math.pow(num, 2);
+    });
+    console.log(sqrArr); // OUTPUT: [ 0, 1, 4, 9, 16, 25, 36, 49, 64, 81 ]
+
+    // declarative with arrow function (lambda expression)
+    sqrArr = arr.map(num => Math.pow(num, 2));
+    console.log(sqrArr); // OUTPUT: [ 0, 1, 4, 9, 16, 25, 36, 49, 64, 81 ]
+    ```
+
+    - __OBS!__ En _"arrow function"_ kan inte användas för att skapa prototyp-funktioner (har att göra med hur `this` hanteras).
+
+    ---
+
+    # Vad är på gång?
+
+    -  [ECMAScript Next](https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_Next_support_in_Mozilla)
+
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js">
+</script>
+<script>
+    var slideshow = remark.create({
+        ratio: "16:9",
+        highlightLanguage: "javascript",
+//            highlightStyle: "ir-black",
+        highlightLines: true,
+        navigation: {
+            scroll: false,
+            touch: true,
+            click: false
+        }
+    });
+</script>
 </body>
 </html>
