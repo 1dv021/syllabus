@@ -3,8 +3,8 @@
 inkapsling, egenskaper, metoder, this, designmönster, "factory",  "constructor", konstruktorfunktion, "new", instanser,  prototyp, "constructor/prototype"
 
 ## Resurser
-- [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/05/index.html#)
-- [Inspelning](https://youtu.be/ZWvYAAftlBM) 2016-09-25, 13-15 (Youtube)
+- <del>[HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/05/index.html#)</del>
+- <del>[Inspelning](https://youtu.be/ZWvYAAftlBM) 2016-09-25, 13-15 (Youtube)</del>
 
 ### Eloquent JavaScript, 2nd Edition 
 
