@@ -4,8 +4,8 @@ konstruktor, prototyp, "this, "__proto__", "prototype", "constructor", inkapslin
 Object.defineProperty, arv, "instanceof", reguljära uttryck, RegExp, try...catch
 
 ## Resurser
-- [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/06/index.html#)
-- [Inspelning](https://youtu.be/0gPvMB3qSFY) 2016-10-04, 13-15 (Youtube)
+- <del>[HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/06/index.html#)</del>
+- <del>[Inspelning](https://youtu.be/0gPvMB3qSFY) 2016-10-04, 13-15 (Youtube)</del>
 
 ### Eloquent JavaScript, 2nd Edition 
 - [6. The Secret Life of Objects](http://eloquentjavascript.net/06_object.html)
