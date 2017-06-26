@@ -3,8 +3,8 @@
 funktion, anropa funktion, argument, returvärde, parameter, return-sats, räckvidd ("*scope*"), globala variabler, lokala variabler, "*closure*", funktionsuttryck, funktiondeklaration
 
 ## Resurser
-- [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/03/index.html#)
-- [Livecoding.tv, 2016-09-06](https://www.livecoding.tv/webbprogrammerare/videos/K941x-sv-funktioner-i-javascript)
+- <del>[HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/03/index.html#)</del>
+- <del>[Livecoding.tv, 2016-09-06](https://www.livecoding.tv/webbprogrammerare/videos/K941x-sv-funktioner-i-javascript)</del>
 
 ### Eloquent JavaScript, 2nd Edition 
 
