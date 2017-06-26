@@ -10,7 +10,7 @@ Innan du startar med detta så förutsätter vi följande:
 
 Guiden består av följande steg:
 
-1. [Introduktion](https://coursepress.gitbooks.io/1dv021/content/guider/programvaror/)
+1. [Kursens programvaror](https://coursepress.gitbooks.io/1dv021/content/guider/programvaror/)
 2. [Git - versionshantering](https://coursepress.gitbooks.io/1dv021/content/guider/programvaror/git.html)
  * Installation
  * Konfiguration
