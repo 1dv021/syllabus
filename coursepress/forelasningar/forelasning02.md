@@ -3,8 +3,8 @@
 kontrollstrukturer, sekvens, selektion, iteration, (rekursion), "if"-satsen, "switch"-satsen, "?:"-operatorn (villkorsoperatorn), "while"-satsen, "do...while"-satsen, "for"-satsen, "break"-satsen, "continue"-satsen, kommentarer
 
 ## Resurser
-- [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/02/index.html#)
-- [Youtube](https://youtu.be/QrgBz3xCYoc) 2016-09-01, 10-12
+- <del>[HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/02/index.html#)</del>
+- <del>[Youtube](https://youtu.be/QrgBz3xCYoc) 2016-09-01, 10-12</del>
 
 ### Eloquent JavaScript, 2nd Edition 
 
