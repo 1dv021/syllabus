@@ -3,8 +3,8 @@
 historik, datatyper, Number, String, Boolean, Object, "typeof"-operatorn, aritmetiska operatorer, logiska operatorer, uttryck, satser, variabler, nyckleord, reserverade ord, funktioner
 
 ## Resurser
-- [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/01/index.html#)
-- [Youtube](https://youtu.be/HGiM9j9oYvk) 2016-08-30, 13:15-15:00
+- <del>[HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/01/index.html#)</del>
+- <del>[Youtube](https://youtu.be/HGiM9j9oYvk) 2016-08-30, 13:15-15:00</del>
 
 ### Eloquent JavaScript, 2nd Edition 
 
