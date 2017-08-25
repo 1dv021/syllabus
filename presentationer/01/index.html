@@ -66,12 +66,11 @@
         - Nu finns det 100(0)-tals programspråk; Javascript är ett av dem.
 
         ```
-        let sum = 0;
+        let sum = 0
         for (let i = 1; i <= 10; i++) {
-            sum += i;
+            sum += i
         }
-        console.log(sum); // → 55
-        Math.ceil(3.14);
+        console.log(sum) // → 55
         ```
 
         ---
@@ -90,13 +89,14 @@
             - 1995 - JavaScript 1.0 med Netscape Navigator 2.
             - 1997 - JavaScript 1.1 standardiseras till ECMAScript 1.
                 - Bekriver syntax, typer, satser, nyckelord, reserverade ord, operatorer och objekt.
-            - 1998 - ECMAScript 2.
-            - 1999 - ECMAScript 3.
-            - 2009 - ECMAScript 5.
-            - 2011 - ECMAScript 5.1.
-            - 2015 - [ECMAScript 2015 (ES6)](http://www.ecma-international.org/ecma-262/6.0/).
-            - 2016 - [ECMAScript 2016 (ES7)](http://www.ecma-international.org/ecma-262/7.0/).
-            - 20?? - ES.Next
+            - 1998 - ECMAScript 2
+            - 1999 - ECMAScript 3
+            - 2009 - ECMAScript 5
+            - 2011 - ECMAScript 5.1
+            - 2015 - [ECMAScript 2015 (ES6)](http://www.ecma-international.org/ecma-262/6.0/)
+            - 2016 - [ECMAScript 2016 (ES7)](http://www.ecma-international.org/ecma-262/7.0/)
+            - 2017 - [ECMAScript 2017 (ES8)](http://www.ecma-international.org/ecma-262/8.0/)
+            - 2018 - ...
 
         ---
 
@@ -124,12 +124,12 @@
             - Alla värden måste vara av någon av de sex typerna ovan.
         - Operatorn `typeof` ger typen ett värde är av i form av en sträng.
             ```
-                typeof 42                                     // number
-                typeof 3.14                                   // number
-                typeof 'Hej hopp!'                            // string
-                typeof true                                   // boolean
-                typeof {age: 42, name: 'Ellen Nu'}            // object
-                typeof function foo() { console.log('bar'); } // function
+                typeof 42                                     // 'number'
+                typeof 3.14                                   // 'number'
+                typeof 'Hej hopp!'                            // 'string'
+                typeof true                                   // 'boolean'
+                typeof {age: 42, name: 'Ellen Nu'}            // 'object'
+                typeof function foo() { console.log('bar') } // 'function'
             ```
         .gray-text[.smaller[(__OBS!__ Rent tekniskt betraktas funktioner att vara av typen `Object`, även om opertorn `typeof` returnerar strängen `function`.)]]
 
@@ -162,8 +162,9 @@
 
         - Strängar används till att representera text.
             ```
-                'Kan skrivas inom apostrofer.'
-                "Kan skrivas inom citattecken också." // INTE i denna kurs!
+            'Kan skrivas inom apostrofer.'
+            `Kan skrivas inom grav accent.`
+            "Kan skrivas inom citationstecken också." // INTE i denna kurs!
             ```
             - Kursens kodstandard hindrar användning av citattecken!
         - Strängar kan läggas ihop, konkateneras .smaller[(latin: _catena_, kedja, "ihopkedjning")].
@@ -355,16 +356,16 @@
                 42
                 (4 + 8) * 3 + 6
             ```
-        - En sats kan innehålla ett eller flera uttryck och avslutas med `;` (semikolon).
+        - En sats kan innehålla ett eller flera uttryck.
             ```
-                42;      // 42
-                "4" + 2; // "42"
-                4 + "2"; // "42"
+                42      // 42
+                "4" + 2 // "42"
+                4 + "2" // "42"
             ```
-            - Avsluta ALLTID alla satser med `;`.
-            - Kursens kodstandard kräver att `;`  alltid används.
+            - Det är vanligt att satser avslutas med `;` (semikolon), INTE i denna kurs dock!
+            - Kursens kodstandard kräver att `;` ALDRIG används.
 
-        .gray-text[.smaller[(Ibland kan `;` uteslutas, men lär dig inte när!)]]
+        .gray-text[.smaller[(Ibland måste `;` användas, det är några specialfall!)]]
 
         ---
 
@@ -373,19 +374,19 @@
         - Program kommer ihåg värden med hjälp av variabler.
         - En variabel defineras med hjälp av nyckelordet `let`, eller `var`, följt av namnet på variabeln.
             ```
-                let count;                     // undefined
-                let result = (4 + 8) * 3 + 8;  // 44
+                let count                     // undefined
+                let result = (4 + 8) * 3 + 8  // 44
             ```
         - Efter att en variabel definierats kan den användas i uttryck.
             ```
-                let result = (4 + 8) * 3 + 8;       // 44
-                let theMeaningOfLife = result - 2;  // 42
+                let result = (4 + 8) * 3 + 8       // 44
+                let theMeaningOfLife = result - 2  // 42
             ```
         - En variabels värde kan ändras.
             ```
-                let result = (4 + 8) * 3 + 8;  // 44
-                result =  13;                  // 13
-                result = result + 29;          // 42
+                let result = (4 + 8) * 3 + 8  // 44
+                result =  13                  // 13
+                result = result + 29          // 42
             ```
 
         .gray-text[`var`,  _function scope_]
@@ -405,8 +406,9 @@
             - Varje ord, utom det första, inleds med versal.
 
         ```
-            let bestBookEver = 'The Hitchhiker\'s Guide to the Galaxy';
-            let theMeaningOfLife = 42;
+            let bestBookEver = `The Hitchhiker's Guide to the Galaxy`
+
+            let theMeaningOfLife = 42
         ```
 
         ---
@@ -441,18 +443,18 @@
 
 
         ```
-            let urging = '"Use the forks Luke!", Obi-Wan said in the Chinese restaurant.';
-            console.log(urging); // ➡ "Use the forks Luke!", Obi-Wan said in the Chinese restaurant.
+            let urging = '"Use the forks Luke!", Obi-Wan said in the Chinese restaurant.'
+            console.log(urging) // Output: "Use the forks Luke!", Obi-Wan said in the Chinese restaurant.
         ```
 
         - `Math.min` är en funktion som returnerar det minsta av flera värden.
 
 
         ```
-            let min;
+            let min
     
-            min = Math.min(103, 42, 57);
-            console.log(min); // ➡ 42
+            min = Math.min(103, 42, 57)
+            console.log(min) // Output: 42
         ```
     
         ---
@@ -463,13 +465,13 @@
     
         ```
             let sayHello = function() {
-                let greeting = 'Hello, World!';
+                let greeting = 'Hello, World!'
 
-                return greeting;
+                return greeting
             };
 
-            let message = sayHello();
-            console.log(message); // ➡ Hello, World!
+            let message = sayHello()
+            console.log(message) // Output: Hello, World!
         ```
 
         - En funktion är ett uttryck som börjar med nyckelordet `function`.
