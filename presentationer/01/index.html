@@ -464,16 +464,26 @@
         - Du definierar en funktion på samma sätt som en variabel, värdet är bara en funktion.
     
         ```
-            let sayHello = function() {
+            let sayHello = function () {
                 let greeting = 'Hello, World!'
 
                 return greeting
-            };
+            }
 
             let message = sayHello()
             console.log(message) // Output: Hello, World!
         ```
 
+        ```
+            function sayHello () {
+              let greeting = 'Hello, World!'
+
+              return greeting
+            }
+
+            let message = sayHello()
+            console.log(message) // Output: Hello, World!
+        ```
         - En funktion är ett uttryck som börjar med nyckelordet `function`.
         - Mellan parenteserna kan ingen, en eller flera parametrar finnas.
         - Funktionens kropp, mellan klammerparenteserna, innehåller satserna som exekveras när funktionen anropas.
