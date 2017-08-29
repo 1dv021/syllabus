@@ -5,7 +5,7 @@ historik, datatyper, Number, String, Boolean, Object, "typeof"-operatorn, aritme
 ## Resurser
 
 - [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/01/index.html#)
-- <del>[Youtube](#) 2017-08-29, 13:15-15:00</del>
+- [Youtube](https://youtu.be/WznwDSoYRW0) 2017-08-29, 13:15-15:00
 
 ### Eloquent JavaScript, 2nd Edition
 
