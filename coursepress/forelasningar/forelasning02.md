@@ -5,7 +5,7 @@ kontrollstrukturer, sekvens, selektion, iteration, (rekursion), "if"-satsen, "sw
 ## Resurser
 
 - [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/02/index.html#)
-- <del>[Youtube](#) 2017-08-31, 13:15-15:00</del>
+- [Youtube](https://youtu.be/OVey1ezWtYI) 2017-08-31, 13:15-15:00
 
 ### Eloquent JavaScript, 2nd Edition
 
