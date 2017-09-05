@@ -52,9 +52,9 @@
         - Alla språk har inbyggda funktioner som utför förutbestämda saker.
 
         ```
-        console.log('Hej hopp!'); // skriver ut en sträng i konsolfönstret
+        console.log('Hej hopp!') // skriver ut en sträng i konsolfönstret
 
-        let result = Math.floor(3.14); // avrundar ett flyttal till närmasta lägre heltal
+        let result = Math.floor(3.14) // avrundar ett flyttal till närmasta lägre heltal
         ```
 
 
@@ -70,11 +70,11 @@
         # Att anropa en funktion
     
         ```
-        console.log('Hello, World!'); // Skriver ut strängen (och returnerar värdet undefined).
+        console.log('Hello, World!') // Skriver ut strängen (och returnerar värdet undefined).
 
-        console.log(); // Skriver ut en ny rad (och returnerar värdet undefined).
+        console.log() // Skriver ut en ny rad (och returnerar värdet undefined).
 
-        let randomNumber = Math.random(); // Returnerar ett värde från och med 0 till 1.
+        let randomNumber = Math.random() // Returnerar ett värde från och med 0 till 1.
         ```
     
         - En funktion anropas genom att ange dess namn följt av parenteser innehållande eventuella argument.
@@ -87,16 +87,16 @@
 
         # Att definiera en funktion
 
-        - Du definierar en funktion på samma sätt som en variabel, värdet är bara en funktion.
+        - Du definierar en funktion på ungefär samma sätt som en variabel, värdet är bara en funktion.
 
         ```
-        let sayHello = function(name) {
-          let greeting = 'Hello, ' + name + '!';
+        const sayHello = function (name) {
+          let greeting = 'Hello, ' + name + '!'
             
-          return greeting;
-        };
+          return greeting
+        }
             
-        console.log(sayHello('Ellen Nu')); // ➡ Hello, Ellen Nu!
+        console.log(sayHello('Ellen Nu')) // OUTPUT: Hello, Ellen Nu!
         ```
 
         - En funktion är ett uttryck som börjar med nyckelordet `function`.
@@ -111,27 +111,27 @@
         - En funktion behöver inte ha en `return`-sats.
 
         ```
-        let sayHello = function(name) {
-          console.log()'Hello, ' + name + '!');
-        };
+        let sayHello = function (name) {
+          console.log('Hello, ' + name + '!')
+        }
 
-        sayHello('Nisse'); // ➡ Hello, Nisse!
+        sayHello('Nisse') // OUTPUT: Hello, Nisse!
         ```
 
         - __OBS!__ Om en `return`-sats saknas i en funktion returnerar funktionen alltid värdet `undefined`!
         - Det kan finnas flera `return`-satser i en funktion.
 
         ```
-        let evenOrOdd = function(value) {
+        let evenOrOdd = function (value) {
           // Är talet jämt delbart med 2?
           if (value % 2 === 0){
-            return 'jämt';
+            return 'jämt'
           }
-          return 'udda';
-        };
+          return 'udda'
+        }
 
-        let result = evenOrOdd(42);
-        console.log('42 är ett ' + result + ' tal.'); // ➡ 42 är ett jämt tal.
+        let result = evenOrOdd(42)
+        console.log('42 är ett ' + result + ' tal.') // OUTPUT: 42 är ett jämt tal.
         ```
         
         ---
@@ -141,28 +141,28 @@
         - Funktion som returnerar en sträng (en mindre generell lösning).
     
         ```
-        let evenOrOdd = function(value) {
+        let evenOrOdd = function (value) {
           // Är talet jämt delbart med 2?
           if (value % 2 === 0) {
-            return 'jämt';
+            return 'jämt'
           }
-          return 'udda';
-        };
+          return 'udda'
+        }
             
-        let result = evenOrOdd(42);
-        console.log('42 är ett' + result + 'tal.'); // ➡ 42 är ett jämt tal.
+        let result = evenOrOdd(42)
+        console.log('42 är ett' + result + 'tal.') // OUTPUT: 42 är ett jämt tal.
         ```                                    
         
         - Funktion som returnerar ett booleskt värde (en generellare lösning).
     
         ```
-        let isEven = function(value) {
+        let isEven = function (value) {
           // Är talet jämt delbart med 2?
-          return value % 2 === 0;
+          return value % 2 === 0
         };
             
-        let result = isEven(42) ? 'jämt' : 'udda';
-        console.log('42 är ett ' + result + ' tal.'); // ➡ 42 är ett jämt tal.
+        let result = isEven(42) ? 'jämt' : 'udda'
+        console.log('42 är ett ' + result + ' tal.') // OUTPUT: 42 är ett jämt tal.
         ```
     
         ---
@@ -170,26 +170,26 @@
         # Parametrar och dess räckvidd ("_scope_")
 
         ```
-        let getFullName = function(firstName, lastName) {
-          let fullName = firstName + ' ' + lastName;  // OBS! lokal variabel
+        let getFullName = function (firstName, lastName) {
+          let fullName = firstName + ' ' + lastName  // OBS! lokal variabel
 
-          return fullName;
-        };
+          return fullName
+        }
         
-        let fullName = getFullName('Ellen', 'Nu'); // OBS! global variabel
-        console.log('Personens fullständiga namn är ' + fullName + '.');
-        // ➡ Personens fullständiga namn är Ellen Nu.
+        let fullName = getFullName('Ellen', 'Nu') // OBS! global variabel
+        console.log('Personens fullständiga namn är ' + fullName + '.')
+        // OUTPUT: Personens fullständiga namn är Ellen Nu.
         
-        fullName = getFullName('Nisse', 'Hult');
-        console.log('Personens fullständiga namn är ' + fullName + '.');
-        // ➡ Personens fullständiga namn är Nisse Hult.
+        fullName = getFullName('Nisse', 'Hult')
+        console.log('Personens fullständiga namn är ' + fullName + '.')
+        // OUTPUT: Personens fullständiga namn är Nisse Hult.
         ```
 
 
         - Parametrar fungerar i stort på samma sätt som lokala variabler i en funktion.
             - Variabler i en funktion måste defineras med `let`, eller `var`, för att bli lokala.
-            - `firtsName`, `lastName` och `fullName` är __lokala__ i funktionen `getFullName`.
-            - Värdena `firstName` och `lastName` tilldelas bestäms vid anropet av funktionen.
+            - `firstName`, `lastName` och `fullName` är __lokala__ i funktionen `getFullName`.
+            - Värdena parametrarna `firstName` och `lastName` tilldelas bestäms vid anropet av funktionen.
 
         ---
     
@@ -200,19 +200,19 @@
         - Är det för många argument ignoreras de extra.
 
         ```
-        Math.floor(3.14, 9.36, 17.3); // → 3
+        Math.floor(3.14, 9.36, 17.3) // → 3
         ```
 
         - Är det för få argument tilldelas funktionens parametrar värdet `undefined`.
 
         ```
-        let sumThreeNumbers = function(op1, op2, op3) {
+        let sumThreeNumbers = function (op1, op2, op3) {
           // Värden vid anrop enligt nedan: op1 = 23, op2 = 4, op3 = undefined
-          let result = op1 + op2 + op3; // → NaN
+          let result = op1 + op2 + op3 // → NaN
 
-          return result;
+          return result
         };
-        console.log(sumThreeNumbers(23, 4)); // ➡ NaN
+        console.log(sumThreeNumbers(23, 4)) // OUTPUT: NaN
         ```
 
         - Lätt hänt att felaktigt antal argument skickas med vid anrop av en funktion.
@@ -222,28 +222,28 @@
         # Funktioner som värden
     
         - En funktion kan skickas som argument till en annan funktion.
-        - En funktionsvariabels värde kan ändras.
+        - En funktionsvariabels värde kan ändras (om den inte deklarerats med `const`).
         
         ```
         let doNotLie = true;
 
-        let confess = function(someFunction) {
-          console.log(someFunction());
-        };
-
-        let tellTheTruth = function() {
-          return 'Mats är bäst!';
-        };
-
-        confess(tellTheTruth); // ➡ Mats är bäst!
-
-        if (doNotLie) {
-          tellTheTruth = function() {
-            return 'Mats är inte bättre än John!';
-          };
+        let confess = function (someFunction) {
+          console.log(someFunction())
         }
 
-        confess(tellTheTruth); // ➡ Mats är inte bättre än John!
+        let tellTheTruth = function () {
+          return 'Mats är bäst!'
+        }
+
+        confess(tellTheTruth); // OUTPUT: Mats är bäst!
+
+        if (doNotLie) {
+          tellTheTruth = function () {
+            return 'Mats är inte bättre än John!'
+          }
+        }
+
+        confess(tellTheTruth) // OUTPUT: Mats är inte bättre än John!
         ```
 
         ---
@@ -254,20 +254,20 @@
         - Funktionen som returneras har full tillgång till den omslutande funktionens lokala variabler.
 
         ```
-        let greet = function(greeting) {
-          let localGreeting = greeting;
+        let greet = function (greeting) {
+          let localGreeting = greeting
         
-          return function(name) {
-            return localGreeting + ' ' + name + '.';
-          };
-        };
+          return function (name) {
+            return localGreeting + ' ' + name + '.'
+          }
+        }
         
-        let goodMorning = greet('God morgon');
-        let goodEvening = greet('God kväll');
+        let goodMorning = greet('God morgon')
+        let goodEvening = greet('God kväll')
         
-        console.log(goodMorning('Ellen')); // ➡ God morgon Ellen.
-        console.log(goodEvening('Nisse')); // ➡ God kväll Nisse.
-        console.log(goodMorning('Mats'));  // ➡ God morgon Mats.
+        console.log(goodMorning('Ellen')) // OUTPUT: God morgon Ellen.
+        console.log(goodEvening('Nisse')) // OUTPUT: God kväll Nisse.
+        console.log(goodMorning('Mats'))  // OUTPUT: God morgon Mats.
         ```
 
         ---
@@ -277,21 +277,21 @@
         ## Funktionsuttryck
 
         ```
-        greet(); // ReferenceError: greet is not defined
-        anotherGreet(); // ReferenceError: greet is not defined
+        greet() // ReferenceError: greet is not defined
+        anotherGreet() // ReferenceError: greet is not defined
     
         // anonymt funktionsuttryck
-        let greet = function() {
-          console.log('Hello, World!');
-        };
+        let greet = function () {
+          console.log('Hello, World!')
+        }
 
         // namngivet funktionsuttryck
         let anotherGreet = function sayHi() {
-          console.log('Hello, World!');
-        };
+          console.log('Hello, World!')
+        }
 
-        greet(); // Outputs: 'Hello, World!'
-        anotherGreet(); // Outputs: 'Hello, World!'
+        greet() // OUTPUT: 'Hello, World!'
+        anotherGreet() // OUTPUT: 'Hello, World!'
         ```
 
         - Funktionen definieras först när satsen som definierar funktionen exekverats.
@@ -299,10 +299,10 @@
         ## Funktionsdeklaration
 
         ```
-        sayHello(); // Outputs: 'Hello, World!'
+        sayHello() // OUTPUT: 'Hello, World!'
 
         function sayHello() {
-          console.log('Hello, World!');
+          console.log('Hello, World!')
         }
         ```
 
