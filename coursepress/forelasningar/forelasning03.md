@@ -5,7 +5,7 @@ funktion, anropa funktion, argument, returvärde, parameter, return-sats, räckv
 ## Resurser
 
 - [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/03/index.html#)
-- <del>[YouTube](#) 2017-09-05, 13:15-15:00</del>
+- [YouTube](https://youtu.be/LDVFNtP1cXU) 2017-09-05, 13:15-15:00
 
 ### Eloquent JavaScript, 2nd Edition 
 
