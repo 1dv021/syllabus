@@ -5,7 +5,6 @@ array, objekt, 0-baserat index, arrayliteral, Array, värdetyp, referenstyp, sor
 ## Resurser
 - [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/04/index.html#)
 - <del>[Inspelning - YouTube](#) 2017-09-12</del>
-- [Inspelning - YouTube](https://youtu.be/_eBqkxUmlFg) 2016-09-13
 
 ### Eloquent JavaScript, 2nd Edition
 
