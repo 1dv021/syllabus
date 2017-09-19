@@ -3,8 +3,8 @@
 array, objekt, 0-baserat index, arrayliteral, Array, värdetyp, referenstyp, sorteringsfunktion, Object, egenskaper, objektliteral, undantag, kasta undantag (throw), fånga undantag (try...catch)
 
 ## Resurser
-- <del>[HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/04/index.html#)</del>
-- <del>[Inspelning - YouTube](https://youtu.be/_eBqkxUmlFg) 2016-09-13</del>
+- [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/04/index.html#)
+- [Inspelning - YouTube](https://youtu.be/d1rbfLI6q-g) 2017-09-12
 
 ### Eloquent JavaScript, 2nd Edition
 
