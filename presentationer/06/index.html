@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>06 - Föreläsning - Grundläggande programmering (1DV021)</title>
+    <title>05 - Föreläsning - Grundläggande programmering (1DV021)</title>
     <meta charset="utf-8">
     <link rel="icon" href="../remark/images/favicon.png" type="image/png">
     <link rel="stylesheet" href="../remark/stylesheets/lnu.dark.css" id="theme">
@@ -13,7 +13,7 @@
     class: center, middle, lnu-background-yellow
 
     ### Grundläggande programmering (1DV021)
-    # Föreläsnig 6
+    # Föreläsnig 5
 
     <div class="lnu-footer">
         <img src="../remark/images/lnu-logotype.png">
@@ -47,247 +47,222 @@
 
     ---
 
-    # Relationer mellan konstruktor, prototyp och objekt
+    # Vad är avsikten med koden egentligen?
 
-    <pre style="float:left;width: 54%;"><code class="js">
-    function Die() {
-        this.faceValue;
-    }
+    ```
+    let value;
 
-    Die.prototype.roll = function() {
-        this.faceValue = Math.floor(Math.random() * 6) + 1;
+    let getNumber = function() {
+        return Math.floor(Math.random() * 6) + 1;
     };
 
-    let die1 = new Die();
-    let die2 = new Die();
+    value = getNumber();
 
-    die1.roll();
-    die2.roll();
-    </code></pre>
+    console.log(value); // ➡ 3
+    ```
 
-    <img src="prototype.png" width="45%" height="45%" style="border: none; background: none; float:right;padding-top:2em;" />
-
-    <div style="clear: both;"></div>
-
-    - När en konstruktorfunktion skapas skapas även en tillhörande prototyp, som är ett objekt bl.a. innehållande en referens, `constructor`, till konstruktorfunktionen samt egenskaper och metoder gemensamma för alla instanser av typen.
-    - Varje instans har en referens, `__proto__`, till konstruktorns prototyp.
+    - Att skriva större program bestående av kod med fristående variabler och funktioner blir ohållbart i längden.
+    - Vi behöver ett nytt sätt att organisera vår kod så att den blir tydligare!
 
     ---
 
-    # ES2015 och syntaktiska sockret `class`
+    #Hur kan vi skriva tydligare kod?
 
+    <fieldset style="border: 1px solid #eba056;margin-bottom:1em;">
+        <legend style="margin-left:1em;padding: 0 .3em;color:#eba056">Die <span style="font-size: smaller;">(<i>tärning</i>)</span></legend>
     ```
-    function Die() {
-        this.faceValue;
-    }
+    let value;
 
-    Die.prototype.roll = function() {
-        this.faceValue = Math.floor(Math.random() * 6) + 1;
+    let getNumber = function() {
+        return Math.floor(Math.random() * 6) + 1;
     };
 
-    let die1 = new Die();
-    let die2 = new Die();
+    value = getNumber();
 
-    die1.roll();
-    die2.roll();
-
-    console.log(die1.faceValue);
-    console.log(die2.faceValue);
+    console.log(value); // ➡ 3
     ```
+    </fieldset>
+    - Genom att på något sätt kapsla in variabler och funktioner blir koden tydligare.
+    - Objekt kan användas till att kapsla in variabler och funktioner; objekt kan både innehålla variabler (egenskaper) och funktioner (metoder).
+
+    ---
+
+    # Skapa ett objekt
 
     ```
-    class Die {
-      constructor() {
-        this.faceValue = undefined;
-      }
-
-      roll() {
+    let die = {
+      faceValue: undefined,
+      roll: function() {
         this.faceValue = Math.floor(Math.random() * 6) + 1;
       }
-    }
+    };
 
-    let die1 = new Die();
-    let die2 = new Die();
-
-    die1.roll();
-    die2.roll();
-
-    console.log(die1.faceValue);
-    console.log(die2.faceValue);
+    die.roll();
+    console.log(die.faceValue); // ➡ 3
     ```
+
+    - Ett Object-objekt används till att kapsla in...
+        - ...tärningens aktuella värde (egenskapen `faceValue`).
+        - ...att tärningen kan kastas (metoden `roll`), vilket ändrar tärningens värde.
+    - Vanligt sätt att skapa __ett__ objekt, MEN...
+    - ...behöver flera objekt skapas måste koden dupliceras!
+
     ---
 
-    # Problem med publika egenskaper
+    # this
+    ```
+    let roll = function() {
+      this.faceValue = Math.floor(Math.random() * 6) + 1;
+    };
+
+    let die = {
+      faceValue: undefined
+    };
+
+    let die2 = {
+      faceValue: undefined,
+      roll
+    };
+
+    roll.call(die); // i roll() kommer this att referera till samma objekt som die
+    die2.roll();    // i roll() kommer this att referera till samma objekt som die2
+
+    console.log(die.faceValue);  // ➡ 3
+    console.log(die2.faceValue); // ➡ 5
+    ```
+
+    - `this` refererar till objektet som funktionen anropades för.
+
+    ---
+
+    # Funktion som använder `this`
+
+    ```
+    // Skapar objekt som anropar funktion som använder this.
+
+    let smallTalk = function(greet = 'Hej!') {
+      console.log(greet + ' Jag, ' + this.name + ', är ' +  this.age + ' år.');
+    };
+
+    let simplePerson = {
+      name: 'Nisse',
+      age: 42,
+      talk: smallTalk
+    };
+
+    simplePerson.talk();                               // ➡ Hej! Jag, Nisse, är 42 år.
+
+    let anotherSimplePerson = {
+      name: 'Ellen',
+      age: 6
+    };
+
+    smallTalk.apply(anotherSimplePerson, ['Tjabba!']); // ➡ Tjabba! Jag, Ellen, är 6 år.
+    smallTalk.call(anotherSimplePerson, 'Hallå!');     // ➡ Hallå! Jag, Ellen, är 6 år.
+    ```
+
+    ---
+
+    # Designmönstret "_Factory_"
+
+    - Funktionen `createDie` löser problemet med att skapa flera liknande objekt, MEN...
+    - ...av vilken typ är objekten som skapas? Jo, `Object`! Inte `Die`!
+
+    ```
+    let createDie = function() {
+      let obj = {
+        faceValue: undefined,
+        roll: function() {
+          this.faceValue = Math.floor(Math.random() * 6) + 1;
+        }
+      };
+
+      return obj;
+    };
+
+    let die = createDie();
+    die.roll();
+
+    console.log(die.faceValue);   // ➡ 3
+    console.log(typeof die);      // ➡ object
+    console.log(die.constructor); // ➡ [Function: Object]
+    ```
+
+    ---
+
+    # Designmönstret "_Constructor_"
+
+    - Används nyckleordet `new` före en funktion som anropas betraktas funktionen som en konstruktorfunktion.
+    - Ett objekt som skapas med `new` sägs vara en __instans__ av dess konstruktor.
 
     ```
     function Die() {
-      this.faceValue;
-    }
-
-    Die.prototype.roll = function() {
+      this.faceValue = undefined;
+      this.roll = function() {
         this.faceValue = Math.floor(Math.random() * 6) + 1;
-    };
-
-    let die1 = new Die();
-    let die2 = new Die();
-
-    // Inte några värden en sexsidig tärning ska ha...
-    die1.faceValue = 42;
-    die2.faceValue = 'Kilroy was here!';
-    ```
-
-    - En publik egenskap kan sättas till vilket värde som helst.
-    - LÖSNING: datat, egenskapen `faceValue`, ska kapslas in och döljas.
-
-    ---
-
-    # Privata medlemmar
-
-    - Privata medlemmar kallas egenskaper och metoder som inte kan kommas åt utanför konstruktorfunktionen.
-    - Privata medlemmar skapas av konstruktorn.
-        - Konstruktorns parametrar.
-        - Medlemmar definierade med let (eller var, eller const).
-
-    ```
-    function Foo(param) {
-      this.param = param; // "publik"
-      this._notSoPrivate; // "publik" MEN "semi-privat" genom namngivning (namn inleds med _)
-      let secret = 42;    // "privat"
-
-      let bar = function() {  // "privat"
-        return 'forty-two';
       };
     }
-    ```
 
-    - "Getters" och "setters" krävs för åtkomst av privata egenskaper.
+    let die = new Die(); // die refererar till en instans av Die
+    die.roll();
+
+    console.log(die.faceValue);   // ➡ 4
+    console.log(typeof die);      // ➡ object
+    console.log(die.constructor); // ➡ [Function: Die]
+    ```
 
     ---
 
-    # En privat tärning
+    # Konstruktorfunktion med parametrar
 
-    - Genom att använda `Object.defineProperty` kan du ange den funktion som ska köras då en egenskaps värde hämtas respektive tilldelas ett värde.
+    ```
+    function SimplePerson(name, age) {
+      this.name = name;
+      this.age = age;
+      this.talk = function() {
+        console.log('Jag, ' + this.name + ', är ' +  this.age + ' år.');
+      };
+    }
+
+    let simplePerson1 = new SimplePerson('Nisse', 42);
+    let simplePerson2 = new SimplePerson('Ellen', 6);
+
+    simplePerson1.talk(); // ➡ Jag, Nisse, är 42 år.
+    simplePerson2.talk(); // ➡ Jag, Ellen, är 6 år.
+    ```
+
+    - Två identiska objekt skapas, så när på värdena egenskaperna `name` och `age` har.
+    - __OBS!__ Metoden `talk` är en del av varje instans av `SimplePerson`; det finns alltså två exakt lika upplagor av metoden.
+
+    ---
+
+    # Designmönstret "_Constructor/Prototype_"
 
     ```
     function Die() {
-      let _faceValue;
-
-      Object.defineProperty(this, 'faceValue', {
-        get: function() {
-          return _faceValue;
-        },
-
-        set: function(value) {
-          const intValue = parseInt(value, 10);
-          if (isNaN(intValue) || intValue < 1 || intValue > 6) {
-            throw new Error('faceValue must be an integer between 1 and 6.');
-          }
-          _faceValue = intValue;
-        }
-      });
+      this.faceValue = undefined;
     }
 
     Die.prototype.roll = function() {
       this.faceValue = Math.floor(Math.random() * 6) + 1;
     };
 
-    let die1 = new Die();
-    let die2 = new Die();
+    let die = new Die();
+    die.roll();
 
-    die1.roll();
-    die2.roll();
-
-    console.log(die1.faceValue);
-    console.log(die2.faceValue);
-
-    die1.faceValue = 42; // ett undantag kastas
+    console.log(die.faceValue);    // ➡ 4
+    console.log(typeof die);       // ➡ object
+    console.log(die.constructor);  // ➡ [Function: Die]
     ```
+
+    - Konstruktorfunktionen innehåller enbart instansegenskapen `faceValue`, som är unik för varje instans av `Die`.
+    - Metoden `roll` tillhör prototypen för `Die` och är gemensam för alla objekt instansierade från `Die`.
 
     ---
 
-    # En semi-privat tärning med klass
+    # Designmönster för referenstyper
 
-    ```
-    class Die {
-      constructor() {
-        this._faceValue = undefined;
-      }
-
-      get faceValue() {
-        return this._faceValue;
-      }
-
-      set faceValue(value) {
-        const numberValue = Number(value);
-        if (!Number.isInteger(numberValue) || numberValue < 1 || numberValue > 6) {
-          throw new Error('faceValue must be an integer between 1 and 6.');
-        }
-        this._faceValue = value;
-      }
-
-      roll() {
-        this.faceValue = Math.floor(Math.random() * 6) + 1;
-      }
-    }
-
-    let die1 = new Die();
-    let die2 = new Die();
-
-    die1.roll();
-    die2.roll();
-
-    console.log(die1.faceValue);
-    console.log(die2.faceValue);
-
-    die1.faceValue = 42; // ett undantag kastas
-    ```
-
-    ---
-
-    # En högst privat tärning med klass
-
-    ```
-    let _faceValue = new WeakMap();
-
-    class Die {
-      constructor() {
-        _faceValue.set(this, undefined);
-      }
-
-      get faceValue() {
-        return _faceValue.get(this);
-      }
-
-      set faceValue(value) {
-        const numberValue = Number(value);
-        if (!Number.isInteger(numberValue) || numberValue < 1 || numberValue > 6) {
-          throw new Error('faceValue must be an integer between 1 and 6.');
-        }
-        _faceValue.set(this, value);
-      }
-
-      roll() {
-        this.faceValue = Math.floor(Math.random() * 6) + 1;
-      }
-    }
-
-    let die1 = new Die();
-    let die2 = new Die();
-
-    die1.roll();
-    die2.roll();
-
-    console.log(die1.faceValue);
-    console.log(die2.faceValue);
-
-    die1.faceValue = 42; // ett undantag kastas
-    ```
-
-    ---
-
-    # Upprepning av kod
-
-    - `Person` och `Student` innehåller kod gemensam för de båda typerna. Behöver det vara så? Nej, med hjälp av arv (_"inheritance"_) kan kod återanvändas instället för att upprepas.
+    - Alla objekt instansierade med samma konstruktor delar samma prototyp (egenskaper och metoder).
 
     ```
     function Person(name, age) {
@@ -295,194 +270,22 @@
       this.age = age;
     }
 
-    Person.prototype.toString = function() {
-      return 'Jag, ' + this.name + ', är ' +  this.age + ' år.';
+    Person.prototype.talk = function() {
+      console.log('Jag, ' + this.name + ', är ' +  this.age + ' år.');
     };
 
-    function Student(name, age, isCampus) {
-      this.name = name;
-      this.age = age;
-      this.isCampus = isCampus;
-    }
+    let person1 = new Person('Nisse', 42);
+    console.log(person1.constructor); // [Function: Person]
 
-    Student.prototype.toString = function() {
-      return 'Jag, ' + this.name + ', läser på ' +
-        (this.isCampus ? 'campus' : 'distans') + ' och är ' +  this.age + ' år.';
-    };
+    let person2 = new Person('Ellen', 5);
+    console.log(person2.constructor); // [Function: Person]
+
+    person1.talk(); // Jag, Nisse, är 42 år.
+    person2.talk(); // Jag, Ellen, är 5 år.
     ```
 
-    ---
 
-    # Återanvändning av kod genom arv
-
-    - Genom att låta `Student` ärva från `Person` kan kod i `Person` återanvändas av `Student`.
-
-    ```
-    function Person(name, age) {
-      this.name = name;
-      this.age = age;
-    }
-
-    Person.prototype.toString = function() { // överskuggar metoden i Object.prototype
-      return 'Jag, ' + this.name + ', är ' +  this.age + ' år.';
-    };
-
-    function Student(name, age, isCampus) {
-      Person.call(this, name, age); // anrop av konstruktorn för Person
-      this.isCampus = isCampus;
-    }
-
-    Student.prototype = Object.create(Person.prototype); // ärver prototypen från Person
-    Student.prototype.constructor =  Student; // återställer konstruktorn till Student
-
-    Student.prototype.toString = function() { // överskuggar metoden i Person.prototype
-      return 'Jag, ' + this.name + ', läser på ' +
-        (this.isCampus ? 'campus' : 'distans') + ' och är ' +  this.age + ' år.';
-    };
-    ```
-
-    ---
-
-    # Återanvändning av kod genom arv med klasser
-
-    ```
-    class Person {
-      constructor(name, age) {
-        this.name = name;
-        this.age = age;
-      }
-
-      toString() { // överskuggar metoden i Object.prototype
-        return 'Jag, ' + this.name + ', är ' +  this.age + ' år.';
-      }
-    }
-
-    class Student extends Person {
-      constructor(name, age, isCampus) {
-        super(name, age); // anrop av konstruktorn för Person
-        this.isCampus = isCampus;
-      }
-
-      toString() { // överskuggar metoden i Person
-        return 'Jag, ' + this.name + ', läser på ' +
-          (this.isCampus ? 'campus' : 'distans') + ' och är ' +  this.age + ' år.';
-      }
-    }
-
-    let p = new Person('Ellen', 6);
-    console.log(p.toString()); // Jag, Ellen, är 6 år.
-
-    let s = new Student('Nisse', 42, true);
-    console.log(s.toString()); // Jag, Nisse, läser på campus och är 42 år.
-    ```
-
-    ---
-
-    # Av vilken typ är ett objekt?
-
-    - Med operatorn `instanceof` kan du undersöka om en konstruktor har används för att skapa ett objekt.
-
-    ```
-    let person1 = new Person("Nisse", 42);
-    let student1 = new Student("Ellen", 21, true);
-
-    console.log(person1 instanceof Person);  // ➡ true
-    console.log(person1 instanceof Student); // ➡ false
-
-    console.log(student1 instanceof Person);  // ➡ true
-    console.log(student1 instanceof Student); // ➡ true
-    ```
-
-    ---
-
-    # Hur kontrollera att en egenskaps värde är formaterat på rätt sätt?
-
-    ```
-    function Address(addressLine, postalCode, city) {
-      this.adressLine = addressLine;
-      this.postalCode = postalCode;
-      this.city = city;
-    }
-
-    let address1 = new Address("Storgatan 1", "123 45", "Storstaden"); // OK adress!
-    let address2 = new Address("Lillgatan 1", "ingen aning", "Lillstaden"); // felaktigt postnummer!
-    ```
-
-    - Att kontrollera att postnumret består av fem siffror med eventuellt mellanslag mellan tredje och fjärde siffran kräver en hel del kod...
-    - ...om vi inte kapslar den publika egenskapen och använder ett __reguljärt uttryck__ vid valideringen av värdet.
-
-    ---
-
-    # Reguljärt uttryck till undsättning
-
-    ```
-    function Address(addressLine, postalCode, city) {
-      this.adressLine = addressLine;
-      this.city = city;
-
-      Object.defineProperty(this, "postalCode", {
-        get: function() {
-          return postalCode;
-        },
-
-        set: function(value) {
-          if (!/^[1-9]\d{2} ?\d{2}$/.test(value)){
-            throw new Error("postalCode seems to be invalid.");
-          }
-          postalCode = value;
-        }
-      });
-
-      this.postalCode = postalCode;
-    }
-
-    let address1 = new Address("Storgatan 1", "123 45", "Storstaden"); // OK adress!
-    let address2 = new Address("Lillgatan 1", "ingen aning", "Lillstaden"); // Undantag kastas!
-    ```
-
-    - Det reguljära uttrycket defineras av  `/^[1-9]\d{2} ?\d{2}$/`.
-
-    ---
-
-    # Vad betyder `/^[1-9]\d{2} ?\d{2}$/`?
-
-    - Reguljära uttryck hanteras av typen <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp">`RegExp`</a>.
-        - `^`, start av strängen.
-        - `[1-9]`, exakt en förekomst av 1, 2, 3, 4, 5, 6, 7, 8 eller 9.
-        - `\d{2}`, exakt två förekomster av 0 till 9.
-        - <code><span class="text-gray">˽</span>?</code>, ingen eller en förekomst av ett mellanslag.
-        - `\d{2}`, exakt två förekomster av 0 till 9.
-        - `$`, slut på strängen.
-    - Det finns två sätt att skapa `RegExp`-objekt på:
-
-    ```
-    let regexp1 =  /^[1-9]\d{2} ?\d{2}$/; // literal
-
-    let regexp2 = new RegExp('^[1-9]\d{2} ?\d{2}$'); // konstruktor
-    ```
-
-    ---
-
-    # Fånga undantag med [`try...catch`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
-
-    - För att kasta ett undantag används `throw`.
-    - Kod som kan leda till att ett undantag kastas placeras i ett `try`-block, som följs av ett...
-    - ...`catch`-block innehållande kod som ska exekveras om ett undantag har kastats.
-
-    ```
-    try {
-      // Normalt programflöde i try-blocket.
-      let address2 = new Address("Lillgatan 1", "ingen aning", "Lillstaden"); // Undantag kastas!
-
-      // Gör något med address2...
-
-    } catch (e) { // Fångar undantaget.
-      // Programflöde i catch-blocket om fel inträffat, d.v.s. om undantag kastats av try-blocket.
-      concole.log(e.message); // Presenterar felmeddelandet "postalCode seems to be invalid.".
-    }
-    ```
-
-    </textarea>
+</textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js">
 </script>
 <script>

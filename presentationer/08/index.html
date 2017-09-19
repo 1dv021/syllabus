@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>07 - Föreläsning - Grundläggande programmering (1DV021)</title>
+    <meta charset="utf-8">
+    <link rel="icon" href="../remark/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="../remark/stylesheets/lnu.dark.css" id="theme">
+    <link rel="stylesheet" href="../reveal.js/css/theme/black.lnu.css">
+</head>
+<body class="lnu">
+<textarea id="source">
+
+    class: center, middle, lnu-background-yellow
+
+    ### Grundläggande programmering (1DV021)
+    # Föreläsnig 7
+
+    <div class="lnu-footer">
+        <img src="../remark/images/lnu-logotype.png">
+        <img src="../remark/images/lnu-symbol.png">
+    </div>
+
+    ---
+
+    class: lnu-background-cc
+
+    ### Upphovsrätt för detta verk
+
+    Detta verk är framtaget av Mats Loock i anslutning till kursen Grundläggande programmering (1DV021) vid Linnéuniversitetet.
+
+    Allt innehåll i detta verk förutom fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol,
+    är licensierad under en <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+        <img alt="Creative Commons-licens" style="border-width:0;vertical-align:middle" src="https://i.creativecommons.org/l/by/4.0/80x15.png" />
+        Creative Commons Erkännande 4.0 Internationell Licens
+    </a>.
+    #### Du får använda detta verk så här
+    - kopiera hela eller delar av innehållet
+    - sprida hela eller delar av innehållet
+    - visa hela eller delar av innehållet offentligt och digitalt
+    - konvertera innehållet till annat format
+    - du får även göra om innehållet
+
+    Om du förändrar innehållet så ta inte med fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol i din nya version!
+
+    Vid all användning måste du ange källan: ”Linnéuniversitetet – Grundläggande programmering (1DV021)” och
+    en länk till https://coursepress.lnu.se/kurs/grundlaggande-programmering och till Creative Common-licensen här ovan.
+
+    ---
+
+    # Organisera din kod!
+    - Det är viktigt att skriva kod som är...
+        - lätt att läsa
+        - lätt att förstå
+        - lätt att underhålla
+        - lätt att samarbeta kring
+    - Du har redan organiserat din kod!
+        - Satser som hör samman har du organiserat i __funktioner__.
+        - Funktioner och variabler (som då kallats metoder och egenskaper) som hör samman har du organiserat i __egendefinerade typer__ ("_Constructor/Prototype pattern_").
+        - De egendefinierade typerna har du organiserat i...__moduler__(?).
+
+    ---
+
+    # Moduler i JavaScript
+
+    - Vad är en en modul i Javascript?
+        - En modul är helt enkelt en samling med Javasciptkod som (säkert) kan användas av annan Javascriptkod.
+    - Varför ska jag organisera min kod i form av moduler?
+        - Genom att organisera din kod i moduler kommer du att dela upp din kod i mindre återanvändbara delar. Vilket är bra eftersom:
+            - Korta kodavsnitt är enklare att förstå och "debugga".
+            - Korta kodavsnitt är enklare att testa.
+            - Det är enklare att återanvända kodavsnitt istället för att dublicera koden.
+    - Beroende på miljö finns det olika sätt att hantera moduler. Node.js har sitt sätt. På klienten finns t.ex. Browserify, requireJS och commonJS. <span class="text-gray">(ECMAScript 2015 har sitt sätt.)</span>
+    
+    ---
+    
+    # Moduler med Node.js
+                
+    - En modul kapslar in kod som hör samman. För att  skapa en modul samlar du alla relaterade funktioner i en fil...
+
+    ```
+    // greetings.js
+    const sayHelloInEnglish = function() {
+      return 'Hello';
+    };
+
+    const sayHelloInSpanish = function() {
+      return 'Hola';
+    };
+
+    const sayHelloInSwedish = function() {
+      return 'Hej';
+    };
+    ```
+
+    - ...men det räcker inte att samla funktioner i en fil. För att göra dem tillgängliga utanför
+        filen måste de __exporteras__ så att de kan __importeras__ i de filer som behöver använda funktionerna.
+
+    ---
+
+    # Exportera funktioner
+
+    ```
+    // greetings.js
+    const sayHelloInEnglish = function() {
+      return 'Hello';
+    };
+
+    const sayHelloInSpanish = function() {
+      return 'Hola';
+    };
+
+    const sayHelloInSwedish = function() {
+      return 'Hej';
+    };
+
+    // Två funktioner som exporteras; funktionen sayHelloInSwedish
+    // är att betrakta som privat inom modulen, d.v.s. inte tillgänglig utanför
+    // filen greetings.js.
+    module.exports.sayHelloInEnglish = sayHelloInEnglish;
+    module.exports.sayHelloInSpanish = sayHelloInSpanish;
+    ```
+
+    - Genom att tilldela `module.exports`, ett objekt som Node.js tillhandahåller, referenser till funktioner kan du bestämma vilka funktioner som ska göras tillgängliga utanför filen, exporteras.
+
+    ---
+
+    # Alternativ syntax
+
+    ```
+    // greetings.js
+
+    // Två funktioner som exporteras; funktionen sayHelloInSwedish
+    // är att betrakta som privat inom modulen, d.v.s. inte tillgänglig utanför
+    // filen greetings.js.
+
+    module.exports.sayHelloInEnglish = function() {
+      return 'Hello';
+    };
+
+    module.exports.sayHelloInSpanish = function() {
+      return 'Hola';
+    };
+
+    const sayHelloInSwedish = function() {
+      return 'Hej';
+    };
+    ```
+
+    ---
+
+    # Alternativ syntax II
+
+    ```
+    // greetings.js
+    // Två funktioner som exporteras; funktionen sayHelloInSwedish
+    // är att betrakta som privat inom modulen, d.v.s. inte tillgänglig utanför
+    // filen greetings.js.
+
+    module.exports = {
+      sayHelloInEnglish : function() {
+        return 'Hello';
+      },
+
+      sayHelloInSpanish : function() {
+        return 'Hola';
+      };
+    };
+
+    const sayHelloInSwedish = function() {
+      return 'Hej';
+    };
+    ```
+
+    ---
+
+    # Exportera en typ
+
+    ```
+    // User.js
+    function User(name, email) {
+      this.name = name;
+      this.email = email;
+    }
+
+    module.exports = User;
+
+    // Använd INTE!
+    //module.exports.User = User;
+    ```
+
+    - Om du vill att din modulrot ska vara en konstruktorfunktion tilldelar du `module.exports` referensen till konstruktorfunktionen direkt. <span class="text-gray">(Har betydelse vid import av modulen.)</span>
+
+    ---
+
+    # Importera kod
+
+    - För att ladda en modul som finns i samma katalog som filen som laddar den använder du `require` och filnamnet (inklusive sökvägen).
+
+    ```
+    //app.js
+    const greetings = require('./greetings');
+    console.log(greetings.sayHelloInEnglish());
+    console.log(greetings.sayHelloInSpanish());
+    ```
+
+    - Du anger alltid den relativa sökvägen, i förhållande till filen som vill använda en modul, till den fil som innehåller modulen du vill ladda.
+        - Det är viktigt att du inleder med `./`, `../` eller `/` för att indikera en fil, annars måste modulen vara en "_core module_" eller återfinnas i katalogen `node_modules`.
+        - Hittas inte filen kommer Node.js att försöka ladda den angivna modulen genom att lägga till filändelserna `.js`, `.json` och slutligen `.node`.
+
+    ---
+
+    # Importera och använda en egendefinierad typ
+
+    ```
+    // User.js
+    function User(name, email) {
+      this.name = name;
+      this.email = email;
+    }
+
+    module.exports = User;
+    ```
+
+    ```
+    // app.js
+    const User = require('./User');
+
+    let user = new User('Ellen Nu', 'en@lnu.se');
+
+    console.log(user); // ➡ { name: 'Ellen Nu', email: 'en@lnu.se' }
+    ```
+
+    ---
+
+    # Olika sätt att lösa upphöjt problem
+
+    ```
+    // imperative
+    let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    for (let i = 0; i < arr.length; i += 1) {
+      arr[i] = Math.pow(arr[i], 2);
+    }
+    console.log(arr); // OUTPUT: [ 0, 1, 4, 9, 16, 25, 36, 49, 64, 81 ]
+
+    // declarative with anonymous function expression
+    arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let sqrArr = arr.map(function(num) {
+      return Math.pow(num, 2);
+    });
+    console.log(sqrArr); // OUTPUT: [ 0, 1, 4, 9, 16, 25, 36, 49, 64, 81 ]
+
+    // declarative with arrow function (lambda expression)
+    sqrArr = arr.map(num => Math.pow(num, 2));
+    console.log(sqrArr); // OUTPUT: [ 0, 1, 4, 9, 16, 25, 36, 49, 64, 81 ]
+    ```
+
+    - __OBS!__ En _"arrow function"_ kan inte användas för att skapa prototyp-funktioner (har att göra med hur `this` hanteras).
+
+    ---
+
+    # Vad är på gång?
+
+    -  [ECMAScript Next](https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_Next_support_in_Mozilla)
+
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js">
+</script>
+<script>
+    var slideshow = remark.create({
+        ratio: "16:9",
+        highlightLanguage: "javascript",
+//            highlightStyle: "ir-black",
+        highlightLines: true,
+        navigation: {
+            scroll: false,
+            touch: true,
+            click: false
+        }
+    });
+</script>
+</body>
+</html>

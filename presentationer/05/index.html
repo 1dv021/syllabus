@@ -10,282 +10,270 @@
 <body class="lnu">
 <textarea id="source">
 
-    class: center, middle, lnu-background-yellow
+        class: center, middle, lnu-background-yellow
 
-    ### Grundläggande programmering (1DV021)
-    # Föreläsnig 5
+        ### Grundläggande programmering (1DV021)
+        # Föreläsnig 5
 
-    <div class="lnu-footer">
-        <img src="../remark/images/lnu-logotype.png">
-        <img src="../remark/images/lnu-symbol.png">
-    </div>
+        <div class="lnu-footer">
+            <img src="../remark/images/lnu-logotype.png">
+            <img src="../remark/images/lnu-symbol.png">
+        </div>
 
-    ---
+        ---
 
-    class: lnu-background-cc
+        class: lnu-background-cc
 
-    ### Upphovsrätt för detta verk
+        ### Upphovsrätt för detta verk
 
-    Detta verk är framtaget av Mats Loock i anslutning till kursen Grundläggande programmering (1DV021) vid Linnéuniversitetet.
+        Detta verk är framtaget av Mats Loock i anslutning till kursen Grundläggande programmering (1DV021) vid Linnéuniversitetet.
 
-    Allt innehåll i detta verk förutom fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol,
-    är licensierad under en <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-        <img alt="Creative Commons-licens" style="border-width:0;vertical-align:middle" src="https://i.creativecommons.org/l/by/4.0/80x15.png" />
-        Creative Commons Erkännande 4.0 Internationell Licens
-    </a>.
-    #### Du får använda detta verk så här
-    - kopiera hela eller delar av innehållet
-    - sprida hela eller delar av innehållet
-    - visa hela eller delar av innehållet offentligt och digitalt
-    - konvertera innehållet till annat format
-    - du får även göra om innehållet
+        Allt innehåll i detta verk förutom fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol,
+        är licensierad under en <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+            <img alt="Creative Commons-licens" style="border-width:0;vertical-align:middle" src="https://i.creativecommons.org/l/by/4.0/80x15.png" />
+            Creative Commons Erkännande 4.0 Internationell Licens
+        </a>.
+        #### Du får använda detta verk så här
+        - kopiera hela eller delar av innehållet
+        - sprida hela eller delar av innehållet
+        - visa hela eller delar av innehållet offentligt och digitalt
+        - konvertera innehållet till annat format
+        - du får även göra om innehållet
 
-    Om du förändrar innehållet så ta inte med fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol i din nya version!
+        Om du förändrar innehållet så ta inte med fotografier, ikoner, bild på kurslitteraturen samt Linnéuniversitetets logotyp och symbol i din nya version!
 
-    Vid all användning måste du ange källan: ”Linnéuniversitetet – Grundläggande programmering (1DV021)” och
-    en länk till https://coursepress.lnu.se/kurs/grundlaggande-programmering och till Creative Common-licensen här ovan.
+        Vid all användning måste du ange källan: ”Linnéuniversitetet – Grundläggande programmering (1DV021)” och
+        en länk till https://coursepress.lnu.se/kurs/grundlaggande-programmering och till Creative Common-licensen här ovan.
 
-    ---
+        ---
 
-    # Vad är avsikten med koden egentligen?
+        # Hur hantrera flera värden genom en variabel eller ett returvärde?
+        ## Problem
 
-    ```
-    let value;
+        - En variabel kan bara tilldelas ett värde.
+            - Vilka alternativ finns det om "flera" värden ska kunna tilldelas en variabel?
+        - En funktion kan bara returnera ett värde.
+            - Vilka alternativ finns det om "flera" värden ska returneras?
 
-    let getNumber = function() {
-        return Math.floor(Math.random() * 6) + 1;
-    };
+        ## Lösning
 
-    value = getNumber();
+        Oavsett om det är "flera" värden som ska tilldelas en variabel eller om en funktion ska returnera "flera" värden är lösningen __EN__ referens till en __array__ eller ett __objekt__, där arrayen eller objektet kan __innehålla flera värden__.
 
-    console.log(value); // ➡ 3
-    ```
+        ---
+    
+        # Vad är ett objekt?
 
-    - Att skriva större program bestående av kod med fristående variabler och funktioner blir ohållbart i längden.
-    - Vi behöver ett nytt sätt att organisera vår kod så att den blir tydligare!
+        - Objekt är ett referensvärde, en instans av en referenstyp, som t.ex. `Object`.
+        - Du kan samla namngivna värden i objekt. Namn/värde-paren kallas egenskaper.
+        - Egenskaperna ett objekt har kan vara olika typer.
+        - En, eller flera, referensvariabler kan referera till ett och samma objekt.
 
-    ---
-
-    #Hur kan vi skriva tydligare kod?
-
-    <fieldset style="border: 1px solid #eba056;margin-bottom:1em;">
-        <legend style="margin-left:1em;padding: 0 .3em;color:#eba056">Die <span style="font-size: smaller;">(<i>tärning</i>)</span></legend>
-    ```
-    let value;
-
-    let getNumber = function() {
-        return Math.floor(Math.random() * 6) + 1;
-    };
-
-    value = getNumber();
-
-    console.log(value); // ➡ 3
-    ```
-    </fieldset>
-    - Genom att på något sätt kapsla in variabler och funktioner blir koden tydligare.
-    - Objekt kan användas till att kapsla in variabler och funktioner; objekt kan både innehålla variabler (egenskaper) och funktioner (metoder).
-
-    ---
-
-    # Skapa ett objekt
-
-    ```
-    let die = {
-      faceValue: undefined,
-      roll: function() {
-        this.faceValue = Math.floor(Math.random() * 6) + 1;
-      }
-    };
-
-    die.roll();
-    console.log(die.faceValue); // ➡ 3
-    ```
-
-    - Ett Object-objekt används till att kapsla in...
-        - ...tärningens aktuella värde (egenskapen `faceValue`).
-        - ...att tärningen kan kastas (metoden `roll`), vilket ändrar tärningens värde.
-    - Vanligt sätt att skapa __ett__ objekt, MEN...
-    - ...behöver flera objekt skapas måste koden dupliceras!
-
-    ---
-
-    # this
-    ```
-    let roll = function() {
-      this.faceValue = Math.floor(Math.random() * 6) + 1;
-    };
-
-    let die = {
-      faceValue: undefined
-    };
-
-    let die2 = {
-      faceValue: undefined,
-      roll
-    };
-
-    roll.call(die); // i roll() kommer this att referera till samma objekt som die
-    die2.roll();    // i roll() kommer this att referera till samma objekt som die2
-
-    console.log(die.faceValue);  // ➡ 3
-    console.log(die2.faceValue); // ➡ 5
-    ```
-
-    - `this` refererar till objektet som funktionen anropades för.
-
-    ---
-
-    # Funktion som använder `this`
-
-    ```
-    // Skapar objekt som anropar funktion som använder this.
-
-    let smallTalk = function(greet = 'Hej!') {
-      console.log(greet + ' Jag, ' + this.name + ', är ' +  this.age + ' år.');
-    };
-
-    let simplePerson = {
-      name: 'Nisse',
-      age: 42,
-      talk: smallTalk
-    };
-
-    simplePerson.talk();                               // ➡ Hej! Jag, Nisse, är 42 år.
-
-    let anotherSimplePerson = {
-      name: 'Ellen',
-      age: 6
-    };
-
-    smallTalk.apply(anotherSimplePerson, ['Tjabba!']); // ➡ Tjabba! Jag, Ellen, är 6 år.
-    smallTalk.call(anotherSimplePerson, 'Hallå!');     // ➡ Hallå! Jag, Ellen, är 6 år.
-    ```
-
-    ---
-
-    # Designmönstret "_Factory_"
-
-    - Funktionen `createDie` löser problemet med att skapa flera liknande objekt, MEN...
-    - ...av vilken typ är objekten som skapas? Jo, `Object`! Inte `Die`!
-
-    ```
-    let createDie = function() {
-      let obj = {
-        faceValue: undefined,
-        roll: function() {
-          this.faceValue = Math.floor(Math.random() * 6) + 1;
+        ```
+        let person = {
+          firstName: 'Ellen',
+          lastName: 'Nu',
+          age: 7,
+          eyeColor: 'yellow'
         }
-      };
+        
+        let anotherRef = person // båda variablerna refererar till samma objekt
+        ```
 
-      return obj;
-    };
+        ---
 
-    let die = createDie();
-    die.roll();
+        # Så skapar du ett Object-objekt
 
-    console.log(die.faceValue);   // ➡ 3
-    console.log(typeof die);      // ➡ object
-    console.log(die.constructor); // ➡ [Function: Object]
-    ```
+        - Objektliteral - rekommenderat sätt
 
-    ---
+        ```
+         // Ett tomt obejkt
+        let person = {}
 
-    # Designmönstret "_Constructor_"
+        // Ett objekt med tre egenskaper
+        let car = {
+          make: 'Volvo',
+          color: 'blue',
+          year: 2010
+        }
+        ```
 
-    - Används nyckleordet `new` före en funktion som anropas betraktas funktionen som en konstruktorfunktion.
-    - Ett objekt som skapas med `new` sägs vara en __instans__ av dess konstruktor.
+        - Med nyckelordet new - ___inte rekommenderat!___
 
-    ```
-    function Die() {
-      this.faceValue = undefined;
-      this.roll = function() {
-        this.faceValue = Math.floor(Math.random() * 6) + 1;
-      };
-    }
+        ```
+        // Ett tomt objekt
+        let person = new Object()
 
-    let die = new Die(); // die refererar till en instans av Die
-    die.roll();
+        // Ett objekt med tre egenskaper
+        let car = new Object()
+        car.make = 'Volvo'
+        car.color = 'blue'
+        car.year = 2010
+        ```
 
-    console.log(die.faceValue);   // ➡ 4
-    console.log(typeof die);      // ➡ object
-    console.log(die.constructor); // ➡ [Function: Die]
-    ```
+        ---
+        
+        # Så kan du också skapa ett Object-objekt
 
-    ---
+        - `Object.create(proto[, propertiesObject])` ger dig mer kontroll över ett objekts egenskaper.
 
-    # Konstruktorfunktion med parametrar
+        ```
+        // Tomma objekt
+        let person = {}
 
-    ```
-    function SimplePerson(name, age) {
-      this.name = name;
-      this.age = age;
-      this.talk = function() {
-        console.log('Jag, ' + this.name + ', är ' +  this.age + ' år.');
-      };
-    }
+        let anotherPerson = Object.create(Object.prototype)
+        ```
 
-    let simplePerson1 = new SimplePerson('Nisse', 42);
-    let simplePerson2 = new SimplePerson('Ellen', 6);
+        ```
+        // Objekt med egenskaper
+        let car = {
+            make: 'Volvo',
+            color: 'blue',
+            year: 2010
+        }
 
-    simplePerson1.talk(); // ➡ Jag, Nisse, är 42 år.
-    simplePerson2.talk(); // ➡ Jag, Ellen, är 6 år.
-    ```
+        let anotherCar = Object.create(Object.prototype, {
+          make: {
+            value: 'Volvo',
+            writable: true,
+            enumerable: true,
+            configurable: true
+          },
+          color: {
+            value: 'blue',
+            writable: true,
+            enumerable: true,
+            configurable: true
+          },
+          year: {
+            value: 2010,
+            writable: true,
+            enumerable: true,
+            configurable: true
+          }
+        })
+        ```
 
-    - Två identiska objekt skapas, så när på värdena egenskaperna `name` och `age` har.
-    - __OBS!__ Metoden `talk` är en del av varje instans av `SimplePerson`; det finns alltså två exakt lika upplagor av metoden.
+        ---
 
-    ---
+        # Två olika sätt att att komma åt egenskapers värden
 
-    # Designmönstret "_Constructor/Prototype_"
+        - Punktnotationen är det föredragna sättet.
+        - Hakparenteser används oftast tillsammans med en variabel innehållande egenskapens namn.
 
-    ```
-    function Die() {
-      this.faceValue = undefined;
-    }
+        ```
+        let car = {
+          make: 'Volvo',
+          color: 'blue',
+          year: 2010
+        }
 
-    Die.prototype.roll = function() {
-      this.faceValue = Math.floor(Math.random() * 6) + 1;
-    };
+        console.log(car.year) // OUTPUT:  2010
 
-    let die = new Die();
-    die.roll();
+        // Lägg till en ny egenskap till objektet.
+        car.model = 'V70' // { make: 'Volvo', color: 'blue', year: 2010, model: 'V70' }
 
-    console.log(die.faceValue);    // ➡ 4
-    console.log(typeof die);       // ➡ object
-    console.log(die.constructor);  // ➡ [Function: Die]
-    ```
+        let property = 'model'
+        console.log(car[property]) // OUTPUT:  'V70'
+        ```
 
-    - Konstruktorfunktionen innehåller enbart instansegenskapen `faceValue`, som är unik för varje instans av `Die`.
-    - Metoden `roll` tillhör prototypen för `Die` och är gemensam för alla objekt instansierade från `Die`.
+        ---
 
-    ---
+        # Egenskaper i ett objekt
 
-    # Designmönster för referenstyper
+        - Iterera genom ett objekts samtliga egenskaper (inklusive dess prototyper) med [`for...in`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in).
 
-    - Alla objekt instansierade med samma konstruktor delar samma prototyp (egenskaper och metoder).
+        ```
+        let property;
+        let car = {
+          make: 'Volvo',
+          color: 'blue',
+          year: 2010
+        }
 
-    ```
-    function Person(name, age) {
-      this.name = name;
-      this.age = age;
-    }
+        for (property in car) {
+          console.log(property + ': ' +  car[property])
+        }
 
-    Person.prototype.talk = function() {
-      console.log('Jag, ' + this.name + ', är ' +  this.age + ' år.');
-    };
+        // OUTPUT: make: Volvo
+        // OUTPUT: color: blue
+        // OUTPUT: year: 2010
+        ```
 
-    let person1 = new Person('Nisse', 42);
-    console.log(person1.constructor); // [Function: Person]
+        ---
 
-    let person2 = new Person('Ellen', 5);
-    console.log(person2.constructor); // [Function: Person]
+        # Nycklarna till värdena
 
-    person1.talk(); // Jag, Nisse, är 42 år.
-    person2.talk(); // Jag, Ellen, är 5 år.
-    ```
+        - Iterera igenom ett objekts egna egenskaper med hjälp av egenskapen [`keys`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys), som är en array innehållande objektets egna egenskaper.
 
+        ```
+        let car = {
+          make: 'Volvo',
+          color: 'blue',
+          year: 2010
+        }
 
-</textarea>
+        let keys = Object.keys(car) // [ 'make', 'color', 'year' ]
+
+        keys.forEach(function (key) {
+          console.log(key + ': ' +  car[key])
+        })
+
+        // OUTPUT: make: Volvo
+        // OUTPUT: color: blue
+        // OUTPUT: year: 2010
+        ```
+
+        ---
+
+        # Om fel inträffar kasta ett undantag!
+
+        - Kastas ett undantag avbryts all exekvering av en aktuella funktionen ([`throw`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw)).
+        - Exekveringen fortsätter i det först förekommande `catch`-blocket; saknas det avslutas programmet.
+
+        ```
+        let foo = function (arr) {
+
+          // Kasta ett undantag om arr inte refererar till en array.
+          if (!Array.isArray(arr)) {
+            throw new TypeError('arr doesn\'t refer to an array.')
+          }
+
+          // Gör något med arrayen...
+        };
+
+        foo('Jag är inte en array!')  // Anropet leder till att programmet avslutas!
+        ```
+
+        ---
+
+        # Hantera undantag
+
+        - Undantag kan fångas och hanteras ([`try...catch`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)).
+
+        ```
+        let car = {
+          make: 'Volvo',
+          color: 'blue',
+          year: 2010
+        }
+
+        let bar = function (obj) {
+          if (!obj.hasOwnProperty('make') ||
+            !obj.hasOwnProperty('model')) {
+            throw new Error('Objektet saknar relevanta egenskap(er).')
+          }
+
+          // Gör något med objektets egenskaper make och model...
+        }
+
+        try {
+          bar(car)
+        } catch (e) {
+          console.error(e.message) // OUTPUT: Objektet saknar relevanta egenskap(er).
+        }
+        ```
+
+    </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js">
 </script>
 <script>
@@ -295,7 +283,7 @@
 //            highlightStyle: "ir-black",
         highlightLines: true,
         navigation: {
-            scroll: false,
+            scroll: true,
             touch: true,
             click: false
         }

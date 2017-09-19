@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>07 - Föreläsning - Grundläggande programmering (1DV021)</title>
+    <title>06 - Föreläsning - Grundläggande programmering (1DV021)</title>
     <meta charset="utf-8">
     <link rel="icon" href="../remark/images/favicon.png" type="image/png">
     <link rel="stylesheet" href="../remark/stylesheets/lnu.dark.css" id="theme">
@@ -13,7 +13,7 @@
     class: center, middle, lnu-background-yellow
 
     ### Grundläggande programmering (1DV021)
-    # Föreläsnig 7
+    # Föreläsnig 6
 
     <div class="lnu-footer">
         <img src="../remark/images/lnu-logotype.png">
@@ -47,220 +47,440 @@
 
     ---
 
-    # Organisera din kod!
-    - Det är viktigt att skriva kod som är...
-        - lätt att läsa
-        - lätt att förstå
-        - lätt att underhålla
-        - lätt att samarbeta kring
-    - Du har redan organiserat din kod!
-        - Satser som hör samman har du organiserat i __funktioner__.
-        - Funktioner och variabler (som då kallats metoder och egenskaper) som hör samman har du organiserat i __egendefinerade typer__ ("_Constructor/Prototype pattern_").
-        - De egendefinierade typerna har du organiserat i...__moduler__(?).
+    # Relationer mellan konstruktor, prototyp och objekt
+
+    <pre style="float:left;width: 54%;"><code class="js">
+    function Die() {
+        this.faceValue;
+    }
+
+    Die.prototype.roll = function() {
+        this.faceValue = Math.floor(Math.random() * 6) + 1;
+    };
+
+    let die1 = new Die();
+    let die2 = new Die();
+
+    die1.roll();
+    die2.roll();
+    </code></pre>
+
+    <img src="prototype.png" width="45%" height="45%" style="border: none; background: none; float:right;padding-top:2em;" />
+
+    <div style="clear: both;"></div>
+
+    - När en konstruktorfunktion skapas skapas även en tillhörande prototyp, som är ett objekt bl.a. innehållande en referens, `constructor`, till konstruktorfunktionen samt egenskaper och metoder gemensamma för alla instanser av typen.
+    - Varje instans har en referens, `__proto__`, till konstruktorns prototyp.
 
     ---
 
-    # Moduler i JavaScript
-
-    - Vad är en en modul i Javascript?
-        - En modul är helt enkelt en samling med Javasciptkod som (säkert) kan användas av annan Javascriptkod.
-    - Varför ska jag organisera min kod i form av moduler?
-        - Genom att organisera din kod i moduler kommer du att dela upp din kod i mindre återanvändbara delar. Vilket är bra eftersom:
-            - Korta kodavsnitt är enklare att förstå och "debugga".
-            - Korta kodavsnitt är enklare att testa.
-            - Det är enklare att återanvända kodavsnitt istället för att dublicera koden.
-    - Beroende på miljö finns det olika sätt att hantera moduler. Node.js har sitt sätt. På klienten finns t.ex. Browserify, requireJS och commonJS. <span class="text-gray">(ECMAScript 2015 har sitt sätt.)</span>
-    
-    ---
-    
-    # Moduler med Node.js
-                
-    - En modul kapslar in kod som hör samman. För att  skapa en modul samlar du alla relaterade funktioner i en fil...
+    # ES2015 och syntaktiska sockret `class`
 
     ```
-    // greetings.js
-    const sayHelloInEnglish = function() {
-      return 'Hello';
+    function Die() {
+        this.faceValue;
+    }
+
+    Die.prototype.roll = function() {
+        this.faceValue = Math.floor(Math.random() * 6) + 1;
     };
 
-    const sayHelloInSpanish = function() {
-      return 'Hola';
-    };
+    let die1 = new Die();
+    let die2 = new Die();
 
-    const sayHelloInSwedish = function() {
-      return 'Hej';
-    };
+    die1.roll();
+    die2.roll();
+
+    console.log(die1.faceValue);
+    console.log(die2.faceValue);
     ```
 
-    - ...men det räcker inte att samla funktioner i en fil. För att göra dem tillgängliga utanför
-        filen måste de __exporteras__ så att de kan __importeras__ i de filer som behöver använda funktionerna.
-
-    ---
-
-    # Exportera funktioner
-
     ```
-    // greetings.js
-    const sayHelloInEnglish = function() {
-      return 'Hello';
-    };
+    class Die {
+      constructor() {
+        this.faceValue = undefined;
+      }
 
-    const sayHelloInSpanish = function() {
-      return 'Hola';
-    };
+      roll() {
+        this.faceValue = Math.floor(Math.random() * 6) + 1;
+      }
+    }
 
-    const sayHelloInSwedish = function() {
-      return 'Hej';
-    };
+    let die1 = new Die();
+    let die2 = new Die();
 
-    // Två funktioner som exporteras; funktionen sayHelloInSwedish
-    // är att betrakta som privat inom modulen, d.v.s. inte tillgänglig utanför
-    // filen greetings.js.
-    module.exports.sayHelloInEnglish = sayHelloInEnglish;
-    module.exports.sayHelloInSpanish = sayHelloInSpanish;
+    die1.roll();
+    die2.roll();
+
+    console.log(die1.faceValue);
+    console.log(die2.faceValue);
     ```
-
-    - Genom att tilldela `module.exports`, ett objekt som Node.js tillhandahåller, referenser till funktioner kan du bestämma vilka funktioner som ska göras tillgängliga utanför filen, exporteras.
-
     ---
 
-    # Alternativ syntax
+    # Problem med publika egenskaper
 
     ```
-    // greetings.js
+    function Die() {
+      this.faceValue;
+    }
 
-    // Två funktioner som exporteras; funktionen sayHelloInSwedish
-    // är att betrakta som privat inom modulen, d.v.s. inte tillgänglig utanför
-    // filen greetings.js.
-
-    module.exports.sayHelloInEnglish = function() {
-      return 'Hello';
+    Die.prototype.roll = function() {
+        this.faceValue = Math.floor(Math.random() * 6) + 1;
     };
 
-    module.exports.sayHelloInSpanish = function() {
-      return 'Hola';
-    };
+    let die1 = new Die();
+    let die2 = new Die();
 
-    const sayHelloInSwedish = function() {
-      return 'Hej';
-    };
+    // Inte några värden en sexsidig tärning ska ha...
+    die1.faceValue = 42;
+    die2.faceValue = 'Kilroy was here!';
     ```
+
+    - En publik egenskap kan sättas till vilket värde som helst.
+    - LÖSNING: datat, egenskapen `faceValue`, ska kapslas in och döljas.
 
     ---
 
-    # Alternativ syntax II
+    # Privata medlemmar
+
+    - Privata medlemmar kallas egenskaper och metoder som inte kan kommas åt utanför konstruktorfunktionen.
+    - Privata medlemmar skapas av konstruktorn.
+        - Konstruktorns parametrar.
+        - Medlemmar definierade med let (eller var, eller const).
 
     ```
-    // greetings.js
-    // Två funktioner som exporteras; funktionen sayHelloInSwedish
-    // är att betrakta som privat inom modulen, d.v.s. inte tillgänglig utanför
-    // filen greetings.js.
+    function Foo(param) {
+      this.param = param; // "publik"
+      this._notSoPrivate; // "publik" MEN "semi-privat" genom namngivning (namn inleds med _)
+      let secret = 42;    // "privat"
 
-    module.exports = {
-      sayHelloInEnglish : function() {
-        return 'Hello';
-      },
-
-      sayHelloInSpanish : function() {
-        return 'Hola';
+      let bar = function() {  // "privat"
+        return 'forty-two';
       };
+    }
+    ```
+
+    - "Getters" och "setters" krävs för åtkomst av privata egenskaper.
+
+    ---
+
+    # En privat tärning
+
+    - Genom att använda `Object.defineProperty` kan du ange den funktion som ska köras då en egenskaps värde hämtas respektive tilldelas ett värde.
+
+    ```
+    function Die() {
+      let _faceValue;
+
+      Object.defineProperty(this, 'faceValue', {
+        get: function() {
+          return _faceValue;
+        },
+
+        set: function(value) {
+          const intValue = parseInt(value, 10);
+          if (isNaN(intValue) || intValue < 1 || intValue > 6) {
+            throw new Error('faceValue must be an integer between 1 and 6.');
+          }
+          _faceValue = intValue;
+        }
+      });
+    }
+
+    Die.prototype.roll = function() {
+      this.faceValue = Math.floor(Math.random() * 6) + 1;
     };
 
-    const sayHelloInSwedish = function() {
-      return 'Hej';
+    let die1 = new Die();
+    let die2 = new Die();
+
+    die1.roll();
+    die2.roll();
+
+    console.log(die1.faceValue);
+    console.log(die2.faceValue);
+
+    die1.faceValue = 42; // ett undantag kastas
+    ```
+
+    ---
+
+    # En semi-privat tärning med klass
+
+    ```
+    class Die {
+      constructor() {
+        this._faceValue = undefined;
+      }
+
+      get faceValue() {
+        return this._faceValue;
+      }
+
+      set faceValue(value) {
+        const numberValue = Number(value);
+        if (!Number.isInteger(numberValue) || numberValue < 1 || numberValue > 6) {
+          throw new Error('faceValue must be an integer between 1 and 6.');
+        }
+        this._faceValue = value;
+      }
+
+      roll() {
+        this.faceValue = Math.floor(Math.random() * 6) + 1;
+      }
+    }
+
+    let die1 = new Die();
+    let die2 = new Die();
+
+    die1.roll();
+    die2.roll();
+
+    console.log(die1.faceValue);
+    console.log(die2.faceValue);
+
+    die1.faceValue = 42; // ett undantag kastas
+    ```
+
+    ---
+
+    # En högst privat tärning med klass
+
+    ```
+    let _faceValue = new WeakMap();
+
+    class Die {
+      constructor() {
+        _faceValue.set(this, undefined);
+      }
+
+      get faceValue() {
+        return _faceValue.get(this);
+      }
+
+      set faceValue(value) {
+        const numberValue = Number(value);
+        if (!Number.isInteger(numberValue) || numberValue < 1 || numberValue > 6) {
+          throw new Error('faceValue must be an integer between 1 and 6.');
+        }
+        _faceValue.set(this, value);
+      }
+
+      roll() {
+        this.faceValue = Math.floor(Math.random() * 6) + 1;
+      }
+    }
+
+    let die1 = new Die();
+    let die2 = new Die();
+
+    die1.roll();
+    die2.roll();
+
+    console.log(die1.faceValue);
+    console.log(die2.faceValue);
+
+    die1.faceValue = 42; // ett undantag kastas
+    ```
+
+    ---
+
+    # Upprepning av kod
+
+    - `Person` och `Student` innehåller kod gemensam för de båda typerna. Behöver det vara så? Nej, med hjälp av arv (_"inheritance"_) kan kod återanvändas instället för att upprepas.
+
+    ```
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+
+    Person.prototype.toString = function() {
+      return 'Jag, ' + this.name + ', är ' +  this.age + ' år.';
+    };
+
+    function Student(name, age, isCampus) {
+      this.name = name;
+      this.age = age;
+      this.isCampus = isCampus;
+    }
+
+    Student.prototype.toString = function() {
+      return 'Jag, ' + this.name + ', läser på ' +
+        (this.isCampus ? 'campus' : 'distans') + ' och är ' +  this.age + ' år.';
     };
     ```
 
     ---
 
-    # Exportera en typ
+    # Återanvändning av kod genom arv
+
+    - Genom att låta `Student` ärva från `Person` kan kod i `Person` återanvändas av `Student`.
 
     ```
-    // User.js
-    function User(name, email) {
+    function Person(name, age) {
       this.name = name;
-      this.email = email;
+      this.age = age;
     }
 
-    module.exports = User;
+    Person.prototype.toString = function() { // överskuggar metoden i Object.prototype
+      return 'Jag, ' + this.name + ', är ' +  this.age + ' år.';
+    };
 
-    // Använd INTE!
-    //module.exports.User = User;
-    ```
-
-    - Om du vill att din modulrot ska vara en konstruktorfunktion tilldelar du `module.exports` referensen till konstruktorfunktionen direkt. <span class="text-gray">(Har betydelse vid import av modulen.)</span>
-
-    ---
-
-    # Importera kod
-
-    - För att ladda en modul som finns i samma katalog som filen som laddar den använder du `require` och filnamnet (inklusive sökvägen).
-
-    ```
-    //app.js
-    const greetings = require('./greetings');
-    console.log(greetings.sayHelloInEnglish());
-    console.log(greetings.sayHelloInSpanish());
-    ```
-
-    - Du anger alltid den relativa sökvägen, i förhållande till filen som vill använda en modul, till den fil som innehåller modulen du vill ladda.
-        - Det är viktigt att du inleder med `./`, `../` eller `/` för att indikera en fil, annars måste modulen vara en "_core module_" eller återfinnas i katalogen `node_modules`.
-        - Hittas inte filen kommer Node.js att försöka ladda den angivna modulen genom att lägga till filändelserna `.js`, `.json` och slutligen `.node`.
-
-    ---
-
-    # Importera och använda en egendefinierad typ
-
-    ```
-    // User.js
-    function User(name, email) {
-      this.name = name;
-      this.email = email;
+    function Student(name, age, isCampus) {
+      Person.call(this, name, age); // anrop av konstruktorn för Person
+      this.isCampus = isCampus;
     }
 
-    module.exports = User;
-    ```
+    Student.prototype = Object.create(Person.prototype); // ärver prototypen från Person
+    Student.prototype.constructor =  Student; // återställer konstruktorn till Student
 
-    ```
-    // app.js
-    const User = require('./User');
-
-    let user = new User('Ellen Nu', 'en@lnu.se');
-
-    console.log(user); // ➡ { name: 'Ellen Nu', email: 'en@lnu.se' }
+    Student.prototype.toString = function() { // överskuggar metoden i Person.prototype
+      return 'Jag, ' + this.name + ', läser på ' +
+        (this.isCampus ? 'campus' : 'distans') + ' och är ' +  this.age + ' år.';
+    };
     ```
 
     ---
 
-    # Olika sätt att lösa upphöjt problem
+    # Återanvändning av kod genom arv med klasser
 
     ```
-    // imperative
-    let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-    for (let i = 0; i < arr.length; i += 1) {
-      arr[i] = Math.pow(arr[i], 2);
+    class Person {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      toString() { // överskuggar metoden i Object.prototype
+        return 'Jag, ' + this.name + ', är ' +  this.age + ' år.';
+      }
     }
-    console.log(arr); // OUTPUT: [ 0, 1, 4, 9, 16, 25, 36, 49, 64, 81 ]
 
-    // declarative with anonymous function expression
-    arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-    let sqrArr = arr.map(function(num) {
-      return Math.pow(num, 2);
-    });
-    console.log(sqrArr); // OUTPUT: [ 0, 1, 4, 9, 16, 25, 36, 49, 64, 81 ]
+    class Student extends Person {
+      constructor(name, age, isCampus) {
+        super(name, age); // anrop av konstruktorn för Person
+        this.isCampus = isCampus;
+      }
 
-    // declarative with arrow function (lambda expression)
-    sqrArr = arr.map(num => Math.pow(num, 2));
-    console.log(sqrArr); // OUTPUT: [ 0, 1, 4, 9, 16, 25, 36, 49, 64, 81 ]
+      toString() { // överskuggar metoden i Person
+        return 'Jag, ' + this.name + ', läser på ' +
+          (this.isCampus ? 'campus' : 'distans') + ' och är ' +  this.age + ' år.';
+      }
+    }
+
+    let p = new Person('Ellen', 6);
+    console.log(p.toString()); // Jag, Ellen, är 6 år.
+
+    let s = new Student('Nisse', 42, true);
+    console.log(s.toString()); // Jag, Nisse, läser på campus och är 42 år.
     ```
-
-    - __OBS!__ En _"arrow function"_ kan inte användas för att skapa prototyp-funktioner (har att göra med hur `this` hanteras).
 
     ---
 
-    # Vad är på gång?
+    # Av vilken typ är ett objekt?
 
-    -  [ECMAScript Next](https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_Next_support_in_Mozilla)
+    - Med operatorn `instanceof` kan du undersöka om en konstruktor har används för att skapa ett objekt.
+
+    ```
+    let person1 = new Person("Nisse", 42);
+    let student1 = new Student("Ellen", 21, true);
+
+    console.log(person1 instanceof Person);  // ➡ true
+    console.log(person1 instanceof Student); // ➡ false
+
+    console.log(student1 instanceof Person);  // ➡ true
+    console.log(student1 instanceof Student); // ➡ true
+    ```
+
+    ---
+
+    # Hur kontrollera att en egenskaps värde är formaterat på rätt sätt?
+
+    ```
+    function Address(addressLine, postalCode, city) {
+      this.adressLine = addressLine;
+      this.postalCode = postalCode;
+      this.city = city;
+    }
+
+    let address1 = new Address("Storgatan 1", "123 45", "Storstaden"); // OK adress!
+    let address2 = new Address("Lillgatan 1", "ingen aning", "Lillstaden"); // felaktigt postnummer!
+    ```
+
+    - Att kontrollera att postnumret består av fem siffror med eventuellt mellanslag mellan tredje och fjärde siffran kräver en hel del kod...
+    - ...om vi inte kapslar den publika egenskapen och använder ett __reguljärt uttryck__ vid valideringen av värdet.
+
+    ---
+
+    # Reguljärt uttryck till undsättning
+
+    ```
+    function Address(addressLine, postalCode, city) {
+      this.adressLine = addressLine;
+      this.city = city;
+
+      Object.defineProperty(this, "postalCode", {
+        get: function() {
+          return postalCode;
+        },
+
+        set: function(value) {
+          if (!/^[1-9]\d{2} ?\d{2}$/.test(value)){
+            throw new Error("postalCode seems to be invalid.");
+          }
+          postalCode = value;
+        }
+      });
+
+      this.postalCode = postalCode;
+    }
+
+    let address1 = new Address("Storgatan 1", "123 45", "Storstaden"); // OK adress!
+    let address2 = new Address("Lillgatan 1", "ingen aning", "Lillstaden"); // Undantag kastas!
+    ```
+
+    - Det reguljära uttrycket defineras av  `/^[1-9]\d{2} ?\d{2}$/`.
+
+    ---
+
+    # Vad betyder `/^[1-9]\d{2} ?\d{2}$/`?
+
+    - Reguljära uttryck hanteras av typen <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp">`RegExp`</a>.
+        - `^`, start av strängen.
+        - `[1-9]`, exakt en förekomst av 1, 2, 3, 4, 5, 6, 7, 8 eller 9.
+        - `\d{2}`, exakt två förekomster av 0 till 9.
+        - <code><span class="text-gray">˽</span>?</code>, ingen eller en förekomst av ett mellanslag.
+        - `\d{2}`, exakt två förekomster av 0 till 9.
+        - `$`, slut på strängen.
+    - Det finns två sätt att skapa `RegExp`-objekt på:
+
+    ```
+    let regexp1 =  /^[1-9]\d{2} ?\d{2}$/; // literal
+
+    let regexp2 = new RegExp('^[1-9]\d{2} ?\d{2}$'); // konstruktor
+    ```
+
+    ---
+
+    # Fånga undantag med [`try...catch`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
+
+    - För att kasta ett undantag används `throw`.
+    - Kod som kan leda till att ett undantag kastas placeras i ett `try`-block, som följs av ett...
+    - ...`catch`-block innehållande kod som ska exekveras om ett undantag har kastats.
+
+    ```
+    try {
+      // Normalt programflöde i try-blocket.
+      let address2 = new Address("Lillgatan 1", "ingen aning", "Lillstaden"); // Undantag kastas!
+
+      // Gör något med address2...
+
+    } catch (e) { // Fångar undantaget.
+      // Programflöde i catch-blocket om fel inträffat, d.v.s. om undantag kastats av try-blocket.
+      concole.log(e.message); // Presenterar felmeddelandet "postalCode seems to be invalid.".
+    }
+    ```
 
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js">
