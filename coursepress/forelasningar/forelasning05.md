@@ -5,7 +5,7 @@ objekt, värdetyp, referenstyp, Object, egenskaper, objektliteral, undantag, kas
 ## Resurser
 
 - [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/05/index.html#)
-- <del>[YouTube](#) 2017-09-19, 13:15-15:00</del>
+- [YouTube](https://youtu.be/JhOkJJ4jgkY) 2017-09-19, 13:15-15:00
 
 ### Eloquent JavaScript, 2nd Edition
 
