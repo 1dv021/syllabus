@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>05 - Föreläsning - Grundläggande programmering (1DV021)</title>
+    <title>06 - Föreläsning - Grundläggande programmering (1DV021)</title>
     <meta charset="utf-8">
     <link rel="icon" href="../remark/images/favicon.png" type="image/png">
     <link rel="stylesheet" href="../remark/stylesheets/lnu.dark.css" id="theme">
@@ -13,7 +13,7 @@
     class: center, middle, lnu-background-yellow
 
     ### Grundläggande programmering (1DV021)
-    # Föreläsnig 5
+    # Föreläsnig 6
 
     <div class="lnu-footer">
         <img src="../remark/images/lnu-logotype.png">
@@ -50,15 +50,15 @@
     # Vad är avsikten med koden egentligen?
 
     ```
-    let value;
+    let value
 
-    let getNumber = function() {
-        return Math.floor(Math.random() * 6) + 1;
-    };
+    let getNumber = function () {
+      return Math.floor(Math.random() * 6) + 1
+    }
 
-    value = getNumber();
+    value = getNumber()
 
-    console.log(value); // ➡ 3
+    console.log(value) // OUTPUT: 4
     ```
 
     - Att skriva större program bestående av kod med fristående variabler och funktioner blir ohållbart i längden.
@@ -69,21 +69,21 @@
     #Hur kan vi skriva tydligare kod?
 
     <fieldset style="border: 1px solid #eba056;margin-bottom:1em;">
-        <legend style="margin-left:1em;padding: 0 .3em;color:#eba056">Die <span style="font-size: smaller;">(<i>tärning</i>)</span></legend>
+        <legend style="margin-left:1em;padding: 0 .3em;color:#eba056;background:#222;">Die <span style="font-size: smaller;">(<i>tärning</i>)</span></legend>
     ```
-    let value;
+    let value
 
-    let getNumber = function() {
-        return Math.floor(Math.random() * 6) + 1;
-    };
+    let getNumber = function () {
+        return Math.floor(Math.random() * 6) + 1
+    }
 
-    value = getNumber();
+    value = getNumber()
 
-    console.log(value); // ➡ 3
+    console.log(value) // OUTPUT: 4
     ```
     </fieldset>
     - Genom att på något sätt kapsla in variabler och funktioner blir koden tydligare.
-    - Objekt kan användas till att kapsla in variabler och funktioner; objekt kan både innehålla variabler (egenskaper) och funktioner (metoder).
+    - <b>Objekt kan</b> användas till att <b>kapsla in variabler och funktioner</b>; objekt kan både innehålla variabler (egenskaper) och funktioner (metoder).
 
     ---
 
@@ -92,13 +92,13 @@
     ```
     let die = {
       faceValue: undefined,
-      roll: function() {
-        this.faceValue = Math.floor(Math.random() * 6) + 1;
+      roll: function () {
+        this.faceValue = Math.floor(Math.random() * 6) + 1
       }
-    };
+    }
 
-    die.roll();
-    console.log(die.faceValue); // ➡ 3
+    die.roll()
+    console.log(die.faceValue) // OUTPUT: 4
     ```
 
     - Ett Object-objekt används till att kapsla in...
@@ -111,24 +111,24 @@
 
     # this
     ```
-    let roll = function() {
-      this.faceValue = Math.floor(Math.random() * 6) + 1;
-    };
+    let roll = function () {
+      this.faceValue = Math.floor(Math.random() * 6) + 1
+    }
 
     let die = {
       faceValue: undefined
-    };
+    }
 
     let die2 = {
       faceValue: undefined,
       roll
-    };
+    }
 
-    roll.call(die); // i roll() kommer this att referera till samma objekt som die
-    die2.roll();    // i roll() kommer this att referera till samma objekt som die2
+    roll.call(die) // i roll() kommer this att referera till samma objekt som die
+    die2.roll()    // i roll() kommer this att referera till samma objekt som die2
 
-    console.log(die.faceValue);  // ➡ 3
-    console.log(die2.faceValue); // ➡ 5
+    console.log(die.faceValue)  // OUTPUT: 4
+    console.log(die2.faceValue) // OUTPUT: 2
     ```
 
     - `this` refererar till objektet som funktionen anropades för.
@@ -140,27 +140,28 @@
     ```
     // Skapar objekt som anropar funktion som använder this.
 
-    let smallTalk = function(greet = 'Hej!') {
-      console.log(greet + ' Jag, ' + this.name + ', är ' +  this.age + ' år.');
-    };
+    let smallTalk = function (greet = 'Hej!') {
+      console.log(greet + ' Jag, ' + this.name + ', är ' +  this.age + ' år.')
+    }
 
     let simplePerson = {
       name: 'Nisse',
       age: 42,
       talk: smallTalk
-    };
+    }
 
-    simplePerson.talk();                               // ➡ Hej! Jag, Nisse, är 42 år.
+    simplePerson.talk()                               // OUTPUT: Hej! Jag, Nisse, är 42 år.
 
     let anotherSimplePerson = {
       name: 'Ellen',
-      age: 6
-    };
+      age: 7
+    }
 
-    smallTalk.apply(anotherSimplePerson, ['Tjabba!']); // ➡ Tjabba! Jag, Ellen, är 6 år.
-    smallTalk.call(anotherSimplePerson, 'Hallå!');     // ➡ Hallå! Jag, Ellen, är 6 år.
+    smallTalk.apply(anotherSimplePerson, ['Tjabba!']) // OUTPUT: Tjabba! Jag, Ellen, är 7 år.
+    smallTalk.call(anotherSimplePerson, 'Hallå!')     // OUTPUT: Hallå! Jag, Ellen, är 7 år.
     ```
-
+    - `Function.apply()` kräver att andra parametern är en array. Syntax: `func.apply(thisArg, [argsArray])`
+    - `Function.call()` anropas med kommaseparerade argument. Syntax: `function.call(thisArg, arg1, arg2, ...)`
     ---
 
     # Designmönstret "_Factory_"
@@ -169,23 +170,23 @@
     - ...av vilken typ är objekten som skapas? Jo, `Object`! Inte `Die`!
 
     ```
-    let createDie = function() {
+    let createDie = function () {
       let obj = {
         faceValue: undefined,
         roll: function() {
-          this.faceValue = Math.floor(Math.random() * 6) + 1;
+          this.faceValue = Math.floor(Math.random() * 6) + 1
         }
-      };
+      }
 
-      return obj;
-    };
+      return obj
+    }
 
-    let die = createDie();
-    die.roll();
+    let die = createDie()
+    die.roll()
 
-    console.log(die.faceValue);   // ➡ 3
-    console.log(typeof die);      // ➡ object
-    console.log(die.constructor); // ➡ [Function: Object]
+    console.log(die.faceValue)   // OUTPUT: 3
+    console.log(typeof die)      // OUTPUT: object
+    console.log(die.constructor) // OUTPUT: [Function: Object]
     ```
 
     ---
@@ -196,19 +197,19 @@
     - Ett objekt som skapas med `new` sägs vara en __instans__ av dess konstruktor.
 
     ```
-    function Die() {
-      this.faceValue = undefined;
-      this.roll = function() {
-        this.faceValue = Math.floor(Math.random() * 6) + 1;
-      };
+    function Die () {
+      this.faceValue = undefined
+      this.roll = function () {
+        this.faceValue = Math.floor(Math.random() * 6) + 1
+      }
     }
 
-    let die = new Die(); // die refererar till en instans av Die
-    die.roll();
+    let die = new Die() // die refererar till en instans av Die
+    die.roll()
 
-    console.log(die.faceValue);   // ➡ 4
-    console.log(typeof die);      // ➡ object
-    console.log(die.constructor); // ➡ [Function: Die]
+    console.log(die.faceValue)   // OUTPUT: 4
+    console.log(typeof die)      // OUTPUT: object
+    console.log(die.constructor) // OUTPUT: [Function: Die]
     ```
 
     ---
@@ -216,19 +217,19 @@
     # Konstruktorfunktion med parametrar
 
     ```
-    function SimplePerson(name, age) {
-      this.name = name;
-      this.age = age;
-      this.talk = function() {
-        console.log('Jag, ' + this.name + ', är ' +  this.age + ' år.');
-      };
+    function SimplePerson (name, age) {
+      this.name = name
+      this.age = age
+      this.talk = function () {
+        console.log('Jag, ' + this.name + ', är ' +  this.age + ' år.')
+      }
     }
 
-    let simplePerson1 = new SimplePerson('Nisse', 42);
-    let simplePerson2 = new SimplePerson('Ellen', 6);
+    let simplePerson1 = new SimplePerson('Nisse', 42)
+    let simplePerson2 = new SimplePerson('Ellen', 7)
 
-    simplePerson1.talk(); // ➡ Jag, Nisse, är 42 år.
-    simplePerson2.talk(); // ➡ Jag, Ellen, är 6 år.
+    simplePerson1.talk() // OUTPUT: Jag, Nisse, är 42 år.
+    simplePerson2.talk() // OUTPUT: Jag, Ellen, är 7 år.
     ```
 
     - Två identiska objekt skapas, så när på värdena egenskaperna `name` och `age` har.
@@ -239,20 +240,20 @@
     # Designmönstret "_Constructor/Prototype_"
 
     ```
-    function Die() {
-      this.faceValue = undefined;
+    function Die () {
+      this.faceValue = undefined
     }
 
-    Die.prototype.roll = function() {
-      this.faceValue = Math.floor(Math.random() * 6) + 1;
-    };
+    Die.prototype.roll = function () {
+      this.faceValue = Math.floor(Math.random() * 6) + 1
+    }
 
-    let die = new Die();
-    die.roll();
+    let die = new Die()
+    die.roll()
 
-    console.log(die.faceValue);    // ➡ 4
-    console.log(typeof die);       // ➡ object
-    console.log(die.constructor);  // ➡ [Function: Die]
+    console.log(die.faceValue)    // OUTPUT: 4
+    console.log(typeof die)       // OUTPUT: object
+    console.log(die.constructor)  // OUTPUT: [Function: Die]
     ```
 
     - Konstruktorfunktionen innehåller enbart instansegenskapen `faceValue`, som är unik för varje instans av `Die`.
@@ -265,23 +266,23 @@
     - Alla objekt instansierade med samma konstruktor delar samma prototyp (egenskaper och metoder).
 
     ```
-    function Person(name, age) {
-      this.name = name;
-      this.age = age;
+    function Person (name, age) {
+      this.name = name
+      this.age = age
     }
 
-    Person.prototype.talk = function() {
-      console.log('Jag, ' + this.name + ', är ' +  this.age + ' år.');
-    };
+    Person.prototype.talk = function () {
+      console.log('Jag, ' + this.name + ', är ' +  this.age + ' år.')
+    }
 
-    let person1 = new Person('Nisse', 42);
-    console.log(person1.constructor); // [Function: Person]
+    let person1 = new Person('Nisse', 42)
+    console.log(person1.constructor) // [Function: Person]
 
-    let person2 = new Person('Ellen', 5);
-    console.log(person2.constructor); // [Function: Person]
+    let person2 = new Person('Ellen', 5)
+    console.log(person2.constructor) // [Function: Person]
 
-    person1.talk(); // Jag, Nisse, är 42 år.
-    person2.talk(); // Jag, Ellen, är 5 år.
+    person1.talk() // Jag, Nisse, är 42 år.
+    person2.talk() // Jag, Ellen, är 5 år.
     ```
 
 
@@ -299,7 +300,7 @@
             touch: true,
             click: false
         }
-    });
+    })
 </script>
 </body>
 </html>
