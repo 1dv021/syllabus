@@ -1,10 +1,10 @@
 ## Nyckelord
 
-inkapsling, egenskaper, metoder, this, designmönster, "factory",  "constructor", konstruktorfunktion, "new", instanser,  prototyp, "constructor/prototype"
+inkapsling, egenskaper, metoder, this, designmönster, "factory",  "constructor", konstruktorfunktion, "new", instanser,  prototyp, "constructor/prototype", class, OLOO
 
 ## Resurser
 
-- <del>[HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/05/index.html#)</del>
+- [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/06/index.html#)
 - <del>[Inspelning](https://youtu.be/ZWvYAAftlBM) 2016-09-25, 13-15 (Youtube)</del>
 
 ### Eloquent JavaScript, 2nd Edition 
