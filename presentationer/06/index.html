@@ -141,7 +141,7 @@
     // Skapar objekt som anropar funktion som använder this.
 
     let smallTalk = function (greet = 'Hej!') {
-      console.log(greet + ' Jag, ' + this.name + ', är ' +  this.age + ' år.')
+      console.log(greet + ' Jag, ' + this.name + ', är ' + this.age + ' år.')
     }
 
     let simplePerson = {
@@ -173,7 +173,7 @@
     let createDie = function () {
       let obj = {
         faceValue: undefined,
-        roll: function() {
+        roll: function () {
           this.faceValue = Math.floor(Math.random() * 6) + 1
         }
       }
@@ -187,6 +187,8 @@
     console.log(die.faceValue)   // OUTPUT: 3
     console.log(typeof die)      // OUTPUT: object
     console.log(die.constructor) // OUTPUT: [Function: Object]
+
+    console.log(Object.getOwnPropertyNames(die)) // OUTPUT: [ 'faceValue', 'roll' ]
     ```
 
     ---
@@ -210,6 +212,8 @@
     console.log(die.faceValue)   // OUTPUT: 4
     console.log(typeof die)      // OUTPUT: object
     console.log(die.constructor) // OUTPUT: [Function: Die]
+
+    console.log(Object.getOwnPropertyNames(die)) // OUTPUT: [ 'faceValue', 'roll' ]
     ```
 
     ---
@@ -221,7 +225,7 @@
       this.name = name
       this.age = age
       this.talk = function () {
-        console.log('Jag, ' + this.name + ', är ' +  this.age + ' år.')
+        console.log('Jag, ' + this.name + ', är ' + this.age + ' år.')
       }
     }
 
@@ -230,6 +234,8 @@
 
     simplePerson1.talk() // OUTPUT: Jag, Nisse, är 42 år.
     simplePerson2.talk() // OUTPUT: Jag, Ellen, är 7 år.
+
+    console.log(Object.getOwnPropertyNames(simplePerson1)) // OUTPUT: [ 'name', 'age', 'talk' ]
     ```
 
     - Två identiska objekt skapas, så när på värdena egenskaperna `name` och `age` har.
@@ -254,6 +260,9 @@
     console.log(die.faceValue)    // OUTPUT: 4
     console.log(typeof die)       // OUTPUT: object
     console.log(die.constructor)  // OUTPUT: [Function: Die]
+
+    console.log(Object.getOwnPropertyNames(die)) // OUTPUT: [ 'faceValue' ]
+    console.log(Object.getOwnPropertyNames(Die.prototype)) // OUTPUT: [ 'constructor', 'roll' ]
     ```
 
     - Konstruktorfunktionen innehåller enbart instansegenskapen `faceValue`, som är unik för varje instans av `Die`.
@@ -272,20 +281,150 @@
     }
 
     Person.prototype.talk = function () {
-      console.log('Jag, ' + this.name + ', är ' +  this.age + ' år.')
+      console.log('Jag, ' + this.name + ', är ' + this.age + ' år.')
     }
 
     let person1 = new Person('Nisse', 42)
     console.log(person1.constructor) // [Function: Person]
 
-    let person2 = new Person('Ellen', 5)
+    let person2 = new Person('Ellen', 7)
     console.log(person2.constructor) // [Function: Person]
 
     person1.talk() // Jag, Nisse, är 42 år.
-    person2.talk() // Jag, Ellen, är 5 år.
+    person2.talk() // Jag, Ellen, är 7 år.
     ```
 
+    ---
 
+    # Klassyntax - bara syntaktiskt socker
+
+    - _"JavaScript classes introduced in ECMAScript 2015 are syntactical sugar over JavaScript's existing prototype-based inheritance. The class syntax is not introducing a new object-oriented inheritance model to JavaScript. JavaScript classes provide a much simpler and clearer syntax to create objects and deal with inheritance."_
+
+    ```
+    class Die {
+      constructor () {
+        this.faceValue = undefined
+      }
+    
+      roll () {
+        this.faceValue = Math.floor(Math.random() * 6) + 1
+      }
+    }
+    
+    let die = new Die()
+    die.roll()
+    
+    console.log(die.faceValue)    // OUTPUT: 4
+    console.log(typeof die)       // OUTPUT: object
+    console.log(die.constructor)  // OUTPUT: [Function: Die]
+
+    console.log(Object.getOwnPropertyNames(die)) // OUTPUT: [ 'faceValue' ]
+    console.log(Object.getOwnPropertyNames(Die.prototype)) // OUTPUT: [ 'constructor', 'roll' ]
+    ```
+
+    ---
+
+    # Konstruktor med parametrar i klass
+
+    ```
+    class Person {
+      constructor (name, age) {
+        this.name = name
+        this.age = age
+      }
+    
+      talk () {
+        console.log('Jag, ' + this.name + ', är ' + this.age + ' år.')
+      }
+    }
+    
+    let person1 = new Person('Nisse', 42)
+    console.log(person1.constructor) // OUTPUT: [Function: Person]
+    
+    let person2 = new Person('Ellen', 7)
+    console.log(person2.constructor) // OUTPUT: [Function: Person]
+    
+    person1.talk() // OUTPUT: Jag, Nisse, är 42 år.
+    person2.talk() // OUTPUT: Jag, Ellen, är 7 år.
+    
+    console.log(Object.getOwnPropertyNames(person1)) // OUTPUT: [ 'name', 'age' ]
+    console.log(Object.getOwnPropertyNames(Person.prototype))  // OUTPUT: [ 'constructor', 'talk' ]
+    ```
+
+    ---
+
+    # Designmöntret OLOO (Object Linked to Other Objects)
+
+    ```
+    const dieBase = {
+      roll: function () {
+        this.faceValue = Math.floor(Math.random() * 6) + 1
+      }
+    }
+    
+    let createDie = function () {
+      return Object.create(dieBase, {
+        'faceValue': {
+          value: undefined,
+          writable: true,
+          enumerable: true,
+          configurable: true
+        }
+      })
+    }
+    
+    let die = createDie()
+    die.roll()
+    
+    console.log(die.faceValue)   // OUTPUT: 4
+    console.log(typeof die)      // OUTPUT: object
+    console.log(die.constructor) // OUTPUT: [Function: Object]
+    
+    console.log(Object.getOwnPropertyNames(die)) // OUTPUT: [ 'faceValue' ]
+    ```
+    - Beteendet att kasta tärningen delegeras från objektet med egenskapen `faceValue` till objektet med funktionen `roll`.
+
+    ---
+
+    # Person som beter sig
+
+    ```
+    const Person = {
+      talk: function () {
+        console.log('Jag, ' + this.name + ', är ' + this.age + ' år.')
+      }
+    }
+    
+    const createPerson = function (name, age) {
+      return Object.create(Person, {
+        'name': {
+          value: name,
+          writable: true,
+          enumerable: true,
+          configurable: true
+        },
+        'age': {
+          value: age,
+          writable: true,
+          enumerable: true,
+          configurable: true
+        }
+      })
+    }
+    
+    let person1 = createPerson('Nisse', 42)
+    console.log(person1.constructor) // OUTPUT: [Function: Object]
+    
+    let person2 = createPerson('Ellen', 7)
+    console.log(person2.constructor) // OUTPUT: [Function: Object]
+    
+    person1.talk() // OUTPUT: Jag, Nisse, är 42 år.
+    person2.talk() // OUTPUT: Jag, Ellen, är 7 år.
+    
+    console.log(Object.getOwnPropertyNames(person1)) // OUTPUT: [ 'name', 'age' ]
+    console.log(Object.getOwnPropertyNames(Person)) // OUTPUT: [ 'talk' ]
+    ```
+    
 </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js">
 </script>
