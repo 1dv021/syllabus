@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>06 - Föreläsning - Grundläggande programmering (1DV021)</title>
+    <title>07 - Föreläsning - Grundläggande programmering (1DV021)</title>
     <meta charset="utf-8">
     <link rel="icon" href="../remark/images/favicon.png" type="image/png">
     <link rel="stylesheet" href="../remark/stylesheets/lnu.dark.css" id="theme">
@@ -13,7 +13,7 @@
     class: center, middle, lnu-background-yellow
 
     ### Grundläggande programmering (1DV021)
-    # Föreläsnig 6
+    # Föreläsning 7
 
     <div class="lnu-footer">
         <img src="../remark/images/lnu-logotype.png">
@@ -46,26 +46,116 @@
     en länk till https://coursepress.lnu.se/kurs/grundlaggande-programmering och till Creative Common-licensen här ovan.
 
     ---
+    # Från objekt med egenskaper...
 
-    # Relationer mellan konstruktor, prototyp och objekt
-
-    <pre style="float:left;width: 54%;"><code class="js">
-    function Die() {
-        this.faceValue;
+    ```
+    let rectangle = {
+      length: 6,
+      width: 7
     }
 
-    Die.prototype.roll = function() {
-        this.faceValue = Math.floor(Math.random() * 6) + 1;
-    };
+    console.log('Area: ' + rectangle.length * rectangle.width)
+    ```
 
-    let die1 = new Die();
-    let die2 = new Die();
+    ## ...till objekt med egenskaper och metod, vidare till...
 
-    die1.roll();
-    die2.roll();
+    ```
+    let rectangle = {
+      length: 6,
+      width: 7,
+      getArea: function () {
+        return this.length * this.width
+      }
+    }
+
+    console.log('Area: ' + rectangle.getArea())
+    ```
+
+    ---
+
+    # Konstruktorfunktion (i en egen modul)...
+
+    src/Rectangle.js
+    ```
+    function Rectangle () {
+      this.length = 0
+      this.width = 0
+
+      this.getArea = function () {
+        return this.length * this.width
+      }
+    }
+
+    module.exports = Rectangle
+    ```
+
+    app.js
+    ```
+    const Rectangle = require('./src/Rectangle')
+
+    let rectangle = new Rectangle()
+    rectangle.length = 6
+    rectangle.width = 7
+
+    console.log('Area: ' + rectangle.getArea())
+    ```
+
+    ---
+
+    # Konstruktorfunktion med prototypfunktion...
+
+    src/Rectangle.js
+    ```
+    function Rectangle (length = 0, width = 0) {
+      this.length = length
+      this.width = width
+    }
+
+    Rectangle.prototype.getArea = function () {
+      return this.length * this.width
+    }
+
+    module.exports = Rectangle
+    ```
+
+    app.js
+    ```
+    const Rectangle = require('./src/Rectangle')
+
+    let rectangle = new Rectangle(6, 7)
+    
+    console.log('Area: ' + rectangle.getArea())
+    ```
+
+    ---
+    
+    ## Relationer mellan konstruktor, prototyp och objekt
+
+    <div style="float:left;width: 54%;">
+    src/Rectangle.js
+    <pre><code class="js">function Rectangle (length = 0, width = 0) {
+      this.length = length
+      this.width = width
+    }
+  
+    Rectangle.prototype.getArea = function () {
+      return this.length * this.width
+    }
+  
+    module.exports = Rectangle</code></pre>
+    
+    app.js
+    <pre><code class="js">const Rectangle = require('./src/Rectangle')
+  
+    let rectangle1 = new Rectangle(6, 7)
+    let rectangle2 = new Rectangle(3, 4)
+      
+    console.log('Area: ' + rectangle1.getArea())
+    console.log('Area: ' + rectangle2.getArea())
     </code></pre>
-
-    <img src="prototype.png" width="45%" height="45%" style="border: none; background: none; float:right;padding-top:2em;" />
+    </div>
+    
+    <img src="rectangle-prototype.png" width="45%" height="45%" style="border: none; background: none; float:right;padding-top:2em;" />
 
     <div style="clear: both;"></div>
 
@@ -74,70 +164,29 @@
 
     ---
 
-    # ES2015 och syntaktiska sockret `class`
+    # Problem(?) med publika egenskaper
 
     ```
-    function Die() {
-        this.faceValue;
+    function Die () {
+      this.faceValue
     }
 
-    Die.prototype.roll = function() {
-        this.faceValue = Math.floor(Math.random() * 6) + 1;
-    };
-
-    let die1 = new Die();
-    let die2 = new Die();
-
-    die1.roll();
-    die2.roll();
-
-    console.log(die1.faceValue);
-    console.log(die2.faceValue);
-    ```
-
-    ```
-    class Die {
-      constructor() {
-        this.faceValue = undefined;
-      }
-
-      roll() {
-        this.faceValue = Math.floor(Math.random() * 6) + 1;
-      }
+    Die.prototype.roll = function () {
+      this.faceValue = Math.floor(Math.random() * 6) + 1
     }
 
-    let die1 = new Die();
-    let die2 = new Die();
-
-    die1.roll();
-    die2.roll();
-
-    console.log(die1.faceValue);
-    console.log(die2.faceValue);
-    ```
-    ---
-
-    # Problem med publika egenskaper
-
-    ```
-    function Die() {
-      this.faceValue;
-    }
-
-    Die.prototype.roll = function() {
-        this.faceValue = Math.floor(Math.random() * 6) + 1;
-    };
-
-    let die1 = new Die();
-    let die2 = new Die();
+    let die1 = new Die()
+    let die2 = new Die()
 
     // Inte några värden en sexsidig tärning ska ha...
-    die1.faceValue = 42;
-    die2.faceValue = 'Kilroy was here!';
+    die1.faceValue = 42
+    die2.faceValue = 'Kilroy was here!'
     ```
 
     - En publik egenskap kan sättas till vilket värde som helst.
-    - LÖSNING: datat, egenskapen `faceValue`, ska kapslas in och döljas.
+    - LÖSNING: datat, egenskapen `faceValue`, ska kapslas in (och döljas).
+      - Semi-privat
+      - Privat
 
     ---
 
@@ -149,18 +198,57 @@
         - Medlemmar definierade med let (eller var, eller const).
 
     ```
-    function Foo(param) {
-      this.param = param; // "publik"
-      this._notSoPrivate; // "publik" MEN "semi-privat" genom namngivning (namn inleds med _)
-      let secret = 42;    // "privat"
-
-      let bar = function() {  // "privat"
-        return 'forty-two';
-      };
+    function Foo (param) {                    // "privat"
+      this.ohSoPublic = param                 // "publik"
+      this._notSoPrivate = param              // "publik" MEN "semi-privat" genom namngivning (namn inleds med _)
+      let secret = 42                         // "privat"
+    
+      let getTheMeaningOfLife = function () { // "privat"
+        return 'forty-two'
+      }
     }
-    ```
+    
+    let foo = new Foo(21)
+    console.log(foo.ohSoPublic)            // OUTPUT: 21
+    console.log(foo._notSoPrivate)         // OUTPUT: 21
+    console.log(foo.secret)                // OUTPUT: undefined
+    console.log(foo.getTheMeaningOfLife()) // EXCEPTION: TypeError: foo.getTheMeaningOfLife is not a function
+      ```
 
     - "Getters" och "setters" krävs för åtkomst av privata egenskaper.
+
+    ---
+    
+    # En semi-privat tärning
+    
+    - Genom att använda `Object.defineProperty` kan du ange den funktion som ska köras då en egenskaps värde hämtas.
+
+    ```
+    function Die () {
+      this._faceValue = undefined // semi-private property
+    
+      Object.defineProperty(this, 'faceValue', {
+        get: function () {
+          return this._faceValue
+        }
+      })
+    }
+    
+    Die.prototype.roll = function () {
+      this._faceValue = Math.floor(Math.random() * 6) + 1
+    }
+    
+    let die1 = new Die()
+    let die2 = new Die()
+    
+    die1.roll()
+    die2.roll()
+    
+    console.log(die1.faceValue)
+    console.log(die2.faceValue)
+    
+    die1.faceValue = 42                  // EXCEPTION: TypeError: Cannot set property faceValue of #&lt;Die&gt; which has only a getter
+    ```
 
     ---
 
@@ -169,38 +257,38 @@
     - Genom att använda `Object.defineProperty` kan du ange den funktion som ska köras då en egenskaps värde hämtas respektive tilldelas ett värde.
 
     ```
-    function Die() {
-      let _faceValue;
-
+    function Die () {
+      let _faceValue
+    
       Object.defineProperty(this, 'faceValue', {
-        get: function() {
-          return _faceValue;
+        get: function () {
+          return _faceValue
         },
-
-        set: function(value) {
-          const intValue = parseInt(value, 10);
-          if (isNaN(intValue) || intValue < 1 || intValue > 6) {
-            throw new Error('faceValue must be an integer between 1 and 6.');
+    
+        set: function (value) {
+          const intValue = Number.parseInt(value, 10)
+          if (!Number.isInteger(intValue) || intValue &lt; 1 || intValue &gt; 6) {
+            throw new Error('faceValue must be set to an integer between 1 and 6.')
           }
-          _faceValue = intValue;
+          _faceValue = intValue
         }
-      });
+      })
     }
-
-    Die.prototype.roll = function() {
-      this.faceValue = Math.floor(Math.random() * 6) + 1;
-    };
-
-    let die1 = new Die();
-    let die2 = new Die();
-
-    die1.roll();
-    die2.roll();
-
-    console.log(die1.faceValue);
-    console.log(die2.faceValue);
-
-    die1.faceValue = 42; // ett undantag kastas
+    
+    Die.prototype.roll = function () {
+      this.faceValue = Math.floor(Math.random() * 6) + 1
+    }
+    
+    let die1 = new Die()
+    let die2 = new Die()
+    
+    die1.roll()
+    die2.roll()
+    
+    console.log(die1.faceValue)
+    console.log(die2.faceValue)
+    
+    die1.faceValue = 42 // EXCEPTION: Error: faceValue must be set to an integer between 1 and 6.
     ```
 
     ---
@@ -209,37 +297,29 @@
 
     ```
     class Die {
-      constructor() {
-        this._faceValue = undefined;
+      constructor () {
+        this._faceValue = undefined
       }
 
-      get faceValue() {
-        return this._faceValue;
+      get faceValue () {
+        return this._faceValue
       }
 
-      set faceValue(value) {
-        const numberValue = Number(value);
-        if (!Number.isInteger(numberValue) || numberValue < 1 || numberValue > 6) {
-          throw new Error('faceValue must be an integer between 1 and 6.');
-        }
-        this._faceValue = value;
-      }
-
-      roll() {
-        this.faceValue = Math.floor(Math.random() * 6) + 1;
+      roll () {
+        this.faceValue = Math.floor(Math.random() * 6) + 1
       }
     }
 
-    let die1 = new Die();
-    let die2 = new Die();
+    let die1 = new Die()
+    let die2 = new Die()
 
-    die1.roll();
-    die2.roll();
+    die1.roll()
+    die2.roll()
 
-    console.log(die1.faceValue);
-    console.log(die2.faceValue);
+    console.log(die1.faceValue)
+    console.log(die2.faceValue)
 
-    die1.faceValue = 42; // ett undantag kastas
+    die1.faceValue = 42 // EXCEPTION: TypeError: Cannot set property faceValue of #&lt;Die&gt; which has only a getter
     ```
 
     ---
@@ -247,40 +327,40 @@
     # En högst privat tärning med klass
 
     ```
-    let _faceValue = new WeakMap();
+    let _faceValue = new WeakMap()
 
     class Die {
-      constructor() {
-        _faceValue.set(this, undefined);
+      constructor () {
+        _faceValue.set(this, undefined)
       }
 
-      get faceValue() {
-        return _faceValue.get(this);
+      get faceValue () {
+        return _faceValue.get(this)
       }
 
-      set faceValue(value) {
-        const numberValue = Number(value);
-        if (!Number.isInteger(numberValue) || numberValue < 1 || numberValue > 6) {
-          throw new Error('faceValue must be an integer between 1 and 6.');
+      set faceValue (value) {
+        const numberValue = Number(value)
+        if (!Number.isInteger(numberValue) || numberValue &lt; 1 || numberValue &gt; 6) {
+          throw new Error('faceValue must be set to an integer between 1 and 6.')
         }
-        _faceValue.set(this, value);
+        _faceValue.set(this, value)
       }
 
-      roll() {
-        this.faceValue = Math.floor(Math.random() * 6) + 1;
+      roll () {
+        this.faceValue = Math.floor(Math.random() * 6) + 1
       }
     }
 
-    let die1 = new Die();
-    let die2 = new Die();
+    let die1 = new Die()
+    let die2 = new Die()
 
-    die1.roll();
-    die2.roll();
+    die1.roll()
+    die2.roll()
 
-    console.log(die1.faceValue);
-    console.log(die2.faceValue);
+    console.log(die1.faceValue)
+    console.log(die2.faceValue)
 
-    die1.faceValue = 42; // ett undantag kastas
+    die1.faceValue = 42 // EXCEPTION: Error: faceValue must be set to an integer between 1 and 6.
     ```
 
     ---
@@ -289,26 +369,30 @@
 
     - `Person` och `Student` innehåller kod gemensam för de båda typerna. Behöver det vara så? Nej, med hjälp av arv (_"inheritance"_) kan kod återanvändas instället för att upprepas.
 
+    src/Person.js
     ```
-    function Person(name, age) {
-      this.name = name;
-      this.age = age;
+    function Person (name, age) {
+      this.name = name
+      this.age = age
     }
 
-    Person.prototype.toString = function() {
-      return 'Jag, ' + this.name + ', är ' +  this.age + ' år.';
-    };
+    Person.prototype.toString = function () {
+      return 'Jag, ' + this.name + ', är ' +  this.age + ' år.'
+    }
+    ```
 
+    src/Student.js
+    ```
     function Student(name, age, isCampus) {
-      this.name = name;
-      this.age = age;
-      this.isCampus = isCampus;
+      this.name = name
+      this.age = age
+      this.isCampus = isCampus
     }
 
-    Student.prototype.toString = function() {
+    Student.prototype.toString = function () {
       return 'Jag, ' + this.name + ', läser på ' +
-        (this.isCampus ? 'campus' : 'distans') + ' och är ' +  this.age + ' år.';
-    };
+        (this.isCampus ? 'campus' : 'distans') + ' och är ' +  this.age + ' år.'
+    }
     ```
 
     ---
@@ -317,63 +401,74 @@
 
     - Genom att låta `Student` ärva från `Person` kan kod i `Person` återanvändas av `Student`.
 
+    <code>src/Person.js</code>
     ```
-    function Person(name, age) {
-      this.name = name;
-      this.age = age;
+    function Person (name, age) {
+      this.name = name
+      this.age = age
     }
 
     Person.prototype.toString = function() { // överskuggar metoden i Object.prototype
-      return 'Jag, ' + this.name + ', är ' +  this.age + ' år.';
-    };
+      return 'Jag, ' + this.name + ', är ' +  this.age + ' år.'
+    }
+    ```
+    
+    <code>src/Student.js</code>
+    ```
+    const Person = require('Person')
 
-    function Student(name, age, isCampus) {
-      Person.call(this, name, age); // anrop av konstruktorn för Person
-      this.isCampus = isCampus;
+    function Student (name, age, isCampus) {
+      Person.call(this, name, age) // anrop av konstruktorn för Person
+      this.isCampus = isCampus
     }
 
-    Student.prototype = Object.create(Person.prototype); // ärver prototypen från Person
-    Student.prototype.constructor =  Student; // återställer konstruktorn till Student
+    Student.prototype = Object.create(Person.prototype) // ärver prototypen från Person
+    Student.prototype.constructor =  Student // återställer konstruktorn till Student
 
     Student.prototype.toString = function() { // överskuggar metoden i Person.prototype
       return 'Jag, ' + this.name + ', läser på ' +
-        (this.isCampus ? 'campus' : 'distans') + ' och är ' +  this.age + ' år.';
-    };
+        (this.isCampus ? 'campus' : 'distans') + ' och är ' +  this.age + ' år.'
+    }
     ```
 
     ---
 
     # Återanvändning av kod genom arv med klasser
 
+    <code>src/Person.js</code>
     ```
     class Person {
-      constructor(name, age) {
-        this.name = name;
-        this.age = age;
+      constructor (name, age) {
+        this.name = name
+        this.age = age
       }
 
       toString() { // överskuggar metoden i Object.prototype
-        return 'Jag, ' + this.name + ', är ' +  this.age + ' år.';
+        return 'Jag, ' + this.name + ', är ' +  this.age + ' år.'
       }
     }
 
+    ```
+    
+    <code>src/Student.js</code>
+    ```
     class Student extends Person {
-      constructor(name, age, isCampus) {
-        super(name, age); // anrop av konstruktorn för Person
-        this.isCampus = isCampus;
+      constructor (name, age, isCampus) {
+        super(name, age) // anrop av konstruktorn för Person
+        this.isCampus = isCampus
       }
 
       toString() { // överskuggar metoden i Person
         return 'Jag, ' + this.name + ', läser på ' +
-          (this.isCampus ? 'campus' : 'distans') + ' och är ' +  this.age + ' år.';
+          (this.isCampus ? 'campus' : 'distans') + ' och är ' +  this.age + ' år.'
       }
     }
 
-    let p = new Person('Ellen', 6);
-    console.log(p.toString()); // Jag, Ellen, är 6 år.
+    let p = new Person('Ellen', 6)
+    console.log(p.toString()) // OUTPUT: Jag, Ellen, är 6 år.
 
-    let s = new Student('Nisse', 42, true);
-    console.log(s.toString()); // Jag, Nisse, läser på campus och är 42 år.
+    let s = new Student('Nisse', 42, true)
+    console.log(s.toString()); // OUTPUT: Jag, Nisse, läser på campus och är 42 år.
     ```
 
     ---
@@ -383,14 +478,14 @@
     - Med operatorn `instanceof` kan du undersöka om en konstruktor har används för att skapa ett objekt.
 
     ```
-    let person1 = new Person("Nisse", 42);
-    let student1 = new Student("Ellen", 21, true);
+    let person1 = new Person('Nisse', 42)
+    let student1 = new Student('Ellen', 21, true)
 
-    console.log(person1 instanceof Person);  // ➡ true
-    console.log(person1 instanceof Student); // ➡ false
+    console.log(person1 instanceof Person)  // OUTPUT: true
+    console.log(person1 instanceof Student) // OUTPUT: false
 
-    console.log(student1 instanceof Person);  // ➡ true
-    console.log(student1 instanceof Student); // ➡ true
+    console.log(student1 instanceof Person)  // OUTPUT: true
+    console.log(student1 instanceof Student) // OUTPUT: true
     ```
 
     ---
@@ -398,14 +493,14 @@
     # Hur kontrollera att en egenskaps värde är formaterat på rätt sätt?
 
     ```
-    function Address(addressLine, postalCode, city) {
-      this.adressLine = addressLine;
-      this.postalCode = postalCode;
-      this.city = city;
+    function Address (addressLine, postalCode, city) {
+      this.adressLine = addressLine
+      this.postalCode = postalCode
+      this.city = city
     }
 
-    let address1 = new Address("Storgatan 1", "123 45", "Storstaden"); // OK adress!
-    let address2 = new Address("Lillgatan 1", "ingen aning", "Lillstaden"); // felaktigt postnummer!
+    let address1 = new Address('Storgatan 1', '123 45', 'Storstaden') // OK adress!
+    let address2 = new Address('Lillgatan 1', 'ingen aning', 'Lillstaden') // felaktigt postnummer!
     ```
 
     - Att kontrollera att postnumret består av fem siffror med eventuellt mellanslag mellan tredje och fjärde siffran kräver en hel del kod...
@@ -416,28 +511,28 @@
     # Reguljärt uttryck till undsättning
 
     ```
-    function Address(addressLine, postalCode, city) {
-      this.adressLine = addressLine;
-      this.city = city;
+    function Address (addressLine, postalCode, city) {
+      this.adressLine = addressLine
+      this.city = city
 
-      Object.defineProperty(this, "postalCode", {
+      Object.defineProperty(this, 'postalCode', {
         get: function() {
-          return postalCode;
+          return postalCode
         },
 
         set: function(value) {
           if (!/^[1-9]\d{2} ?\d{2}$/.test(value)){
-            throw new Error("postalCode seems to be invalid.");
+            throw new Error('postalCode seems to be invalid.')
           }
-          postalCode = value;
+          postalCode = value
         }
       });
 
-      this.postalCode = postalCode;
+      this.postalCode = postalCode
     }
 
-    let address1 = new Address("Storgatan 1", "123 45", "Storstaden"); // OK adress!
-    let address2 = new Address("Lillgatan 1", "ingen aning", "Lillstaden"); // Undantag kastas!
+    let address1 = new Address('Storgatan 1', '123 45', 'Storstaden') // OK adress!
+    let address2 = new Address('Lillgatan 1', 'ingen aning', 'Lillstaden') // Undantag kastas!
     ```
 
     - Det reguljära uttrycket defineras av  `/^[1-9]\d{2} ?\d{2}$/`.
@@ -456,9 +551,9 @@
     - Det finns två sätt att skapa `RegExp`-objekt på:
 
     ```
-    let regexp1 =  /^[1-9]\d{2} ?\d{2}$/; // literal
+    let regexp1 =  /^[1-9]\d{2} ?\d{2}$/ // literal
 
-    let regexp2 = new RegExp('^[1-9]\d{2} ?\d{2}$'); // konstruktor
+    let regexp2 = new RegExp('^[1-9]\d{2} ?\d{2}$') // konstruktor
     ```
 
     ---
@@ -472,13 +567,13 @@
     ```
     try {
       // Normalt programflöde i try-blocket.
-      let address2 = new Address("Lillgatan 1", "ingen aning", "Lillstaden"); // Undantag kastas!
+      let address = new Address('Lillgatan 1', 'ingen aning', 'Lillstaden') // Undantag kastas!
 
       // Gör något med address2...
 
     } catch (e) { // Fångar undantaget.
       // Programflöde i catch-blocket om fel inträffat, d.v.s. om undantag kastats av try-blocket.
-      concole.log(e.message); // Presenterar felmeddelandet "postalCode seems to be invalid.".
+      concole.error(e.message) // Presenterar felmeddelandet "postalCode seems to be invalid.".
     }
     ```
 
