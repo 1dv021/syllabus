@@ -232,6 +232,94 @@
 
     ---
 
+    # Hur kontrollera att en egenskaps värde är formaterat på rätt sätt?
+
+    ```
+    function Address (addressLine, postalCode, city) {
+      this.adressLine = addressLine
+      this.postalCode = postalCode
+      this.city = city
+    }
+
+    let address1 = new Address('Storgatan 1', '123 45', 'Storstaden') // OK adress!
+    let address2 = new Address('Lillgatan 1', 'ingen aning', 'Lillstaden') // felaktigt postnummer!
+    ```
+
+    - Att kontrollera att postnumret består av fem siffror med eventuellt mellanslag mellan tredje och fjärde siffran kräver en hel del kod...
+    - ...om vi inte kapslar den publika egenskapen och använder ett __reguljärt uttryck__ vid valideringen av värdet.
+
+    ---
+
+    # Reguljärt uttryck till undsättning
+
+    ```
+    function Address (addressLine, postalCode, city) {
+      this.adressLine = addressLine
+      this.city = city
+
+      Object.defineProperty(this, 'postalCode', {
+        get: function() {
+          return postalCode
+        },
+
+        set: function(value) {
+          if (!/^[1-9]\d{2} ?\d{2}$/.test(value)){
+            throw new Error('postalCode seems to be invalid.')
+          }
+          postalCode = value
+        }
+      });
+
+      this.postalCode = postalCode
+    }
+
+    let address1 = new Address('Storgatan 1', '123 45', 'Storstaden') // OK adress!
+    let address2 = new Address('Lillgatan 1', 'ingen aning', 'Lillstaden') // Undantag kastas!
+    ```
+
+    - Det reguljära uttrycket defineras av  `/^[1-9]\d{2} ?\d{2}$/`.
+
+    ---
+
+    # Vad betyder `/^[1-9]\d{2} ?\d{2}$/`?
+
+    - Reguljära uttryck hanteras av typen <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp">`RegExp`</a>.
+        - `^`, start av strängen.
+        - `[1-9]`, exakt en förekomst av 1, 2, 3, 4, 5, 6, 7, 8 eller 9.
+        - `\d{2}`, exakt två förekomster av 0 till 9.
+        - <code><span class="text-gray">˽</span>?</code>, ingen eller en förekomst av ett mellanslag.
+        - `\d{2}`, exakt två förekomster av 0 till 9.
+        - `$`, slut på strängen.
+    - Det finns två sätt att skapa `RegExp`-objekt på:
+
+    ```
+    let regexp1 =  /^[1-9]\d{2} ?\d{2}$/ // literal
+
+    let regexp2 = new RegExp('^[1-9]\d{2} ?\d{2}$') // konstruktor
+    ```
+
+    ---
+
+    # Fånga undantag med [`try...catch`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
+
+    - För att kasta ett undantag används `throw`.
+    - Kod som kan leda till att ett undantag kastas placeras i ett `try`-block, som följs av ett...
+    - ...`catch`-block innehållande kod som ska exekveras om ett undantag har kastats.
+
+    ```
+    try {
+      // Normalt programflöde i try-blocket.
+      let address = new Address('Lillgatan 1', 'ingen aning', 'Lillstaden') // Undantag kastas!
+
+      // Gör något med address2...
+
+    } catch (e) { // Fångar undantaget.
+      // Programflöde i catch-blocket om fel inträffat, d.v.s. om undantag kastats av try-blocket.
+      concole.error(e.message) // Presenterar felmeddelandet "postalCode seems to be invalid.".
+    }
+    ```
+    ---
+
     # Olika sätt att lösa upphöjt problem
 
     ```

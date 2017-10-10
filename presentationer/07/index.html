@@ -75,7 +75,7 @@
 
     # Konstruktorfunktion (i en egen modul)...
 
-    src/Rectangle.js
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:-1em;'><code>src/Rectangle.js</code></p>
     ```
     function Rectangle () {
       this.length = 0
@@ -89,7 +89,7 @@
     module.exports = Rectangle
     ```
 
-    app.js
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:0em;'><code>app.js</code></p>
     ```
     const Rectangle = require('./src/Rectangle')
 
@@ -104,7 +104,7 @@
 
     # Konstruktorfunktion med prototypfunktion...
 
-    src/Rectangle.js
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:-1em;'><code>src/Rectangle.js</code></p>
     ```
     function Rectangle (length = 0, width = 0) {
       this.length = length
@@ -118,12 +118,11 @@
     module.exports = Rectangle
     ```
 
-    app.js
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:0em;'><code>app.js</code></p>
     ```
     const Rectangle = require('./src/Rectangle')
 
     let rectangle = new Rectangle(6, 7)
-    
     console.log('Area: ' + rectangle.getArea())
     ```
 
@@ -132,7 +131,7 @@
     ## Relationer mellan konstruktor, prototyp och objekt
 
     <div style="float:left;width: 54%;">
-    src/Rectangle.js
+      <p style='font-size: 70%;margin-bottom:-1em;margin-top:-1em;'><code>src/Rectangle.js</code></p>
     <pre><code class="js">function Rectangle (length = 0, width = 0) {
       this.length = length
       this.width = width
@@ -144,7 +143,7 @@
   
     module.exports = Rectangle</code></pre>
     
-    app.js
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:0em;'><code>app.js</code></p>
     <pre><code class="js">const Rectangle = require('./src/Rectangle')
   
     let rectangle1 = new Rectangle(6, 7)
@@ -166,6 +165,7 @@
 
     # Problem(?) med publika egenskaper
 
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:-1em;'><code>src/Die.js</code></p>
     ```
     function Die () {
       this.faceValue
@@ -174,6 +174,13 @@
     Die.prototype.roll = function () {
       this.faceValue = Math.floor(Math.random() * 6) + 1
     }
+
+    module.exports = Die
+    ```
+
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:0em;'><code>app.js</code></p>
+    ```
+    const Die = require('./src/Die')
 
     let die1 = new Die()
     let die2 = new Die()
@@ -223,6 +230,7 @@
     
     - Genom att använda `Object.defineProperty` kan du ange den funktion som ska köras då en egenskaps värde hämtas.
 
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:0em;'><code>src/Die.js</code></p>
     ```
     function Die () {
       this._faceValue = undefined // semi-private property
@@ -237,7 +245,14 @@
     Die.prototype.roll = function () {
       this._faceValue = Math.floor(Math.random() * 6) + 1
     }
+
+    module.exports = Die
+    ```
     
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:0em;'><code>app.js</code></p>
+    ```
+    const Die = require('./src/Die')
+
     let die1 = new Die()
     let die2 = new Die()
     
@@ -252,10 +267,10 @@
 
     ---
 
-    # En privat tärning
-
+    ## En privat tärning
     - Genom att använda `Object.defineProperty` kan du ange den funktion som ska köras då en egenskaps värde hämtas respektive tilldelas ett värde.
-
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:0em;'><code>src/Die.js</code></p>
+    
     ```
     function Die () {
       let _faceValue
@@ -279,14 +294,15 @@
       this.faceValue = Math.floor(Math.random() * 6) + 1
     }
     
+
+    module.exports = Die
+    ```
+    
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:-1em;'><code>app.js</code></p>
+    ```
+    const Die = require('./src/Die')
+
     let die1 = new Die()
-    let die2 = new Die()
-    
-    die1.roll()
-    die2.roll()
-    
-    console.log(die1.faceValue)
-    console.log(die2.faceValue)
     
     die1.faceValue = 42 // EXCEPTION: Error: faceValue must be set to an integer between 1 and 6.
     ```
@@ -295,6 +311,7 @@
 
     # En semi-privat tärning med klass
 
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:0em;'><code>src/Die.js</code></p>
     ```
     class Die {
       constructor () {
@@ -310,6 +327,13 @@
       }
     }
 
+    module.exports = Die
+    ```
+    
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:-1em;'><code>app.js</code></p>
+    ```
+    const Die = require('./src/Die')
+
     let die1 = new Die()
     let die2 = new Die()
 
@@ -324,8 +348,9 @@
 
     ---
 
-    # En högst privat tärning med klass
+    ## En högst privat tärning med klass
 
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:-1em;'><code>src/Die.js</code></p>
     ```
     let _faceValue = new WeakMap()
 
@@ -351,14 +376,15 @@
       }
     }
 
+    module.exports = Die
+    ```
+    
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:-1em;'><code>app.js</code></p>
+    ```
+    const Die = require('./src/Die')
+
+
     let die1 = new Die()
-    let die2 = new Die()
-
-    die1.roll()
-    die2.roll()
-
-    console.log(die1.faceValue)
-    console.log(die2.faceValue)
 
     die1.faceValue = 42 // EXCEPTION: Error: faceValue must be set to an integer between 1 and 6.
     ```
@@ -369,7 +395,7 @@
 
     - `Person` och `Student` innehåller kod gemensam för de båda typerna. Behöver det vara så? Nej, med hjälp av arv (_"inheritance"_) kan kod återanvändas instället för att upprepas.
 
-    src/Person.js
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:0em;'><code>src/Person.js</code></p>
     ```
     function Person (name, age) {
       this.name = name
@@ -379,9 +405,11 @@
     Person.prototype.toString = function () {
       return 'Jag, ' + this.name + ', är ' +  this.age + ' år.'
     }
+
+    module.exports = Person
     ```
 
-    src/Student.js
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:-1em;'><code>src/Student.js</code></p>
     ```
     function Student(name, age, isCampus) {
       this.name = name
@@ -393,6 +421,8 @@
       return 'Jag, ' + this.name + ', läser på ' +
         (this.isCampus ? 'campus' : 'distans') + ' och är ' +  this.age + ' år.'
     }
+
+    module.exports = Student
     ```
 
     ---
@@ -401,7 +431,7 @@
 
     - Genom att låta `Student` ärva från `Person` kan kod i `Person` återanvändas av `Student`.
 
-    <code>src/Person.js</code>
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:0em;'><code>src/Person.js</code></p>
     ```
     function Person (name, age) {
       this.name = name
@@ -411,11 +441,13 @@
     Person.prototype.toString = function() { // överskuggar metoden i Object.prototype
       return 'Jag, ' + this.name + ', är ' +  this.age + ' år.'
     }
+    
+    module.exports = Person
     ```
     
-    <code>src/Student.js</code>
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:-1em;'><code>src/Student.js</code></p>
     ```
-    const Person = require('Person')
+    const Person = require('./Person')
 
     function Student (name, age, isCampus) {
       Person.call(this, name, age) // anrop av konstruktorn för Person
@@ -429,13 +461,15 @@
       return 'Jag, ' + this.name + ', läser på ' +
         (this.isCampus ? 'campus' : 'distans') + ' och är ' +  this.age + ' år.'
     }
+    
+    module.exports = Student
     ```
 
     ---
 
-    # Återanvändning av kod genom arv med klasser
+    ## Återanvändning av kod genom arv med klasser
 
-    <code>src/Person.js</code>
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:-1em;'><code>src/Person.js</code></p>
     ```
     class Person {
       constructor (name, age) {
@@ -447,11 +481,13 @@
         return 'Jag, ' + this.name + ', är ' +  this.age + ' år.'
       }
     }
-
+    module.exports = Person
     ```
     
-    <code>src/Student.js</code>
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:-1em;'><code>src/Student.js</code></p>
     ```
+    const Person = requier('./Person')
+
     class Student extends Person {
       constructor (name, age, isCampus) {
         super(name, age) // anrop av konstruktorn för Person
@@ -463,7 +499,10 @@
           (this.isCampus ? 'campus' : 'distans') + ' och är ' +  this.age + ' år.'
       }
     }
-
+    module.exports = Student
+    ```
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:-1em;'><code>app.js</code></p>
+    ```
     let p = new Person('Ellen', 6)
     console.log(p.toString()) // OUTPUT: Jag, Ellen, är 6 år.
 
@@ -487,95 +526,56 @@
     console.log(student1 instanceof Person)  // OUTPUT: true
     console.log(student1 instanceof Student) // OUTPUT: true
     ```
-
     ---
+    
+    # Återanvändning av kod genom länkning
 
-    # Hur kontrollera att en egenskaps värde är formaterat på rätt sätt?
-
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:-2em;'><code>src/personMaker.js</code></p>
     ```
-    function Address (addressLine, postalCode, city) {
-      this.adressLine = addressLine
-      this.postalCode = postalCode
-      this.city = city
+    const personBase = {
+      toString: function () {
+        return `Jag, ${this.name}, är ${this.age} år.`
+      }
     }
-
-    let address1 = new Address('Storgatan 1', '123 45', 'Storstaden') // OK adress!
-    let address2 = new Address('Lillgatan 1', 'ingen aning', 'Lillstaden') // felaktigt postnummer!
-    ```
-
-    - Att kontrollera att postnumret består av fem siffror med eventuellt mellanslag mellan tredje och fjärde siffran kräver en hel del kod...
-    - ...om vi inte kapslar den publika egenskapen och använder ett __reguljärt uttryck__ vid valideringen av värdet.
-
-    ---
-
-    # Reguljärt uttryck till undsättning
-
-    ```
-    function Address (addressLine, postalCode, city) {
-      this.adressLine = addressLine
-      this.city = city
-
-      Object.defineProperty(this, 'postalCode', {
-        get: function() {
-          return postalCode
+    
+    let createPerson = function (name, age) {
+      return Object.create(personBase, {
+        age: {
+          value: age,
+          writable: true, configurable: true, enumerable: true
         },
-
-        set: function(value) {
-          if (!/^[1-9]\d{2} ?\d{2}$/.test(value)){
-            throw new Error('postalCode seems to be invalid.')
-          }
-          postalCode = value
+        name: {
+          value: name,
+          writable: true, configurable: true, enumerable: true
         }
-      });
-
-      this.postalCode = postalCode
+      })
     }
-
-    let address1 = new Address('Storgatan 1', '123 45', 'Storstaden') // OK adress!
-    let address2 = new Address('Lillgatan 1', 'ingen aning', 'Lillstaden') // Undantag kastas!
+    
+    module.exports.createPerson = createPerson
     ```
 
-    - Det reguljära uttrycket defineras av  `/^[1-9]\d{2} ?\d{2}$/`.
-
-    ---
-
-    # Vad betyder `/^[1-9]\d{2} ?\d{2}$/`?
-
-    - Reguljära uttryck hanteras av typen <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp">`RegExp`</a>.
-        - `^`, start av strängen.
-        - `[1-9]`, exakt en förekomst av 1, 2, 3, 4, 5, 6, 7, 8 eller 9.
-        - `\d{2}`, exakt två förekomster av 0 till 9.
-        - <code><span class="text-gray">˽</span>?</code>, ingen eller en förekomst av ett mellanslag.
-        - `\d{2}`, exakt två förekomster av 0 till 9.
-        - `$`, slut på strängen.
-    - Det finns två sätt att skapa `RegExp`-objekt på:
-
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:-1em;'><code>src/studentMaker.js</code></p>
     ```
-    let regexp1 =  /^[1-9]\d{2} ?\d{2}$/ // literal
-
-    let regexp2 = new RegExp('^[1-9]\d{2} ?\d{2}$') // konstruktor
-    ```
-
-    ---
-
-    # Fånga undantag med [`try...catch`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
-
-    - För att kasta ett undantag används `throw`.
-    - Kod som kan leda till att ett undantag kastas placeras i ett `try`-block, som följs av ett...
-    - ...`catch`-block innehållande kod som ska exekveras om ett undantag har kastats.
-
-    ```
-    try {
-      // Normalt programflöde i try-blocket.
-      let address = new Address('Lillgatan 1', 'ingen aning', 'Lillstaden') // Undantag kastas!
-
-      // Gör något med address2...
-
-    } catch (e) { // Fångar undantaget.
-      // Programflöde i catch-blocket om fel inträffat, d.v.s. om undantag kastats av try-blocket.
-      concole.error(e.message) // Presenterar felmeddelandet "postalCode seems to be invalid.".
+    const personMaker = require('./personMaker')
+    
+    let createStudent = function (name, age, isCampus) {
+      let obj = Object.create(personMaker.createPerson(name, age), {
+        isCampus: {
+          value: isCampus,
+          writable: true, configurable: true, enumerable: true
+        }
+      })
+    
+      obj.toString = function () {
+        return `Jag, ${this.name}, läser på ${this.isCampus ? 'campus' : 'distans'} och är ${this.age} år.`
+      }
+    
+      return obj
     }
+        
+    module.exports.createStudent = createStudent
     ```
+    
 
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js">
