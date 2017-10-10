@@ -1,7 +1,7 @@
 ## Nyckelord
 
 konstruktor, prototyp, "this, "__proto__", "prototype", "constructor", inkapsling, privata medlemmar, "getters", "setters", 
-Object.defineProperty, arv, "instanceof", reguljära uttryck, RegExp, try...catch
+Object.defineProperty, arv, "instanceof", "module.exports", "require"
 
 ## Resurser
 
@@ -12,3 +12,4 @@ Object.defineProperty, arv, "instanceof", reguljära uttryck, RegExp, try...catc
 
 - [6. The Secret Life of Objects](http://eloquentjavascript.net/06_object.html)
 - [7. Project: Electronic Life](http://eloquentjavascript.net/07_elife.html)
+- [10. Modules](http://eloquentjavascript.net/10_modules.html)
