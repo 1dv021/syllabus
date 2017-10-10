@@ -5,7 +5,7 @@ inkapsling, egenskaper, metoder, this, designmönster, "factory",  "constructor"
 ## Resurser
 
 - [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/06/index.html#)
-- <del>[Inspelning](https://youtu.be/ZWvYAAftlBM) 2016-09-25, 13-15 (Youtube)</del>
+- [YouTube](https://youtu.be/bXhQzmaK4FU) 2017-10-03, 13:15-15:00
 
 ### Eloquent JavaScript, 2nd Edition 
 
