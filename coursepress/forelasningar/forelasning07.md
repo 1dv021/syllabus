@@ -6,7 +6,7 @@ Object.defineProperty, arv, "instanceof", "module.exports", "require"
 ## Resurser
 
 - [HTML-presentation](https://rawgit.com/1dv021/syllabus/master/presentationer/07/index.html#)
-- <del>[Inspelning](https://youtu.be/0gPvMB3qSFY) 2016-10-04, 13-15 (Youtube)</del>
+- [YouTube](https://youtu.be/3WIgJLwPAr8) 2017-10-10, 13:15-15:00
 
 ### Eloquent JavaScript, 2nd Edition 
 
