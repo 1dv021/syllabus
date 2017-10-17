@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>07 - Föreläsning - Grundläggande programmering (1DV021)</title>
+    <title>08 - Föreläsning - Grundläggande programmering (1DV021)</title>
     <meta charset="utf-8">
     <link rel="icon" href="../remark/images/favicon.png" type="image/png">
     <link rel="stylesheet" href="../remark/stylesheets/lnu.dark.css" id="theme">
@@ -13,7 +13,7 @@
     class: center, middle, lnu-background-yellow
 
     ### Grundläggande programmering (1DV021)
-    # Föreläsnig 7
+    # Föreläsnig 8
 
     <div class="lnu-footer">
         <img src="../remark/images/lnu-logotype.png">
@@ -77,19 +77,19 @@
                 
     - En modul kapslar in kod som hör samman. För att  skapa en modul samlar du alla relaterade funktioner i en fil...
 
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:0em;'><code>src/greetings.js</code></p>
     ```
-    // greetings.js
-    const sayHelloInEnglish = function() {
-      return 'Hello';
-    };
+    const sayHelloInEnglish = function () {
+      return 'Hello'
+    }
 
-    const sayHelloInSpanish = function() {
-      return 'Hola';
-    };
+    const sayHelloInSpanish = function () {
+      return 'Hola'
+    }
 
-    const sayHelloInSwedish = function() {
-      return 'Hej';
-    };
+    const sayHelloInSwedish = function () {
+      return 'Hej'
+    }
     ```
 
     - ...men det räcker inte att samla funktioner i en fil. För att göra dem tillgängliga utanför
@@ -99,25 +99,24 @@
 
     # Exportera funktioner
 
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:0em;'><code>src/greetings.js</code></p>
     ```
-    // greetings.js
-    const sayHelloInEnglish = function() {
-      return 'Hello';
-    };
+    const sayHelloInEnglish = function () {
+      return 'Hello'
+    }
 
-    const sayHelloInSpanish = function() {
-      return 'Hola';
-    };
+    const sayHelloInSpanish = function () {
+      return 'Hola'
+    }
 
-    const sayHelloInSwedish = function() {
-      return 'Hej';
-    };
+    const sayHelloInSwedish = function () {
+      return 'Hej'
+    }
 
-    // Två funktioner som exporteras; funktionen sayHelloInSwedish
-    // är att betrakta som privat inom modulen, d.v.s. inte tillgänglig utanför
-    // filen greetings.js.
-    module.exports.sayHelloInEnglish = sayHelloInEnglish;
-    module.exports.sayHelloInSpanish = sayHelloInSpanish;
+    // Två funktioner som exporteras; funktionen sayHelloInSwedish är att betrakta som privat inom modulen,
+    // d.v.s. inte tillgänglig utanför filen greetings.js.
+    module.exports.sayHelloInEnglish = sayHelloInEnglish
+    module.exports.sayHelloInSpanish = sayHelloInSpanish
     ```
 
     - Genom att tilldela `module.exports`, ett objekt som Node.js tillhandahåller, referenser till funktioner kan du bestämma vilka funktioner som ska göras tillgängliga utanför filen, exporteras.
@@ -126,66 +125,65 @@
 
     # Alternativ syntax
 
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:0em;'><code>src/greetings.js</code></p>
     ```
-    // greetings.js
-
     // Två funktioner som exporteras; funktionen sayHelloInSwedish
     // är att betrakta som privat inom modulen, d.v.s. inte tillgänglig utanför
     // filen greetings.js.
 
-    module.exports.sayHelloInEnglish = function() {
-      return 'Hello';
-    };
+    module.exports.sayHelloInEnglish = function () {
+      return 'Hello'
+    }
 
-    module.exports.sayHelloInSpanish = function() {
-      return 'Hola';
-    };
+    module.exports.sayHelloInSpanish = function () {
+      return 'Hola'
+    }
 
-    const sayHelloInSwedish = function() {
-      return 'Hej';
-    };
+    const sayHelloInSwedish = function () {
+      return 'Hej'
+    }
     ```
 
     ---
 
     # Alternativ syntax II
 
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:0em;'><code>src/greetings.js</code></p>
     ```
-    // greetings.js
     // Två funktioner som exporteras; funktionen sayHelloInSwedish
     // är att betrakta som privat inom modulen, d.v.s. inte tillgänglig utanför
     // filen greetings.js.
 
     module.exports = {
-      sayHelloInEnglish : function() {
-        return 'Hello';
+      sayHelloInEnglish : function () {
+        return 'Hello'
       },
 
-      sayHelloInSpanish : function() {
-        return 'Hola';
-      };
-    };
+      sayHelloInSpanish : function () {
+        return 'Hola'
+      }
+    }
 
-    const sayHelloInSwedish = function() {
-      return 'Hej';
-    };
+    const sayHelloInSwedish = function () {
+      return 'Hej'
+    }
     ```
 
     ---
 
     # Exportera en typ
 
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:0em;'><code>src/User.js</code></p>
     ```
-    // User.js
-    function User(name, email) {
-      this.name = name;
-      this.email = email;
+    function User (name, email) {
+      this.name = name
+      this.email = email
     }
 
-    module.exports = User;
+    module.exports = User
 
     // Använd INTE!
-    //module.exports.User = User;
+    //module.exports.User = User
     ```
 
     - Om du vill att din modulrot ska vara en konstruktorfunktion tilldelar du `module.exports` referensen till konstruktorfunktionen direkt. <span class="text-gray">(Har betydelse vid import av modulen.)</span>
@@ -194,40 +192,49 @@
 
     # Importera kod
 
-    - För att ladda en modul som finns i samma katalog som filen som laddar den använder du `require` och filnamnet (inklusive sökvägen).
-
+    - För att ladda en modul som finns i en underkatalog som filen som laddar den använder du `require` och den relativa sökvägen till filen.
+    
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:0em;'><code>app.js</code></p>
     ```
-    //app.js
+    const greetings = require('./src/greetings')
+
+    console.log(greetings.sayHelloInEnglish())
+    console.log(greetings.sayHelloInSpanish())
+    ```
+
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:0em;'><code>src/playAround.js</code></p>
+    ```
     const greetings = require('./greetings');
+
     console.log(greetings.sayHelloInEnglish());
     console.log(greetings.sayHelloInSpanish());
     ```
 
     - Du anger alltid den relativa sökvägen, i förhållande till filen som vill använda en modul, till den fil som innehåller modulen du vill ladda.
-        - Det är viktigt att du inleder med `./`, `../` eller `/` för att indikera en fil, annars måste modulen vara en "_core module_" eller återfinnas i katalogen `node_modules`.
-        - Hittas inte filen kommer Node.js att försöka ladda den angivna modulen genom att lägga till filändelserna `.js`, `.json` och slutligen `.node`.
+    - Det är viktigt att du inleder med `./`, `../` eller `/` för att indikera en fil, annars måste modulen vara en "_core module_" eller återfinnas i katalogen `node_modules`.
+    - Hittas inte filen kommer Node.js att försöka ladda den angivna modulen genom att lägga till filändelserna `.js`, `.json` och slutligen `.node`.
 
     ---
 
     # Importera och använda en egendefinierad typ
 
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:0em;'><code>src/User.js</code></p>
     ```
-    // User.js
     function User(name, email) {
-      this.name = name;
-      this.email = email;
+      this.name = name
+      this.email = email
     }
 
-    module.exports = User;
+    module.exports = User
     ```
 
+    <p style='font-size: 70%;margin-bottom:-1em;margin-top:0em;'><code>app.js</code></p>
     ```
-    // app.js
-    const User = require('./User');
+    const User = require('./src/User')
 
-    let user = new User('Ellen Nu', 'en@lnu.se');
+    let user = new User('Ellen Nu', 'en@lnu.se')
 
-    console.log(user); // ➡ { name: 'Ellen Nu', email: 'en@lnu.se' }
+    console.log(user) // OUTPUT: { name: 'Ellen Nu', email: 'en@lnu.se' }
     ```
 
     ---
@@ -324,22 +331,22 @@
 
     ```
     // imperative
-    let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-    for (let i = 0; i < arr.length; i += 1) {
-      arr[i] = Math.pow(arr[i], 2);
+    let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    for (let i = 0; i &lt; arr.length; i += 1) {
+      arr[i] = Math.pow(arr[i], 2)
     }
-    console.log(arr); // OUTPUT: [ 0, 1, 4, 9, 16, 25, 36, 49, 64, 81 ]
+    console.log(arr) // OUTPUT: [ 0, 1, 4, 9, 16, 25, 36, 49, 64, 81 ]
 
     // declarative with anonymous function expression
-    arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     let sqrArr = arr.map(function(num) {
-      return Math.pow(num, 2);
-    });
-    console.log(sqrArr); // OUTPUT: [ 0, 1, 4, 9, 16, 25, 36, 49, 64, 81 ]
+      return Math.pow(num, 2)
+    })
+    console.log(sqrArr) // OUTPUT: [ 0, 1, 4, 9, 16, 25, 36, 49, 64, 81 ]
 
     // declarative with arrow function (lambda expression)
-    sqrArr = arr.map(num => Math.pow(num, 2));
-    console.log(sqrArr); // OUTPUT: [ 0, 1, 4, 9, 16, 25, 36, 49, 64, 81 ]
+    sqrArr = arr.map(num => Math.pow(num, 2))
+    console.log(sqrArr) // OUTPUT: [ 0, 1, 4, 9, 16, 25, 36, 49, 64, 81 ]
     ```
 
     - __OBS!__ En _"arrow function"_ kan inte användas för att skapa prototyp-funktioner (har att göra med hur `this` hanteras).
