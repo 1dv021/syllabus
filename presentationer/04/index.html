@@ -66,7 +66,7 @@
         <table>
             <thead>
                 <tr>
-                    <td style="font-size:smaller">värde OUTPUT: </td>
+                    <td style="font-size:smaller">värde:&nbsp;&nbsp;</td>
                     <td style="text-align:center;border: 1px solid gray;width: 3em;"><code>12.6</code></td>
                     <td style="text-align:center;border: 1px solid gray;width: 3em;">18.7</td>
                     <td style="text-align:center;border: 1px solid gray;width: 3em;">9.8</td>
@@ -76,7 +76,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td style="font-size:smaller;color:#fc6">index OUTPUT: </td>
+                    <td style="font-size:smaller;color:#fc6">index:&nbsp;&nbsp;</td>
                     <td style="text-align:center;font-size:smaller;;color:#fc6;">0</td>
                     <td style="text-align:center;font-size:smaller;;color:#fc6;">1</td>
                     <td style="text-align:center;font-size:smaller;;color:#fc6;">2</td>
@@ -95,7 +95,7 @@
         <table>
             <thead>
                 <tr>
-                    <td style="font-size:smaller">värde OUTPUT: </td>
+                    <td style="font-size:smaller">värde:&nbsp;&nbsp;</td>
                     <td style="text-align:center;border: 1px solid gray;">42</td>
                     <td style="text-align:center;border: 1px solid gray;">"är meningen med livet"</td>
                     <td style="text-align:center;border: 1px solid gray;">true</td>
@@ -103,7 +103,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td style="font-size:smaller;color:#fc6">index OUTPUT: </td>
+                    <td style="font-size:smaller;color:#fc6">index:&nbsp;&nbsp;</td>
                     <td style="text-align:center;font-size:smaller;;color:#fc6;">0</td>
                     <td style="text-align:center;font-size:smaller;;color:#fc6;">1</td>
                     <td style="text-align:center;font-size:smaller;;color:#fc6;">2</td>
@@ -373,178 +373,7 @@
         });
 
         console.log(transformedValues) // OUTPUT:  4, 2, 16
-        ```
-    
-        ---
-    
-        # Vad är ett objekt?
-
-        - Objekt är ett referensvärde, en instans av en referenstyp, som t.ex. `Object`.
-        - Du kan samla namngivna värden i objekt. Namn/värde-paren kallas egenskaper.
-        - Egenskaperna ett objekt har kan vara olika typer.
-        - En, eller flera, referensvariabler kan referera till ett och samma objekt.
-
-        ```
-        let person = {
-          firstName: 'Ellen',
-          lastName: 'Nu',
-          age: 7,
-          eyeColor: 'yellow'
-        }
-        
-        let anotherRef = person // båda variablerna refererar till samma objekt
-        ```
-
-        ---
-
-        # Så skapar du ett Object-objekt
-
-        - Objektliteral - rekommenderat sätt
-
-        ```
-         // Ett tomt obejkt
-        let person = {}
-
-        // Ett objekt med tre egenskaper
-        let car = {
-            make: 'Volvo',
-            color: 'blue',
-            year: 2010
-        }
-        ```
-
-        - Med nyckelordet new - ___inte rekommenderat!___
-
-        ```
-        // Ett tomt objekt
-        let person = new Object()
-
-        // Ett objekt med tre egenskaper
-        let car = new Object()
-        car.make = 'Volvo'
-        car.color = 'blue'
-        car.year = 2010
-        ```
-
-        ---
-
-        # Två olika sätt att att komma åt egenskapers värden
-
-        - Punktnotationen är det föredragna sättet.
-        - Hakparenteser används oftast tillsammans med en variabel innehållande egenskapens namn.
-
-        ```
-        let car = {
-            make: 'Volvo',
-            color: 'blue',
-            year: 2010
-        }
-
-        console.log(car.year) // OUTPUT:  2010
-
-        // Lägg till en ny egenskap till objektet.
-        car.model = 'V70' // { make: 'Volvo', color: 'blue', year: 2010, model: 'V70' }
-
-        let property = 'model'
-        console.log(car[property]) // OUTPUT:  'V70'
-        ```
-
-        ---
-
-        # Egenskaper i ett objekt
-
-        - Iterera genom ett objekts samtliga egenskaper (inklusive dess prototyper) med [`for...in`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in).
-
-        ```
-        let property;
-        let car = {
-            make: 'Volvo',
-            color: 'blue',
-            year: 2010
-        }
-
-        for (property in car) {
-            console.log(property + ': ' +  car[property])
-        }
-
-        // OUTPUT: make: Volvo
-        // OUTPUT: color: blue
-        // OUTPUT: year: 2010
-        ```
-
-        ---
-
-        # Nycklarna till värdena
-
-        - Iterera igenom ett objekts egna egenskaper med hjälp av egenskapen [`keys`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys), som är en array innehållande objektets egna egenskaper.
-
-        ```
-        let car = {
-            make: 'Volvo',
-            color: 'blue',
-            year: 2010
-        }
-
-        let keys = Object.keys(car) // [ 'make', 'color', 'year' ]
-
-        keys.forEach(function (key) {
-            console.log(key + ': ' +  car[key])
-        })
-
-        // OUTPUT: make: Volvo
-        // OUTPUT: color: blue
-        // OUTPUT: year: 2010
-        ```
-
-        ---
-
-        # Om fel inträffar kasta ett undantag!
-
-        - Kastas ett undantag avbryts all exekvering av en aktuella funktionen ([`throw`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw)).
-        - Exekveringen fortsätter i det först förekommande `catch`-blocket; saknas det avslutas programmet.
-
-        ```
-        let foo = function (arr) {
-
-            // Kasta ett undantag om arr inte refererar till en array.
-            if (!Array.isArray(arr)) {
-                throw new TypeError('arr doesn\'t refer to an array.')
-            }
-
-            // Gör något med arrayen...
-        };
-
-        foo('Jag är inte en array!')  // Anropet leder till att programmet avslutas!
-        ```
-
-        ---
-
-        # Hantera undantag
-
-        - Undantag kan fångas och hanteras ([`try...catch`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)).
-
-        ```
-        let car = {
-            make: 'Volvo',
-            color: 'blue',
-            year: 2010
-        }
-
-        let bar = function (obj) {
-            if (!obj.hasOwnProperty('make') ||
-                !obj.hasOwnProperty('model')) {
-                throw new Error('Objektet saknar relevanta egenskap(er).')
-            }
-
-            // Gör något med objektets egenskaper make och model...
-        }
-
-        try {
-            bar(car)
-        } catch (e) {
-            console.error(e.message) // OUTPUT: Objektet saknar relevanta egenskap(er).
-        }
-        ```
+        ``` 
 
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js">
