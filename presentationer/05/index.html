@@ -183,15 +183,14 @@
         - Iterera genom ett objekts samtliga egenskaper (inklusive dess prototyper) med [`for...in`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in).
 
         ```
-        let property;
         let car = {
           make: 'Volvo',
           color: 'blue',
           year: 2010
         }
 
-        for (property in car) {
-          console.log(property + ': ' +  car[property])
+        for (let propertyName in car) {
+          console.log(property + ': ' + car[propertyName])
         }
 
         // OUTPUT: make: Volvo
@@ -215,7 +214,7 @@
         let keys = Object.keys(car) // [ 'make', 'color', 'year' ]
 
         keys.forEach(function (key) {
-          console.log(key + ': ' +  car[key])
+          console.log(key + ': ' + car[key])
         })
 
         // OUTPUT: make: Volvo
@@ -231,15 +230,15 @@
         - Exekveringen fortsätter i det först förekommande `catch`-blocket; saknas det avslutas programmet.
 
         ```
-        let foo = function (arr) {
+        const foo = function (arr) {
 
           // Kasta ett undantag om arr inte refererar till en array.
           if (!Array.isArray(arr)) {
-            throw new TypeError('arr doesn\'t refer to an array.')
+            throw new TypeError(`arr doesn't refer to an array.`)
           }
 
           // Gör något med arrayen...
-        };
+        }
 
         foo('Jag är inte en array!')  // Anropet leder till att programmet avslutas!
         ```
