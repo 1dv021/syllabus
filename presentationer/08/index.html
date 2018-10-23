@@ -48,6 +48,7 @@
     ---
 
     # Organisera din kod!
+
     - Det är viktigt att skriva kod som är...
         - lätt att läsa
         - lätt att förstå
@@ -55,7 +56,7 @@
         - lätt att samarbeta kring
     - Du har redan organiserat din kod!
         - Satser som hör samman har du organiserat i __funktioner__.
-        - Funktioner och variabler (som då kallats metoder och egenskaper) som hör samman har du organiserat i __egendefinerade typer__ ("_Constructor/Prototype pattern_").
+        - Funktioner och variabler (som då kallats metoder och egenskaper) som hör samman har du organiserat i __egendefinerade typer__ ("_Constructor/Prototype pattern_", JavaScript classes).
         - De egendefinierade typerna har du organiserat i...__moduler__(?).
 
     ---
@@ -69,7 +70,7 @@
             - Korta kodavsnitt är enklare att förstå och "debugga".
             - Korta kodavsnitt är enklare att testa.
             - Det är enklare att återanvända kodavsnitt istället för att dublicera koden.
-    - Beroende på miljö finns det olika sätt att hantera moduler. Node.js har sitt sätt. På klienten finns t.ex. Browserify, requireJS och commonJS. <span class="text-gray">(ECMAScript 2015 har sitt sätt.)</span>
+    - Beroende på miljö finns det olika sätt att hantera moduler. Node.js använder en egen implementation av CommonJS. På klienten används ECMAScript Modules (ES Modules).
     
     ---
     
@@ -263,22 +264,21 @@
     function Address (addressLine, postalCode, city) {
       this.adressLine = addressLine
       this.city = city
-
-      Object.defineProperty(this, 'postalCode', {
-        get: function() {
-          return postalCode
-        },
-
-        set: function(value) {
-          if (!/^[1-9]\d{2} ?\d{2}$/.test(value)){
-            throw new Error('postalCode seems to be invalid.')
-          }
-          postalCode = value
-        }
-      });
-
       this.postalCode = postalCode
     }
+
+
+    Object.defineProperty(Address.prototype, 'postalCode', {
+      get: function () {
+        return this._postalCode
+      },
+      set: function (value) {
+        if (!/^[1-9]\d{2} ?\d{2}$/.test(value)) {
+          throw new Error('postalCode seems to be invalid.')
+        }
+        this._postalCode = value
+      }
+    })
 
     let address1 = new Address('Storgatan 1', '123 45', 'Storstaden') // OK adress!
     let address2 = new Address('Lillgatan 1', 'ingen aning', 'Lillstaden') // Undantag kastas!
