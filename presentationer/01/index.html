@@ -63,7 +63,7 @@
         01100010 00000000 00000000
         ```
 
-        - Nu finns det 100(0)-tals programspråk; Javascript är ett av dem.
+        - Nu finns det 100(0)-tals programspråk; JavaScript är ett av dem.
 
         ```
         let sum = 0
@@ -75,9 +75,9 @@
 
         ---
 
-        # Kortfattad historik
+        # Kortfattad historik över JavaScript
 
-        <audio controls>
+        <audio controls style="height:20px">
             <source src="dial-up-modem.mp3" type="audio/mpeg" />
             Din webbläsare saknar stöd för audio-element.
         </audio>
@@ -88,7 +88,7 @@
         - När?
             - 1995 - JavaScript 1.0 med Netscape Navigator 2.
             - 1997 - JavaScript 1.1 standardiseras till ECMAScript 1.
-                - Bekriver syntax, typer, satser, nyckelord, reserverade ord, operatorer och objekt.
+                - Beskriver syntax, typer, satser, nyckelord, reserverade ord, operatorer och objekt.
             - 1998 - ECMAScript 2
             - 1999 - ECMAScript 3
             - 2009 - ECMAScript 5
@@ -96,7 +96,25 @@
             - 2015 - [ECMAScript 2015 (ES6)](http://www.ecma-international.org/ecma-262/6.0/)
             - 2016 - [ECMAScript 2016 (ES7)](http://www.ecma-international.org/ecma-262/7.0/)
             - 2017 - [ECMAScript 2017 (ES8)](http://www.ecma-international.org/ecma-262/8.0/)
-            - 2018 - ...
+            - 2018 - [ECMAScript 2018 (ES9)](http://www.ecma-international.org/ecma-262/9.0/)
+            - 2019 - ...
+
+        ---
+
+        # JavaScript utan webbläsare!
+
+        - Under kursen kommer du använda Node-plattformen för att exekvera JavaScript-kod.
+            - I denna kurs kommer du alltså inte arbeta med någon form av webbläsare!
+        - Node.js är ett öppet källkodsprojekt, som bygger på samma JavaScript-motor (V8) som webbläsaren Chrome använder.
+            - Kan köras på flera plattformar som macOS, Linux och Windows.
+            - JavaScript kompileras, optimeras och exekveras.
+        - Du kommer att under kursen skapa konsolapplikationer.
+            - Du kommer fokusera på att lära dig programmera i JavaScript och inte att skapa grafiska gränssnitt eller server-applikationer.
+
+        <div>
+            <img src="jsnodeterm.png" width="45%" height="45%" style="border:none;background:none;display:block;margin-left:auto;margin-right:auto;" />
+        </div>
+        <img src="v8.png" width="50%" height="50%" style="border:none;background:none;display:block;margin-left:auto;z-index:-1;opacity:0.1;filter:alpha(opacity=10);margin-top:-100px;margin-right:-100px;" />
 
         ---
 
@@ -112,16 +130,22 @@
         - Strömmen av bitar behöver delas in mindre delar - __värden__.
         - Värden kan vara av olika __typer__, som t.ex.:
             - tal: 42
-            - strängar: 'Hej hopp!'
+            - strängar: 'Hej hopp!'        
+            ```
+                   01001000 01100101 01101010 01000000 01101000 01101111 01110000 01110000 00100001 // binärt värde
+                         72      101      106       32      104      111      112      112       33 // ASCII-värde, numeriskt värde som representerar ett tecken
+                          H        e        j                 h        o        p        p        ! // tecken
+            ```
 
+        <img src="ascii.png" width="15%" height="15%" style="border:none;background:none;display:block;margin-left:50px;" />
         ---
 
         # Datatyper
 
         - Javascript är löst typat språk.
-            - Fem enkla (primitiva) datatyper: `Undefined`, `Null`, `Boolean`, `Number` och `String`.
+            - Sex enkla (primitiva) datatyper: `Undefined`, `Null`, `Boolean`, `Number`, `Symbol` och `String`.
             - En komplexare typ, `Object`, som är en osorterad lista med namn/värde-par.
-            - Alla värden måste vara av någon av de sex typerna ovan.
+            - Alla värden måste vara av någon av de sju typerna ovan.
         - Operatorn `typeof` ger typen ett värde är av i form av en sträng.
             ```
                 typeof 42                                     // 'number'
@@ -129,9 +153,9 @@
                 typeof 'Hej hopp!'                            // 'string'
                 typeof true                                   // 'boolean'
                 typeof {age: 42, name: 'Ellen Nu'}            // 'object'
-                typeof function foo() { console.log('bar') } // 'function'
+                typeof function foo() { console.log('bar') }  // 'function'
             ```
-        .gray-text[.smaller[(__OBS!__ Rent tekniskt betraktas funktioner att vara av typen `Object`, även om opertorn `typeof` returnerar strängen `function`.)]]
+        .gray-text[.smaller[(__OBS!__ Rent tekniskt betraktas funktioner att vara av typen `Object`, även om operatorn `typeof` returnerar strängen `function`.)]]
 
         ---
 
@@ -162,9 +186,9 @@
 
         - Strängar används till att representera text.
             ```
-            'Kan skrivas inom apostrofer.'
-            `Kan skrivas inom grav accent.`
-            "Kan skrivas inom citationstecken också." // INTE i denna kurs!
+                'Kan skrivas inom apostrofer.'
+                `Kan skrivas inom grav accent.`
+                "Kan skrivas inom citationstecken också." // INTE i denna kurs!
             ```
             - Kursens kodstandard hindrar användning av citattecken!
         - Strängar kan läggas ihop, konkateneras .smaller[(latin: _catena_, kedja, "ihopkedjning")].
@@ -183,15 +207,15 @@
         # Datatypen `Boolean`
 
         - Bara två värden möjliga, antingen `true` eller `false`.
-        - Booleska värden kan skapas med __jämförelseoperatorer__,
+        - Boolska värden kan skapas med __jämförelseoperatorer__,
         `<`, `>`, `<=`, `>=`, `==`, `!=`, `===` (jämför även typ), `!==` (jämför även typ).
             ```
                 5 > 3 // true
                 5 < 3 // false
-                'Mats' < 'Bäst' // false, fungerar med strängar också
-                'Mats' < 'bäst' // true, gemener sorteras före versaler
+                'Mats' < 'Bäst' // false, fungerar med strängar också (M = 77, B = 66)
+                'Mats' < 'bäst' // true,  versaler sorteras före gemener (M = 77, b = 98)
             ```
-        - __Logiska operatorer__ används för att "resonera" runt booleska värden; OCH (`&&`), ELLER (`||`) samt ICKE (`!`).
+        - __Logiska operatorer__ används för att "resonera" runt boolska värden; OCH (`&&`), ELLER (`||`) samt ICKE (`!`).
             ```
                 true && false // false
                 true || false // true
@@ -200,149 +224,191 @@
 
         ---
 
-        # Sanningstabeller
+        # Sanningstabeller för `&&`, `||` och `!`
+        
+        - Operatorn `&&` kräver att båda värdena är `true` för att resultatet ska bli `true`.
+        - Operatorn `||` kräver att minst ett av värdena är `true` för att resultatet ska bli `true`.
 
-        <div>
-            <table style="float:left; width:33%">
-                <tr>
-                    <td colspan="3">
-                        OCH (&&, AND)
-                    </td>
-                </tr>
-                <tr>
-                    <td>false</td>
-                    <td>false</td>
-                    <td>false</td>
-                </tr>
-                <tr>
-                    <td>false</td>
-                    <td>true</td>
-                    <td>false</td>
-                </tr>
-                <tr>
-                    <td>true</td>
-                    <td>false</td>
-                    <td>false</td>
-                </tr>
-                <tr>
-                    <td>true</td>
-                    <td>true</td>
-                    <td>true</td>
-                </tr>
+        <div style="padding-top:1em">
+            <table style="float:left; width:33%;border-collapse:collapse">
+                <thead style="background-color:#eba056">
+                    <tr>
+                        <th colspan="3">
+                            <code>&&</code> (AND, OCH)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody style="text-align: center">
+                    <tr>
+                        <td>false</td>
+                        <td>false</td>
+                        <td style="border-left:1px solid #eba056">false</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>false</td>
+                        <td>true</td>
+                        <td style="border-left:1px solid #eba056">false</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>true</td>
+                        <td>false</td>
+                        <td style="border-left:1px solid #eba056">false</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>true</td>
+                        <td>true</td>
+                        <td style="border-left:1px solid #eba056">true</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </tbody>
             </table>
-            <table style="float:right; width:33%">
-                <tr>
-                    <td colspan="3">
-                        ICKE (!, NOT)
-                    </td>
-                </tr>
-                <tr>
-                    <td>false</td>
-                    <td>true</td>
-                </tr>
-                <tr>
-                    <td>true</td>
-                    <td>false</td>
-                </tr>
+            <table style="float:left; width:33%;border-collapse: collapse">
+                <thead style="background-color:#57EBA1">
+                    <tr>
+                        <th colspan="3">
+                            <code>||</code> (OR, ELLER)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody style="text-align: center">
+                    <tr>
+                        <td>false</td>
+                        <td>false</td>
+                        <td style="border-left:1px solid #57EBA1">false</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>false</td>
+                        <td>true</td>
+                        <td style="border-left:1px solid #57EBA1">true</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>true</td>
+                        <td>false</td>
+                        <td style="border-left:1px solid #57EBA1">true</td>
+                    </tr>
+                    <tr>
+                        <td>true</td>
+                        <td>true</td>
+                        <td style="border-left:1px solid #57EBA1">true</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </tbody>
             </table>
-            <table style="float:none; width:33%">
-                <tr>
-                    <td colspan="3">
-                        ELLER (||, OR)
-                    </td>
-                </tr>
-                <tr>
-                    <td>false</td>
-                    <td>false</td>
-                    <td>false</td>
-                </tr>
-                <tr>
-                    <td>false</td>
-                    <td>true</td>
-                    <td>true</td>
-                </tr>
-                <tr>
-                    <td>true</td>
-                    <td>false</td>
-                    <td>true</td>
-                </tr>
-                <tr>
-                    <td>true</td>
-                    <td>true</td>
-                    <td>true</td>
-                </tr>
+            <table style="float:left; width:33%;border-collapse: collapse">
+                <thead style="background-color:#EB57A1">
+                    <tr>
+                        <th colspan="3">
+                            <code>!</code> (NOT, ICKE)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody style="text-align: center">
+                    <tr>
+                        <td>false</td>
+                        <td style="border-left:1px solid #EB57A1">true</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>true</td>
+                        <td style="border-left:1px solid #EB57A1">false</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
+        <div style="clear: both"></div>
         <div style="color:gray;font-size:70%;">
             <p>OCH tänk multiplikation; ELLER tänk addition; false = 0, true = 1.</p>
-            <table style="float:left; width:33%">
-                <tr>
-                    <td colspan="3">
-                        OCH (&&, AND)
-                    </td>
-                </tr>
-                <tr>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
+            <table style="float:left; width:33%;border-collapse:collapse">
+                <thead style="background-color:#EFEEEC">
+                    <tr>
+                        <th colspan="5">
+                            <code>&&</code> (AND, OCH)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody style="text-align: center">
+                    <tr>
+                        <td>0</td>
+                        <td>×</td>
+                        <td>0</td>
+                        <td>=</td>
+                        <td>0</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>×</td>
+                        <td>1</td>
+                        <td>=</td>
+                        <td>0</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>×</td>
+                        <td>0</td>
+                        <td>=</td>
+                        <td>0</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>×</td>
+                        <td>1</td>
+                        <td>=</td>
+                        <td>1</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </tbody>
             </table>
-            <table style="float:right; width:33%">
-                <tr>
-                    <td colspan="3">
-                        ICKE (!, NOT)
-                    </td>
-                </tr>
-                <tr>
-                    <td>0</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>0</td>
-                </tr>
-            </table>
-            <table style="float:none; width:33%">
-                <tr>
-                    <td colspan="3">
-                        ELLER (||, OR)
-                    </td>
-                </tr>
-                <tr>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
+            <table style="float:left; width:33%;border-collapse:collapse">
+                <thead style="background-color:#D1D0CE">
+                    <tr>
+                        <th colspan="5">
+                            <code>||</code> (OR, ELLER)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody style="text-align: center">
+                    <tr>
+                        <td>0</td>
+                        <td>+</td>
+                        <td>0</td>
+                        <td>=</td>
+                        <td>0</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>+</td>
+                        <td>1</td>
+                        <td>=</td>
+                        <td>1</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>+</td>
+                        <td>0</td>
+                        <td>=</td>
+                        <td>1</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>+</td>
+                        <td>1</td>
+                        <td>=</td>
+                        <td>1</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
 
@@ -372,7 +438,7 @@
         # Variabler
 
         - Program kommer ihåg värden med hjälp av variabler.
-        - En variabel defineras med hjälp av nyckelordet `let`, eller `var`, följt av namnet på variabeln.
+        - En variabel definieras med hjälp av nyckelordet `let`, eller `var`, följt av namnet på variabeln.
             ```
                 let count                     // undefined
                 let result = (4 + 8) * 3 + 8  // 44
@@ -397,10 +463,13 @@
     
         # Variablers namn
 
+        <img src="identifiers.png" width="45%" height="45%" style="border: none; background: none;" />
+
         - Beskrivande namn är centralt. Håll dig till ett språk, gärna engelska.
         - Kan vara vilket ord som helst bara det inte är ett nyckelord eller ett reserverat ord.
         - Får innehålla tecknen a-z, A-Z, 0-9, _ och $.
             - Får inte börja med en siffra.
+            - Fler tecken är tillåtna, som t.ex. åäö, men använd aldrig dessa.
         - Kan bestå av flera ord. Tillämpa i så fall så kallad kamelnotation (_"camelCasing"_).
             - Ett sätt att skriva samman ord utan bindestreck eller mellanslag.
             - Varje ord, utom det första, inleds med versal.
@@ -413,25 +482,25 @@
 
         ---
 
-        # Nycklelord och reserverade ord
+        # Nyckelord och reserverade ord
 
         - Problem vid definition av en variabel? Du kanske har använt något av orden nedan.
 
         ```
-            break          do             in             typeof
-            case           else           instanceof     throw
+            await          delete         import         this
+            break          do             in             throw
+            case           else           instanceof     typeof
             catch          export         new            try
             class          extends        let            var
             const          finally        return         void
             continue       for            static         while
             debugger       function       super          with
             default        if             switch         yield
-            delete         import         this
         ```
 
         ```
-            await          implements     package        protected
             enum           interface      private        public
+            implements     package        protected
         ```
 
         ---
@@ -459,12 +528,12 @@
     
         ---
     
-        # Definiera en funktion
+        # Definiera funktioner
     
-        - Du definierar en funktion på samma sätt som en variabel, värdet är bara en funktion.
+        - Funktioner kan definieras på flera sätt, t.ex. genom ett _"function expression"_ eller en _"function declaration"_.
     
         ```
-            let sayHello = function () {
+            let sayHello = function () { // function expression
                 let greeting = 'Hello, World!'
 
                 return greeting
@@ -473,9 +542,8 @@
             let message = sayHello()
             console.log(message) // Output: Hello, World!
         ```
-
         ```
-            function sayHello () {
+            function sayHello () {  // function declaration
               let greeting = 'Hello, World!'
 
               return greeting
@@ -487,7 +555,7 @@
         - En funktion är ett uttryck som börjar med nyckelordet `function`.
         - Mellan parenteserna kan ingen, en eller flera parametrar finnas.
         - Funktionens kropp, mellan klammerparenteserna, innehåller satserna som exekveras när funktionen anropas.
-        - `return`-satsen, om den finns någon, bestämmer värdet funktionen returnerar då den anropas, saknas den returnera värdet `undefined`.
+        - `return`-satsen, om den finns någon, bestämmer värdet funktionen returnerar då den anropas, saknas den returneras värdet `undefined`.
 
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
