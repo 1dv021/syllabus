@@ -16,8 +16,8 @@
         # Föreläsning 3
 
         <div class="lnu-footer">
-            <img src="../remark/images/lnu-logotype.png">
-            <img src="../remark/images/lnu-symbol.png">
+          <img src="../images/lnu_wordmark_kalmar_vaxjo_pahang_150mm150dpi.png">
+          <img src="../images/lnu_symbol_150mm150dpi.png">
         </div>
 
         ---
@@ -90,7 +90,7 @@
         - Du definierar en funktion på ungefär samma sätt som en variabel, värdet är bara en funktion.
 
         ```
-        let sayHello = function (name) {
+        const sayHello = function (name) {
           let greeting = 'Hello, ' + name + '!'
             
           return greeting
@@ -111,7 +111,7 @@
         - En funktion behöver inte ha en `return`-sats.
 
         ```
-        let sayHello = function (name) {
+        const sayHello = function (name) {
           console.log('Hello, ' + name + '!')
         }
 
@@ -122,7 +122,7 @@
         - Det kan finnas flera `return`-satser i en funktion.
 
         ```
-        let evenOrOdd = function (value) {
+        const evenOrOdd = function (value) {
           // Är talet jämt delbart med 2?
           if (value % 2 === 0){
             return 'jämt'
@@ -141,7 +141,7 @@
         - Funktion som returnerar en sträng (en mindre generell lösning).
     
         ```
-        let evenOrOdd = function (value) {
+        const evenOrOdd = function (value) {
           // Är talet jämt delbart med 2?
           if (value % 2 === 0) {
             return 'jämt'
@@ -156,7 +156,7 @@
         - Funktion som returnerar ett booleskt värde (en generellare lösning).
     
         ```
-        let isEven = function (value) {
+        const isEven = function (value) {
           // Är talet jämt delbart med 2?
           return value % 2 === 0
         };
@@ -170,7 +170,7 @@
         # Parametrar och dess räckvidd ("_scope_")
 
         ```
-        let getFullName = function (firstName, lastName) {
+        const getFullName = function (firstName, lastName) {
           let fullName = firstName + ' ' + lastName  // OBS! lokal variabel
 
           return fullName
@@ -187,7 +187,7 @@
 
 
         - Parametrar fungerar i stort på samma sätt som lokala variabler i en funktion.
-            - Variabler i en funktion måste defineras med `let`, eller `var`, för att bli lokala.
+            - Variabler i en funktion måste definieras med `let`, eller `var`, för att bli lokala.
             - `firstName`, `lastName` och `fullName` är __lokala__ i funktionen `getFullName`.
             - Värdena parametrarna `firstName` och `lastName` tilldelas bestäms vid anropet av funktionen.
 
@@ -206,7 +206,7 @@
         - Är det för få argument tilldelas funktionens parametrar värdet `undefined`.
 
         ```
-        let sumThreeNumbers = function (op1, op2, op3) {
+        const sumThreeNumbers = function (op1, op2, op3) {
           // Värden vid anrop enligt nedan: op1 = 23, op2 = 4, op3 = undefined
           let result = op1 + op2 + op3 // → NaN
 
@@ -239,11 +239,11 @@
 
         if (doNotLie) {
           tellTheTruth = function () {
-            return 'Mats är inte bättre än John!'
+            return 'Mats är inte bättre än Johan!'
           }
         }
 
-        confess(tellTheTruth) // OUTPUT: Mats är inte bättre än John!
+        confess(tellTheTruth) // OUTPUT: Mats är inte bättre än Johan!
         ```
 
         ---
@@ -272,7 +272,7 @@
 
         ---
 
-        # Olika sätt att skapa funktioner
+        # Olika sätt att skapa funktioner (1 av 2)
 
         ## Funktionsuttryck
 
@@ -281,12 +281,12 @@
         anotherGreet() // ReferenceError: greet is not defined
     
         // anonymt funktionsuttryck
-        let greet = function () {
+        const greet = function () {
           console.log('Hello, World!')
         }
 
         // namngivet funktionsuttryck
-        let anotherGreet = function sayHi() {
+        const anotherGreet = function sayHi() {
           console.log('Hello, World!')
         }
 
@@ -295,6 +295,10 @@
         ```
 
         - Funktionen definieras först när satsen som definierar funktionen exekverats.
+
+        ---
+
+        # Olika sätt att skapa funktioner (2 av 2)
 
         ## Funktionsdeklaration
 
@@ -307,6 +311,10 @@
         ```
 
         - Funktionen definieras precis innan omslutande funktion exekveras.
+
+        ---
+
+        <img src="../images/lnu_symbol_150mm150dpi.png" alt="lnu-symbol" style="display: block;height:auto;width:40%;margin-left:auto;margin-right:auto">
 
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js">

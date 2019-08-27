@@ -168,8 +168,7 @@
 }
 
     .lnu-footer img {
-        max-height: 95%;
-        max-width: 95%;
+        height: 45px;
     }
 
         .lnu-footer img:nth-of-type(2) {
@@ -232,29 +231,36 @@ code.javascript.hljs {
     color: #dcdcdc;
     width: 90%;
 }
-
     code.javascript .hljs-title,
     code.javascript .hljs-literal,
     code.javascript .hljs-keyword {
-        color: #cc7832;
-	font-weight:bold;
+        font-weight:normal;
+    }
+
+    code.javascript .hljs-keyword {
+        color: #569CD6;
+    }
+
+    code.javascript .hljs-title
+    {
+        color: #DCDCAA;
     }
 
     code.javascript  .hljs-number {
-        color: #6897bb;
+        color: #B5CEA8;
     }
 
     code.javascript  .hljs-string {
-        color: #6a8759;
+        color: #CE9178;
     }
 
     code.javascript .hljs-comment {
-        color: #808080;
+        color: #6A9955;
     }
 
     code.javascript .hljs-built_in {
-        color: #9876aa;
-    }
+        color: #4EC9B0;
+    } 
 
 .organe-border {
     -webkit-border-radius: 80px;
@@ -273,4 +279,9 @@ code.javascript.hljs {
 }
 .gray-text {
     color: #808080;
+}
+
+.remark-code-span-highlighted,
+.remark-code-line-highlighted {
+    background-color: #264F78;
 }

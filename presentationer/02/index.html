@@ -6,6 +6,14 @@
     <link rel="icon" href="../remark/images/favicon.png" type="image/png">
     <link rel="stylesheet" href="../remark/stylesheets/lnu.dark.css" id="theme">
     <link rel="stylesheet" href="../reveal.js/css/theme/black.lnu.css">
+    <style>
+        .twocolumn {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 10px;
+          text-align: left;
+       }
+    </style>
 </head>
 <body class="lnu">
 <textarea id="source">
@@ -16,8 +24,8 @@
         # Föreläsning 2
 
         <div class="lnu-footer">
-            <img src="../remark/images/lnu-logotype.png">
-            <img src="../remark/images/lnu-symbol.png">
+          <img src="../images/lnu_wordmark_kalmar_vaxjo_pahang_150mm150dpi.png">
+          <img src="../images/lnu_symbol_150mm150dpi.png">
         </div>
 
         ---
@@ -47,8 +55,46 @@
 
         ---
 
+        <section>
+          <h1>Kontrollstrukturer</h1>
+          <div class="twocolumn">
+            <div>
+              <p>Kontrollstrukturer är grundläggande verktyg vid programmering.</p>
+              <ul>
+                <li>Sekvens
+                  <ul>
+                    <li>En <strong>följd</strong> satser som måste utföras efter varandra.</li>
+                  </ul>
+                </li>
+                <li>Selektion
+                  <ul>
+                    <li>Ett sätt att <strong>välja</strong> mellan att exekvera olika satser.</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else"><code class="javascript remark-inline-code">if</code></a>-satsen, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch"><code class="javascript remark-inline-code">switch</code></a>-satsen, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator">villkorsoperatorn  (<code class="javascript remark-inline-code">?:</code>)</a></li>
+                  </ul>
+                </li>
+                <li>Iteration
+                  <ul>
+                    <li>Ett sätt att <strong>upprepa</strong> en sats ingen eller flera gånger.</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while"><code class="javascript remark-inline-code">while</code></a>-satsen, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while"><code class="javascript remark-inline-code">do...while</code></a>-satsen, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for"><code class="javascript remark-inline-code">for</code></a>-satsen.</li>
+                  </ul>
+                </li>
+                <li>Rekursion
+                  <ul>
+                    <li>En funktion som anropar sig själv. <span class="text-gray">(Mer om detta längre fram i kursen.)</span></li>
+                  </ul>
+                </li>
+              </ul>           
+            </div>
+            <div>
+                <img src="controlstructures.png" width="25%" style="border:none;background:none;display:block;margin-left:auto;margin-right:auto;opacity:0.6;filter:alpha(opacity=60)" />
+            </div>
+          </div>
+        </section>
+        
+        ???
+
         # Kontrollstrukturer
-    
+        
         Kontrollstrukturer är grundläggande verktyg vid programmering.
     
         - Sekvens
@@ -62,6 +108,8 @@
         - Rekursion
             - En funktion som anropar sig själv. <span class="text-gray">(Mer om detta längre fram i kursen.)</span>
     
+        <img src="controlstructures.png" width="10%" height="10%" style="border:none;background:none;display:block;margin-left:auto;z-index:100;margin-top:-100%;margin-right:-100px;" />
+
         ---
     
         # Sekvens
@@ -118,12 +166,12 @@
         # `if`-satsen
 
         ```
-            if (villkoruttryck) {
+            if (villkorsuttryck) {
                 sats(er) // Omslut alltid satsen/satserna mellan klammerparenteser.
             }            // (Behövs inte om det bara är en sats, men gör det alltid ändå.)
         ```
-        - Om villkorsyttrycket är `true` utförs en eller flera satser omslutna mellan klammerparenteserna, `if`-satsens kropp.
-        - Villkoruttrycket är ett uttryck som resulterar i något som Javascript betraktar som `true` eller `false`.
+        - Om villkorsuttrycket är `true` utförs en eller flera satser omslutna mellan klammerparenteserna, `if`-satsens kropp.
+        - Villkorsuttrycket är ett uttryck som resulterar i något som Javascript betraktar som `true` eller `false`.
 
         ```
             let number = 42
@@ -242,7 +290,7 @@
             
             // OUTPUT: Talet är jämt.
         ```
-        - ...med hjälp av villkoroperatorn `?:`.
+        - ...med hjälp av villkorsoperatorn `?:`.
 
         ```
             let number = 42
@@ -268,7 +316,7 @@
             - Loopen körs minst en gång.
 
         ```
-            REPERTERA
+            REPETERA
               Instruktion(er)
             SÅ LÄNGE villkor uppfyllt
         ```
@@ -320,7 +368,7 @@
             let i = 10
             do {
               console.log(i + ' ')
-              i++;
+              i++
             } while (i < 10)
 
             // OUTPUT: 10
@@ -385,7 +433,7 @@
             let output = ''
 
             for (let i = 0; i < 10; i++) {
-              if (i % 3 === 0) {
+              if (i % 3 === 0) { // 3, 6 och 9 jämt delbart med 3
                 continue
               }
               output += `${i} ` // en "template literal",
@@ -404,7 +452,7 @@
         # Kommentarer
 
         - Kod säger inte allt. För att beskriva vad kod gör kan __kommentarer__ användas.
-        - Kommentarer är VIKTIGT att skriva.
+        - Kommentarer är __VIKTIGT__ att skriva.
             - Ska stå på helt egna rader med en tomrad raden ovan i enlighet med kursens kodstandard.
         - Det finns olika typer av kommentarer.
 
@@ -416,7 +464,7 @@
               product *= i
             }
 
-            /* Blockkommentarer där allt mellan start och slut
+            /* Blockkommentarer där allt mellan start och slut 
             betraktas som en kommentar. */
             console.log(product)
 
@@ -434,6 +482,9 @@
               return newData
             }
         ```
+        ---
+
+        <img src="../images/lnu_symbol_150mm150dpi.png" alt="lnu-symbol" style="display: block;height:auto;width:40%;margin-left:auto;margin-right:auto">
 
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js">

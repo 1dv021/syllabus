@@ -16,8 +16,8 @@
         # Föreläsning 1
 
         <div class="lnu-footer">
-            <img src="../remark/images/lnu-logotype.png">
-            <img src="../remark/images/lnu-symbol.png">
+            <img src="../images/lnu_wordmark_kalmar_vaxjo_pahang_150mm150dpi.png">
+            <img src="../images/lnu_symbol_150mm150dpi.png">
         </div>
 
         ---
@@ -68,10 +68,11 @@
         ```
         let sum = 0
         for (let i = 1; i <= 10; i++) {
-            sum += i
+          sum += i
         }
         console.log(sum) // → 55
         ```
+
 
         ---
 
@@ -557,6 +558,10 @@
         - Funktionens kropp, mellan klammerparenteserna, innehåller satserna som exekveras när funktionen anropas.
         - `return`-satsen, om den finns någon, bestämmer värdet funktionen returnerar då den anropas, saknas den returneras värdet `undefined`.
 
+        ---
+
+        <img src="../images/lnu_symbol_150mm150dpi.png" alt="lnu-symbol" style="display: block;height:auto;width:40%;margin-left:auto;margin-right:auto">
+
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
     </script>
@@ -564,8 +569,9 @@
         var slideshow = remark.create({
             ratio: "16:9",
             highlightLanguage: "javascript",
-//            highlightStyle: "ir-black",
+            // highlightStyle: "vs 2015",
             highlightLines: true,
+            highlightSpans: false,
             navigation: {
                 scroll: true,
                 touch: true,
