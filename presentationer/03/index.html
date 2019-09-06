@@ -62,7 +62,7 @@
         - Att dela upp ett program i mindre delar, __funktioner__, är viktigt för att...
             - ...strukturera kod.
             - ...få överblick över koden.
-            - ...undvika att identisk kod upprepas. <span class="text-gray">Bryt aldrig mot principen __DRY__ _(Don't repeat yourself!_).</span>
+            - ...undvika att identisk kod upprepas. <span class="text-gray">Bryt aldrig mot principen __DRY__ _(__D__on't __R__epeat __Y__ourself!_).</span>
             - ...koden blir enklare att testa.
 
         ---
@@ -78,10 +78,10 @@
         ```
     
         - En funktion anropas genom att ange dess namn följt av parenteser innehållande eventuella argument.
-            - Argument är värden som skickas till funktionen. Det är funktionen som bestämmer om inget , ett eller flera argument kan skickas vid anrop.
+            - Argument är värden som skickas till funktionen. Det är funktionen som bestämmer om inget , ett eller flera argument tas om hand vid anrop.
         - Då en funktion exekverats klart returneras __alltid__ ett värde, ett så kallat returvärde.
             - Returvärde är det värde en funktion ger tillbaka. Bara ett värde kan returneras.
-        - Parenteserna efter funktionens namn måste alltid anges, oavsett om det finns argument eller inte.
+        - Parenteserna efter funktionens namn måste alltid anges vid anrop, oavsett om det finns argument eller inte.
 
         ---
 
@@ -100,7 +100,8 @@
         ```
 
         - En funktion är ett uttryck som börjar med nyckelordet `function`.
-        - Mellan parenteserna kan ingen, en eller flera __parametrar__ finnas. En parameter fungerar på samma sätt som en lokal variabel i funktionen.
+        - Mellan parenteserna kan ingen, en eller flera __parametrar__ finnas.
+          - En parameter fungerar på samma sätt som en lokal variabel i funktionen.
         - Funktionens kropp, mellan klammerparenteserna, innehåller satserna som exekveras när funktionen anropas.
         - return-satsen, om den finns någon, bestämmer värdet funktionen returnerar då den anropas. Saknas `return`-sats returneras värdet `undefined`.
 
@@ -278,7 +279,7 @@
 
         ```
         greet() // ReferenceError: greet is not defined
-        anotherGreet() // ReferenceError: greet is not defined
+        anotherGreet() // ReferenceError: anotherGreet is not defined
     
         // anonymt funktionsuttryck
         const greet = function () {
@@ -308,6 +309,8 @@
         function sayHello() {
           console.log('Hello, World!')
         }
+
+        sayHello() // OUTPUT: 'Hello, World!'
         ```
 
         - Funktionen definieras precis innan omslutande funktion exekveras.
