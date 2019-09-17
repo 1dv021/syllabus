@@ -16,9 +16,9 @@
         # Föreläsning 4
 
         <div class="lnu-footer">
-            <img src="../remark/images/lnu-logotype.png">
-            <img src="../remark/images/lnu-symbol.png">
-        </div>
+            <img src="../images/lnu_wordmark_kalmar_vaxjo_pahang_150mm150dpi.png">
+            <img src="../images/lnu_symbol_150mm150dpi.png">
+          </div>
 
         ---
 
@@ -119,26 +119,26 @@
 
         ```
         // En tom array
-        let values = []
+        const values = []
 
         // En array med tre element
-        let cars = ['Volvo', 'Nissan', 'Passat']
+        const cars = ['Volvo', 'Nissan', 'Passat']
         ```
                         
         - Med nyckleordet new - ___inte rekommenderat!___
 
         ```
         // En tom array
-        let values = new Array()
+        const values = new Array()
 
         // En array med tre element
-        let cars = new Array('Volvo', 'Nissan', 'Passat') // ['Volvo', 'Nissan', 'Passat']
+        const cars = new Array('Volvo', 'Nissan', 'Passat') // ['Volvo', 'Nissan', 'Passat']
 
-        let numbers = new Array(1, 2, 3, 4, 5)
+        const numbers = new Array(1, 2, 3, 4, 5)
         numbers[0] // returns 1
         numbers.length // returns 5
 
-        let anotherArray = new Array(10) // [undefined, undefined, undefined, ..., undefined]
+        const anotherArray = new Array(10) // [undefined, undefined, undefined, ..., undefined]
         anotherArray[0] // returns undefined
         anotherArray.length // returns 10
         ```
@@ -149,7 +149,7 @@
 
         ```
         // Array med fem element.
-        let temperatures = [12.6, 18.7, 9.8, 13.2, 14.4]
+        const temperatures = [12.6, 18.7, 9.8, 13.2, 14.4]
 
         // Hämta värdet för det fjärde elementet.
         console.log(temperatures[3]) // OUTPUT: 13.2
@@ -179,7 +179,7 @@
         - Värdetyp (t.ex. Number)
 
         ```
-        let dogAge = 7
+        const dogAge = 7
         let catAge
 
         console.log(dogAge) // OUTPUT: 7
@@ -194,7 +194,7 @@
         - Referenstyp (t.ex. Array)
 
         ```
-        let numbers = [5, 8, 7, 1, 6] // tilldelar en variabel en referens till en array
+        const numbers = [5, 8, 7, 1, 6] // tilldelar en variabel en referens till en array
         let figures
 
         console.log(numbers) // OUTPUT: [ 5, 8, 7, 1, 6 ]
@@ -211,16 +211,14 @@
         # En array som returvärde
 
         ```
-        let numbers
-
         /**
          * Returns an array of numbers in the range of 0 to 9.
          *
          * @param count {number} Number of random numbers to randomize.
          * @returns {number[]} An array with random numbers between 0 and 9.
          */
-        let getRandomNumbers = function (count) {
-            let randomNumbers = []
+        const getRandomNumbers = function (count) {
+            const randomNumbers = []
 
             for (let i = 0; i < count; i++) {
                 randomNumbers.push(Math.floor(Math.random() * 10))
@@ -231,7 +229,7 @@
         };
 
         // Set a variable to refer to the returned array.
-        numbers = getRandomNumbers(5)
+        const numbers = getRandomNumbers(5)
 
         console.log(numbers) // OUTPUT: [ 5, 8, 7, 1, 6 ]
         ```
@@ -243,9 +241,7 @@
         - Använder du en array som argument kan du få oönskade "sidoeffekter".
 
         ```
-        let scores
-
-        let logDoubledUp = function (results) {
+        const logDoubledUp = function (results) {
             for (let i = 0; i < results.length; i++) {
                 results[i] *= 2
             }
@@ -253,14 +249,14 @@
             console.log(results) // OUTPUT: [ 36, 18, 46, 24, 42, 34 ]
         };
 
-        scores = [18, 9, 23, 12, 21, 17]
+        const scores = [18, 9, 23, 12, 21, 17]
         console.log(scores)      // OUTPUT: [ 18, 9, 23, 12, 21, 17 ]
 
         logDoubledUp(scores)
         console.log(scores)      // OUTPUT: [ 36, 18, 46, 24, 42, 34 ]
         ```
 
-        - Den globala variablen `scores` refererar till exakt samma array som parametern `results` gör, varför samma array påverkas oavsett vilken av dem som används.
+        - Den globala konstanten `scores` refererar till exakt samma array som parametern `results` gör, varför samma array påverkas oavsett vilken av dem som används.
 
         ---
 
@@ -269,10 +265,8 @@
         - Metoden [`slice`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice) skapar en kopia av en array.
 
         ```
-        let scores
-
-        let logDoubledUp = function (results) {
-            let copy = results.slice() // skapar en kopia av arrayen results refererar till
+        const logDoubledUp = function (results) {
+            const copy = results.slice() // skapar en kopia av arrayen results refererar till
 
             for (let i = 0; i < results.length; i++) {
                 copy[i] *= 2
@@ -281,7 +275,7 @@
             console.log(copy) // OUTPUT: [ 36, 18, 46, 24, 42, 34 ]
         }
 
-        scores = [18, 9, 23, 12, 21, 17]
+        const scores = [18, 9, 23, 12, 21, 17]
         console.log(scores)   // OUTPUT: [ 18, 9, 23, 12, 21, 17 ]
 
         logDoubledUp(scores)
@@ -295,7 +289,7 @@
         - Metoden [`sort`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) sorterar, om ingen sorteringsfunktion anges, genom att först konvertera elementens värden till strängar för att sedan jämföra strängarna (lexografisk sortering).
 
         ```
-        let values = [2, 42, 10, 1, 8, 24, 4]
+        const values = [2, 42, 10, 1, 8, 24, 4]
 
         values.sort()
         console.log(values) // OUTPUT: [ 1, 10, 2, 24, 4, 42, 8 ], 10 kommer före 2!
@@ -304,7 +298,7 @@
         - Genom att ange en sorteringsfunktion i form av ett funktionsuttryck kan en egen sorteringordningen bestämmas.
 
         ```
-        let values = [2, 42, 10, 1, 8, 24, 4]
+        const values = [2, 42, 10, 1, 8, 24, 4]
 
         values.sort(function (a, b) {
             return a - b
@@ -320,7 +314,7 @@
         - Iterera igenom värden i en array ([`forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)).
 
         ```
-        let values = [2, 1, 8]
+        const values = [2, 1, 8]
 
         values.forEach(function (value) {
             console.log(value)
@@ -335,7 +329,7 @@
 
         ```
         let sum
-        let values = [2, 1, 8]
+        const values = [2, 1, 8]
 
         sum = values.reduce(function (a, b) {
             return a + b
@@ -352,7 +346,7 @@
 
         ```
         let filteredValues
-        let values = [2, 1, 8]
+        const values = [2, 1, 8]
 
         filteredValues = values.filter(function (a) {
             // Return all even numbers.
@@ -366,7 +360,7 @@
 
         ```
         let transformedValues;
-        let values = [2, 1, 8]
+        const values = [2, 1, 8]
 
         transformedValues = values.map(function (a) {
             return a * 2
@@ -374,6 +368,9 @@
 
         console.log(transformedValues) // OUTPUT:  4, 2, 16
         ``` 
+        ---
+
+        <img src="../images/lnu_symbol_150mm150dpi.png" alt="lnu-symbol" style="display: block;height:auto;width:40%;margin-left:auto;margin-right:auto">
 
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js">
