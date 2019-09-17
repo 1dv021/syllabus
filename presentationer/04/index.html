@@ -194,12 +194,12 @@
         - Referenstyp (t.ex. Array)
 
         ```
-        const numbers = [5, 8, 7, 1, 6] // tilldelar en variabel en referens till en array
+        const numbers = [5, 8, 7, 1, 6] // tilldelar en konstanten en referens till en array
         let figures
 
         console.log(numbers) // OUTPUT: [ 5, 8, 7, 1, 6 ]
 
-        figures = numbers    // kopierar referensen till en ny variabel
+        figures = numbers    // kopierar referensen till arrayen till en variabel
         figures[0] = 42      // ändrar det första elementets värde genom att använda kopian av referensen
 
         console.log(figures) // OUTPUT: [ 42, 8, 7, 1, 6 ]
