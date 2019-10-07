@@ -16,8 +16,8 @@
     # Föreläsning 6
 
     <div class="lnu-footer">
-        <img src="../remark/images/lnu-logotype.png">
-        <img src="../remark/images/lnu-symbol.png">
+      <img src="../images/lnu_wordmark_kalmar_vaxjo_pahang_150mm150dpi.png">
+      <img src="../images/lnu_symbol_150mm150dpi.png">
     </div>
 
     ---
@@ -52,7 +52,7 @@
     ```
     let value
 
-    let getNumber = function () {
+    const getNumber = function () {
       return Math.floor(Math.random() * 6) + 1
     }
 
@@ -73,7 +73,7 @@
     ```
     let value
 
-    let getNumber = function () {
+    const getNumber = function () {
         return Math.floor(Math.random() * 6) + 1
     }
 
@@ -90,7 +90,7 @@
     # Skapa ett objekt
 
     ```
-    let die = {
+    const die = {
       faceValue: undefined,
       roll: function () {
         this.faceValue = Math.floor(Math.random() * 6) + 1
@@ -111,15 +111,15 @@
 
     # this
     ```
-    let roll = function () {
+    const roll = function () {
       this.faceValue = Math.floor(Math.random() * 6) + 1
     }
 
-    let die = {
+    const die = {
       faceValue: undefined
     }
 
-    let die2 = {
+    const die2 = {
       faceValue: undefined,
       roll
     }
@@ -140,11 +140,11 @@
     ```
     // Skapar objekt som anropar funktion som använder this.
 
-    let smallTalk = function (greet = 'Hej!') {
+    const smallTalk = function (greet = 'Hej!') {
       console.log(greet + ' Jag, ' + this.name + ', är ' + this.age + ' år.')
     }
 
-    let simplePerson = {
+    const simplePerson = {
       name: 'Nisse',
       age: 42,
       talk: smallTalk
@@ -152,7 +152,7 @@
 
     simplePerson.talk()                               // OUTPUT: Hej! Jag, Nisse, är 42 år.
 
-    let anotherSimplePerson = {
+    const anotherSimplePerson = {
       name: 'Ellen',
       age: 7
     }
@@ -170,7 +170,7 @@
     - ...av vilken typ är objekten som skapas? Jo, `Object`! Inte `Die`!
 
     ```
-    let createDie = function () {
+    const createDie = function () {
       let obj = {
         faceValue: undefined,
         roll: function () {
@@ -181,7 +181,7 @@
       return obj
     }
 
-    let die = createDie()
+    const die = createDie()
     die.roll()
 
     console.log(die.faceValue)   // OUTPUT: 3
@@ -206,7 +206,7 @@
       }
     }
 
-    let die = new Die() // die refererar till en instans av Die
+    const die = new Die() // die refererar till en instans av Die
     die.roll()
 
     console.log(die.faceValue)   // OUTPUT: 4
@@ -229,8 +229,8 @@
       }
     }
 
-    let simplePerson1 = new SimplePerson('Nisse', 42)
-    let simplePerson2 = new SimplePerson('Ellen', 7)
+    const simplePerson1 = new SimplePerson('Nisse', 42)
+    const simplePerson2 = new SimplePerson('Ellen', 7)
 
     simplePerson1.talk() // OUTPUT: Jag, Nisse, är 42 år.
     simplePerson2.talk() // OUTPUT: Jag, Ellen, är 7 år.
@@ -254,7 +254,7 @@
       this.faceValue = Math.floor(Math.random() * 6) + 1
     }
 
-    let die = new Die()
+    const die = new Die()
     die.roll()
 
     console.log(die.faceValue)    // OUTPUT: 4
@@ -284,10 +284,10 @@
       console.log('Jag, ' + this.name + ', är ' + this.age + ' år.')
     }
 
-    let person1 = new Person('Nisse', 42)
+    const person1 = new Person('Nisse', 42)
     console.log(person1.constructor) // [Function: Person]
 
-    let person2 = new Person('Ellen', 7)
+    const person2 = new Person('Ellen', 7)
     console.log(person2.constructor) // [Function: Person]
 
     person1.talk() // Jag, Nisse, är 42 år.
@@ -311,7 +311,7 @@
       }
     }
     
-    let die = new Die()
+    const die = new Die()
     die.roll()
     
     console.log(die.faceValue)    // OUTPUT: 4
@@ -338,10 +338,10 @@
       }
     }
     
-    let person1 = new Person('Nisse', 42)
+    const person1 = new Person('Nisse', 42)
     console.log(person1.constructor) // OUTPUT: [Function: Person]
     
-    let person2 = new Person('Ellen', 7)
+    const person2 = new Person('Ellen', 7)
     console.log(person2.constructor) // OUTPUT: [Function: Person]
     
     person1.talk() // OUTPUT: Jag, Nisse, är 42 år.
@@ -373,7 +373,7 @@
       })
     }
     
-    let die = createDie()
+    const die = createDie()
     die.roll()
     
     console.log(die.faceValue)   // OUTPUT: 4
@@ -412,10 +412,10 @@
       })
     }
     
-    let person1 = createPerson('Nisse', 42)
+    const person1 = createPerson('Nisse', 42)
     console.log(person1.constructor) // OUTPUT: [Function: Object]
     
-    let person2 = createPerson('Ellen', 7)
+    const person2 = createPerson('Ellen', 7)
     console.log(person2.constructor) // OUTPUT: [Function: Object]
     
     person1.talk() // OUTPUT: Jag, Nisse, är 42 år.
@@ -424,7 +424,10 @@
     console.log(Object.getOwnPropertyNames(person1)) // OUTPUT: [ 'name', 'age' ]
     console.log(Object.getOwnPropertyNames(Person)) // OUTPUT: [ 'talk' ]
     ```
-    
+    ---
+
+    <img src="../images/lnu_symbol_150mm150dpi.png" alt="lnu-symbol" style="display: block;height:auto;width:40%;margin-left:auto;margin-right:auto">
+
 </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js">
 </script>
