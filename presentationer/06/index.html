@@ -171,7 +171,7 @@
 
     ```
     const createDie = function () {
-      let obj = {
+      const obj = {
         faceValue: undefined,
         roll: function () {
           this.faceValue = Math.floor(Math.random() * 6) + 1
@@ -362,7 +362,7 @@
       }
     }
     
-    let createDie = function () {
+    const createDie = function () {
       return Object.create(dieBase, {
         'faceValue': {
           value: undefined,
