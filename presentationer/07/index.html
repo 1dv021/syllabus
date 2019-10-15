@@ -16,8 +16,8 @@
     # Föreläsning 7
 
     <div class="lnu-footer">
-        <img src="../remark/images/lnu-logotype.png">
-        <img src="../remark/images/lnu-symbol.png">
+      <img src="../images/lnu_wordmark_kalmar_vaxjo_pahang_150mm150dpi.png">
+      <img src="../images/lnu_symbol_150mm150dpi.png">
     </div>
 
     ---
@@ -49,7 +49,7 @@
     # Från objekt med egenskaper...
 
     ```
-    let rectangle = {
+    const rectangle = {
       length: 6,
       width: 7
     }
@@ -60,7 +60,7 @@
     ## ...till objekt med egenskaper och metod, vidare till...
 
     ```
-    let rectangle = {
+    const rectangle = {
       length: 6,
       width: 7,
       getArea: function () {
@@ -93,7 +93,7 @@
     ```
     const Rectangle = require('./src/Rectangle')
 
-    let rectangle = new Rectangle()
+    const rectangle = new Rectangle()
     rectangle.length = 6
     rectangle.width = 7
 
@@ -122,7 +122,7 @@
     ```
     const Rectangle = require('./src/Rectangle')
 
-    let rectangle = new Rectangle(6, 7)
+    const rectangle = new Rectangle(6, 7)
     console.log('Area: ' + rectangle.getArea())
     ```
 
@@ -150,7 +150,7 @@
     ```
     const Rectangle = require('./src/Rectangle')
 
-    let rectangle = new Rectangle(6, 7)
+    const rectangle = new Rectangle(6, 7)
     console.log('Area: ' + rectangle.getArea())
     ```
 
@@ -174,15 +174,15 @@
     <p style='font-size: 70%;margin-bottom:-1em;margin-top:0em;'><code>app.js</code></p>
     <pre><code class="js">const Rectangle = require('./src/Rectangle')
   
-    let rectangle1 = new Rectangle(6, 7)
-    let rectangle2 = new Rectangle(3, 4)
+    const rectangle1 = new Rectangle(6, 7)
+    const rectangle2 = new Rectangle(3, 4)
       
     console.log('Area: ' + rectangle1.getArea())
     console.log('Area: ' + rectangle2.getArea())
     </code></pre>
     </div>
     
-    <img src="rectangle-prototype.png" width="45%" height="45%" style="border: none; background: none; float:right;padding-top:2em;" />
+    <img src="rectangle-prototype.png" width="45%" height="45%" style="border: none; background: none; float:right;padding-top:0em;" />
 
     <div style="clear: both;"></div>
 
@@ -210,8 +210,8 @@
     ```
     const Die = require('./src/Die')
 
-    let die1 = new Die()
-    let die2 = new Die()
+    const die1 = new Die()
+    const die2 = new Die()
 
     // Inte några värden en sexsidig tärning ska ha...
     die1.faceValue = 42
@@ -243,7 +243,7 @@
       }
     }
     
-    let foo = new Foo(21)
+    const foo = new Foo(21)
     console.log(foo.ohSoPublic)            // OUTPUT: 21
     console.log(foo._notSoPrivate)         // OUTPUT: 21
     console.log(foo.secret)                // OUTPUT: undefined
@@ -281,8 +281,8 @@
     ```
     const Die = require('./src/Die')
 
-    let die1 = new Die()
-    let die2 = new Die()
+    const die1 = new Die()
+    const die2 = new Die()
     
     die1.roll()
     die2.roll()
@@ -291,6 +291,7 @@
     console.log(die2.faceValue)
     
     die1.faceValue = 42                  // EXCEPTION: TypeError: Cannot set property faceValue of #&lt;Die&gt; which has only a getter
+    die1._faceValue = 42                 // Fortfarande möjligt, egenskapen är ju "bara" semi-privat! Programmeraren får skylla sig själv...
     ```
 
     ---
@@ -330,7 +331,7 @@
     ```
     const Die = require('./src/Die')
 
-    let die1 = new Die()
+    const die1 = new Die()
     
     die1.faceValue = 42 // EXCEPTION: Error: faceValue must be set to an integer between 1 and 6.
     ```
@@ -362,8 +363,8 @@
     ```
     const Die = require('./src/Die')
 
-    let die1 = new Die()
-    let die2 = new Die()
+    const die1 = new Die()
+    const die2 = new Die()
 
     die1.roll()
     die2.roll()
@@ -380,7 +381,7 @@
 
     <p style='font-size: 70%;margin-bottom:-1em;margin-top:-1em;'><code>src/Die.js</code></p>
     ```
-    let _faceValue = new WeakMap()
+    const _faceValue = new WeakMap()
 
     class Die {
       constructor () {
@@ -412,14 +413,14 @@
     const Die = require('./src/Die')
 
 
-    let die1 = new Die()
+    const die1 = new Die()
 
     die1.faceValue = 42 // EXCEPTION: Error: faceValue must be set to an integer between 1 and 6.
     ```
 
     ---
 
-    ## En högst privat tärning med klass 2019(?)
+    ## En högst privat tärning med klass 2020(?)
 
     <p style='font-size: 70%;margin-bottom:-1em;margin-top:-1em;'><code>src/Die.js</code></p>
     ```
@@ -455,7 +456,7 @@
     const Die = require('./src/Die')
 
 
-    let die1 = new Die()
+    const die1 = new Die()
 
     die1.faceValue = 42 // EXCEPTION: Error: faceValue must be set to an integer between 1 and 6.
     ```
@@ -557,7 +558,7 @@
     
     <p style='font-size: 70%;margin-bottom:-1em;margin-top:-1em;'><code>src/Student.js</code></p>
     ```
-    const Person = requier('./Person')
+    const Person = require('./Person')
 
     class Student extends Person {
       constructor (name, age, isCampus) {
@@ -574,10 +575,10 @@
     ```
     <p style='font-size: 70%;margin-bottom:-1em;margin-top:-1em;'><code>app.js</code></p>
     ```
-    let p = new Person('Ellen', 6)
+    const p = new Person('Ellen', 6)
     console.log(p.toString()) // OUTPUT: Jag, Ellen, är 6 år.
 
-    let s = new Student('Nisse', 42, true)
+    const s = new Student('Nisse', 42, true)
     console.log(s.toString()); // OUTPUT: Jag, Nisse, läser på campus och är 42 år.
     ```
 
@@ -588,8 +589,8 @@
     - Med operatorn `instanceof` kan du undersöka om en konstruktor har används för att skapa ett objekt.
 
     ```
-    let person1 = new Person('Nisse', 42)
-    let student1 = new Student('Ellen', 21, true)
+    const person1 = new Person('Nisse', 42)
+    const student1 = new Student('Ellen', 21, true)
 
     console.log(person1 instanceof Person)  // OUTPUT: true
     console.log(person1 instanceof Student) // OUTPUT: false
@@ -646,9 +647,11 @@
         
     module.exports.createStudent = createStudent
     ```
-    
+    ---
 
-    </textarea>
+    <img src="../images/lnu_symbol_150mm150dpi.png" alt="lnu-symbol" style="display: block;height:auto;width:40%;margin-left:auto;margin-right:auto">
+
+</textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js">
 </script>
 <script>
